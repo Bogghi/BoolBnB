@@ -65,6 +65,7 @@
     </head>
     <body>
         <h1>ciao team 5</h1>
+        <p>Prova gitkraken lorenzo</p>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
