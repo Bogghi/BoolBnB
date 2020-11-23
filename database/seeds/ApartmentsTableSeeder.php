@@ -16,7 +16,7 @@ class ApartmentsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
 
-            $randomUser = User::inRandomOrder()->first();
+            $randomUser = User::inRandomOrder()->first()->id;
 
             $newApartment = new Apartment;
             $newApartment->user_id = $randomUser;
