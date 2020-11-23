@@ -8,7 +8,7 @@ class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * //seeder User
+     * // Seeder for generating random Users
      * 
      * @return void
      */

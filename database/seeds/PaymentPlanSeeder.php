@@ -8,7 +8,7 @@ class PaymentPlanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * // seeder PaymentPlan
+     * // seeder PaymentPlan for sponsorization
      * @return void
      */
     public function run(Faker $faker)
