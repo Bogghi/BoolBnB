@@ -17,52 +17,20 @@ class SponsorizationSeeder extends Seeder
     public function run(Faker $fake)
     {
         //function to fill the promotion with fake record
-        $prices = $this->pricePlan();
-        $aprIds = $this->apartmentsId();
 
         for($i = 0; $i < 10; $i++){
+            $aprId = Apartment::inRandomOrder()->first()->id;
+            $prcPlanId = PaymentPlan::inRandomOrder()->first();
+            $prcHour = $prcPlanId->hours_duration;
+
             $newSpon = new Sponsorization;
             $newSpon->start_date = date("Y-m-d H:m:s");
-            $newSpon->end_date = date("Y-m-d H:m:s",strtotime("+5 hours"));
-            $newSpon->apartment_id = $aprIds[0];
-            $newSpon->payment_plan_id = $prices[0][0];
+            $newSpon->end_date = date("Y-m-d H:m:s",strtotime("+{$prcHour} hours"));
+            $newSpon->apartment_id = $aprId;
+            $newSpon->payment_plan_id = $prcPlanId->id;
             $newSpon->save();
-            shuffle($prices);
-            shuffle($aprIds);
+
         }
     }
 
-    /**
-     *
-     * @return price id from db
-     */
-    public function pricePlan()
-    {
-        //function to reutrn primary key from database
-        
-        $priceList = [];
-        $allPlan = PaymentPlan::all();
-
-        for($i = 0; $i < $allPlan->length(); $i++){
-            $rand = rand(0,2);
-            $tmpPrice = PaymentPlan::find($rand);
-            array_push($priceList,$tmpPrice);
-        }
-        
-        return $priceList;
-    }
-
-
-    /** 
-    * @return aprtments list of apparment for apartments table
-    */
-    public function apartmentsId(){
-        $aptList = [];
-        
-        for($i = 0; $i < 5; $i++){
-            $rand = rand(0,3);
-            $tmpApt = Apartment::find($rand);
-            array_push($aptList,$tmpApt);
-        }
-    }
 }
