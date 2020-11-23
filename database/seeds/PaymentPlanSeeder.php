@@ -8,13 +8,12 @@ class PaymentPlanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * // seeder PaymentPlan
      * @return void
      */
     public function run(Faker $faker)
     {
         
-
             $durations = [24, 72, 144];
 
             foreach ($durations as $duration) {
