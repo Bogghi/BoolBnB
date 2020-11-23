@@ -20,7 +20,7 @@ class MessagesSeeder extends Seeder
 
             $newMessage = new Message;
 
-            $newMessage->apartment_id = Apartment::inRandomOrder()->first();
+            $newMessage->apartment_id = Apartment::inRandomOrder()->first()->id;
             $newMessage->email = $faker->email();
             $newMessage->content = $faker->text(200);
 

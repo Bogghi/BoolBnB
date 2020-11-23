@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Apartment;
 use App\User;
+use App\Service;
 
 class ApartmentsTableSeeder extends Seeder
 {
@@ -33,6 +34,10 @@ class ApartmentsTableSeeder extends Seeder
             $newApartment->visibility = $faker->boolean();
 
             $newApartment->save();
+
+            $allServices = Service::all()->count();
+            $services = Service::inRandomOrder()->limit(rand(1,$allServices))->get();
+            $newApartment->services()->attach($services);
         }
     }
 }

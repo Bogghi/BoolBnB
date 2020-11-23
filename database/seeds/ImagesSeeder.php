@@ -20,7 +20,7 @@ class ImagesSeeder extends Seeder
             
             $newImage = new Image;
 
-            $newImage->apartment_id = Apartment::inRandomOrder()->first();
+            $newImage->apartment_id = Apartment::inRandomOrder()->first()->id;
             $newImage->image_path = $faker->imageUrl(200, 300);
 
             $newImage->save();
