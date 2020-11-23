@@ -8,7 +8,8 @@ class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * // Seeder for generating random Users
+     * 
      * @return void
      */
     public function run(Faker $faker)
