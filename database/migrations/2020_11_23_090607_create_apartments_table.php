@@ -27,7 +27,7 @@ class CreateApartmentsTable extends Migration
             $table->integer('beds_number');
             $table->integer('square_meters');
             $table->string('address');
-            $table->text('descriptions');
+            $table->text('description');
             $table->integer('rooms_number');
             $table->string('title', 255);
             $table->boolean('visibility')->default(1);
