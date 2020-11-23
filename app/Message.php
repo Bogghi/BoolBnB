@@ -8,7 +8,7 @@ class Message extends Model
 {
     //this model rappresent all messages recived by the owners
 
-    public function aparment(){
+    public function apartment(){
         return $this->belongsTo("App\Apartment");
     }
 }
