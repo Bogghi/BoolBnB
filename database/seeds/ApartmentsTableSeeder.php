@@ -14,7 +14,7 @@ class ApartmentsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i > 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
 
             $randomUser = User::inRandomOrder()->first();
 
