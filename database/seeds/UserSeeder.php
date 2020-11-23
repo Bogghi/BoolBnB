@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\User;
-
+use Illuminate\Support\Facades\Hash;
 class UserSeeder extends Seeder
 {
     /**
@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
           $newUser->name = $faker->firstName();
           $newUser->lastname = $faker->lastName;
           $newUser->date_of_birth = $faker->date('Y-m-d');
-          $newUser->password = "admin01";
+          $newUser->password = Hash::make('admin007');
           $newUser->email = $faker->email;
           $newUser->save();
         }
