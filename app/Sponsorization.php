@@ -10,7 +10,7 @@ class Sponsorization extends Model
         return $this->belongsTo('App\Apartment');
     }
 
-    public function payment_plan() {
-        return $this->belongsTo('App\Apartment');
+    public function paymentPlan() {
+        return $this->belongsTo('App\PaymentPlan');
     }
 }
