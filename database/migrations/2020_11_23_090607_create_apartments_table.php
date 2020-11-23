@@ -10,7 +10,7 @@ class CreateApartmentsTable extends Migration
     /**
      * Run the migrations.
      * 
-     * * Tabella  immobile 
+     * * Apartment Table 
      *
      * @return void
      */
