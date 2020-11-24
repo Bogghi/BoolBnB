@@ -129,7 +129,9 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.edit');
+        $apartment = Apartment::find($id);
+
+        return view('admin.edit', compact('apartment'));
 
     }
 
@@ -145,6 +147,7 @@ class ApartmentController extends Controller
         $data = $request->all();
 
         $request-> validate([
+            'images.*' => "image|unique:images",
             'address' => "required|max:255",
             'cover_image' => "required|unique|image",
             'bathrooms_number' => "required|number",
@@ -179,6 +182,30 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->update();
+
+        $apartment_id = $apartment->id;
+
+        if ($request->hasFile('images')) {
+
+        $images = $request->file('images');
+
+        foreach ($images as $image) {
+
+          $name = $image->getClientOriginalName();
+
+          $path = $image->storeAs(
+            "images/". $apartment_id,
+            $name,
+            "public"
+          );
+
+          $newImage = new Image();
+          $newImage->apartment_id = $apartment_id;
+          $newImage->image_path = $path;
+          $newImage->save();
+        }
+
+        }
 
 
         return redirect()->route('admin.show', $apartment);
