@@ -18,7 +18,6 @@ class ApartmentController extends Controller
     {
         $users_id = Auth::id();
         $apartment = Apartment::where('user_id', $users_id)->get();
-        dd($apartment);
         return view('admin.index', compact('apartment'));
     }
 
@@ -29,7 +28,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -40,7 +39,33 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $request-> validate([
+            'address' => "required|max:255",
+            'cover_image' => "required|unique|image",
+            'bathrooms_number' => "required|number",
+            'beds_number' => "required|number",
+            'square_meters' => "required|number",
+            'description' => "required|min:50",
+            'rooms_number' => "required|number",
+            'title' => "required|max:255",
+            'visibility' => "boolean",
+        ]);
+
+        $address = $data['address'];
+        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output= json_decode($geocode);
+        $lat = $output->results[0]->position->lat;
+        $lon = $output->results[0]->position->lon;
+
+
+
+        $apartment = new apartment;
+
+
+        $apartment->save();
+        return redirect()->route('', $apartment);
     }
 
     /**
