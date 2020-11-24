@@ -52,7 +52,7 @@ class ApartmentController extends Controller
         Validator::make($data, [
             'images.*' => "image|unique:images",
             'services.*' => [
-              Rule::in($services);
+              Rule::in($services)
             ],
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
@@ -161,7 +161,7 @@ class ApartmentController extends Controller
         Validator::make($data, [
             'images.*' => "image|unique:images",
             'services.*' => [
-              Rule::in($services);
+              Rule::in($services)
             ],
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
