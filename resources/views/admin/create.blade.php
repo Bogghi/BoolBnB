@@ -4,10 +4,10 @@
 <div class="container">
   <section>
     <h1>Aggiungi un appartamento</h1>
-    <form action="{{route("admin.apartment.update")}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route("admin.apartment.store")}}" method="POST" enctype="multipart/form-data">
 
       @csrf
-      @method("PUT")
+      @method("POST")
 
       <div class="form-group">
         <label for="title">Titolo</label>
