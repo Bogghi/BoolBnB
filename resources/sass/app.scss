@@ -1,27 +1,18 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Variables
+@import 'Partials/variables';
 
-.h-80 {
-  height: 80px;
-  padding: 0 10px;
-}
+// Common
+@import 'Partials/common';
 
-.navbar-nav {
-  align-items: center;
-}
+// Partials
+@import 'Partials/header';
+@import 'Partials/main';
+@import 'Partials/footer';
 
-main {
-  height: calc(100vh - 140px);
-}
 
-footer {
-  height: 60px;
-  background-color: red;
-}

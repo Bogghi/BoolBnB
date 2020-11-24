@@ -1,0 +1,22 @@
+header {
+  height: 80px;
+  border-bottom: 2px solid $bluebnb;
+
+  .navbar {
+    height: 100%;
+
+    .logo {
+      img#logo {
+        width: 130px;
+      }
+    }
+
+    .navbar-nav {
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+
+  
+}
