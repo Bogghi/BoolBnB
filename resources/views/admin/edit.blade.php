@@ -4,7 +4,7 @@
 <div class="container">
   <section>
     <h1>Aggiungi un appartamento</h1>
-    <form action="{{route("admin.apartment.update")}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route("admin.apartment.update", $apartment->id)}}" method="POST" enctype="multipart/form-data">
 
       @csrf
       @method("PUT")

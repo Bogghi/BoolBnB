@@ -147,7 +147,9 @@ class ApartmentController extends Controller
     {
         $apartment = Apartment::find($id);
 
-        return view('admin.edit', compact('apartment'));
+        $services = Service::all();
+
+        return view('admin.edit', compact('apartment', 'services'));
     }
 
     /**
@@ -165,9 +167,9 @@ class ApartmentController extends Controller
 
         Validator::make($data, [
             'images.*' => "image|unique:images",
-            'services.*' => [
-                Rule::in($services)
-            ],
+            // 'services.*' => [
+            //     Rule::in($services)
+            // ],
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
@@ -185,9 +187,9 @@ class ApartmentController extends Controller
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
-
+        $user_id = Auth::id();
         $apartment = Apartment::find($id);
-
+        $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
         $apartment->cover_image = $data['cover_image'];
@@ -201,7 +203,6 @@ class ApartmentController extends Controller
         $apartment->title = $data['title'];
         $apartment->visibility = $data['visibility'];
 
-        $apartment->update();
 
         $apartment_id = $apartment->id;
 
@@ -226,6 +227,14 @@ class ApartmentController extends Controller
             }
         }
 
+        if (isset($data['services'])) {
+            $apartment->services()->sync($data['services']);
+          } else {
+            $apartment->services()->detach();
+          }
+
+          $apartment->update();
+          
 
         return redirect()->route('admin.show', $apartment);
     }
