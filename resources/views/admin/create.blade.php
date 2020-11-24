@@ -41,12 +41,21 @@
         <div>
           <label>Servizi</label>
         </div>
+
+        <?php $i = 0; ?>
         @foreach ($services as $service)
+        <?php $count = $i+=1?>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="service-{{$service->name}}" name="services[]" value="{{$service->name}}">
-          <label class="form-check-label" for="service-{{$service->name}}">{{$service->name}}</label>
+          <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
+          <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
         </div>
         @endforeach
+
+
+
+        <div class="form-check form-check-inline">
+          <input type="number" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="1" required>
+        </div>
         
       <div class="form-group mt-sm-4">
         <label for="cover_image">Immagine di copertina</label>
