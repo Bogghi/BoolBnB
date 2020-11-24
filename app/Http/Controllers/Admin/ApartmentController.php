@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
+use App\Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,15 +57,40 @@ class ApartmentController extends Controller
         $address = $data['address'];
         $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
         $output= json_decode($geocode);
-        $lat = $output->results[0]->position->lat;
-        $lon = $output->results[0]->position->lon;
+        $latitude = $output->results[0]->position->lat;
+        $longitude = $output->results[0]->position->lon;
 
 
 
         $apartment = new apartment;
+        $apartment->longitude = $longitude;
+        $apartment->latitude = $latitude;
+        $apartment->cover_image = $data['cover_image'];
+        $apartment->bathrooms_number = $data['bathrooms_number'];
+        $apartment->beds_number = $data['beds_number'];
+        $apartment->square_meters = $data['square_meters'];
+        $apartment->square_meters = $data['square_meters'];
+        $apartment->address = $data['address'];
+        $apartment->description = $data['description'];
+        $apartment->rooms_number = $data['rooms_number'];
+        $apartment->title = $data['title'];
+        $apartment->visibility = $data['visibility'];
+
+
+
+
+
+
+
+
+        
+
+        
 
 
         $apartment->save();
+        
+
         return redirect()->route('', $apartment);
     }
 
