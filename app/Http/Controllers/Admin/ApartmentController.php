@@ -79,7 +79,7 @@ class ApartmentController extends Controller
         $apartment->save();
         
 
-        return redirect()->route('', $apartment);
+        return redirect()->route('admin.index', $apartment);
     }
 
     /**
@@ -90,7 +90,10 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $apartment = Apartment::find($id);
+
+        return view("admin.show", ["apartment" => $apartment]);
     }
 
     /**
@@ -101,7 +104,8 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.edit');
+        
     }
 
     /**
@@ -113,7 +117,46 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $request-> validate([
+            'address' => "required|max:255",
+            'cover_image' => "required|unique|image",
+            'bathrooms_number' => "required|number",
+            'beds_number' => "required|number",
+            'square_meters' => "required|number",
+            'description' => "required|min:50",
+            'rooms_number' => "required|number",
+            'title' => "required|max:255",
+            'visibility' => "boolean",
+        ]);
+
+        $address = $data['address'];
+        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output= json_decode($geocode);
+        $latitude = $output->results[0]->position->lat;
+        $longitude = $output->results[0]->position->lon;
+
+
+        $apartment = Apartment::find($id);
+        
+        $apartment->longitude = $longitude;
+        $apartment->latitude = $latitude;
+        $apartment->cover_image = $data['cover_image'];
+        $apartment->bathrooms_number = $data['bathrooms_number'];
+        $apartment->beds_number = $data['beds_number'];
+        $apartment->square_meters = $data['square_meters'];
+        $apartment->square_meters = $data['square_meters'];
+        $apartment->address = $data['address'];
+        $apartment->description = $data['description'];
+        $apartment->rooms_number = $data['rooms_number'];
+        $apartment->title = $data['title'];
+        $apartment->visibility = $data['visibility'];
+
+        $apartment->update();
+        
+
+        return redirect()->route('admin.show', $apartment);
     }
 
     /**
