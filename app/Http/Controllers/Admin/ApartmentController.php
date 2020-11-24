@@ -42,21 +42,21 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $request->validate([
             'address' => "required|max:255",
             'cover_image' => "required|unique|image",
-            'bathrooms_number' => "required|number",
-            'beds_number' => "required|number",
-            'square_meters' => "required|number",
+            'bathrooms_number' => "required|integer",
+            'beds_number' => "required|integer",
+            'square_meters' => "required|integer",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
@@ -77,7 +77,7 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->save();
-        
+
 
         return redirect()->route('admin.index', $apartment);
     }
@@ -105,7 +105,6 @@ class ApartmentController extends Controller
     public function edit($id)
     {
         return view('admin.edit');
-        
     }
 
     /**
@@ -119,27 +118,27 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $request->validate([
             'address' => "required|max:255",
             'cover_image' => "required|unique|image",
-            'bathrooms_number' => "required|number",
-            'beds_number' => "required|number",
-            'square_meters' => "required|number",
+            'bathrooms_number' => "required|integer",
+            'beds_number' => "required|integer",
+            'square_meters' => "required|integer",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
 
         $apartment = Apartment::find($id);
-        
+
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
         $apartment->cover_image = $data['cover_image'];
@@ -154,7 +153,7 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->update();
-        
+
 
         return redirect()->route('admin.show', $apartment);
     }
