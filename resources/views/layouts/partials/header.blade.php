@@ -1,9 +1,11 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-light bg-white">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+      <div class="logo">
+        <a href="{{ route('homepage') }}">
+          <img id="logo" src="{{asset("img/boolbnb-logo-dark.svg")}}" alt="BoolBnB">
         </a>
+      </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +17,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto h-80">
+            <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @if (Route::currentRouteName() != 'homepage')
                 <li class="nav-item">
@@ -38,6 +40,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

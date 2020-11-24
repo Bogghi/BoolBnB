@@ -60,14 +60,14 @@ class ApartmentController extends Controller
             'beds_number' => "required|number",
             'square_meters' => "required|number",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
@@ -169,14 +169,14 @@ class ApartmentController extends Controller
             'beds_number' => "required|number",
             'square_meters' => "required|number",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 

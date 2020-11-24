@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.guests')
 
 @section('content')
-    <section class="sponsorizations">
+    <section id="hero"></section>
+    <section id="sponsorizations">
       {{-- @foreach ($apartments as $apartment)
 
       @endforeach --}}

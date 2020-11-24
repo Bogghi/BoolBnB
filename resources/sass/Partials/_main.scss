@@ -1,0 +1,12 @@
+main {
+  height: calc(100vh - 140px);
+
+  #hero {
+    height: 400px;
+  }
+
+  #sponsorizations {
+    background-color: $greenbnb;
+    height: calc(100vh - 540px);
+  }
+}
