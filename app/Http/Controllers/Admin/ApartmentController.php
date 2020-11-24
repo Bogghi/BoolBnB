@@ -76,18 +76,6 @@ class ApartmentController extends Controller
         $apartment->title = $data['title'];
         $apartment->visibility = $data['visibility'];
 
-
-
-
-
-
-
-
-        
-
-        
-
-
         $apartment->save();
         
 
