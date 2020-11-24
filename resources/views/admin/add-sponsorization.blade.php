@@ -8,15 +8,27 @@
 </head>
 <body>
 
-    <form action="" method="POST">
-        
+    <form action="{{route("admin.sponsorization.store")}}" method="POST">
+        @csrf
+        @method('POST')
+        <input type="hidden" name="appartment_id" value="{{$id}}">
         @foreach ($payPlan->all() as $plan)
             {{-- @dd($plan) --}}
-            <input type="radio" id="{{$plan->id}}" name="option" value="{{$plan->hours_duration}}">
+            <input type="radio" id="{{$plan->id}}" name="payment_plan_id" value="{{$plan->id}}">
             <label for="male">{{$plan->hours_duration}} {{$plan->price}}</label><br>
         @endforeach
 
+        <button type="submit">salva</button>
+
     </form>
+
+    @if ($errors->any())
+    <ul>    
+    @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>    
+    @endforeach
+    </ul>
+@endif
 
 </body>
 </html>

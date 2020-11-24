@@ -4,20 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 use App\PaymentPlan;
+use App\Sponsorization;
+use App\Apartment;
 
 class SponsorizationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-        dd("ciao");
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -45,6 +41,29 @@ class SponsorizationController extends Controller
     {
         //
         $data = $request->all();
+        $newSpn = new Sponsorization;
+        $userId = Auth::id();
+        $paymentPlanId = $data["payment_plan_id"];
+        $payPlanInfo = PaymentPlan::find($paymentPlanId)->hours_duration;
+        
+        $userApartment = DB::table('apartments')
+                            ->where('user_id', $userId)
+                            ->pluck('id');
+
+        $request->validate([
+            'payment_plan_id' => "required",
+            'appartment_id' => [
+                'required',
+                Rule::in($userApartment)
+            ]
+        ]);
+        
+        $newSpn->apartment_id = $data["appartment_id"];
+        $newSpn->payment_plan_id = $data["payment_plan_id"];
+        $newSpn->start_date = date("Y-m-d H:m:s");
+        $newSpn->end_date = date("Y-m-d H:m:s",strtotime("+{$payPlanInfo} hours"));
+
+        $newSpn->save();
     }
 
     /**
@@ -58,38 +77,4 @@ class SponsorizationController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-        dd($id);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
