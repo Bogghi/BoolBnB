@@ -34,7 +34,9 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $services = Service::all();
+
+        return view('admin.create', compact('services'));
     }
 
     /**
@@ -52,7 +54,7 @@ class ApartmentController extends Controller
         Validator::make($data, [
             'images.*' => "image|unique:images",
             'services.*' => [
-              Rule::in($services)
+                Rule::in($services)
             ],
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
@@ -93,24 +95,23 @@ class ApartmentController extends Controller
 
         if ($request->hasFile('images')) {
 
-        $images = $request->file('images');
+            $images = $request->file('images');
 
-        foreach ($images as $image) {
+            foreach ($images as $image) {
 
-          $name = $image->getClientOriginalName();
+                $name = $image->getClientOriginalName();
 
-          $path = $image->storeAs(
-            "images/". $apartment_id,
-            $name,
-            "public"
-          );
+                $path = $image->storeAs(
+                    "images/" . $apartment_id,
+                    $name,
+                    "public"
+                );
 
-          $newImage = new Image();
-          $newImage->apartment_id = $apartment_id;
-          $newImage->image_path = $path;
-          $newImage->save();
-        }
-
+                $newImage = new Image();
+                $newImage->apartment_id = $apartment_id;
+                $newImage->image_path = $path;
+                $newImage->save();
+            }
         }
 
 
@@ -142,7 +143,6 @@ class ApartmentController extends Controller
         $apartment = Apartment::find($id);
 
         return view('admin.edit', compact('apartment'));
-
     }
 
     /**
@@ -161,7 +161,7 @@ class ApartmentController extends Controller
         Validator::make($data, [
             'images.*' => "image|unique:images",
             'services.*' => [
-              Rule::in($services)
+                Rule::in($services)
             ],
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
@@ -202,24 +202,23 @@ class ApartmentController extends Controller
 
         if ($request->hasFile('images')) {
 
-        $images = $request->file('images');
+            $images = $request->file('images');
 
-        foreach ($images as $image) {
+            foreach ($images as $image) {
 
-          $name = $image->getClientOriginalName();
+                $name = $image->getClientOriginalName();
 
-          $path = $image->storeAs(
-            "images/". $apartment_id,
-            $name,
-            "public"
-          );
+                $path = $image->storeAs(
+                    "images/" . $apartment_id,
+                    $name,
+                    "public"
+                );
 
-          $newImage = new Image();
-          $newImage->apartment_id = $apartment_id;
-          $newImage->image_path = $path;
-          $newImage->save();
-        }
-
+                $newImage = new Image();
+                $newImage->apartment_id = $apartment_id;
+                $newImage->image_path = $path;
+                $newImage->save();
+            }
         }
 
 
