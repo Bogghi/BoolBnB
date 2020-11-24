@@ -10903,3 +10903,21 @@ a.text-dark:focus {
   }
 }
 
+.h-80 {
+  height: 80px;
+  padding: 0 10px;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+main {
+  height: calc(100vh - 140px);
+}
+
+footer {
+  height: 60px;
+  background-color: red;
+}
+
