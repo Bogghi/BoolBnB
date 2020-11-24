@@ -4,9 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Image;
+use App\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class ApartmentController extends Controller
 {
@@ -42,8 +47,13 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $services = Service::all();
+
+        Validator::make($data, [
             'images.*' => "image|unique:images",
+            'services.*' => [
+              Rule::in($services);
+            ],
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
@@ -146,10 +156,15 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $services = Service::all();
+
+        Validator::make($data, [
             'images.*' => "image|unique:images",
+            'services.*' => [
+              Rule::in($services);
+            ],
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
+            'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
             'beds_number' => "required|number",
             'square_meters' => "required|number",
