@@ -87,7 +87,7 @@ class SponsorizationController extends Controller
      * @return true if a promo is already active
      * @return flase if there isn't a promo active
      */
-    public function alreadyActive($aprId){
+    private function alreadyActive($aprId){
         $now = date("Y-m-d H:m:s");
 
         $promoActive = DB::table('sponsorizations')
