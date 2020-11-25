@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 use App\PaymentPlan;
 use App\Sponsorization;
@@ -44,26 +45,63 @@ class SponsorizationController extends Controller
         $newSpn = new Sponsorization;
         $userId = Auth::id();
         $paymentPlanId = $data["payment_plan_id"];
+        $apartmentId = $data["apartment_id"];
         $payPlanInfo = PaymentPlan::find($paymentPlanId)->hours_duration;
-        
+        $alreadyActive = $this->alreadyActive($apartmentId);
+
         $userApartment = DB::table('apartments')
                             ->where('user_id', $userId)
                             ->pluck('id');
 
-        $request->validate([
+        $validator = Validator::make($request->all(),[
             'payment_plan_id' => "required",
             'appartment_id' => [
                 'required',
                 Rule::in($userApartment)
             ]
         ]);
-        
-        $newSpn->apartment_id = $data["appartment_id"];
-        $newSpn->payment_plan_id = $data["payment_plan_id"];
+
+        $validator->after(function ($validator) use ($alreadyActive){
+            if ($alreadyActive) {
+                $validator->errors()->add('apartment_promo', 'A promo is already active on this apartment!');
+            }
+        });
+
+
+        if ($validator->fails()) {
+            //
+        }
+
+        $newSpn->apartment_id = $apartmentId;
+        $newSpn->payment_plan_id = $paymentPlanId;
         $newSpn->start_date = date("Y-m-d H:m:s");
         $newSpn->end_date = date("Y-m-d H:m:s",strtotime("+{$payPlanInfo} hours"));
 
         $newSpn->save();
+
+    }
+
+    /**
+     * Check if the promo is already active 
+     * 
+     * @return true if a promo is already active
+     * @return flase if there isn't a promo active
+     */
+    public function alreadyActive($aprId){
+        $now = date("Y-m-d H:m:s");
+
+        $promoActive = DB::table('sponsorizations')
+                           ->where('apartment_id',$aprId)
+                           ->where('end_date','>',$now)
+                           ->get();
+        
+        // dd($promoActive);
+        // dd(empty($promoActive));
+
+        if(empty($promoActive)){
+            return false;
+        }
+        return true;
     }
 
     /**
