@@ -19,7 +19,7 @@
     <div id="app">
         @include('layouts.partials.header')
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
 
