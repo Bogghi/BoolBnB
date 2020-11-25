@@ -26,7 +26,7 @@ class SponsorizationController extends Controller
         //
         $payPlan = PaymentPlan::all();
         $id = $id->id;
-        return view("admin.sponsorization",[
+        return view("admin.add-sponsorization",[
             "payPlan"=>$payPlan,
             "id"=>$id
         ]);
@@ -78,7 +78,7 @@ class SponsorizationController extends Controller
 
         $newSpn->save();
 
-
+        return redirect()->route('admin.apartment.show',$apartmentId);
     }
 
     /**
@@ -95,7 +95,7 @@ class SponsorizationController extends Controller
                            ->where('end_date','>',$now)
                            ->get();
 
-        if(empty($promoActive)){
+        if(count($promoActive) == 0){
             return false;
         }
         return true;
