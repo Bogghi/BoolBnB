@@ -28,4 +28,4 @@ Route::get('/', 'ApartmentController@index')->name('homepage');
 Route::get('/show/{id}', 'ApartmentController@show')->name('apartment.show');
 
 //Route for store the message.
-Route::post('/message/{$apartment_id}', 'MessageController@store')->name('message.store');
+Route::post('/message/{id}', 'MessageController@store')->name('message.store');

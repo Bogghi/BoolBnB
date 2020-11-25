@@ -26,7 +26,7 @@ class SponsorizationController extends Controller
         //
         $payPlan = PaymentPlan::all();
         $id = $id->id;
-        return view("admin.add-sponsorization",[
+        return view("admin.sponsorization",[
             "payPlan"=>$payPlan,
             "id"=>$id
         ]);

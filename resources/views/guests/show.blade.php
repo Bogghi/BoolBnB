@@ -9,7 +9,7 @@
       <div class="row">
   
         <div class="col-md-6 m-auto">
-          <img class="img-fluid mx-auto d-block rounded-left" src="{{$apartment->cover_image}}" alt="project image">
+          <img class="img-fluid mx-auto d-block rounded-left" src="{{asset('storage/'.$apartment->cover_image)}}" alt="project image">
         </div>
   
         <div class="col-md-6 p-5 align-self-center">
@@ -51,15 +51,16 @@
         <div class="col-md-8 mx-auto">
 
           <form class="border border-light p-5" action="{{route("message.store", $apartment->id)}}" method="POST">
-
+            @csrf
+            @method('POST')
             <p class="h4 mb-4 text-center">Contatta il proprietario</p>
         
-            <input type="email" id="email" class="form-control mb-4" placeholder="Il tuo indirizzo e-mail" value="{{old("email") ?? old("email")}}" required>
+            <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Il tuo indirizzo e-mail" value="{{old("email") ?? old("email")}}" required>
             @error('email')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Il tuo messaggio..." required style="resize: none;">{{old("content") ?? old("content")}}</textarea>
+            <textarea class="form-control rounded-0" name="content" id="content" rows="3" placeholder="Il tuo messaggio..." required style="resize: none;">{{old("content") ?? old("content")}}</textarea>
             @error('email')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror

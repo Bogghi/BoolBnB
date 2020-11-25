@@ -9,7 +9,7 @@
       <div class="row">
   
         <div class="col-md-6 m-auto">
-          <img class="img-fluid mx-auto d-block rounded-left" src="{{$apartment->cover_image}}" alt="project image">
+          <img class="img-fluid mx-auto d-block rounded-left" src="{{asset('storage/'.$apartment->cover_image)}}" alt="project image">
         </div>
   
         <div class="col-md-6 p-5 align-self-center">
@@ -49,7 +49,7 @@
       <div class="row">
         
 
-        <a class="btn btn-info my-4 px-5 mx-auto d-block background-color-primary" href="#">Sponsorizza questo appartamento</a>
+        <a class="btn btn-info my-4 px-5 mx-auto d-block background-color-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza questo appartamento</a>
 
         
   

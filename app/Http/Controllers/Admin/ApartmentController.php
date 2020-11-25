@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -24,7 +25,7 @@ class ApartmentController extends Controller
     {
         $users_id = Auth::id();
         $apartment = Apartment::where('user_id', $users_id)->get();
-        return view('admin.index', compact('apartment'));
+        return view('admin.apartment.index', compact('apartment'));
     }
 
     /**
@@ -65,20 +66,20 @@ class ApartmentController extends Controller
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
-            dd($request);
         $address = $data['address'];
         $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
         $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
-
+        
+        $pathstorage = Storage::disk('public')->put('images', $data['cover_image']);
         
         $user_id = Auth::id();
         $apartment = new apartment;
         $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
-        $apartment->cover_image = $data['cover_image'];
+        $apartment->cover_image = $pathstorage;
         $apartment->bathrooms_number = $data['bathrooms_number'];
         $apartment->beds_number = $data['beds_number'];
         $apartment->square_meters = $data['square_meters'];

@@ -8,10 +8,9 @@ use App\Apartment;
 
 class MessageController extends Controller
 {
-    public function store(Request $request,$apartment_id) {
+    public function store(Request $request,$id) {
 
       $data = $request->all();
-
 
       $request->validate([
         'email' => "required|email:rfc,dns",
@@ -20,10 +19,11 @@ class MessageController extends Controller
 
       $newMessage = new Message();
 
-      $newMessage->apartment_id = $apartment_id;
+      $newMessage->apartment_id = $id;
       $newMessage->email = $data["email"];
       $newMessage->content = $data["content"];
 
       $newMessage->save();
-    }
+      return redirect()->route('apartment.show', $id);
+    } 
 }
