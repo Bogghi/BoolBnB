@@ -22,6 +22,9 @@ main {
   #sponsorizations {
     background-color: $greenbnb;
     height: 400px;
+    .image-sponsored {
+      display: flex;
+    }
     .sponsored {
       width: 13rem;
       height: 13rem;

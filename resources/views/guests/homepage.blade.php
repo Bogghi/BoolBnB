@@ -15,18 +15,25 @@
     </section>
     <section class="container-fluid" id="sponsorizations">
       
-        <div class="row pt-5">
-          <div class="col-10 offset-1">
-          <div class="border rounded sponsored">
-            TEST SPONSORSHIPS
-          </div>
-        </div>
-        </div>
+          <div class="container image-sponsored ml-5 pt-5">
+              @foreach ($sponsored_apartments as $apartments)
+
+              <?php
+              $image = $apartments->cover_image;
+              $pos = strpos($image, "placeholder");
+    
+              ?> 
+              
+              <div class="border mr-5 d-flex rounded sponsored">
+                <?php if ($pos === false) {?>
+                  <img class="responsive-image" src=" {{asset('storage/'.$apartments->cover_image)}}" alt="image">
       
-      
-    </div>
-      {{-- @foreach ($apartments as $apartment)
-          
-      @endforeach --}}
+                <?php } else {?>
+                    <img class="responsive-image" src="{{$apartments->cover_image}}" alt="image">
+              </div>
+              <?php }?>
+
+              @endforeach
+            </div>
     </section>
 @endsection
