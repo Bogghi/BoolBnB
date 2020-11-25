@@ -18,7 +18,7 @@
       @enderror
       <div class="form-group">
         <label for="address">Indirizzo</label>
-        <input type="text" class="form-control" id="address" name="address" placeholder="Digita l'indirizzo del tuo appartamento" value="{{old("address") ?? old("address") : $apartment->address}}">
+        <input type="text" class="form-control" id="address" name="address" placeholder="Digita l'indirizzo del tuo appartamento" value="{{old("address") ? old("address") : $apartment->address}}">
       </div>
       @error('address')
         <div class="alert alert-danger">{{ $message }}</div>
