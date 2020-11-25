@@ -1,5 +1,23 @@
 footer {
   width: 100%;
-  height: 60px;
+  height:100%;
   background-color: $bluebnb;
+  .developer {
+    height: 100%;
+    .pic {
+      margin-right: 50px;
+    }
+    .footer-img {
+      width: 16rem;
+ 
+    }
+    .custom-social {
+      color: $greenbnb;
+      font-size: 40px;
+      background-color: $white;
+      padding: 10px;
+      
+
+    }
+  }
 }

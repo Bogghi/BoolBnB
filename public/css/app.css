@@ -10907,6 +10907,22 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.color-primary {
+  color: #001533;
+}
+
+.color-secondary {
+  color: #00F087;
+}
+
+.background-color-primary {
+  background-color: #001533;
+}
+
+.background-color-secondary {
+  background-color: #00F087;
+}
+
 header {
   height: 80px;
   border-bottom: 2px solid #001533;
@@ -10936,14 +10952,52 @@ main .jumbo-home {
   height: 450px;
 }
 
+main .jumbo-home .jumbo-text {
+  margin-top: 100px;
+}
+
+main .jumbo-home .jumbo-text .btn-outline-primary {
+  border-color: #001533;
+  color: #001533;
+}
+
+main .jumbo-home .jumbo-text .btn-outline-primary:hover {
+  background-color: #001533;
+  color: #fff;
+}
+
 main #sponsorizations {
   background-color: #00F087;
   height: 400px;
 }
 
+main #sponsorizations .sponsored {
+  width: 13rem;
+  height: 13rem;
+}
+
 footer {
   width: 100%;
-  height: 60px;
+  height: 100%;
   background-color: #001533;
+}
+
+footer .developer {
+  height: 100%;
+}
+
+footer .developer .pic {
+  margin-right: 50px;
+}
+
+footer .developer .footer-img {
+  width: 16rem;
+}
+
+footer .developer .custom-social {
+  color: #00F087;
+  font-size: 40px;
+  background-color: #fff;
+  padding: 10px;
 }
 

@@ -1,3 +1,18 @@
+@import 'Partials/variables';
 body {
   font-family: 'Lato', sans-serif;
+}
+
+.color-primary {
+  color: $bluebnb;
+}
+.color-secondary {
+  color: $greenbnb;
+}
+
+.background-color-primary {
+  background-color: $bluebnb;
+}
+.background-color-secondary {
+  background-color: $greenbnb;
 }

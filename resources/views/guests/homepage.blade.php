@@ -3,18 +3,30 @@
 @section('content')
     <section id="jumbotron-home">
       <div class="jumbo-home jumbotron-fluid">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
-            <div class="xs-2">
-              <h1 class="display-4">Fluid jumbotron</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <div class="col-5 offset-1 jumbo-text">
+              <h1 class="display-4">BoolBnB</h1>
+              <p class="lead">The website of your dream</p>
+              <a class="btn btn-outline-primary " href="">Cerca un appartamento</a>
             </div>
           </div>
           
         </div>
       </div>
     </section>
-    <section id="sponsorizations">
+    <section class="container-fluid" id="sponsorizations">
+      
+        <div class="row pt-5">
+          <div class="col-10 offset-1">
+          <div class="border rounded sponsored">
+            TEST SPONSORSHIPS
+          </div>
+        </div>
+        </div>
+      
+      
+    </div>
       {{-- @foreach ($apartments as $apartment)
           
       @endforeach --}}

@@ -6,10 +6,25 @@ main {
   }
   .jumbo-home {
     height: 450px;
+    .jumbo-text {
+      margin-top: 100px;
+      .btn-outline-primary {
+        border-color: $bluebnb;
+        color: $bluebnb;
+        &:hover {
+          background-color: $bluebnb;
+          color: $white;
+        }
+      }
+    }
   }
 
   #sponsorizations {
     background-color: $greenbnb;
     height: 400px;
+    .sponsored {
+      width: 13rem;
+      height: 13rem;
+    }
   }
 }
