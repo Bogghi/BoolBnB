@@ -19,12 +19,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->group(function () {
     Route::resource('apartment', 'ApartmentController');
-<<<<<<< HEAD
     Route::resource('sponsorization', 'SponsorizationController');
 });
-=======
 
-});
 
 // Routes for guests' apartments' controller.
 Route::get('/', 'ApartmentController@index')->name('homepage');
