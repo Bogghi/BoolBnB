@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('guests.homepage');
+})->name('homepage');
 
 Auth::routes();
 
@@ -22,7 +25,3 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->
     Route::resource('apartment', 'ApartmentController');
 
 });
-
-// Routes for guests' apartments' controller.
-Route::get('/', 'ApartmentController@index')->name('homepage');
-Route::get('/show/{id}', 'ApartmentController@show')->name('show');
