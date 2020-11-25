@@ -4,9 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Image;
+use App\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class ApartmentController extends Controller
 {
@@ -42,21 +47,27 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $services = Service::all();
+
+        Validator::make($data, [
+            'images.*' => "image|unique:images",
+            'services.*' => [
+              Rule::in($services)
+            ],
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
+            'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
             'beds_number' => "required|number",
             'square_meters' => "required|number",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
@@ -77,7 +88,31 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->save();
-        
+
+        $apartment_id = $apartment->id;
+
+        if ($request->hasFile('images')) {
+
+        $images = $request->file('images');
+
+        foreach ($images as $image) {
+
+          $name = $image->getClientOriginalName();
+
+          $path = $image->storeAs(
+            "images/". $apartment_id,
+            $name,
+            "public"
+          );
+
+          $newImage = new Image();
+          $newImage->apartment_id = $apartment_id;
+          $newImage->image_path = $path;
+          $newImage->save();
+        }
+
+        }
+
 
         return redirect()->route('admin.index', $apartment);
     }
@@ -104,8 +139,10 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.edit');
-        
+        $apartment = Apartment::find($id);
+
+        return view('admin.edit', compact('apartment'));
+
     }
 
     /**
@@ -119,27 +156,33 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $services = Service::all();
+
+        Validator::make($data, [
+            'images.*' => "image|unique:images",
+            'services.*' => [
+              Rule::in($services)
+            ],
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
+            'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
             'beds_number' => "required|number",
             'square_meters' => "required|number",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
 
         $apartment = Apartment::find($id);
-        
+
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
         $apartment->cover_image = $data['cover_image'];
@@ -154,7 +197,31 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->update();
-        
+
+        $apartment_id = $apartment->id;
+
+        if ($request->hasFile('images')) {
+
+        $images = $request->file('images');
+
+        foreach ($images as $image) {
+
+          $name = $image->getClientOriginalName();
+
+          $path = $image->storeAs(
+            "images/". $apartment_id,
+            $name,
+            "public"
+          );
+
+          $newImage = new Image();
+          $newImage->apartment_id = $apartment_id;
+          $newImage->image_path = $path;
+          $newImage->save();
+        }
+
+        }
+
 
         return redirect()->route('admin.show', $apartment);
     }
