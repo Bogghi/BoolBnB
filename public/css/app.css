@@ -10989,6 +10989,7 @@ main #sponsorizations {
 
 main #sponsorizations .image-sponsored {
   display: flex;
+  flex-wrap: wrap;
 }
 
 main #sponsorizations .sponsored {

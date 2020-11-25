@@ -24,6 +24,8 @@ main {
     height: 400px;
     .image-sponsored {
       display: flex;
+      flex-wrap: wrap;
+
     }
     .sponsored {
       width: 13rem;
