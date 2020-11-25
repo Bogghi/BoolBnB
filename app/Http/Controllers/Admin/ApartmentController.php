@@ -120,7 +120,7 @@ class ApartmentController extends Controller
           }
 
 
-        return redirect()->route('admin.index', $apartment);
+        return redirect()->route('admin.index');
     }
 
     /**
