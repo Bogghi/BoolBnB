@@ -10911,6 +10911,10 @@ body {
   border: 1px solid #00F087;
 }
 
+.colorgreen {
+  color: #00F087;
+}
+
 .btm-link {
   border-color: #00F087;
   color: #001533;
@@ -10928,16 +10932,16 @@ header {
   border-bottom: 2px solid #001533;
 }
 
-header .navbar {
-  height: 100%;
-}
-
 header .navbar .logo img#logo {
   width: 130px;
 }
 
 header .navbar .navbar-nav a {
   font-weight: 700;
+}
+
+header .zindex {
+  z-index: 1;
 }
 
 main {
