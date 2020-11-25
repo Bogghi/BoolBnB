@@ -30,14 +30,16 @@
                             <p class="card-text"><small class="text-muted">Created 30 mins ago. {{$apartment->created_id}}</small></p>
                         </div>    
 
-                        {{-- bottom for link pages --}}
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-outline-info mr-2 btm-link">Show</button>
-                            <button type="button" class="btn btn-outline-info mr-2 btm-link">Edit</button>
-                            <button type="button" class="btn btn-outline-info mr-2 btm-link">Statistic</button>
-                            <button type="button" class="btn btn-outline-info mr-2 btm-link">Sponsorization</button>
+                            
+                        {{-- {{-- bottom for link pages --}}
+                      
+                       <div  class="d-flex flex-wrap justify-content-end">
+                            <a href="{{route('admin.apartment.show', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Show</a>
+                            <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Edit</a>
+                            <a href="#" class="btn btn-outline-info mr-2 mb-2 btm-link">Statistic</a>
+                            <a href="{{route('admin.sponsorization.create', $apartment->id)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Sponsorization</a>
                         </div>
-                        
+                       
                     </div>
                 </div>
 
