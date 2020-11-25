@@ -107,10 +107,11 @@ class SponsorizationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
-        dd($id);
+        $spn = Sponsorization::find($id);
+        dd($spn);
     }
 
 }
