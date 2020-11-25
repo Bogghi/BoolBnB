@@ -69,7 +69,9 @@ class SponsorizationController extends Controller
 
 
         if ($validator->fails()) {
-            //
+            return redirect()->route('admin.sponsorization.create')
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $newSpn->apartment_id = $apartmentId;
@@ -78,6 +80,7 @@ class SponsorizationController extends Controller
         $newSpn->end_date = date("Y-m-d H:m:s",strtotime("+{$payPlanInfo} hours"));
 
         $newSpn->save();
+
 
     }
 
@@ -94,9 +97,6 @@ class SponsorizationController extends Controller
                            ->where('apartment_id',$aprId)
                            ->where('end_date','>',$now)
                            ->get();
-        
-        // dd($promoActive);
-        // dd(empty($promoActive));
 
         if(empty($promoActive)){
             return false;
