@@ -19,11 +19,18 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
+                @if (Route::currentRouteName() == 'admin.apartment.index')
+                <li class="nav-item">
+                  <a class="nav-button" href="{{ route('admin.apartment.create') }}">Create an appartment</a>
+                </li>
+                @endif
                 @if (Route::currentRouteName() != 'homepage')
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                 </li>
                 @endif
+
+              
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

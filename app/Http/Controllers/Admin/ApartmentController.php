@@ -4,9 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Image;
+use App\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class ApartmentController extends Controller
 {
@@ -52,19 +57,19 @@ class ApartmentController extends Controller
             //     Rule::in($services)
             // ],
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
+            'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
             'beds_number' => "required|number",
             'square_meters' => "required|number",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
@@ -86,7 +91,6 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->save();
-        
 
         $apartment_id = $apartment->id;
 
@@ -167,19 +171,19 @@ class ApartmentController extends Controller
             //     Rule::in($services)
             // ],
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
+            'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
             'beds_number' => "required|number",
             'square_meters' => "required|number",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
