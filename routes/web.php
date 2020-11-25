@@ -31,5 +31,4 @@ Route::get('/', 'ApartmentController@index')->name('homepage');
 Route::get('/show/{id}', 'ApartmentController@show')->name('apartment.show');
 
 //Route for store the message.
-Route::post('/message', 'MessageController@store')->name('message.store');
->>>>>>> 1cf5d288981156be7b05fadd9fcc1035b5588a6e
+Route::post('/message/{$apartment_id}', 'MessageController@store')->name('message.store');
