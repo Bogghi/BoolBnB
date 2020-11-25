@@ -24,4 +24,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->
 
 // Routes for guests' apartments' controller.
 Route::get('/', 'ApartmentController@index')->name('homepage');
-Route::get('/show/{id}', 'ApartmentController@show')->name('show');
+Route::get('/show/{id}', 'ApartmentController@show')->name('apartment.show');
+
+//Route for store the message.
+Route::post('/message', 'MessageController@store')->name('message.store');
