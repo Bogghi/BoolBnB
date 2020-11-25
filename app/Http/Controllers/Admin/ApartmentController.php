@@ -4,9 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Image;
+use App\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class ApartmentController extends Controller
 {
@@ -29,7 +34,9 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $services = Service::all();
+
+        return view('admin.create', compact('services'));
     }
 
     /**
@@ -42,27 +49,33 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $services = Service::orderByDesc('id')->first();
+
+        $request->validate([
+            'images.*' => "image|unique:images",
+            'services' => "required|array|min:1",
+            'services.*' =>"required|integer|min:1|max:".$services->id,
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
-            'bathrooms_number' => "required|number",
-            'beds_number' => "required|number",
-            'square_meters' => "required|number",
+            'cover_image' => "required|unique:apartments|image",
+            'bathrooms_number' => "required|integer",
+            'beds_number' => "required|integer",
+            'square_meters' => "required|integer",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
-
+            dd($request);
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
-
-
+        
+        $user_id = Auth::id();
         $apartment = new apartment;
+        $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
         $apartment->cover_image = $data['cover_image'];
@@ -77,7 +90,34 @@ class ApartmentController extends Controller
         $apartment->visibility = $data['visibility'];
 
         $apartment->save();
-        
+
+        $apartment_id = $apartment->id;
+
+        if ($request->hasFile('images')) {
+
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+
+                $name = $image->getClientOriginalName();
+
+                $path = $image->storeAs(
+                    "images/" . $apartment_id,
+                    $name,
+                    "public"
+                );
+
+                $newImage = new Image();
+                $newImage->apartment_id = $apartment_id;
+                $newImage->image_path = $path;
+                $newImage->save();
+            }
+        }
+
+        if (isset($data['services'])) {
+            $apartment->services()->sync($data['services']);
+          }
+
 
         return redirect()->route('admin.index', $apartment);
     }
@@ -104,8 +144,11 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.edit');
-        
+        $apartment = Apartment::find($id);
+
+        $services = Service::all();
+
+        return view('admin.edit', compact('apartment', 'services'));
     }
 
     /**
@@ -119,27 +162,32 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $request-> validate([
+        $services = Service::orderByDesc('id')->first();
+        
+        $request->validate([
+            'images.*' => "image|unique:images",
+            'services' => "required|array|min:1",
+            'services.*' =>"required|integer|min:1|max:".$services->id,
             'address' => "required|max:255",
-            'cover_image' => "required|unique|image",
-            'bathrooms_number' => "required|number",
-            'beds_number' => "required|number",
-            'square_meters' => "required|number",
+            'cover_image' => "required|unique:apartments|image",
+            'bathrooms_number' => "required|integer",
+            'beds_number' => "required|integer",
+            'square_meters' => "required|integer",
             'description' => "required|min:50",
-            'rooms_number' => "required|number",
+            'rooms_number' => "required|integer",
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
 
         $address = $data['address'];
-        $geocode=file_get_contents('https://api.tomtom.com/search/2/geocode/'.$address.'.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
-        $output= json_decode($geocode);
+        $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
+        $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
-
+        $user_id = Auth::id();
         $apartment = Apartment::find($id);
-        
+        $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
         $apartment->cover_image = $data['cover_image'];
@@ -153,8 +201,38 @@ class ApartmentController extends Controller
         $apartment->title = $data['title'];
         $apartment->visibility = $data['visibility'];
 
-        $apartment->update();
-        
+
+        $apartment_id = $apartment->id;
+
+        if ($request->hasFile('images')) {
+
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+
+                $name = $image->getClientOriginalName();
+
+                $path = $image->storeAs(
+                    "images/" . $apartment_id,
+                    $name,
+                    "public"
+                );
+
+                $newImage = new Image();
+                $newImage->apartment_id = $apartment_id;
+                $newImage->image_path = $path;
+                $newImage->save();
+            }
+        }
+
+        if (isset($data['services'])) {
+            $apartment->services()->sync($data['services']);
+          } else {
+            $apartment->services()->detach();
+          }
+
+          $apartment->update();
+          
 
         return redirect()->route('admin.show', $apartment);
     }

@@ -1,0 +1,30 @@
+main {
+  min-height: calc(100vh - 80px) ;
+
+  #hero {
+    height: 400px;
+  }
+  .jumbo-home {
+    height: 450px;
+    .info-jumbo {
+      padding-top: $spacer * 8;
+      .btn-outline-primary {
+        border-color: $bluebnb;
+        color: $bluebnb;
+        &:hover {
+          background-color: $bluebnb;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  #sponsorizations {
+    background-color: $greenbnb;
+    height: 400px;
+    .sponsored {
+      width: 13rem;
+      height: 13rem;
+    }
+  }
+}
