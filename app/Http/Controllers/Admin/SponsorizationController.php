@@ -101,17 +101,4 @@ class SponsorizationController extends Controller
         return true;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        //
-        $spn = Sponsorization::find($id);
-        dd($spn);
-    }
-
 }
