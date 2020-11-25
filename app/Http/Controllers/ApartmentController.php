@@ -24,8 +24,6 @@ class ApartmentController extends Controller
         $sponsored_apartments[] = $apartment;
       }
 
-
-
       return view('guests.homepage', compact('sponsored_apartments'));
     }
 
