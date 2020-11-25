@@ -51,14 +51,12 @@ class SponsorizationController extends Controller
 
         $userApartment = DB::table('apartments')
                             ->where('user_id', $userId)
+                            // ->get();
                             ->pluck('id');
 
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($data,[
             'payment_plan_id' => "required",
-            'appartment_id' => [
-                'required',
-                Rule::in($userApartment)
-            ]
+            'apartment_id' => Rule::in($userApartment)
         ]);
 
         $validator->after(function ($validator) use ($alreadyActive){
@@ -67,9 +65,8 @@ class SponsorizationController extends Controller
             }
         });
 
-
         if ($validator->fails()) {
-            return redirect()->route('admin.sponsorization.create')
+            return redirect()->route('admin.sponsorization.create',["id"=>$apartmentId])
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -113,6 +110,7 @@ class SponsorizationController extends Controller
     public function show($id)
     {
         //
+        dd($id);
     }
 
 }
