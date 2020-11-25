@@ -16,3 +16,20 @@ body {
 .background-color-secondary {
   background-color: $greenbnb;
 }
+
+.bordergreen{
+  border: 1px solid $greenbnb;
+}
+
+// * Modify bottom Admin.Apartmet 
+.btm-link{
+  border-color: $greenbnb;
+  color: $bluebnb;
+
+  &:hover{
+    background-color: $greenbnb;
+    border-color: $greenbnb;
+    color: $bluebnb;
+    transition: 0.5s;
+  }
+}
