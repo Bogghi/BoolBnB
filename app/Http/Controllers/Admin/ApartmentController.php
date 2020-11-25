@@ -131,10 +131,14 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-
+        $userId = Auth::id();
         $apartment = Apartment::find($id);
+        // apartment.show
+        if($apartment->user_id == $userId){
+            return view("admin.show", ["apartment" => $apartment]);    
+        }
 
-        return view("admin.show", ["apartment" => $apartment]);
+        return view('guests.show', ["apartment" => $apartment]); 
     }
 
     /**
