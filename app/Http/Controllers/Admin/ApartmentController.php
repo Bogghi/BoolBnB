@@ -51,16 +51,15 @@ class ApartmentController extends Controller
 
         $services = Service::orderByDesc('id')->first();
 
-        Validator::make($data, [
+        $request->validate([
             'images.*' => "image|unique:images",
-            // 'services' => "present" ,
-            // 'services.*' => ,
-            
+            'services' => "required|array|min:1",
+            'services.*' =>"required|integer|min:1|max:".$services->id,
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
-            'bathrooms_number' => "required|number",
-            'beds_number' => "required|number",
-            'square_meters' => "required|number",
+            'bathrooms_number' => "required|integer",
+            'beds_number' => "required|integer",
+            'square_meters' => "required|integer",
             'description' => "required|min:50",
             'rooms_number' => "required|integer",
             'title' => "required|max:255",
@@ -163,18 +162,17 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $services = Service::all();
-
-        Validator::make($data, [
+        $services = Service::orderByDesc('id')->first();
+        
+        $request->validate([
             'images.*' => "image|unique:images",
-            // 'services.*' => [
-            //     Rule::in($services)
-            // ],
+            'services' => "required|array|min:1",
+            'services.*' =>"required|integer|min:1|max:".$services->id,
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
-            'bathrooms_number' => "required|number",
-            'beds_number' => "required|number",
-            'square_meters' => "required|number",
+            'bathrooms_number' => "required|integer",
+            'beds_number' => "required|integer",
+            'square_meters' => "required|integer",
             'description' => "required|min:50",
             'rooms_number' => "required|integer",
             'title' => "required|max:255",

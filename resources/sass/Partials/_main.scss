@@ -1,12 +1,15 @@
 main {
-  height: calc(100vh - 140px);
+  height: 100%;
 
   #hero {
     height: 400px;
   }
+  .jumbo-home {
+    height: 450px;
+  }
 
   #sponsorizations {
     background-color: $greenbnb;
-    height: calc(100vh - 540px);
+    height: 400px;
   }
 }
