@@ -3,15 +3,13 @@
 @section('content')
     <section id="jumbotron-home">
       <div class="jumbo-home jumbotron-fluid">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-5 offset-1 jumbo-text">
+        <div class="container">
+          <div class=" info-jumbo">
               <h1 class="display-4">BoolBnB</h1>
               <p class="lead">The website of your dream</p>
               <a class="btn btn-outline-primary " href="">Cerca un appartamento</a>
-            </div>
+
           </div>
-          
         </div>
       </div>
     </section>

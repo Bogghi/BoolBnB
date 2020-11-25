@@ -6,8 +6,8 @@ main {
   }
   .jumbo-home {
     height: 450px;
-    .jumbo-text {
-      margin-top: 100px;
+    .info-jumbo {
+      padding-top: $spacer * 8;
       .btn-outline-primary {
         border-color: $bluebnb;
         color: $bluebnb;

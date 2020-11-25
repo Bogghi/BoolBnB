@@ -10952,16 +10952,16 @@ main .jumbo-home {
   height: 450px;
 }
 
-main .jumbo-home .jumbo-text {
-  margin-top: 100px;
+main .jumbo-home .info-jumbo {
+  padding-top: 8rem;
 }
 
-main .jumbo-home .jumbo-text .btn-outline-primary {
+main .jumbo-home .info-jumbo .btn-outline-primary {
   border-color: #001533;
   color: #001533;
 }
 
-main .jumbo-home .jumbo-text .btn-outline-primary:hover {
+main .jumbo-home .info-jumbo .btn-outline-primary:hover {
   background-color: #001533;
   color: #fff;
 }
