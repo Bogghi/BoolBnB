@@ -49,13 +49,13 @@ class ApartmentController extends Controller
     {
         $data = $request->all();
 
-        $services = Service::all();
-        
+        $services = Service::orderByDesc('id')->first();
+
         Validator::make($data, [
             'images.*' => "image|unique:images",
-            // 'services.*' => [
-            //     Rule::in($services)
-            // ],
+            // 'services' => "present" ,
+            // 'services.*' => ,
+            
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|number",
@@ -66,7 +66,7 @@ class ApartmentController extends Controller
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
-
+            dd($request);
         $address = $data['address'];
         $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
         $output = json_decode($geocode);
