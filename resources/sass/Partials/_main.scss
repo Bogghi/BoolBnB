@@ -1,11 +1,11 @@
 main {
-  min-height: calc(100%) ;
+  min-height: 100% ;
 
   #hero {
     height: 400px;
   }
   .jumbo-home {
-    height: 450px;
+    height: 40vh;
     .info-jumbo {
       padding-top: $spacer * 8;
       .btn-outline-primary {
