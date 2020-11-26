@@ -26,10 +26,16 @@ main {
       flex-wrap: wrap;
 
     }
+
+    
     .sponsored {
       width: 13rem;
       height: 13rem;
       margin: 10px;
+
+      .responsive-image {
+        width: 100%;
+      }
     }
   }
 }
