@@ -25,7 +25,7 @@
                 
                             <?php } else {?>
                                 <img class="card-img" src="{{$apartment->cover_image}}" alt="image">
-                                <?php }?>
+                        <?php }?>
                     </div>
                    
                     {{-- Description Apartments --}}
@@ -33,11 +33,11 @@
 
                         {{-- Description --}}
                         <div class="card-body">
-                            <h5 class="card-title">Title Apartmet</h5>
-                            {{-- {{$apartment->title}} --}}
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            {{-- {{$apartment->description}}  --}}
-                            <p class="card-text"><small class="text-muted">Created 30 mins ago. {{$apartment->created_id}}</small></p>
+                            <h5 class="card-title">{{$apartment->title}}</h5>
+                            
+                            <p class="card-text">{{$apartment->description}}</p>
+                            
+                            <p class="card-text"><small class="text-muted">Created on {{$apartment->created_at->format('d-m-Y')}}.</small></p>
                         </div>
 
 
