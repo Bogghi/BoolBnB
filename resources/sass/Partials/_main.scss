@@ -1,33 +1,69 @@
 main {
-  min-height: calc(100vh - 80px) ;
+  min-height: $main-heigth;
 
   #hero {
     height: 400px;
   }
+
   .jumbo-home {
-    height: 450px;
+    height: 70vh;
+    background-image: url(/storage/images/jumbo-background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     .info-jumbo {
       padding-top: $spacer * 8;
+
       .btn-outline-primary {
-        border-color: $bluebnb;
-        color: $bluebnb;
+        border-color: $white;
+        color: $white;
+
         &:hover {
-          background-color: $bluebnb;
+          background-color: $white;
+          color: $black;
+        }
+      }
+    }
+
+      .searchbar {
+        
+        #search-input {
+          width:100%;
           color: $white;
+
+          .tt-search-box-input-container {
+            padding: 10px 20px;
+            border-radius: 50px;
+
+            &:focus {
+              border-color: $greenbnb;
+            }
+        
+          
+
+          input.tt-search-box-input {
+            height: 40px;
+            padding: 3px 12px;
+            font-size: 20px;
+            color: $bluebnb;
+          }
         }
       }
     }
   }
 
+    
+
   #sponsorizations {
+
     background-color: $greenbnb;
+
     .image-sponsored {
       display: flex;
       flex-wrap: wrap;
-
     }
 
-    
     .sponsored {
       width: 13rem;
       height: 13rem;

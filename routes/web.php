@@ -29,3 +29,6 @@ Route::get('/show/{id}', 'ApartmentController@show')->name('apartment.show');
 
 //Route for store the message.
 Route::post('/message/{id}', 'MessageController@store')->name('message.store');
+
+//Route for search controller
+Route::post('/search', 'SearchController@search')->name('search');

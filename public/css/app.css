@@ -10905,6 +10905,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Lato", sans-serif;
+  min-height: 100vh;
 }
 
 .color-primary {
@@ -10952,8 +10953,22 @@ header .navbar .logo img#logo {
   width: 130px;
 }
 
-header .navbar .navbar-nav a {
+header .navbar .navbar-nav .nav-link {
   font-weight: 700;
+  color: #001533;
+}
+
+header .navbar .navbar-nav .nav-link:hover {
+  color: #00F087;
+}
+
+header .navbar .navbar-nav .nav-link.btn {
+  background-color: #001533;
+  color: #fff;
+}
+
+header .navbar .navbar-nav .nav-link.btn:hover {
+  background-color: #00F087;
 }
 
 header .zindex {
@@ -10961,7 +10976,7 @@ header .zindex {
 }
 
 main {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 404px);
 }
 
 main #hero {
@@ -10969,26 +10984,30 @@ main #hero {
 }
 
 main .jumbo-home {
-  height: 450px;
+  height: 70vh;
+  background-image: url(/storage/images/jumbo-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 main .jumbo-home .info-jumbo {
   padding-top: 8rem;
+  color: #fff;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary {
-  border-color: #001533;
-  color: #001533;
+  border-color: #fff;
+  color: #fff;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary:hover {
-  background-color: #001533;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 main #sponsorizations {
   background-color: #00F087;
-  height: 400px;
 }
 
 main #sponsorizations .image-sponsored {
@@ -10999,13 +11018,17 @@ main #sponsorizations .image-sponsored {
 main #sponsorizations .sponsored {
   width: 13rem;
   height: 13rem;
+  margin: 10px;
+}
+
+main #sponsorizations .sponsored .responsive-image {
+  width: 100%;
 }
 
 footer {
   width: 100%;
   height: 100%;
   background-color: #001533;
-  margin-top: -40px;
 }
 
 footer .developer {
