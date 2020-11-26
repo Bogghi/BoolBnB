@@ -12,7 +12,7 @@
                         
                     
                     <div class="d-flex flex-column">
-                        <img src="{{$all_sponsorized_apartments[$i]->cover_image}}" alt="Cover">
+                        <img class="border rounded search-image" src="{{$all_sponsorized_apartments[$i]->cover_image}}" alt="Cover">
                     </div>
                     @endfor
                 </div>
