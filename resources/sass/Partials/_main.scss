@@ -4,6 +4,7 @@ main {
   #hero {
     height: 400px;
   }
+
   .jumbo-home {
     height: 70vh;
     background-image: url(/storage/images/jumbo-background.webp);
@@ -12,6 +13,21 @@ main {
     background-position: center;
     .info-jumbo {
       padding-top: $spacer * 8;
+
+    }
+
+    .searchbar {
+      
+      #search-input {
+        width:100%;
+
+        .tt-search-box-input-container {
+          padding: 10px 20px;
+          border-radius: 50px;
+
+          &:focus {
+            border-color: $greenbnb;
+          }
       color: $white;
       .btn-outline-primary {
         border-color: $white;
@@ -20,19 +36,27 @@ main {
           background-color: $white;
           color: $black;
         }
+
+        input.tt-search-box-input {
+          height: 40px;
+          padding: 3px 12px;
+          font-size: 20px;
+          color: $bluebnb;
+        }
       }
+      
     }
   }
 
   #sponsorizations {
+
     background-color: $greenbnb;
+
     .image-sponsored {
       display: flex;
       flex-wrap: wrap;
-
     }
 
-    
     .sponsored {
       width: 13rem;
       height: 13rem;
