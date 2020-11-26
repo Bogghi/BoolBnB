@@ -10,10 +10,11 @@
               <p class="lead">The website of your dream</p>
             </div>
             <div class="searchbar mt-5">
-              <form class="form-inline d-flex justify-content-center md-form form-sm form-color mt-2" method="GET">
+            <form class="form-inline d-flex justify-content-center md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST">
                 @csrf
-                @method("GET")
+                @method("POST")
                 <div id="search-input"></div>
+                <input type="submit" value="SEARCH">
               </form>
             </div>
           </div>

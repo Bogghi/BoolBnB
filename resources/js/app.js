@@ -1,7 +1,7 @@
 const { includes } = require('lodash');
 
 require('./bootstrap');
-
+var $ = require('jquery');
 
 var options = {
   searchOptions: {
@@ -17,3 +17,4 @@ var options = {
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 document.getElementById("search-input").append(searchBoxHTML);
+$(".tt-search-box-input").attr("name", "search");

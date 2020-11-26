@@ -10993,7 +10993,6 @@ main .jumbo-home {
 
 main .jumbo-home .info-jumbo {
   padding-top: 8rem;
-  color: #fff;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary {
@@ -11004,6 +11003,27 @@ main .jumbo-home .info-jumbo .btn-outline-primary {
 main .jumbo-home .info-jumbo .btn-outline-primary:hover {
   background-color: #fff;
   color: #000;
+}
+
+main .jumbo-home .searchbar #search-input {
+  width: 100%;
+  color: #fff;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box-input-container {
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box-input-container:focus {
+  border-color: #00F087;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box-input-container input.tt-search-box-input {
+  height: 40px;
+  padding: 3px 12px;
+  font-size: 20px;
+  color: #001533;
 }
 
 main #sponsorizations {
