@@ -60,13 +60,31 @@
         <div>
           <label>Servizi</label>
         </div>
-
-      @foreach ($services as $service)
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
-        <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
-      </div>
-      @endforeach
+      
+      @php
+      if (!old("services")) {
+          $apartmentServices = [];
+          foreach($apartment->services as $service) {
+            $apartmentServices[] = $service->id;
+          }
+        }
+      @endphp
+      
+      @if(!old("services"))  
+        @foreach ($services as $service)
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}">
+          <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+        </div>
+        @endforeach
+      @else
+        @foreach ($services as $service)
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
+          <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+        </div>
+        @endforeach
+      @endif
 
       <div class="form-check mt-sm-4">
         <label for="visibility">Visibile</label>
