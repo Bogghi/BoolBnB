@@ -77,3 +77,38 @@ main {
 }
 
 // homepage main
+
+
+// Search 
+
+.search-container {
+
+  .row {
+
+    .col-12{
+
+      .container-apartment{
+
+        .search-image {
+          width: 300px;
+          height: 300px;
+          padding: 10px;
+
+        }
+        .info-apartment {
+
+          .info-tag{
+            .list-info{
+              list-style: none;
+              li {
+                padding: -5px;
+              }
+            }
+
+          }
+        }
+      }
+ 
+    }
+  }
+}
