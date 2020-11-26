@@ -26,7 +26,7 @@
                     <!-- Authentication Links  only admin is log-->
                     @if (Route::currentRouteName() == 'admin.apartment.index')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.apartment.create') }}">Create a new appartment</a>
+                            <a class="nav-link btn btn-primary" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
                         </li>
                     @endif
                     <!-- Authentication Links  only admin is log-->

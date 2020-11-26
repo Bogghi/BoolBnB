@@ -12,9 +12,22 @@ header {
     }
 
     .navbar-nav {
-      a {
+      .nav-link {
         font-weight: 700;
+        color: $bluebnb;
+        &:hover {
+          color: $greenbnb;
+        }
       }
+      .nav-link.btn {
+        background-color: $bluebnb;
+        color: #fff;
+        &:hover {
+          background-color: $greenbnb;
+        }
+      }
+
+      
     }
   }
 
