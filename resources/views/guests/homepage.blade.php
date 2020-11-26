@@ -15,7 +15,7 @@
     </section>
     <section class="container-fluid" id="sponsorizations">
       
-          <div class="container image-sponsored ml-5 pt-5">
+          <div class="image-sponsored ml-5 pt-5">
               @foreach ($sponsored_apartments as $apartments)
 
               <?php
