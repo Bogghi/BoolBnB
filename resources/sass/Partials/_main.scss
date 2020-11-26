@@ -1,19 +1,24 @@
 main {
-  min-height: calc(100vh - 80px) ;
+  min-height: 100% ;
 
   #hero {
     height: 400px;
   }
   .jumbo-home {
-    height: 450px;
+    height: 70vh;
+    background-image: url(/storage/images/jumbo-background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     .info-jumbo {
       padding-top: $spacer * 8;
+      color: $white;
       .btn-outline-primary {
-        border-color: $bluebnb;
-        color: $bluebnb;
+        border-color: $white;
+        color: $white;
         &:hover {
-          background-color: $bluebnb;
-          color: $white;
+          background-color: $white;
+          color: $black;
         }
       }
     }
