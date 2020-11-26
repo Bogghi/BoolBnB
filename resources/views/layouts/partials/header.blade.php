@@ -1,6 +1,6 @@
 {{-- Header top --}}
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white zindex">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light zindex">
         <div class="container">
             {{-- logo --}}
             <div class="logo">

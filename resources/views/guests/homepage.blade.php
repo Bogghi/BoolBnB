@@ -26,7 +26,7 @@
               
               <div class="border mr-5 d-flex rounded sponsored">
                 <?php if ($pos === false) {?>
-                  <img class="responsive-image" src=" {{asset('storage/'.$image)}}" alt="image">
+                  <img class="responsive-image" src="{{asset('storage/'.$image)}}" alt="image">
       
                 <?php } else {?>
                     <img class="responsive-image" src="{{$apartments->cover_image}}" alt="image">
