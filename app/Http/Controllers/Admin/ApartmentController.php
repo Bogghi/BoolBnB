@@ -24,8 +24,8 @@ class ApartmentController extends Controller
     public function index()
     {
         $users_id = Auth::id();
-        $apartment = Apartment::where('user_id', $users_id)->get();
-        return view('admin.index', compact('apartment'));
+        $apartments = Apartment::where('user_id', $users_id)->get();
+        return view('admin.index', compact('apartments'));
     }
 
     /**
@@ -66,20 +66,35 @@ class ApartmentController extends Controller
             'title' => "required|max:255",
             'visibility' => "boolean",
         ]);
+
+        // Api call to get latitude and longitude from the passed address.
         $address = $data['address'];
         $geocode = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo');
         $output = json_decode($geocode);
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
-        
-        $pathstorage = Storage::disk('public')->put('images', $data['cover_image']);
-        
+
+        // Save cover_image in the storage with original name.
+        $cover_image_name = $request->cover_image->getClientOriginalName();
+
+        $new_apartment_id = Apartment::orderByDesc("id")->first()->id + 1;
+
+        $path_cover_image = $request->cover_image->storeAs(
+            "images/" . $new_apartment_id,
+            $cover_image_name,
+            "public"
+        );
+
+        // Metodo Danilo
+        // $pathstorage = Storage::disk('public')->put('images', $data['cover_image']);
+
+        // Creation of a new apartment and add it to apartment's table.
         $user_id = Auth::id();
         $apartment = new apartment;
         $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
-        $apartment->cover_image = $pathstorage;
+        $apartment->cover_image = $path_cover_image;
         $apartment->bathrooms_number = $data['bathrooms_number'];
         $apartment->beds_number = $data['beds_number'];
         $apartment->square_meters = $data['square_meters'];
@@ -92,9 +107,10 @@ class ApartmentController extends Controller
 
         $apartment->save();
 
-        $apartment_id = $apartment->id;
-
+        // Save other images in the images' table, if they are passed.
         if ($request->hasFile('images')) {
+
+            $apartment_id = $apartment->id;
 
             $images = $request->file('images');
 
@@ -115,12 +131,13 @@ class ApartmentController extends Controller
             }
         }
 
+        // Add checked services to the pivot table.
         if (isset($data['services'])) {
             $apartment->services()->sync($data['services']);
           }
 
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.apartment.index');
     }
 
     /**
@@ -135,10 +152,10 @@ class ApartmentController extends Controller
         $apartment = Apartment::find($id);
         // apartment.show
         if($apartment->user_id == $userId){
-            return view("admin.show", ["apartment" => $apartment]);    
+            return view("admin.show", ["apartment" => $apartment]);
         }
 
-        return view('guests.show', ["apartment" => $apartment]); 
+        return view('guests.show', ["apartment" => $apartment]);
     }
 
     /**
@@ -168,7 +185,7 @@ class ApartmentController extends Controller
         $data = $request->all();
 
         $services = Service::orderByDesc('id')->first();
-        
+
         $request->validate([
             'images.*' => "image|unique:images",
             'services' => "required|array|min:1",
@@ -237,7 +254,7 @@ class ApartmentController extends Controller
           }
 
           $apartment->update();
-          
+
 
         return redirect()->route('admin.show', $apartment);
     }
