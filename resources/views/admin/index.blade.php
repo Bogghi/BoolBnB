@@ -13,11 +13,21 @@
 
                 <div class="row shadow p-3 mb-5 bg-light rounded bordergreen">
 
+                    <?php
+                    $image = $apartment->cover_image;
+                    $pos = strpos($image, "placeholder");
+          
+                    ?> 
                     {{-- Cover Apartment --}}
                     <div class="col-md-2 mx-auto my-auto">
-                        <img class="card-img" style="width: 100%" src="{{asset("storage/" . $apartment->cover_image)}}" alt="{{$apartment->title}}">
+                        <?php if ($pos === false) {?>
+                            <img class="card-img" src="{{asset('storage/'.$image)}}" alt="image">
+                
+                            <?php } else {?>
+                                <img class="card-img" src="{{$apartment->cover_image}}" alt="image">
+                                <?php }?>
                     </div>
-
+                   
                     {{-- Description Apartments --}}
                     <div class="col-md-8">
 

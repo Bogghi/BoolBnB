@@ -10944,6 +10944,10 @@ header {
   border-bottom: 2px solid #001533;
 }
 
+header .navbar {
+  height: 100%;
+}
+
 header .navbar .logo img#logo {
   width: 130px;
 }
