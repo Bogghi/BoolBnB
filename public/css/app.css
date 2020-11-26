@@ -10923,13 +10923,25 @@ body {
   background-color: #00F087;
 }
 
+.bordergreen {
+  border: 1px solid #00F087;
+}
+
+.btm-link {
+  border-color: #00F087;
+  color: #001533;
+}
+
+.btm-link:hover {
+  background-color: #00F087;
+  border-color: #00F087;
+  color: #001533;
+  transition: 0.5s;
+}
+
 header {
   height: 80px;
   border-bottom: 2px solid #001533;
-}
-
-header .navbar {
-  height: 100%;
 }
 
 header .navbar .logo img#logo {
@@ -10938,6 +10950,10 @@ header .navbar .logo img#logo {
 
 header .navbar .navbar-nav a {
   font-weight: 700;
+}
+
+header .zindex {
+  z-index: 1;
 }
 
 main {
@@ -10969,6 +10985,11 @@ main .jumbo-home .info-jumbo .btn-outline-primary:hover {
 main #sponsorizations {
   background-color: #00F087;
   height: 400px;
+}
+
+main #sponsorizations .image-sponsored {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 main #sponsorizations .sponsored {
