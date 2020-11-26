@@ -4,30 +4,49 @@ main {
   #hero {
     height: 400px;
   }
+
   .jumbo-home {
     height: 450px;
+
     .info-jumbo {
       padding-top: $spacer * 8;
-      .btn-outline-primary {
-        border-color: $bluebnb;
-        color: $bluebnb;
-        &:hover {
-          background-color: $bluebnb;
-          color: $white;
+
+    }
+
+    .searchbar {
+      
+      #search-input {
+        width:100%;
+
+        .tt-search-box-input-container {
+          padding: 10px 20px;
+          border-radius: 50px;
+
+          &:focus {
+            border-color: $greenbnb;
+          }
+        }
+
+        input.tt-search-box-input {
+          height: 40px;
+          padding: 3px 12px;
+          font-size: 20px;
+          color: $bluebnb;
         }
       }
+      
     }
   }
 
   #sponsorizations {
+
     background-color: $greenbnb;
+
     .image-sponsored {
       display: flex;
       flex-wrap: wrap;
-
     }
 
-    
     .sponsored {
       width: 13rem;
       height: 13rem;

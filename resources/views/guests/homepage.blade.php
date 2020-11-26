@@ -4,12 +4,20 @@
     <section id="jumbotron-home">
       <div class="jumbo-home jumbotron-fluid">
         <div class="container">
-          <div class=" info-jumbo">
+          <div class="col-sm-6 mx-auto">
+            <div class="info-jumbo text-center">
               <h1 class="display-4">BoolBnB</h1>
               <p class="lead">The website of your dream</p>
-              <a class="btn btn-outline-primary " href="">Cerca un appartamento</a>
-
+            </div>
+            <div class="searchbar mt-5">
+              <form class="form-inline d-flex justify-content-center md-form form-sm form-color mt-2" method="GET">
+                @csrf
+                @method("GET")
+                <div id="search-input"></div>
+              </form>
+            </div>
           </div>
+          
         </div>
       </div>
     </section>
