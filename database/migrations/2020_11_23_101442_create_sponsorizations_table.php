@@ -17,7 +17,8 @@ class CreateSponsorizationsTable extends Migration
     {
         Schema::create('sponsorizations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('apartment_id')->constrained();
+            $table->unsignedBigInteger('apartment_id');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
             $table->foreignId('payment_plan_id')->constrained();
             $table->dateTime('start_date');
             $table->dateTime('end_date');

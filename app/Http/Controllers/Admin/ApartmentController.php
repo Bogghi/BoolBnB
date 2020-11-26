@@ -98,7 +98,6 @@ class ApartmentController extends Controller
         $apartment->bathrooms_number = $data['bathrooms_number'];
         $apartment->beds_number = $data['beds_number'];
         $apartment->square_meters = $data['square_meters'];
-        $apartment->square_meters = $data['square_meters'];
         $apartment->address = $data['address'];
         $apartment->description = $data['description'];
         $apartment->rooms_number = $data['rooms_number'];
@@ -260,13 +259,17 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Apartment from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $apartment = Apartment::find($id);
+        $apartment->services()->detach();
+        $apartment->delete();
+        return redirect()->route('admin.apartment.index');
+       
     }
 }
