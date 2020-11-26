@@ -1,34 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.guests')
 
-    <form action="{{route("admin.sponsorization.store")}}" method="POST">
-        @csrf
-        @method('POST')
-        <input type="hidden" name="apartment_id" value="{{$id}}">
-        @foreach ($payPlan->all() as $plan)
-            {{-- @dd($plan) --}}
-            <input type="radio" id="{{$plan->id}}" name="payment_plan_id" value="{{$plan->id}}">
-            <label for="male">{{$plan->hours_duration}} {{$plan->price}}</label><br>
-        @endforeach
+@section('content')
 
-        <button type="submit">salva</button>
+<div class="container">
 
-    </form>
-    {{-- @dd($errors) --}}
-    @if ($errors->any())
-        <ul>    
-        @foreach ($errors->all() as $error)
-            <li>{{$error}}</li>    
-        @endforeach
-        </ul>
-    @endif
+    <section>
+        <form action="{{route("admin.sponsorization.store")}}" method="POST">
+            @csrf
+            @method('POST')
+            <h1>Seleziona un piano di sponsorizazzione</h1>
+            <div class="form-check">
+                
+                @foreach ($payPlan->all() as $plan)
+                    <div class="form-check">
+                        <input name="payment_plan_id" class="form-check-input" type="radio" value="{{$plan->id}}" id="{{$plan->id}}">
+                        <label class="form-check-label" for="{{$plan->id}}">
+                            {{$plan->hours_duration}} {{$plan->price}}
+                        </label>
+                    </div>
+                @endforeach
+                
+            </div>
+            <input type="hidden" name="apartment_id" value="{{$id}}">
+    
+    
+            <button type="submit" class="btn btn-primary">Salva</button>
+    
+        </form>
+    
+        @if ($errors->any())
+            <ul>    
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>    
+            @endforeach
+            </ul>
+        @endif
+    </section>
 
-</body>
-</html>
+</div>
+    
+@endsection
