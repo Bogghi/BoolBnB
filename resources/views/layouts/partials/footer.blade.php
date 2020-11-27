@@ -1,35 +1,23 @@
-<footer>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-10 offset-1 mt-5">
-        <div class="developer d-flex justify-content-center">
-
-
-          <div class="pic d-flex flex-column">
-            <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300" alt="">
-            <a class="text-center pt-3" href="#"> <span><i class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
-          </div>
-
-          <div class="pic d-flex flex-column">
-            <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300" alt="">
-            <a class="text-center pt-3" href="#"> <span><i class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
-          </div>
-
-          <div class="pic d-flex flex-column">
-            <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300" alt="">
-            <a class="text-center pt-3" href="#"> <span><i class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
-          </div>
-          <div class="pic d-flex flex-column">
-            <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300" alt="">
-            <a class="text-center pt-3" href="#"> <span><i class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
-          </div>
-          <div class="pic d-flex flex-column">
-            <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300" alt="">
-            <a class="text-center pt-3" href="#"> <span><i class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
-          </div>
+<footer class="py-5">
+  <div class="container">
+      <div class="social-links d-flex justify-content-center mb-4">
+        <div class="social-links-item">
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="social-links-item">
+          <i class="fab fa-twitter-square"></i>
+        </div>
+        <div class="social-links-item">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="social-links-item">
+          <i class="fab fa-youtube"></i>
         </div>
       </div>
-    </div>
+      <div class="copyright text-center text-white ">
+        <p class="mb-0">All rights reserved &copy; BoolBnB 2020</p>
+      </div>
+        
   </div>
   
 </footer>

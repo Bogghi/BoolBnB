@@ -37294,6 +37294,49 @@ var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 document.getElementById("search-input").append(searchBoxHTML);
 $(".tt-search-box-input").attr("name", "search");
+$("#search-button").click(function () {
+  var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
+
+  $.ajax({
+    "url": 'https://api.tomtom.com/search/2/geocode/' + userInput + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+    "method": "GET",
+    "success": function success(data) {
+      var latitude = data.results[0].position.lat;
+      var longitude = data.results[0].position.lon;
+      var rooms = $("#rooms_number").val();
+      var beds = $("#beds_number").val();
+      var radius = $("#radius").val();
+      var services = "";
+      $(".services").each(function () {
+        if (this.checked) {
+          services += this.value + ",";
+        }
+      }); // seconda funzione ajax 
+
+      $.ajax({
+        "url": "localhost:8000/api/search",
+        "data": {
+          "latitude": latitude,
+          "longitude": longitude,
+          "radius": radius,
+          "rooms": rooms,
+          "beds": beds,
+          "services": services
+        },
+        "method": "GET",
+        "success": function success(data) {
+          console.log(data);
+        },
+        "error": function error(_error) {
+          console.log(_error);
+        }
+      }); // seconda funzione ajax 
+    },
+    "error": function error(_error2) {
+      console.log(_error2);
+    }
+  }); // prima funziona ajax
+});
 
 /***/ }),
 
@@ -37360,8 +37403,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
