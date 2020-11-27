@@ -16,7 +16,12 @@ class SearchController extends Controller
       $radius = $_GET["radius"];
       $rooms = $_GET["rooms"];
       $beds = $_GET["beds"];
-      $requested_services = explode(",", $_GET["services"]);
+      if ($_GET["services"] == "") {
+        $requested_services = [];
+      } else {
+        $services = substr($_GET["services"], 0, -1);
+        $requested_services = explode(",", $services);
+      }
 
       // For debug
       // $latitude = 41.918171;
