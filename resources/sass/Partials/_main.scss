@@ -1,6 +1,6 @@
 main {
   min-height: $main-heigth;
-
+  // homepage main
   #hero {
     height: 400px;
   }
@@ -74,4 +74,64 @@ main {
       }
     }
   }
+}
+
+// homepage main
+
+
+// Search 
+
+.search-container {
+
+  .row {
+
+    .col-12{
+
+      .container-apartment{
+        height: 200px;
+        position: relative;
+
+        .search-image {
+
+          padding: 10px;
+          
+        }
+        .info-apartment {
+          .info-text {
+            font-size: 13px;
+          }
+          .info-tag{
+            
+            .list-info{
+              list-style: none;
+
+
+              li {
+                span {
+                  font-size: 10px;
+                  padding-right: 10px;
+                  padding-left: 10px;
+                }
+              }
+
+            }
+
+          }
+        }
+      }
+ 
+    }
+    .carousel-pers {
+      margin-top: 200px;
+    }
+
+
+
+  }
+}
+
+#sponsorized {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
