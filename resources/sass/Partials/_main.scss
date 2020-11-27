@@ -88,21 +88,32 @@ main {
     .col-12{
 
       .container-apartment{
+        height: 200px;
+        position: relative;
 
         .search-image {
-          width: 300px;
-          height: 300px;
-          padding: 10px;
 
+          padding: 10px;
+          
         }
         .info-apartment {
-
+          .info-text {
+            font-size: 13px;
+          }
           .info-tag{
+            
             .list-info{
               list-style: none;
+
+
               li {
-                padding: -5px;
+                span {
+                  font-size: 10px;
+                  padding-right: 10px;
+                  padding-left: 10px;
+                }
               }
+
             }
 
           }
@@ -110,5 +121,17 @@ main {
       }
  
     }
+    .carousel-pers {
+      margin-top: 200px;
+    }
+
+
+
   }
+}
+
+#sponsorized {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
