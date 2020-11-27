@@ -11018,6 +11018,7 @@ main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-co
   padding: 10px 20px;
   border-radius: 50px;
   background-color: #fff;
+  fill: #00F087;
 }
 
 main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
@@ -11029,6 +11030,14 @@ main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-co
   padding: 3px 12px;
   font-size: 20px;
   color: #001533;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-close-icon {
+  fill: #001533;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
+  fill: #00F087;
 }
 
 main #sponsorizations {
@@ -11108,31 +11117,47 @@ main #sponsorizations .container-xl .sponsored-item img {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-footer {
-  width: 100%;
-  height: 100%;
+main #developers {
   background-color: #001533;
+  border-bottom: 5px solid #fff;
 }
 
-footer .developer {
+main #developers .developer {
   height: 100%;
   flex-wrap: wrap;
 }
 
-footer .developer .pic {
-  margin-right: 50px;
+main #developers .developer .pic {
   margin-top: 30px;
   padding-bottom: 30px;
 }
 
-footer .developer .footer-img {
+main #developers .developer .pic:not(:last-child) {
+  margin-right: 50px;
+}
+
+main #developers .developer .footer-img {
   width: 140px;
 }
 
-footer .developer .custom-social {
+main #developers .developer .custom-social {
   color: #00F087;
   font-size: 40px;
   background-color: #fff;
   padding: 10px;
+}
+
+footer {
+  background-color: #00F087;
+}
+
+footer .social-links .social-links-item {
+  margin: 0 20px;
+}
+
+footer .social-links .social-links-item i {
+  cursor: pointer;
+  font-size: 40px;
+  color: #fff;
 }
 
