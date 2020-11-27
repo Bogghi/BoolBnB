@@ -5,9 +5,10 @@
 
         {{-- container pagina --}}
         <div class="container-fluid search-container">
-
+            {{-- ROW --}}
             <div class="row">
-                <div class="col-12 col-md-5">
+                {{-- Lista appartamenti --}}
+                <div class="col-12 col-md-5 list-apartment">
                     <h2 class="text-center py-5">Sponsorized</h2>
                     @for ($i = 0; $i < 5; $i++)
                         
@@ -101,7 +102,8 @@
                     </div> 
                     @endforeach
                 </div>
-
+                {{-- Lista appartamenti --}}
+                {{-- Carousel --}}
                 <div class="d-none d-sm-block col-md-7">
                     <div id="carouselExampleIndicators" class="carousel slide carousel-pers" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -130,8 +132,10 @@
                         </a>
                       </div>
                 </div>
+                {{-- Carousel --}}
 
             </div>
+            {{-- //ROW --}}
 
         </div>
         {{-- fine container pagina --}}
