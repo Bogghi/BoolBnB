@@ -30,9 +30,10 @@ header {
     }
   }
 
-  .dropdown-menu-right{
+  .drop-right{
+    transform: translate(0px, 5px);
     left: auto;
-    right: auto;
+    border-color: $greenbnb;
   }
 
   .zindex{

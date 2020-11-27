@@ -19,7 +19,7 @@
                     ?> 
 
                     {{-- Cover Apartment --}}
-                    <div class="col-md-4 mx-auto my-auto">
+                    <div class="col-md-3 mx-auto my-auto">
                         <?php if ($pos === false) {?>
                             <img class="card-img" src="{{asset('storage/'.$image)}}" alt="image">
                 

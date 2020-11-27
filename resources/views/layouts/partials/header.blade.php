@@ -10,7 +10,7 @@
             </div>
 
             {{-- hamburger --}}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler border border-dark text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,7 +53,7 @@
                             </a>
 
                             {{-- dropdown menu --}}
-                            <div class="dropdown-menu dropdown-menu-right mr-5 mb-5" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu mr-5 mb-5 drop-right" aria-labelledby="navbarDropdown">
 
                                 <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your Apartmet</a>
                                 <div class="dropdown-divider"></div>

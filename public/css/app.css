@@ -10966,9 +10966,10 @@ header .navbar .navbar-nav .nav-link.btn:hover {
   background-color: #00F087;
 }
 
-header .dropdown-menu-right {
+header .drop-right {
+  transform: translate(0px, 5px);
   left: auto;
-  right: auto;
+  border-color: #00F087;
 }
 
 header .zindex {
