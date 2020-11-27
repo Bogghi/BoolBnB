@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <label for="title">Titolo</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Digita un titolo per questo annuncio" max="255" value="{{old("title") ?? old("title")}}">
+        <input type="text" class="form-control" id="title" name="title" placeholder="Digita un titolo per questo annuncio" max="100" value="{{old("title") ?? old("title")}}">
       </div>
       @error('title')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +50,7 @@
       @enderror
       <div class="form-group mt-sm-4">
         <label for="description">Descrizione</label>
-        <textarea class="form-control" id="description" name="description" rows="5" min="50" placeholder="Scrivi una descrizione del tuo appartamento..." style="resize: none;">
+        <textarea class="form-control" id="description" name="description" rows="5" min="50" max="150" placeholder="Scrivi una descrizione del tuo appartamento..." style="resize: none;">
           {{old("description") ?? old("description")}}
         </textarea>
       </div>
