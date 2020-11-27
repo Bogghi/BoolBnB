@@ -16,7 +16,7 @@ class SearchController extends Controller
       $radius = $_GET["radius"];
       $rooms = $_GET["rooms"];
       $beds = $_GET["beds"];
-      $services = $_GET["services"];
+      $requested_services = explode(",", $_GET["services"]);
 
       // For debug
       // $latitude = 41.918171;
@@ -58,6 +58,35 @@ class SearchController extends Controller
         }
       }
 
-      return response()->json($matched_apartments);
+      // Searching for all sponsorized apartments.
+      $all_apartments = Apartment::selectRaw("*,
+             ( 6371 * acos( cos( radians(?) ) *
+               cos( radians( latitude ) )
+               * cos( radians( longitude ) - radians(?)
+               ) + sin( radians(?) ) *
+               sin( radians( latitude ) ) )
+             ) AS distance", [$latitude, $longitude, $latitude])
+      ->orderBy("distance",'asc')
+      ->get();
+
+
+      $all_sponsorized_apartments = [];
+
+      foreach ($all_apartments as $all_apartment) {
+
+        $active_sponsorization = count($all_apartment->sponsorizations->where("end_date", ">", date("Y-m-d H:m:s")));
+
+        if ($active_sponsorization == 1) {
+
+          $all_sponsorized_apartments[] = $all_apartment;
+        }
+      }
+
+      $data = [
+        "matched_apartments" => $matched_apartments,
+        "all_sponsorized_apartments" => $all_sponsorized_apartments
+      ];
+
+      return response()->json($data);
     }
 }
