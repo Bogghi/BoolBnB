@@ -2,52 +2,128 @@
 
 @section('content')
 
-<div class="container">
+    <div class="container">
 
-    <section class="sponsorization">
-        <form action="{{route("admin.sponsorization.store")}}" method="POST">
-            @csrf
-            @method('POST')
-            <h1 class="d-flex justify-content-center">Sponsor your apartment</h1>
-            
+        <section class="sponsorization">
+            <form action="{{ route('admin.sponsorization.store') }}" method="POST" id="hosted-form">
+                @csrf
+                @method('POST')
+                <h1 class="d-flex justify-content-center">Sponsor your apartment</h1>
 
-            <div class="plan-container">
-                @foreach ($payPlan->all() as $plan)
-                    <div class="content">
-                        <div class="label size d-flex justify-content-center align-items-center flex-nowrap ">
-                            <label class="flex-row justify-content-center align-items-center" for="{{$plan->id}}">
-                                <span id="hours">{{$plan->hours_duration}}h</span><br>
-                                <span id="price">{{$plan->price}} &euro;</span>  
-                            </label>
+
+                <div class="plan-container">
+                    @foreach ($payPlan->all() as $plan)
+                        <div class="content">
+                            <div class="label size d-flex justify-content-center align-items-center flex-nowrap ">
+                                <label class="flex-row justify-content-center align-items-center" for="{{ $plan->id }}">
+                                    <span id="hours">{{ $plan->hours_duration }}h</span><br>
+                                    <span id="price">{{ $plan->price }} &euro;</span>
+                                </label>
+                            </div>
+                            <div class="radio d-flex justify-content-center align-items-center">
+                                <input name="payment_plan_id" class="form-check-input" type="radio" value="{{ $plan->id }}"
+                                    id="{{ $plan->id }}">
+                            </div>
                         </div>
-                        <div class="radio d-flex justify-content-center align-items-center">
-                            <input name="payment_plan_id" class="form-check-input" type="radio" value="{{$plan->id}}" id="{{$plan->id}}">
+                    @endforeach
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                        <label for="card-number">Credit card number</label>
+                        <div class="form-control" id="card-number"></div>
+                        <div class="invalid-feedback">
+                        Credit card number is required
                         </div>
                     </div>
-                @endforeach
-            </div>
+                    <div class="col-sm-3 mb-3">
+                        <label for="expiration-date">Expiration</label>
+                        <div class="form-control" id="expiration-date"></div>
+                        <div class="invalid-feedback">
+                        Expiration date required
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label for="cvv">CVV</label>
+                        <div class="form-control" id="cvv"></div>
+                        <div class="invalid-feedback">
+                        Security code required
+                        </div>
+                    </div>
+                </div>
 
-            <div class="desc d-flex justify-content-center align-items-center">
-                Select one of the above option and your apartment will be presented first to your audience
-            </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-primary">Salva</button>
+                </div>
+
+            </form>
+
+
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+        </section>
+
+    </div>
+
+    <script>
+        var form = document.querySelector('#hosted-form');
+        var submit = document.querySelector('input[type="submit"]');
+      
+        braintree.client.create({
+          // Insert your tokenization key here
+          authorization: 'sandbox_ktxk7zdp_74vbrq5qhfspbq2y'
+        }, function (clientErr, clientInstance) {
+          if (clientErr) {
+            console.error(clientErr);
+            return;
+          }
+      
+          // Create a hostedFields component to initialize the form
+      
+          braintree.hostedFields.create({
+            client: clientInstance,
+            // Customize the Hosted Fields.
+            // More information can be found at:
+            // https://developers.braintreepayments.com/guides/hosted-fields/styling/javascript/v3
+            styles: {
+              'input': {
+                'font-size': '14px'
+              },
+              'input.invalid': {
+                'color': 'red'
+              },
+              'input.valid': {
+                'color': 'green'
+              }
+            },
+            // Configure which fields in your card form will be generated by Hosted Fields instead
+            fields: {
+              number: {
+                selector: '#card-number',
+                placeholder: '4111 1111 1111 1111'
+              },
+              cvv: {
+                selector: '#cvv',
+                placeholder: '123'
+              },
+              expirationDate: {
+                selector: '#expiration-date',
+                placeholder: '10/2022'
+              }
+            }
+          }, function (hostedFieldsErr, instance) {
+            if (hostedFieldsErr) {
+              console.error(hostedFieldsErr);
+              return;
+            }
+      
             
-            <input type="hidden" name="apartment_id" value="{{$id}}">
-    
-            <div class="d-flex justify-content-center align-items-center">
-                <button type="submit" class="btn btn-primary">Salva</button>
-            </div>
-    
-        </form>
-    
-        @if ($errors->any())
-            <ul>    
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>    
-            @endforeach
-            </ul>
-        @endif
-    </section>
+          });
+      </script>
 
-</div>
-    
 @endsection

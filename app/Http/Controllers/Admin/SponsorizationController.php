@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Braintree\Gateway;
 
 use App\PaymentPlan;
 use App\Sponsorization;
@@ -26,9 +27,20 @@ class SponsorizationController extends Controller
         //
         $payPlan = PaymentPlan::all();
         $id = $id->id;
+        dd(env('BRAINTREE_MERCHANT_ID'));
+        $gateway = new Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $token = $gateway()->ClientToken()->generate();
+
         return view("admin.add-sponsorization",[
             "payPlan"=>$payPlan,
-            "id"=>$id
+            "id"=>$id,
+            "token"=>$token
         ]);
     }
 
