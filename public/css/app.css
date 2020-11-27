@@ -10979,13 +10979,9 @@ main {
   min-height: calc(100vh - 404px);
 }
 
-main #hero {
-  height: 400px;
-}
-
 main .jumbo-home {
-  height: 70vh;
-  background-image: url(/storage/images/jumbo-background.webp);
+  height: 600px;
+  background-image: url("/img/jumbo-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -10993,7 +10989,10 @@ main .jumbo-home {
 
 main .jumbo-home .info-jumbo {
   padding-top: 8rem;
-  color: #fff;
+}
+
+main .jumbo-home .info-jumbo h1 {
+  font-weight: 700;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary {
@@ -11006,23 +11005,107 @@ main .jumbo-home .info-jumbo .btn-outline-primary:hover {
   color: #000;
 }
 
-main #sponsorizations {
-  background-color: #00F087;
-}
-
-main #sponsorizations .image-sponsored {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-main #sponsorizations .sponsored {
-  width: 13rem;
-  height: 13rem;
-  margin: 10px;
-}
-
-main #sponsorizations .sponsored .responsive-image {
+main .jumbo-home .searchbar #search-input {
   width: 100%;
+  color: #fff;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box {
+  background: none;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container {
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
+  border-color: #00F087;
+}
+
+main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
+  height: 40px;
+  padding: 3px 12px;
+  font-size: 20px;
+  color: #001533;
+}
+
+main #sponsorizations {
+  background-color: #fff;
+}
+
+main #sponsorizations h2 {
+  color: #001533;
+  font-weight: 700;
+}
+
+main #sponsorizations .container-fluid,
+main #sponsorizations .container-sm,
+main #sponsorizations .container-md,
+main #sponsorizations .container-lg,
+main #sponsorizations .container-xl {
+  overflow-x: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+main #sponsorizations .container-fluid::-webkit-scrollbar,
+main #sponsorizations .container-sm::-webkit-scrollbar,
+main #sponsorizations .container-md::-webkit-scrollbar,
+main #sponsorizations .container-lg::-webkit-scrollbar,
+main #sponsorizations .container-xl::-webkit-scrollbar {
+  height: 8px;
+}
+
+main #sponsorizations .container-fluid::-webkit-scrollbar-track,
+main #sponsorizations .container-sm::-webkit-scrollbar-track,
+main #sponsorizations .container-md::-webkit-scrollbar-track,
+main #sponsorizations .container-lg::-webkit-scrollbar-track,
+main #sponsorizations .container-xl::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+main #sponsorizations .container-fluid::-webkit-scrollbar-thumb,
+main #sponsorizations .container-sm::-webkit-scrollbar-thumb,
+main #sponsorizations .container-md::-webkit-scrollbar-thumb,
+main #sponsorizations .container-lg::-webkit-scrollbar-thumb,
+main #sponsorizations .container-xl::-webkit-scrollbar-thumb {
+  background: #00F087;
+  border-radius: 10px;
+}
+
+main #sponsorizations .container-fluid::-webkit-scrollbar-thumb:hover,
+main #sponsorizations .container-sm::-webkit-scrollbar-thumb:hover,
+main #sponsorizations .container-md::-webkit-scrollbar-thumb:hover,
+main #sponsorizations .container-lg::-webkit-scrollbar-thumb:hover,
+main #sponsorizations .container-xl::-webkit-scrollbar-thumb:hover {
+  background: #00F087;
+}
+
+main #sponsorizations .container-fluid .sponsored-item,
+main #sponsorizations .container-sm .sponsored-item,
+main #sponsorizations .container-md .sponsored-item,
+main #sponsorizations .container-lg .sponsored-item,
+main #sponsorizations .container-xl .sponsored-item {
+  margin: 0 10px 20px;
+  border-radius: 5px;
+  height: 160px;
+  width: 240px;
+  background-size: cover;
+  background-position: center;
+}
+
+main #sponsorizations .container-fluid .sponsored-item img,
+main #sponsorizations .container-sm .sponsored-item img,
+main #sponsorizations .container-md .sponsored-item img,
+main #sponsorizations .container-lg .sponsored-item img,
+main #sponsorizations .container-xl .sponsored-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 footer {

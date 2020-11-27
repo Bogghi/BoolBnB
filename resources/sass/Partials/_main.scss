@@ -1,19 +1,19 @@
 main {
   min-height: $main-heigth;
 
-  #hero {
-    height: 400px;
-  }
-
   .jumbo-home {
-    height: 70vh;
-    background-image: url(/storage/images/jumbo-background.webp);
+    height: 600px;
+    background-image: url("/img/jumbo-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
     .info-jumbo {
       padding-top: $spacer * 8;
+
+      h1 {
+        font-weight: 700;
+      }
 
       .btn-outline-primary {
         border-color: $white;
@@ -32,23 +32,28 @@ main {
           width:100%;
           color: $white;
 
-          .tt-search-box-input-container {
-            padding: 10px 20px;
-            border-radius: 50px;
+          .tt-search-box {
+            background: none;
 
-            &:focus {
-              border-color: $greenbnb;
-            }
-        
+            .tt-search-box-input-container {
+              padding: 10px 20px;
+              border-radius: 50px;
+              background-color: #fff;
+  
+              &:focus {
+                border-color: $greenbnb;
+              }
           
-
-          input.tt-search-box-input {
-            height: 40px;
-            padding: 3px 12px;
-            font-size: 20px;
-            color: $bluebnb;
+            
+  
+            input.tt-search-box-input {
+              height: 40px;
+              padding: 3px 12px;
+              font-size: 20px;
+              color: $bluebnb;
+            }
           }
-        }
+        }  
       }
     }
   }
@@ -57,21 +62,53 @@ main {
 
   #sponsorizations {
 
-    background-color: $greenbnb;
+    background-color: #fff;
 
-    .image-sponsored {
-      display: flex;
-      flex-wrap: wrap;
+    h2 {
+      color: $bluebnb;
+      font-weight: 700;
     }
 
-    .sponsored {
-      width: 13rem;
-      height: 13rem;
-      margin: 10px;
+    .container-fluid {
+      overflow-x: scroll;
+      /* width */
+        &::-webkit-scrollbar {
+          height: 8px;
+        }
 
-      .responsive-image {
-        width: 100%;
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: #fff; 
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $greenbnb; 
+          border-radius:10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: $greenbnb; 
+        }
+
+      .sponsored-item {
+        margin: 0 10px 20px;
+        border-radius: 5px;
+        height: 160px;
+        width: 240px;
+        background-size: cover;
+        background-position: center;
+  
+        img {
+          width: 100%;
+          border-radius: 10px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
       }
     }
+    
+    
   }
+
 }
