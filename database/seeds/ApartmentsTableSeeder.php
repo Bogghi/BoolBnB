@@ -27,10 +27,10 @@ class ApartmentsTableSeeder extends Seeder
             $newApartment->bathrooms_number = rand(1, 3);
             $newApartment->beds_number = rand(2, 8);
             $newApartment->square_meters = rand(40, 200);
-            $newApartment->address = $faker->address;
-            $newApartment->description = $faker->paragraph(4, true);
+            $newApartment->address = $faker->city;
+            $newApartment->description = $faker->paragraph(1, true);
             $newApartment->rooms_number = rand(2, 8);
-            $newApartment->title = $faker->text(255);
+            $newApartment->title = $faker->text(100);
             $newApartment->visibility = $faker->boolean();
 
             $newApartment->save();
