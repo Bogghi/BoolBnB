@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Sponsorization;
-
+use App\Service;
 class SearchController extends Controller
 {
     public function search(Request $request) {
-
+      $services = Service::all();
       $data = $request->all();
       $request->validate([
         "search" => "required|string"
@@ -63,6 +63,6 @@ class SearchController extends Controller
       }
 
 
-      return view("guests.search", compact("apartments", "all_sponsorized_apartments"));
+      return view("guests.search", compact("apartments", "all_sponsorized_apartments", "services"));
     }
 }
