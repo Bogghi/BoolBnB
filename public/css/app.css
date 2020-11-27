@@ -11191,7 +11191,7 @@ main #developers .developer .custom-social {
 }
 
 footer {
-  background-color: #00F087;
+  border-top: 2px solid #00F087;
 }
 
 footer .social-links .social-links-item {
