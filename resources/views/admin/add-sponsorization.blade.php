@@ -5,16 +5,19 @@
 <div class="container">
 
     <section class="sponsorization">
+
+        <div class="test resp">ciao</div>
         <form action="{{route("admin.sponsorization.store")}}" method="POST">
             @csrf
             @method('POST')
             <h1 class="d-flex justify-content-center">Sponsor your apartment</h1>
             
+
             <div class="plan-container">
                 @foreach ($payPlan->all() as $plan)
                     <div class="content">
-                        <div class="label d-flex justify-content-center align-items-center">
-                            <label class="form-check-label flex-row justify-content-center align-items-center" for="{{$plan->id}}">
+                        <div class="label size d-flex justify-content-center align-items-center flex-nowrap ">
+                            <label class="flex-row justify-content-center align-items-center" for="{{$plan->id}}">
                                 <span id="hours">{{$plan->hours_duration}}h</span><br>
                                 <span id="price">{{$plan->price}} &euro;</span>  
                             </label>

@@ -11067,15 +11067,24 @@ footer .developer .custom-social {
   align-items: center;
   flex-direction: column;
   width: 33%;
+  padding: 5px;
 }
 
 .sponsorization .content .label {
   background: linear-gradient(43deg, #001533 0%, #001533 1%, #00f087 100%);
   border-radius: 20px;
-  min-height: 250px;
-  min-width: 250px;
   color: white;
   text-align: center;
+}
+
+.sponsorization .content .label.size {
+  min-width: 100%;
+}
+
+.sponsorization .content .label.size:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .sponsorization .content .label #hours {
@@ -11096,12 +11105,6 @@ footer .developer .custom-social {
 .sponsorization .content .radio input {
   transform: translateX(100%);
   background-color: #00F087;
-}
-
-.sponsorization .spn-button {
-  height: 100px;
-  width: 100px;
-  background-image: linear-gradient(43deg, #001533 0%, #001533 1%, #00f087 100%);
 }
 
 .sponsorization .desc {
