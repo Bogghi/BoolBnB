@@ -11045,18 +11045,37 @@ main #sponsorizations .sponsored .responsive-image {
   width: 100%;
 }
 
+.search-container .row .col-12 .container-apartment {
+  height: 200px;
+  position: relative;
+}
+
 .search-container .row .col-12 .container-apartment .search-image {
-  width: 300px;
-  height: 300px;
   padding: 10px;
+}
+
+.search-container .row .col-12 .container-apartment .info-apartment .info-text {
+  font-size: 13px;
 }
 
 .search-container .row .col-12 .container-apartment .info-apartment .info-tag .list-info {
   list-style: none;
 }
 
-.search-container .row .col-12 .container-apartment .info-apartment .info-tag .list-info li {
-  padding: -5px;
+.search-container .row .col-12 .container-apartment .info-apartment .info-tag .list-info li span {
+  font-size: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.search-container .row .carousel-pers {
+  margin-top: 200px;
+}
+
+#sponsorized {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 footer {
