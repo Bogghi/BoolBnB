@@ -10993,16 +10993,16 @@ main .jumbo-home {
 
 main .jumbo-home .info-jumbo {
   padding-top: 8rem;
-  color: #fff;
+  color: white;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary {
-  border-color: #fff;
-  color: #fff;
+  border-color: white;
+  color: white;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary:hover {
-  background-color: #fff;
+  background-color: white;
   color: #000;
 }
 
@@ -11049,7 +11049,63 @@ footer .developer .footer-img {
 footer .developer .custom-social {
   color: #00F087;
   font-size: 40px;
-  background-color: #fff;
+  background-color: white;
   padding: 10px;
+}
+
+.sponsorization h1 {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.sponsorization .plan-container {
+  display: flex;
+}
+
+.sponsorization .content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 33%;
+}
+
+.sponsorization .content .label {
+  background: linear-gradient(43deg, #001533 0%, #001533 1%, #00f087 100%);
+  border-radius: 20px;
+  min-height: 250px;
+  min-width: 250px;
+  color: white;
+  text-align: center;
+}
+
+.sponsorization .content .label #hours {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.sponsorization .content .label #price {
+  font-size: 20px;
+  color: #BDBDBD;
+}
+
+.sponsorization .content .radio {
+  height: 40px;
+  width: 100%;
+}
+
+.sponsorization .content .radio input {
+  transform: translateX(100%);
+  background-color: #00F087;
+}
+
+.sponsorization .spn-button {
+  height: 100px;
+  width: 100px;
+  background-image: linear-gradient(43deg, #001533 0%, #001533 1%, #00f087 100%);
+}
+
+.sponsorization .desc {
+  font-size: 20px;
+  padding-bottom: 20px;
 }
 

@@ -1,0 +1,59 @@
+.sponsorization{
+
+    h1{
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .plan-container {
+        display: flex;
+    }
+    
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 33%;
+        
+        .label{
+            background: linear-gradient(43deg, rgb(0, 21, 51) 0%, rgb(0, 21, 51) 1%, rgb(0, 240, 135) 100%);
+            border-radius: 20px;
+            min-height: $btn-size;
+            min-width: $btn-size;
+            color: $white;
+            text-align: center;
+            
+            #hours {
+                font-size: 60px;
+                font-weight: bold;
+            }
+    
+            #price {
+                font-size: 20px;
+                color: $gray;
+            }
+        }
+    
+        .radio {
+            height: 40px;
+            width: 100%;
+            
+            input {
+                transform: translateX(100%);
+                background-color: $greenbnb;
+            }
+        }
+    }
+    
+    .spn-button {
+        height: 100px;
+        width: 100px;
+        background-image: linear-gradient(43deg, rgb(0, 21, 51) 0%, rgb(0, 21, 51) 1%, rgb(0, 240, 135) 100%);
+    }
+
+    .desc {
+        // line-height: 80px;
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+}

@@ -4,27 +4,37 @@
 
 <div class="container">
 
-    <section>
+    <section class="sponsorization">
         <form action="{{route("admin.sponsorization.store")}}" method="POST">
             @csrf
             @method('POST')
-            <h1>Seleziona un piano di sponsorizazzione</h1>
-            <div class="form-check">
-                
+            <h1 class="d-flex justify-content-center">Sponsor your apartment</h1>
+            
+            <div class="plan-container">
                 @foreach ($payPlan->all() as $plan)
-                    <div class="form-check">
-                        <input name="payment_plan_id" class="form-check-input" type="radio" value="{{$plan->id}}" id="{{$plan->id}}">
-                        <label class="form-check-label" for="{{$plan->id}}">
-                            {{$plan->hours_duration}} {{$plan->price}}
-                        </label>
+                    <div class="content">
+                        <div class="label d-flex justify-content-center align-items-center">
+                            <label class="form-check-label flex-row justify-content-center align-items-center" for="{{$plan->id}}">
+                                <span id="hours">{{$plan->hours_duration}}h</span><br>
+                                <span id="price">{{$plan->price}} &euro;</span>  
+                            </label>
+                        </div>
+                        <div class="radio d-flex justify-content-center align-items-center">
+                            <input name="payment_plan_id" class="form-check-input" type="radio" value="{{$plan->id}}" id="{{$plan->id}}">
+                        </div>
                     </div>
                 @endforeach
-                
             </div>
+
+            <div class="desc d-flex justify-content-center align-items-center">
+                Select one of the above option and your apartment will be presented first to your audience
+            </div>
+            
             <input type="hidden" name="apartment_id" value="{{$id}}">
     
-    
-            <button type="submit" class="btn btn-primary">Salva</button>
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-primary">Salva</button>
+            </div>
     
         </form>
     
