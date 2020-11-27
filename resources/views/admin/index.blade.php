@@ -3,7 +3,7 @@
 @extends('layouts.guests')
 
 @section('content')
-    <div class="container">
+    <div class="container margin-top ">
         <h1>Your Apartments:</h1>
 
         {{-- Call to apartment's table and stamp apartment list of admin --}}

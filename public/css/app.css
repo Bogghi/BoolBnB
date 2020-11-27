@@ -10908,6 +10908,10 @@ body {
   min-height: 100vh;
 }
 
+.margin-top {
+  margin-top: 75px;
+}
+
 .color-primary {
   color: #001533;
 }
