@@ -10941,12 +10941,7 @@ body {
 }
 
 header {
-  height: 80px;
   border-bottom: 2px solid #001533;
-}
-
-header .navbar {
-  height: 100%;
 }
 
 header .navbar .logo img#logo {
@@ -10971,7 +10966,12 @@ header .navbar .navbar-nav .nav-link.btn:hover {
   background-color: #00F087;
 }
 
-header .menu-dropdown {
+header .dropdown-menu-right {
+  left: auto;
+  right: auto;
+}
+
+header .zindex {
   z-index: 1;
 }
 

@@ -1,9 +1,8 @@
 header {
-  height: 80px;
   border-bottom: 2px solid $bluebnb;
  
   .navbar {
-    height: 100%;
+    
 
     .logo {
       img#logo {
@@ -31,7 +30,12 @@ header {
     }
   }
 
-  .menu-dropdown{
+  .dropdown-menu-right{
+    left: auto;
+    right: auto;
+  }
+
+  .zindex{
     z-index: 1;
   }
   
