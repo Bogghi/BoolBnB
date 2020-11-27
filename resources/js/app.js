@@ -46,7 +46,7 @@ $("#search-button").click(function(){
  
       // seconda funzione ajax 
       $.ajax({
-        "url": "localhost:8000/api/search",
+        "url": "http://localhost:8000/api/search",
         "data":{
           "latitude": latitude,
           "longitude": longitude,
