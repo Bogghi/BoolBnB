@@ -267,6 +267,9 @@ class ApartmentController extends Controller
     public function destroy($id)
     {
         $apartment = Apartment::find($id);
+
+        Storage::disk('public')->delete($apartment->cover_image);
+
         $apartment->services()->detach();
         $apartment->delete();
         return redirect()->route('admin.apartment.index');
