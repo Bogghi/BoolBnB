@@ -1,6 +1,6 @@
 {{-- Header top --}}
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light zindex">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             {{-- logo --}}
             <div class="logo">
@@ -15,7 +15,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                 </ul>
@@ -26,7 +26,7 @@
                     <!-- Authentication Links  only admin is log-->
                     @if (Route::currentRouteName() == 'admin.apartment.index')
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
+                            <a class="nav-link" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
                         </li>
                     @endif
                     <!-- Authentication Links  only admin is log-->
@@ -46,7 +46,7 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown-menu">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
@@ -54,7 +54,7 @@
 
                             {{-- dropdown menu --}}
                             <div class="dropdown-menu dropdown-menu-right mb-5" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
+                                <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your Apartmet</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

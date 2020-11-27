@@ -37272,7 +37272,25 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    includes = _require.includes;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var options = {
+  searchOptions: {
+    key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+    language: 'en-GB',
+    limit: 5
+  },
+  autocompleteOptions: {
+    key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+    language: 'it-IT'
+  }
+};
+var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+document.getElementById("search-input").append(searchBoxHTML);
 
 /***/ }),
 
@@ -37339,8 +37357,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Administrator\Desktop\Boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Administrator\Desktop\Boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
