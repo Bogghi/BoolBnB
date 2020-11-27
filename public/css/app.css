@@ -11078,7 +11078,7 @@ footer .developer .custom-social {
 }
 
 .sponsorization .content .label.size {
-  min-width: 100%;
+  min-width: 80%;
 }
 
 .sponsorization .content .label.size:after {
@@ -11110,5 +11110,19 @@ footer .developer .custom-social {
 .sponsorization .desc {
   font-size: 20px;
   padding-bottom: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .sponsorization .content .label.size {
+    min-width: 100%;
+  }
+
+  .sponsorization .content .label #hours {
+    font-size: 30px;
+  }
+
+  .sponsorization .content .label #price {
+    font-size: 20px;
+  }
 }
 

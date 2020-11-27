@@ -5,8 +5,6 @@
 <div class="container">
 
     <section class="sponsorization">
-
-        <div class="test resp">ciao</div>
         <form action="{{route("admin.sponsorization.store")}}" method="POST">
             @csrf
             @method('POST')

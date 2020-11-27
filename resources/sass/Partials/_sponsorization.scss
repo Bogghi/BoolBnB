@@ -1,20 +1,5 @@
 .sponsorization{
 
-    // .test{
-    //     background: linear-gradient(43deg, rgb(0, 21, 51) 0%, rgb(0, 21, 51) 1%, rgb(0, 240, 135) 100%);
-    //     border: 1px solid black;
-
-    //     &.resp{
-    //         max-width: 400px;
-
-    //         &:after{
-                
-    //             display: block;
-    //             padding-bottom: 100%;
-    //         }
-    //     }
-    // }
-
     h1{
         padding-top: 20px;
         padding-bottom: 50px;
@@ -38,7 +23,8 @@
             text-align: center;
             
             &.size{
-                min-width: 100%;
+                min-width: $btn-size;
+
                 &:after{
                     content: "";  
                     display: block;
@@ -55,6 +41,7 @@
                 font-size: 20px;
                 color: $gray;
             }
+            
         }
         
     
@@ -70,7 +57,6 @@
     }
 
     .desc {
-        // line-height: 80px;
         font-size: 20px;
         padding-bottom: 20px;
     }
