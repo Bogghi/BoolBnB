@@ -1,13 +1,12 @@
 header {
-  height: 80px;
   border-bottom: 2px solid $bluebnb;
-
+ 
   .navbar {
-    height: 100%;
+    
 
     .logo {
       img#logo {
-        width: 130px;
+        width: 200px;
       }
     }
 
@@ -31,7 +30,14 @@ header {
     }
   }
 
+  .drop-right{
+    transform: translate(0px, 5px);
+    left: auto;
+    border-color: $greenbnb;
+  }
+
   .zindex{
     z-index: 1;
   }
+  
 }

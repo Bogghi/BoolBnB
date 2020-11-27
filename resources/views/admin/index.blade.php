@@ -3,7 +3,7 @@
 @extends('layouts.guests')
 
 @section('content')
-    <div class="container">
+    <div class="container margin-top ">
         <h1>Your Apartments:</h1>
 
         {{-- Call to apartment's table and stamp apartment list of admin --}}
@@ -14,12 +14,12 @@
                 <div class="row shadow p-3 mb-5 bg-light rounded bordergreen">
 
                     <?php
-                    $image = $apartment->cover_image;
-                    $pos = strpos($image, "placeholder");
-          
+                        $image = $apartment->cover_image;
+                        $pos = strpos($image, "placeholder");          
                     ?> 
+
                     {{-- Cover Apartment --}}
-                    <div class="col-md-2 mx-auto my-auto">
+                    <div class="col-md-3 mx-auto my-auto">
                         <?php if ($pos === false) {?>
                             <img class="card-img" src="{{asset('storage/'.$image)}}" alt="image">
                 
@@ -40,9 +40,7 @@
                             <p class="card-text"><small class="text-muted">Created on {{$apartment->created_at->format('d-m-Y')}}.</small></p>
                         </div>
 
-
                         {{-- {{-- bottom for link pages --}}
-
                        <div  class="d-flex flex-wrap justify-content-end">
                             <a href="{{route('admin.apartment.show', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Show</a>
                             <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Edit</a>

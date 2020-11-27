@@ -10908,6 +10908,10 @@ body {
   min-height: 100vh;
 }
 
+.margin-top {
+  margin-top: 75px;
+}
+
 .color-primary {
   color: #001533;
 }
@@ -10941,16 +10945,11 @@ body {
 }
 
 header {
-  height: 80px;
   border-bottom: 2px solid #001533;
 }
 
-header .navbar {
-  height: 100%;
-}
-
 header .navbar .logo img#logo {
-  width: 130px;
+  width: 200px;
 }
 
 header .navbar .navbar-nav .nav-link {
@@ -10969,6 +10968,12 @@ header .navbar .navbar-nav .nav-link.btn {
 
 header .navbar .navbar-nav .nav-link.btn:hover {
   background-color: #00F087;
+}
+
+header .drop-right {
+  transform: translate(0px, 5px);
+  left: auto;
+  border-color: #00F087;
 }
 
 header .zindex {

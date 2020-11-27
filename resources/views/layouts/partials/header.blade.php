@@ -1,6 +1,6 @@
 {{-- Header top --}}
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light zindex">
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             {{-- logo --}}
             <div class="logo">
@@ -10,12 +10,12 @@
             </div>
 
             {{-- hamburger --}}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler border border-dark text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                 </ul>
@@ -25,13 +25,13 @@
 
                     <!-- Authentication Links  only admin is log-->
                     @if (Route::currentRouteName() == 'admin.apartment.index')
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
+                        <li class="nav-item zindex bg-light pl-5">
+                            <a class="nav-link" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
                         </li>
                     @endif
                     <!-- Authentication Links  only admin is log-->
                     @if (Route::currentRouteName() != 'homepage')
-                        <li class="nav-item">
+                        <li class="nav-item zindex bg-light pl-5">
                             <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                         </li>
                     @endif
@@ -46,15 +46,16 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item zindex bg-light pl-5">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
                             {{-- dropdown menu --}}
-                            <div class="dropdown-menu dropdown-menu-right mb-5" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
+                            <div class="dropdown-menu mr-5 mb-5 drop-right" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your Apartmet</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
