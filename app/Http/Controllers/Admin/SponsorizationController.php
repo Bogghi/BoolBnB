@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Braintree\Gateway;
+use Braintree\PaymentMethodNonce;
 
 use App\PaymentPlan;
 use App\Sponsorization;
@@ -36,7 +37,6 @@ class SponsorizationController extends Controller
         ]);
 
         $token = $gateway->ClientToken()->generate();
-
         return view("admin.add-sponsorization",[
             "payPlan"=>$payPlan,
             "id"=>$id,
@@ -119,7 +119,9 @@ class SponsorizationController extends Controller
     /**
      * Checkout handler 
      */
-    private function checkout(Request $request, $price){
+    private function checkout($request, $price){
+
+        dd($request);
 
         $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
