@@ -17,7 +17,7 @@
                             <div id="search-input"></div>
                                  @foreach ($services as $service)
                                 <div class="form-check form-check-inline">
-                                <input class="form-control services" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
+                                <input class="form-check-input services" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
                                 <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
                                 </div>
                                 @endforeach
