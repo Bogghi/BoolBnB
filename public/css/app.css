@@ -10982,6 +10982,7 @@ header .zindex {
 
 main {
   min-height: calc(100vh - 404px);
+  margin-top: 71.95px;
 }
 
 main .jumbo-home {
