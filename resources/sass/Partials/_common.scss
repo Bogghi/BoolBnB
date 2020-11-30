@@ -38,3 +38,24 @@ body {
     transition: 0.5s;
   }
 }
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $greenbnb; 
+  border-radius:10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $greenbnb; 
+}
+
