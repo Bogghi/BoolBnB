@@ -10995,6 +10995,7 @@ main .jumbo-home {
 
 main .jumbo-home .info-jumbo {
   padding-top: 8rem;
+  color: white;
 }
 
 main .jumbo-home .info-jumbo h1 {
@@ -11002,12 +11003,12 @@ main .jumbo-home .info-jumbo h1 {
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary {
-  border-color: #fff;
-  color: #fff;
+  border-color: white;
+  color: white;
 }
 
 main .jumbo-home .info-jumbo .btn-outline-primary:hover {
-  background-color: #fff;
+  background-color: white;
   color: #000;
 }
 
@@ -11149,59 +11150,117 @@ main #developers .developer .footer-img {
 main #developers .developer .custom-social {
   color: #00F087;
   font-size: 40px;
-  background-color: #fff;
+  background-color: white;
   padding: 10px;
 }
 
-.search-container .row .list-apartment {
-  height: calc(100vh - 78px);
-  overflow-y: auto;
+.sponsorization h1 {
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
-.search-container .row .list-apartment .container-apartment {
-  height: 200px;
-  position: relative;
+.sponsorization .plan-container {
+  display: flex;
 }
 
-.search-container .row .list-apartment .container-apartment .search-image {
-  padding: 10px;
+.sponsorization .content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 33%;
+  padding: 5px;
 }
 
-.search-container .row .list-apartment .container-apartment .info-apartment .info-text {
-  font-size: 13px;
+.sponsorization .content .label {
+  background: linear-gradient(43deg, #001533 0%, #001533 1%, #00f087 100%);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
 }
 
-.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
-  list-style: none;
+.sponsorization .content .label.size {
+  min-width: 80%;
 }
 
-.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {
-  font-size: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
+.sponsorization .content .label.size:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
-.search-container .row .carousel-pers {
-  margin-top: 100px;
+.sponsorization .content .label #hours {
+  font-size: 60px;
+  font-weight: bold;
 }
 
-#sponsorized {
-  position: absolute;
-  top: 0;
-  left: 10px;
+.sponsorization .content .label #price {
+  font-size: 20px;
+  color: #BDBDBD;
 }
 
-footer {
+.sponsorization .content .radio {
+  height: 40px;
+  width: 100%;
+}
+
+.sponsorization .content .radio input {
+  transform: translateX(100%);
   background-color: #00F087;
 }
 
-footer .social-links .social-links-item {
-  margin: 0 20px;
+.sponsorization .desc {
+  font-size: 20px;
+  padding-bottom: 20px;
 }
 
-footer .social-links .social-links-item i {
-  cursor: pointer;
-  font-size: 40px;
-  color: #fff;
+.sponsorization .sbm-button {
+  background: #001533;
+  color: white;
+  border-radius: 5px;
+  border: 2px soldi white;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  transition: background 0.4s;
+}
+
+.sponsorization .sbm-button:hover {
+  background: #00F087;
+  color: #5a5a5a;
+}
+
+.spn-error h1 {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.spn-error .sbm-button {
+  background: #001533;
+  color: white;
+  border-radius: 5px;
+  border: 2px soldi white;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  transition: background 0.4s;
+}
+
+.spn-error .sbm-button:hover {
+  background: #00F087;
+  color: #5a5a5a;
+}
+
+@media screen and (max-width: 400px) {
+  .sponsorization .content .label.size {
+    min-width: 100%;
+  }
+
+  .sponsorization .content .label #hours {
+    font-size: 30px;
+  }
+
+  .sponsorization .content .label #price {
+    font-size: 20px;
+  }
 }
 

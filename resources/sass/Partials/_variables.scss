@@ -1,3 +1,6 @@
+//responsive point
+$smartphone: 990px;
+
 // Body
 $body-bg: #f8fafc;
 $main-heigth: calc(100vh - 404px);
@@ -18,7 +21,14 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
-// Boolbnb Colors 
+$white: white;
+$gray: #BDBDBD;
+$dark-gray: #5a5a5a;
 
+// Boolbnb Colors 
 $bluebnb: #001533;
 $greenbnb: #00F087;
+
+//sponsorization size
+$btn-size: 80%;
+$btn-smarphone-size: 100%;

@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Braintree\Gateway;
 
 use App\PaymentPlan;
 use App\Sponsorization;
@@ -26,9 +27,24 @@ class SponsorizationController extends Controller
         //
         $payPlan = PaymentPlan::all();
         $id = $id->id;
+        $alreadyActive = $this->alreadyActive($id);
+
+        if($alreadyActive){
+            return view("errors.sponsorization");
+        }
+
+        $gateway = new Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $token = $gateway->ClientToken()->generate();
         return view("admin.add-sponsorization",[
             "payPlan"=>$payPlan,
-            "id"=>$id
+            "id"=>$id,
+            "token"=>$token
         ]);
     }
 
@@ -47,7 +63,10 @@ class SponsorizationController extends Controller
         $paymentPlanId = $data["payment_plan_id"];
         $apartmentId = $data["apartment_id"];
         $payPlanInfo = PaymentPlan::find($paymentPlanId)->hours_duration;
+        $payAmaunt = PaymentPlan::find($paymentPlanId)->pirce;
+        
         $alreadyActive = $this->alreadyActive($apartmentId);
+        $checkout = $this->checkout($request, $payAmaunt);
 
         $userApartment = DB::table('apartments')
                             ->where('user_id', $userId)
@@ -101,4 +120,45 @@ class SponsorizationController extends Controller
         return true;
     }
 
+    /**
+     * Checkout handler 
+     */
+    private function checkout($request, $price){
+
+        $gateway = new Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $amount = $price;
+        $nonce = $request->payment_method_nonce;
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        if ($result->success) {
+            $transaction = $result->transaction;
+            // header("Location: transaction.php?id=" . $transaction->id);
+      
+            return back()->with('success_message', 'Transaction successfull. The ID is: '. $transaction->id);
+        } else {
+            $errorString = "";
+      
+            foreach($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+      
+            // $_SESSION["errors"] = $errorString;
+            // header("Location: index.php");
+            return back()->withErrors('An errorr occurred with the message: '. $result->message);
+      
+        }
+    }
 }

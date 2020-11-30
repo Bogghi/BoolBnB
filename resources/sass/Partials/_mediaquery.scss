@@ -1,0 +1,25 @@
+@media screen and (max-width: 400px){
+    .sponsorization{
+
+        .content{
+
+            .label{
+
+                &.size{
+                    min-width: $btn-smarphone-size;
+                }
+                
+                #hours{
+                    font-size: 30px;
+                }
+
+                #price{
+                    font-size: 20px;
+                }
+
+            }
+
+        }
+
+    }
+}

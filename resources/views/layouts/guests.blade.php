@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>   
+    <script src="{{ asset('js/app.js') }}"></script>   
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -25,6 +25,10 @@
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js'></script>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/services/services-web.min.js'></script>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/2.24.2//SearchBox-web.js'></script>
+    <!-- includes the Braintree JS client SDK -->
+    <script src="https://js.braintreegateway.com/web/3.44.2/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.44.2/js/hosted-fields.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/dropin/1.25.0/js/dropin.min.js"></script>
 </head>
 <body>
     <div id="app">
