@@ -63,7 +63,11 @@
 
       @foreach ($services as $service)
       <div class="form-check form-check-inline">
+        @if (old("services"))
+        <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
+        @else 
         <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
+        @endif
         <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
       </div>
       @endforeach
@@ -82,6 +86,13 @@
         <input type="file" class="d-block" id="cover_image" name="cover_image" accept="image/*">
       </div>
       @error('cover_image')
+        <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+      <div class="form-group mt-sm-4">
+        <label for="images">Immagini aggiuntive (fino a 5)</label>
+        <input type="file" class="d-block" id="images" name="images[]" accept="image/*" multiple>
+      </div>
+      @error('images')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <button type="submit" class="btn btn-primary">Salva</button>

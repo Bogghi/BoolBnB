@@ -104,6 +104,35 @@
       @error('cover_image')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
+
+      <div class="apartment-cover">
+        <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="" style="width:200px; height:200px">
+      </div>
+      
+      <div class="form-group mt-sm-4">
+        <label for="images">Immagini aggiuntive (fino a 5)</label>
+        <input type="file" class="d-block" id="images" name="images[]" accept="image/*" multiple>
+      </div>
+      @error('images')
+        <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+
+      @if ($apartment_images)
+      <div class="apartment-images my-sm-4 d-flex">
+        @foreach ($apartment_images as $apartment_image)
+          <div class="apartment-image">
+            <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
+            <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
+              @csrf
+              @method("DELETE")
+              <input type="submit" value="Elimina">
+            </form>
+          </div>
+        @endforeach
+      </div>
+      @endif
+      
+
       <button type="submit" class="btn btn-primary">Salva</button>
     </form>
   </section>
