@@ -206,10 +206,10 @@ class ApartmentController extends Controller
         // Save cover_image in the storage with original name.
         $cover_image_name = $request->cover_image->getClientOriginalName();
 
-        $new_apartment_id = $id;
+        $apartment_id = $id;
 
         $path_cover_image = $request->cover_image->storeAs(
-            "images/" . $new_apartment_id,
+            "images/" . $apartment_id,
             $cover_image_name,
             "public"
         );
@@ -229,9 +229,6 @@ class ApartmentController extends Controller
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
         $apartment->visibility = $data['visibility'];
-
-
-        $apartment_id = $apartment->id;
 
         if ($request->hasFile('images')) {
 
@@ -253,6 +250,7 @@ class ApartmentController extends Controller
                 $newImage->save();
             }
         }
+
 
         if (isset($data['services'])) {
             $apartment->services()->sync($data['services']);
