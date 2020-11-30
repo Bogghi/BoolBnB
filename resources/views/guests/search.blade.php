@@ -82,6 +82,9 @@
                                                 @endif
 
                                         </div>
+                                        <div class="pb-2 text-center">
+                                          <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn btn-success">Vai all'appartamento</a>
+                                        </div>
                                     </div>
                                 </div>
 
