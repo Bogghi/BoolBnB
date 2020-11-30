@@ -10944,8 +10944,36 @@ body {
   transition: 0.5s;
 }
 
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #00F087;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00F087;
+}
+
 header {
+  height: 80px;
   border-bottom: 2px solid #001533;
+}
+
+header .navbar {
+  height: 100%;
 }
 
 header .navbar .logo img#logo {
@@ -10982,7 +11010,7 @@ header .zindex {
 
 main {
   min-height: calc(100vh - 404px);
-  margin-top: 71.95px;
+  margin-top: 80px;
 }
 
 main .jumbo-home {
@@ -11313,5 +11341,23 @@ footer .social-links .social-links-item i {
   .sponsorization .content .label #price {
     font-size: 20px;
   }
+}
+
+#search-results {
+  height: calc(100vh - 80px);
+}
+
+#search-results .searchbar {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 270px;
+  padding: 10px;
+  background-color: #001533;
+  color: #fff;
+  font-weight: 700;
+}
+
+#search-results .list-apartment {
+  height: calc(100vh - 350px);
 }
 

@@ -1,7 +1,7 @@
 @extends('layouts.guests')
 
 @section('content')
-    <section>
+    <section id="search-results">
 
         {{-- container pagina --}}
         <div class="container-fluid search-container">
@@ -9,29 +9,32 @@
             <div class="row">
                 {{-- Lista appartamenti --}}
 
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 px-0">
                     {{-- searchbar --}}
 
 
-                    <div class="searchbar my-3">
+                    <div class="searchbar">
                             <div id="search-input"></div>
-                                 @foreach ($services as $service)
-                                <div class="form-check form-check-inline">
-                                <input class="form-check-input services" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
-                                <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
-                                </div>
+                                <div class="services-checkboxes my-4">
+                                @foreach ($services as $service)
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input services" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
+                                        <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+                                    </div>
                                 @endforeach
-                                <div class="form-check form-check-row"  >
-                                    <label for="rooms_number">Rooms number</label>
+                                </div>
+                                <div class="form-check form-check-inline"  >
+                                    <label for="rooms_number">Rooms:</label>
                                     <input name="rooms_number" id="rooms_number" class="form-control mb-2 m-sm-2" type="number">
-                                    <label for="beds_number">beds number</label>
+                                    <label for="beds_number">Beds:</label>
                                     <input name="beds_number" id="beds_number" class="form-control mb-2 m-sm-2" type="number">
-                                    <label for="radius">search radius</label>
+                                    <label for="radius">Radius:</label>
                                     <input name="radius" value="20" id="radius" class="form-control mb-2 m-sm-2" type="number">
                                     
                                     
                                 </div>
-                            <button id="search-button" class="btn btn-primary">Cerca</button>
+                                
+                                <button id="search-button" class="btn btn-primary d-block mx-auto my-4 background-color-secondary">Cerca</button>
                         </div>
 
                     {{-- searchbar --}}

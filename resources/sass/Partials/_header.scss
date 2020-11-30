@@ -1,8 +1,10 @@
 header {
+  height: 80px;
   border-bottom: 2px solid $bluebnb;
  
   .navbar {
     
+    height: 100%;
 
     .logo {
       img#logo {
@@ -11,13 +13,17 @@ header {
     }
 
     .navbar-nav {
+
       .nav-link {
+
         font-weight: 700;
         color: $bluebnb;
+
         &:hover {
           color: $greenbnb;
         }
       }
+
       .nav-link.btn {
         background-color: $bluebnb;
         color: #fff;
