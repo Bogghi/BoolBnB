@@ -49,13 +49,12 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
         $services = Service::orderByDesc('id')->first();
 
         $request->validate([
-            'images.*' => "image|unique:images",
+            // 'images' => "image|unique:images",
             'services' => "required|array|min:1",
-            'services.*' =>"required|integer|min:1|max:".$services->id,
+            'services.*' => "required|integer|min:1|max:" . $services->id,
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|integer",
@@ -66,6 +65,7 @@ class ApartmentController extends Controller
             'title' => "required|max:100",
             'visibility' => "boolean",
         ]);
+
 
         // Api call to get latitude and longitude from the passed address.
         $address = $data['address'];
@@ -130,7 +130,7 @@ class ApartmentController extends Controller
         // Add checked services to the pivot table.
         if (isset($data['services'])) {
             $apartment->services()->sync($data['services']);
-          }
+        }
 
 
         return redirect()->route('admin.apartment.index');
@@ -147,7 +147,7 @@ class ApartmentController extends Controller
         $userId = Auth::id();
         $apartment = Apartment::find($id);
         // apartment.show
-        if($apartment->user_id == $userId){
+        if ($apartment->user_id == $userId) {
             return view("admin.show", ["apartment" => $apartment]);
         }
 
@@ -165,8 +165,9 @@ class ApartmentController extends Controller
         $apartment = Apartment::find($id);
 
         $services = Service::all();
+        $apartment_images = $apartment->images;
 
-        return view('admin.edit', compact('apartment', 'services'));
+        return view('admin.edit', compact('apartment', 'services', 'apartment_images'));
     }
 
     /**
@@ -183,9 +184,9 @@ class ApartmentController extends Controller
         $services = Service::orderByDesc('id')->first();
 
         $request->validate([
-            'images.*' => "image|unique:images",
+            // 'images' => "image|unique:images",
             'services' => "required|array|min:1",
-            'services.*' =>"required|integer|min:1|max:".$services->id,
+            'services.*' => "required|integer|min:1|max:" . $services->id,
             'address' => "required|max:255",
             'cover_image' => "required|unique:apartments|image",
             'bathrooms_number' => "required|integer",
@@ -233,6 +234,7 @@ class ApartmentController extends Controller
         if ($request->hasFile('images')) {
 
             $images = $request->file('images');
+            dd($images);
 
             foreach ($images as $image) {
 
@@ -254,11 +256,11 @@ class ApartmentController extends Controller
 
         if (isset($data['services'])) {
             $apartment->services()->sync($data['services']);
-          } else {
+        } else {
             $apartment->services()->detach();
-          }
+        }
 
-          $apartment->update();
+        $apartment->update();
 
 
         return redirect()->route('admin.apartment.show', $apartment);
@@ -279,6 +281,5 @@ class ApartmentController extends Controller
         $apartment->services()->detach();
         $apartment->delete();
         return redirect()->route('admin.apartment.index');
-
     }
 }

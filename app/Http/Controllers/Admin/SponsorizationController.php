@@ -29,7 +29,7 @@ class SponsorizationController extends Controller
         $id = $id->id;
         $alreadyActive = $this->alreadyActive($id);
 
-        if($alreadyActive){
+        if ($alreadyActive) {
             return view("errors.sponsorization");
         }
 
@@ -41,10 +41,10 @@ class SponsorizationController extends Controller
         ]);
 
         $token = $gateway->ClientToken()->generate();
-        return view("admin.add-sponsorization",[
-            "payPlan"=>$payPlan,
-            "id"=>$id,
-            "token"=>$token
+        return view("admin.add-sponsorization", [
+            "payPlan" => $payPlan,
+            "id" => $id,
+            "token" => $token
         ]);
     }
 
@@ -69,23 +69,23 @@ class SponsorizationController extends Controller
         $checkout = $this->checkout($request, $payAmaunt);
 
         $userApartment = DB::table('apartments')
-                            ->where('user_id', $userId)
-                            // ->get();
-                            ->pluck('id');
+            ->where('user_id', $userId)
+            // ->get();
+            ->pluck('id');
 
-        $validator = Validator::make($data,[
+        $validator = Validator::make($data, [
             'payment_plan_id' => "required",
             'apartment_id' => Rule::in($userApartment)
         ]);
 
-        $validator->after(function ($validator) use ($alreadyActive){
+        $validator->after(function ($validator) use ($alreadyActive) {
             if ($alreadyActive) {
                 $validator->errors()->add('apartment_promo', 'A promo is already active on this apartment!');
             }
         });
 
         if ($validator->fails()) {
-            return redirect()->route('admin.sponsorization.create',["id"=>$apartmentId])
+            return redirect()->route('admin.sponsorization.create', ["id" => $apartmentId])
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -93,11 +93,11 @@ class SponsorizationController extends Controller
         $newSpn->apartment_id = $apartmentId;
         $newSpn->payment_plan_id = $paymentPlanId;
         $newSpn->start_date = date("Y-m-d H:m:s");
-        $newSpn->end_date = date("Y-m-d H:m:s",strtotime("+{$payPlanInfo} hours"));
+        $newSpn->end_date = date("Y-m-d H:m:s", strtotime("+{$payPlanInfo} hours"));
 
         $newSpn->save();
 
-        return redirect()->route('admin.apartment.show',$apartmentId);
+        return redirect()->route('admin.apartment.show', $apartmentId);
     }
 
     /**
@@ -106,15 +106,16 @@ class SponsorizationController extends Controller
      * @return true if a promo is already active
      * @return flase if there isn't a promo active
      */
-    private function alreadyActive($aprId){
+    private function alreadyActive($aprId)
+    {
         $now = date("Y-m-d H:m:s");
 
         $promoActive = DB::table('sponsorizations')
-                           ->where('apartment_id',$aprId)
-                           ->where('end_date','>',$now)
-                           ->get();
+            ->where('apartment_id', $aprId)
+            ->where('end_date', '>', $now)
+            ->get();
 
-        if(count($promoActive) == 0){
+        if (count($promoActive) == 0) {
             return false;
         }
         return true;
@@ -123,7 +124,8 @@ class SponsorizationController extends Controller
     /**
      * Checkout handler
      */
-    private function checkout($request, $price){
+    private function checkout($request, $price)
+    {
 
         $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
@@ -147,18 +149,17 @@ class SponsorizationController extends Controller
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
 
-            return back()->with('success_message', 'Transaction successfull. The ID is: '. $transaction->id);
+            return back()->with('success_message', 'Transaction successfull. The ID is: ' . $transaction->id);
         } else {
             $errorString = "";
 
-            foreach($result->errors->deepAll() as $error) {
+            foreach ($result->errors->deepAll() as $error) {
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
 
             // $_SESSION["errors"] = $errorString;
             // header("Location: index.php");
-            return back()->withErrors('An errorr occurred with the message: '. $result->message);
-
+            return back()->withErrors('An errorr occurred with the message: ' . $result->message);
         }
     }
 }
