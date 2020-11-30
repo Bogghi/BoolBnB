@@ -28,7 +28,7 @@ main {
     }
 
       .searchbar {
-        
+
         #search-input {
           width:100%;
           color: $white;
@@ -41,11 +41,11 @@ main {
               border-radius: 50px;
               background-color: #fff;
               fill: $greenbnb;
-  
+
               &:focus {
                 border-color: $greenbnb;
               }
-          
+
               input.tt-search-box-input {
                 height: 40px;
                 padding: 3px 12px;
@@ -61,12 +61,12 @@ main {
                 fill: $greenbnb;
               }
             }
-          }  
+          }
         }
       }
   }
 
-    
+
 
   #sponsorizations {
 
@@ -86,18 +86,18 @@ main {
 
         /* Track */
         &::-webkit-scrollbar-track {
-          background: #fff; 
+          background: #fff;
         }
-        
+
         /* Handle */
         &::-webkit-scrollbar-thumb {
-          background: $greenbnb; 
+          background: $greenbnb;
           border-radius:10px;
         }
 
         /* Handle on hover */
         &::-webkit-scrollbar-thumb:hover {
-          background: $greenbnb; 
+          background: $greenbnb;
         }
 
       .sponsored-item {
@@ -107,7 +107,7 @@ main {
         width: 240px;
         background-size: cover;
         background-position: center;
-  
+
         img {
           width: 100%;
           border-radius: 10px;
@@ -115,12 +115,12 @@ main {
         }
       }
     }
-    
-    
+
+
   }
 
   #developers {
-          
+
     background-color: $bluebnb;
     border-bottom: 5px solid #fff;
     .developer {
@@ -128,10 +128,10 @@ main {
       flex-wrap: wrap;
 
       .pic {
-        
+
         margin-top: 30px;
         padding-bottom: 30px;
-  
+
         &:not(:last-child) {
           margin-right: 50px;
         }
@@ -139,14 +139,14 @@ main {
 
       .footer-img {
         width: 140px;
-   
+
       }
       .custom-social {
         color: $greenbnb;
         font-size: 40px;
         background-color: $white;
         padding: 10px;
-        
+
       }
     }
   }
@@ -156,7 +156,7 @@ main {
 // homepage main
 
 
-// Search 
+// Search
 
 .search-container {
 
@@ -166,22 +166,23 @@ main {
       height: calc(100vh - 78px);
       overflow-y: auto;
       .container-apartment{
-        height: 200px;
+        // height: 200px;
         position: relative;
 
         .search-image {
 
           padding: 10px;
-          
+
         }
         .info-apartment {
           .info-text {
             font-size: 13px;
           }
           .info-tag{
-            
+
             .list-info{
               list-style: none;
+              margin-bottom: 0px !important;
 
 
               li {
@@ -197,7 +198,7 @@ main {
           }
         }
       }
- 
+
     }
     .carousel-pers {
       margin-top: 100px;

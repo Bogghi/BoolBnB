@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Sponsorization;
+use App\View;
+use Illuminate\Support\Facades\Auth;
 
 class ApartmentController extends Controller
 {
     public function index() {
 
 
-      $active_sponsorizations = Sponsorization::where("end_date", ">", date("Y-m-d H:m:s"))->get();
+      $active_sponsorizations = Sponsorization::where("end_date", ">", date("Y-m-d H:i:s"))->get();
 
       $sponsored_apartments = [];
 
@@ -33,7 +35,21 @@ class ApartmentController extends Controller
 
       $apartment = Apartment::find($id);
 
+      $owner_id = $apartment->user_id;
+
+      $current_user_id = Auth::id();
+
+      if ($owner_id != $current_user_id) {
+
+        $newView = new View();
+
+        $newView->apartment_id = $id;
+        $newView->date = date("Y-m-d H:i:s");
+
+        $newView->save();
+
+      }
+
       return view('guests.show', compact('apartment'));
     }
 }
-

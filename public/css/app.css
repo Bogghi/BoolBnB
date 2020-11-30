@@ -11159,7 +11159,6 @@ main #developers .developer .custom-social {
 }
 
 .search-container .row .list-apartment .container-apartment {
-  height: 200px;
   position: relative;
 }
 
@@ -11173,6 +11172,7 @@ main #developers .developer .custom-social {
 
 .search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
   list-style: none;
+  margin-bottom: 0px !important;
 }
 
 .search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {

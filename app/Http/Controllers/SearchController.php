@@ -54,7 +54,7 @@ class SearchController extends Controller
 
       foreach ($all_apartments as $all_apartment) {
 
-        $active_sponsorization = count($all_apartment->sponsorizations->where("end_date", ">", date("Y-m-d H:m:s")));
+        $active_sponsorization = count($all_apartment->sponsorizations->where("end_date", ">", date("Y-m-d H:i:s")));
 
         if ($active_sponsorization != 0) {
 
