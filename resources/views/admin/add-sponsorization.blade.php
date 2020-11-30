@@ -57,7 +57,7 @@
 
     <script type="text/javascript">
 
-        var form = document.querySelector('#payment-form');
+        var form = document.querySelector('#hosted-form');
         var client_token = "{{ $token }}";
 
         braintree.dropin.create({
@@ -69,7 +69,6 @@
                 return;
             }
             form.addEventListener('submit', function (event) {
-                console.log("io non funziono");
                 event.preventDefault();
                 instance.requestPaymentMethod(function (err, payload) {
                     if (err) {
@@ -82,7 +81,7 @@
                     form.submit();
                 });
             });
-        });
+        });      
 
     </script>
 

@@ -121,8 +121,6 @@ class SponsorizationController extends Controller
      */
     private function checkout($request, $price){
 
-        dd($request);
-
         $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
@@ -131,7 +129,7 @@ class SponsorizationController extends Controller
         ]);
 
         $amount = $price;
-        $nonce = $reqest->payment_method_nonce;
+        $nonce = $request->payment_method_nonce;
 
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
