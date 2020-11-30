@@ -28,8 +28,8 @@
                                     <input name="beds_number" id="beds_number" class="form-control mb-2 m-sm-2" type="number">
                                     <label for="radius">search radius</label>
                                     <input name="radius" value="20" id="radius" class="form-control mb-2 m-sm-2" type="number">
-                                    
-                                    
+
+
                                 </div>
                             <button id="search-button" class="btn btn-primary">Cerca</button>
                         </div>
@@ -40,17 +40,17 @@
                         <h2 class="text-center py-5">Sponsorized</h2>
                         <div id="sponsorized-apartments">
 
-                        
-                            
+
+
                             @for ($i = 0; $i < 5 && $i < count($all_sponsorized_apartments); $i++)
-                                
-                            
+
+
                             <div class="d-flex flex-column">
                                     <?php
                                         $image = $all_sponsorized_apartments[$i]->cover_image;
                                         $pos = strpos($image, "placeholder");
-                            
-                                    ?> 
+
+                                    ?>
                                 <div class="d-flex border rounded  container-apartment">
                                     <?php if ($pos === false) {?>
                                     <div class="search-image">
@@ -63,7 +63,7 @@
                                     <?php }?>
                                     <div class="info-apartment d-flex flex-column">
 
-                                    
+
 
                                         <h5 class="text-center">{{$all_sponsorized_apartments[$i]->title}}</h5>
                                         <p class="pl-2 info-text">{{$all_sponsorized_apartments[$i]->description}}</p>
@@ -77,31 +77,31 @@
                                                     <div id="sponsorized">
                                                         <h4><span class="badge badge-success">Superhost</span></h4>
                                                         </div>
-                                                    
-                                                    
-                                                @endif 
-                                                
+
+
+                                                @endif
+
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
-                        
+
                         @endfor
                         </div>
                         <h2 class="text-center py-5">Risultati</h2>
                         <div id="searched-apartments">
 
-                        
-                            
+
+
                             @foreach ($apartments as $apartment)
-                                
+
                             <div class="d-flex flex-column">
                                     <?php
                                         $image = $apartment->cover_image;
                                         $pos = strpos($image, "placeholder");
-                            
-                                    ?> 
+
+                                    ?>
                                 <div class="d-flex border rounded container-apartment">
                                     <?php if ($pos === false) {?>
                                         <div class="search-image">
@@ -124,17 +124,17 @@
                                                 <li><p><span><i class="fas fa-circle"></i></span><small> Beds number:</small>  {{$apartment->beds_number}} </p></li>
                                                 <li><p><span><i class="fas fa-circle"></i></span><small> Square meters:</small> {{$apartment->square_meters}}</p></li>
                                             </ul>
-                                                @if (count($apartment->sponsorizations->where('end_date', '>', date('Y-m-d h:m:s'))) == 1)
+                                                @if (count($apartment->sponsorizations->where('end_date', '>', date('Y-m-d h:i:s'))) == 1)
                                                     <div id="sponsorized">
                                                         <h4><span class="badge badge-success ">Superhost</span></h4>
-                                                    </div>  
-                                                 @endif 
+                                                    </div>
+                                                 @endif
 
-                                            
+
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             @endforeach
@@ -178,5 +178,5 @@
 
         </div>
         {{-- fine container pagina --}}
-    </section>  
+    </section>
 @endsection

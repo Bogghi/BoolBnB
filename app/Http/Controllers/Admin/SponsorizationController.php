@@ -92,8 +92,8 @@ class SponsorizationController extends Controller
 
         $newSpn->apartment_id = $apartmentId;
         $newSpn->payment_plan_id = $paymentPlanId;
-        $newSpn->start_date = date("Y-m-d H:m:s");
-        $newSpn->end_date = date("Y-m-d H:m:s",strtotime("+{$payPlanInfo} hours"));
+        $newSpn->start_date = date("Y-m-d H:i:s");
+        $newSpn->end_date = date("Y-m-d H:i:s",strtotime("+{$payPlanInfo} hours"));
 
         $newSpn->save();
 
@@ -107,7 +107,7 @@ class SponsorizationController extends Controller
      * @return flase if there isn't a promo active
      */
     private function alreadyActive($aprId){
-        $now = date("Y-m-d H:m:s");
+        $now = date("Y-m-d H:i:s");
 
         $promoActive = DB::table('sponsorizations')
                            ->where('apartment_id',$aprId)
