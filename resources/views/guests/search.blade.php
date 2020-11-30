@@ -28,8 +28,8 @@
                                     <input name="beds_number" id="beds_number" class="form-control mb-2 m-sm-2" type="number">
                                     <label for="radius">search radius</label>
                                     <input name="radius" value="20" id="radius" class="form-control mb-2 m-sm-2" type="number">
-                                    
-                                    
+
+
                                 </div>
                             <button id="search-button" class="btn btn-primary">Cerca</button>
                         </div>
@@ -38,15 +38,15 @@
 
                     <div class="list-apartment">
                         <h2 class="text-center py-5">Sponsorized</h2>
-                        @for ($i = 0; $i < 5; $i++)
-                            
-                        
+                        @for ($i = 0; $i < 5 && $i < count($all_sponsorized_apartments); $i++)
+
+
                         <div class="d-flex flex-column">
                                 <?php
                                     $image = $all_sponsorized_apartments[$i]->cover_image;
                                     $pos = strpos($image, "placeholder");
-                        
-                                ?> 
+
+                                ?>
                             <div class="d-flex border rounded  container-apartment">
                                 <?php if ($pos === false) {?>
                                 <div class="search-image">
@@ -59,7 +59,7 @@
                                 <?php }?>
                                 <div class="info-apartment d-flex flex-column">
 
-                                
+
 
                                     <h5 class="text-center">{{$all_sponsorized_apartments[$i]->title}}</h5>
                                     <p class="pl-2 info-text">{{$all_sponsorized_apartments[$i]->description}}</p>
@@ -74,24 +74,24 @@
                                                     <h4><span class="badge badge-success">Superhost</span></h4>
                                                     </div>
                                                 @else
-                                                
-                                            @endif 
-                                            
+
+                                            @endif
+
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         @endfor
                         <h2 class="text-center py-5">Risultati</h2>
                         @foreach ($apartments as $apartment)
-                            
+
                         <div class="d-flex flex-column">
                                 <?php
                                     $image = $apartment->cover_image;
                                     $pos = strpos($image, "placeholder");
-                        
-                                ?> 
+
+                                ?>
                             <div class="d-flex border rounded container-apartment">
                                 <?php if ($pos === false) {?>
                                     <div class="search-image">
@@ -119,15 +119,15 @@
                                                 <h4><span class="badge badge-success ">Superhost</span></h4>
                                                 </div>
                                             @else
-                                                
-                                        @endif 
 
-                                        
+                                        @endif
+
+
                                     </div>
                                 </div>
                             </div>
-                            
-                        </div> 
+
+                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -168,5 +168,5 @@
 
         </div>
         {{-- fine container pagina --}}
-    </section>  
+    </section>
 @endsection

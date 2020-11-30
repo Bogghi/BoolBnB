@@ -56,7 +56,7 @@ class SearchController extends Controller
 
         $active_sponsorization = count($all_apartment->sponsorizations->where("end_date", ">", date("Y-m-d H:m:s")));
 
-        if ($active_sponsorization == 1) {
+        if ($active_sponsorization != 0) {
 
           $all_sponsorized_apartments[] = $all_apartment;
         }

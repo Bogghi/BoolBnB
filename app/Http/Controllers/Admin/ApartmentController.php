@@ -85,9 +85,6 @@ class ApartmentController extends Controller
             "public"
         );
 
-        // Metodo Danilo
-        // $pathstorage = Storage::disk('public')->put('images', $data['cover_image']);
-
         // Creation of a new apartment and add it to apartment's table.
         $user_id = Auth::id();
         $apartment = new apartment;
@@ -206,12 +203,23 @@ class ApartmentController extends Controller
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
+        // Save cover_image in the storage with original name.
+        $cover_image_name = $request->cover_image->getClientOriginalName();
+
+        $apartment_id = $id;
+
+        $path_cover_image = $request->cover_image->storeAs(
+            "images/" . $apartment_id,
+            $cover_image_name,
+            "public"
+        );
+
         $user_id = Auth::id();
         $apartment = Apartment::find($id);
         $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
-        $apartment->cover_image = $data['cover_image'];
+        $apartment->cover_image = $path_cover_image;
         $apartment->bathrooms_number = $data['bathrooms_number'];
         $apartment->beds_number = $data['beds_number'];
         $apartment->square_meters = $data['square_meters'];
@@ -221,9 +229,6 @@ class ApartmentController extends Controller
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
         $apartment->visibility = $data['visibility'];
-
-
-        $apartment_id = $apartment->id;
 
         if ($request->hasFile('images')) {
 
@@ -246,6 +251,7 @@ class ApartmentController extends Controller
             }
         }
 
+
         if (isset($data['services'])) {
             $apartment->services()->sync($data['services']);
           } else {
@@ -255,7 +261,7 @@ class ApartmentController extends Controller
           $apartment->update();
 
 
-        return redirect()->route('admin.show', $apartment);
+        return redirect()->route('admin.apartment.show', $apartment);
     }
 
     /**
