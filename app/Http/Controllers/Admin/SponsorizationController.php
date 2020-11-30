@@ -56,15 +56,15 @@ class SponsorizationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
         $data = $request->all();
         $newSpn = new Sponsorization;
         $userId = Auth::id();
         $paymentPlanId = $data["payment_plan_id"];
         $apartmentId = $data["apartment_id"];
         $payPlanInfo = PaymentPlan::find($paymentPlanId)->hours_duration;
-        $payAmaunt = PaymentPlan::find($paymentPlanId)->pirce;
-        
+        $payAmaunt = PaymentPlan::find($paymentPlanId)->price;
+
         $alreadyActive = $this->alreadyActive($apartmentId);
         $checkout = $this->checkout($request, $payAmaunt);
 
@@ -101,8 +101,8 @@ class SponsorizationController extends Controller
     }
 
     /**
-     * Check if the promo is already active 
-     * 
+     * Check if the promo is already active
+     *
      * @return true if a promo is already active
      * @return flase if there isn't a promo active
      */
@@ -121,7 +121,7 @@ class SponsorizationController extends Controller
     }
 
     /**
-     * Checkout handler 
+     * Checkout handler
      */
     private function checkout($request, $price){
 
@@ -146,19 +146,19 @@ class SponsorizationController extends Controller
         if ($result->success) {
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
-      
+
             return back()->with('success_message', 'Transaction successfull. The ID is: '. $transaction->id);
         } else {
             $errorString = "";
-      
+
             foreach($result->errors->deepAll() as $error) {
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
-      
+
             // $_SESSION["errors"] = $errorString;
             // header("Location: index.php");
             return back()->withErrors('An errorr occurred with the message: '. $result->message);
-      
+
         }
     }
 }
