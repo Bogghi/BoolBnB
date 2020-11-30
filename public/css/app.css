@@ -11220,7 +11220,22 @@ main #developers .developer .custom-social {
 }
 
 footer {
-  background-color: #00F087;
+  border-top: 3px solid #00F087;
+  height: 80px;
+}
+
+footer .modal-tr {
+  transition: 0.5s;
+}
+
+footer .hover {
+  color: white;
+}
+
+footer .hover:hover {
+  color: #00F087;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 footer .social-links .social-links-item {
@@ -11233,6 +11248,7 @@ footer .social-links .social-links-item i {
   color: #fff;
 }
 
+<<<<<<< HEAD
 .sponsorization h1 {
   padding-top: 20px;
   padding-bottom: 50px;
@@ -11359,5 +11375,9 @@ footer .social-links .social-links-item i {
 
 #search-results .list-apartment {
   height: calc(100vh - 350px);
+=======
+footer .social-links .social-links-item i:hover {
+  color: #00F087;
+>>>>>>> Footer
 }
 
