@@ -52,7 +52,7 @@
 
             <div class="d-flex border rounded  container-apartment">
 
-              @if ($pos === false) {
+              @if ($pos === false)
               <div class="search-image">
                 <img class="border rounded" width="180px" height="180px" src="{{asset('storage/'.$image)}}" alt="cover">
               </div>
@@ -104,7 +104,7 @@
 
             <div class="d-flex border rounded container-apartment">
 
-              @if ($pos === false) {
+              @if ($pos === false)
               <div class="search-image">
                 <img class="border rounded" width="180px" height="180px" src="{{asset('storage/'.$image)}}" alt="cover">
               </div>
