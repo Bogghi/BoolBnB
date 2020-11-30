@@ -60,4 +60,45 @@
         font-size: 20px;
         padding-bottom: 20px;
     }
+
+    .sbm-button {
+        background: $bluebnb;
+        color: $white;
+        border-radius: 5px;
+        border: 2px soldi $white;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        transition: background 0.4s;
+
+        &:hover {
+            background: $greenbnb;
+            color: $dark-gray;
+        }
+    }
+}
+
+.spn-error{
+
+    h1{
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .sbm-button {
+        background: $bluebnb;
+        color: $white;
+        border-radius: 5px;
+        border: 2px soldi $white;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        transition: background 0.4s;
+
+        &:hover {
+            background: $greenbnb;
+            color: $dark-gray;
+        }
+    }
+
 }

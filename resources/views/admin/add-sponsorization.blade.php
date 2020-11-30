@@ -38,7 +38,7 @@
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
 
                 <div class="d-flex justify-content-center align-items-center">
-                    <button type="submit" class="btn btn-primary">Salva</button>
+                    <button type="submit" class="sbm-button">Pay</button>
                 </div>
 
             </form>

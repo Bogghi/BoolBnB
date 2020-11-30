@@ -20,7 +20,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->group(function () {
     Route::resource('apartment', 'ApartmentController');
     Route::resource('sponsorization', 'SponsorizationController');
-    Route::post('checkout', 'PaymentsController@checkout');
 });
 
 

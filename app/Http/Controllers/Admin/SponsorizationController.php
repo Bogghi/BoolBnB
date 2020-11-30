@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Braintree\Gateway;
-use Braintree\PaymentMethodNonce;
 
 use App\PaymentPlan;
 use App\Sponsorization;
@@ -28,6 +27,11 @@ class SponsorizationController extends Controller
         //
         $payPlan = PaymentPlan::all();
         $id = $id->id;
+        $alreadyActive = $this->alreadyActive($id);
+
+        if($alreadyActive){
+            return view("errors.sponsorization");
+        }
 
         $gateway = new Gateway([
             'environment' => config('services.braintree.environment'),

@@ -11112,6 +11112,43 @@ footer .developer .custom-social {
   padding-bottom: 20px;
 }
 
+.sponsorization .sbm-button {
+  background: #001533;
+  color: white;
+  border-radius: 5px;
+  border: 2px soldi white;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  transition: background 0.4s;
+}
+
+.sponsorization .sbm-button:hover {
+  background: #00F087;
+  color: #5a5a5a;
+}
+
+.spn-error h1 {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.spn-error .sbm-button {
+  background: #001533;
+  color: white;
+  border-radius: 5px;
+  border: 2px soldi white;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  transition: background 0.4s;
+}
+
+.spn-error .sbm-button:hover {
+  background: #00F087;
+  color: #5a5a5a;
+}
+
 @media screen and (max-width: 400px) {
   .sponsorization .content .label.size {
     min-width: 100%;
