@@ -11191,7 +11191,22 @@ main #developers .developer .custom-social {
 }
 
 footer {
-  border-top: 2px solid #00F087;
+  border-top: 3px solid #00F087;
+  height: 80px;
+}
+
+footer .modal-tr {
+  transition: 0.5s;
+}
+
+footer .hover {
+  color: white;
+}
+
+footer .hover:hover {
+  color: #00F087;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 footer .social-links .social-links-item {
@@ -11202,5 +11217,9 @@ footer .social-links .social-links-item i {
   cursor: pointer;
   font-size: 40px;
   color: #fff;
+}
+
+footer .social-links .social-links-item i:hover {
+  color: #00F087;
 }
 

@@ -1,5 +1,21 @@
 footer {
-  border-top: 2px solid $greenbnb;
+  border-top: 3px solid $greenbnb;
+  height: 80px;
+  
+  .modal-tr{
+    transition: 0.5s;
+  }
+        
+  .hover{
+    color: white;
+      &:hover {
+      color: $greenbnb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  
+  
 
   .social-links {
     .social-links-item {
@@ -8,6 +24,11 @@ footer {
         cursor:pointer;
         font-size: 40px;
         color: #fff;
+
+        &:hover{
+          color: $greenbnb;
+        }
+      
       }
     }
   }

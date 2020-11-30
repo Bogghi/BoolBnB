@@ -1,21 +1,21 @@
-<footer class="py-5">
+<footer class="pt-3 bg-secondary text-white">
     <div class="container">
         {{-- Section-end with links to company and
         social-network--}}
+        <div class="d-flex flex-row flex-wrap align-items-center justify-content-between">
 
-        <div class="d-inline-flex flex-wrap justify-content-between align-self-center">
 
-
-            <p>© 2020 BoolBnB, Inc. All rights reserved</p>
 
             {{-- Privacy Policy --}}
-            <div class="mx-5">
+            <div class="d-flex">
+                <label class="mr-3">© 2020 BoolBnB, Inc. All rights reserved</label>
+
                 <!-- Button trigger modal -->
-                <a class="  text-decoration-none color-primary" data-toggle="modal"
-                    data-target="#staticBackdrop">Privacy Policy</a>
+                <a class="hover" data-toggle="modal" data-target="#staticBackdrop">Privacy Policy</a>
+
                 <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade color-primary modal-tr" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             {{-- title Modal --}}
@@ -116,6 +116,20 @@
             </div>
 
 
+            <div class="social-links d-flex">
+                <div class="social-links-item">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <div class="social-links-item">
+                    <i class="fab fa-twitter-square"></i>
+                </div>
+                <div class="social-links-item">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="social-links-item">
+                    <i class=" fab fa-youtube"></i>
+                </div>
+            </div>
 
         </div>
 
@@ -123,25 +137,8 @@
 
 
 
-        {{-- <div class="social-links d-flex justify-content-center mb-4">
-            <div class="social-links-item">
-                <i class="fab fa-facebook"></i>
-            </div>
-            <div class="social-links-item">
-                <i class="fab fa-twitter-square"></i>
-            </div>
-            <div class="social-links-item">
-                <i class="fab fa-instagram"></i>
-            </div>
-            <div class="social-links-item">
-                <i class="fab fa-youtube"></i>
-            </div>
-        </div>
 
-        <div class="copyright text-center text-white ">
-            <p class="mb-0">All rights reserved &copy; BoolBnB 2020</p>
-        </div>
-        --}}
+
     </div>
 
 </footer>
