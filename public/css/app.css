@@ -10995,7 +10995,6 @@ main .jumbo-home {
 
 main .jumbo-home .info-jumbo {
   padding-top: 8rem;
-  color: white;
 }
 
 main .jumbo-home .info-jumbo h1 {
@@ -11014,7 +11013,7 @@ main .jumbo-home .info-jumbo .btn-outline-primary:hover {
 
 main .jumbo-home .searchbar #search-input {
   width: 100%;
-  color: #fff;
+  color: white;
 }
 
 main .jumbo-home .searchbar #search-input .tt-search-box {
@@ -11152,6 +11151,58 @@ main #developers .developer .custom-social {
   font-size: 40px;
   background-color: white;
   padding: 10px;
+}
+
+.search-container .row .list-apartment {
+  height: calc(100vh - 78px);
+  overflow-y: auto;
+}
+
+.search-container .row .list-apartment .container-apartment {
+  height: 200px;
+  position: relative;
+}
+
+.search-container .row .list-apartment .container-apartment .search-image {
+  padding: 10px;
+}
+
+.search-container .row .list-apartment .container-apartment .info-apartment .info-text {
+  font-size: 13px;
+}
+
+.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
+  list-style: none;
+}
+
+.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {
+  font-size: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.search-container .row .carousel-pers {
+  margin-top: 100px;
+}
+
+#sponsorized {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+footer {
+  background-color: #00F087;
+}
+
+footer .social-links .social-links-item {
+  margin: 0 20px;
+}
+
+footer .social-links .social-links-item i {
+  cursor: pointer;
+  font-size: 40px;
+  color: #fff;
 }
 
 .sponsorization h1 {
