@@ -38,7 +38,7 @@
 
                     <div class="list-apartment">
                         <h2 class="text-center py-5">Sponsorized</h2>
-                        @for ($i = 0; $i < 20 && $i < count($all_sponsorized_apartments); $i++)
+                        @for ($i = 0; $i < 5 && $i < count($all_sponsorized_apartments); $i++)
 
 
                         <div class="d-flex flex-column">
