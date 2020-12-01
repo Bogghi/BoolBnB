@@ -11219,6 +11219,20 @@ main #developers .developer .custom-social {
   left: 10px;
 }
 
+#admin-index .rounded-personalized {
+  border-radius: 25px;
+}
+
+#admin-index .btn-personalized {
+  border-radius: 20px;
+  border-color: #001533;
+}
+
+#admin-index .btn-personalized:hover {
+  background-color: #001533;
+  color: white;
+}
+
 footer {
   border-top: 3px solid #00F087;
   height: 80px;
@@ -11248,7 +11262,10 @@ footer .social-links .social-links-item i {
   color: #fff;
 }
 
-<<<<<<< HEAD
+footer .social-links .social-links-item i:hover {
+  color: #00F087;
+}
+
 .sponsorization h1 {
   padding-top: 20px;
   padding-bottom: 50px;
@@ -11375,9 +11392,5 @@ footer .social-links .social-links-item i {
 
 #search-results .list-apartment {
   height: calc(100vh - 350px);
-=======
-footer .social-links .social-links-item i:hover {
-  color: #00F087;
->>>>>>> Footer
 }
 

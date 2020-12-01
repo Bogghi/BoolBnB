@@ -214,3 +214,23 @@ main {
   top: 0;
   left: 10px;
 }
+
+//search end
+
+//Index Admin
+
+#admin-index{
+
+    .rounded-personalized {
+      border-radius: 25px;
+    }
+    .btn-personalized {
+      border-radius: 20px;
+      border-color: $bluebnb;
+      &:hover {
+        background-color: $bluebnb;
+        color: $white;
+      }
+    }
+
+}
