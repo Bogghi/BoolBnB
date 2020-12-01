@@ -4,14 +4,14 @@
 
 @section('content')
     <div class="container margin-top ">
-        <h1>Your Apartments:</h1>
+        <h1 class="pl-3 pt-3">Your Apartments:</h1>
 
         {{-- Call to apartment's table and stamp apartment list of admin --}}
         @foreach ($apartments as $apartment)
 
             <div id="admin-index" class="container-fluid">
 
-                <div class="row shadow bg-light border-bottom">
+                <div class="row border-bottom">
 
                     <?php
                         $image = $apartment->cover_image;
@@ -19,7 +19,7 @@
                     ?> 
 
                     {{-- Cover Apartment --}}
-                    <div class="col-md-3 p-3 d-flex">
+                    <div class="col-md-2 p-3 d-flex">
                         <?php if ($pos === false) {?>
                             <img class="align-items-center card-img rounded-personalized my-2" src="{{asset('storage/'.$image)}}" alt="image">
                 
