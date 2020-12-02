@@ -44,7 +44,7 @@
                        <div  class="d-flex flex-wrap justify-content-end">
                             <a href="{{route('admin.apartment.show', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Show</a>
                             <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Edit</a>
-                            <a href="#" class="btn btn-outline-info mr-2 mb-2 btm-link">Statistic</a>
+                            <a href="{{route('admin.statistics',$apartment->id)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Statistic</a>
                             <a href="{{route('admin.sponsorization.create', ["id"=>$apartment->id])}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Sponsorization</a>
                         </div>
 

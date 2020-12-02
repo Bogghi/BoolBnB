@@ -42352,7 +42352,8 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
-    includes = _require.includes;
+    includes = _require.includes,
+    isNull = _require.isNull;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -42373,8 +42374,14 @@ var options = {
 };
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-document.getElementById("search-input").append(searchBoxHTML);
-$(".tt-search-box-input").attr("name", "search");
+var searchInput = document.getElementById("search-input");
+var element = $(".tt-search-box-input");
+
+if (isNull(element) && isNull(searchInput)) {
+  element.attr("name", "search");
+  searchInput.append(searchBoxHTML);
+}
+
 $("#search-button").click(function () {
   var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
 
@@ -42483,6 +42490,81 @@ function renderResults(data) {
     var html = template(context);
     $("#searched-apartments").append(html);
   }
+} // ------------------------------------------------------------------------------------------------------ //
+// ----------------------------------------------statistc section---------------------------------------- //
+
+
+var apartment_id = window.location.pathname.split('/').pop();
+$(function () {
+  $.ajax({
+    "url": "http://localhost:8000/api/statistics",
+    "data": {
+      "apartment_id": apartment_id
+    },
+    "method": "GET",
+    "success": function success(data) {
+      var views = data.totalViews;
+      var messages = data.totalMessages;
+      renderViews(views);
+      renderMessages(messages);
+    },
+    "error": function error(_error3) {
+      console.log(_error3);
+    }
+  });
+});
+
+function renderViews(views) {
+  var ctx = document.getElementById('chartjs-0').getContext('2d');
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Average Views',
+        borderColor: 'rgb(0, 240, 135)',
+        pointBackgroundColor: 'rgb(0, 21, 51)',
+        pointRadius: 5,
+        fill: 'false',
+        data: views // data: [0, 0.7, 5, 2, 20, 30, 45,0, 10, 5, 2, 20, 30, 45]
+
+      }]
+    },
+    // Configuration options go here
+    options: {
+      responsive: false
+    }
+  });
+}
+
+function renderMessages(messages) {
+  var ctx = document.getElementById('myChart').getContext('2d');
+  Chart.defaults.global.elements.rectangle.backgroundColor = 'rgba(0, 240, 135, 0.2)';
+  Chart.defaults.global.elements.rectangle.borderColor = 'rgba(0, 21, 51, 1)';
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Average Messaggess',
+        data: messages,
+        // data: [12, 10, 3, 5, 2, 3, 12, 10, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      },
+      responsive: false
+    }
+  });
 }
 
 /***/ }),
@@ -42550,8 +42632,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\lored\desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\lored\desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
