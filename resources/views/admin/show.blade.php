@@ -1,7 +1,9 @@
 @extends("layouts.guests")
 
 @section('content')
+<section id="show">
   <div class="container">
+    {{-- row title  --}}
     <div class="row">
       <div class="col-12 d-flex pt-4">
         <h1>{{$apartment->title}}</h1>
@@ -10,7 +12,9 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    {{-- row title  --}}
+    {{-- row carousel  --}}
+    <div class="row mb-5">
       <div class="col-12">
         {{-- carousel --}}
         <div id="carousel-show" class="carousel slide" data-pause="carousel">
@@ -62,6 +66,30 @@
         {{-- carousel --}}
       </div>
     </div>
-  </div>
+    {{-- row carousel  --}}
+    {{-- row info --}}
+    <div class="row mb-5">
+      <div class="col-12 col-md-7 border-pers">
+        <h2 class="py-2">Description</h2>
+        <p>{{$apartment->description}}</p>
+      </div>
+      <div class="col-5 col-md-5 services">
+        <h2>Services</h2>
+        <ul class="d-flex flex-column flex-wrap">
+          @foreach ($apartment->services as $service)
+          <li><i class="fas fa-circle dot-pers mr-2"></i>{{$service->name}}</li>
+          @endforeach
+        </ul>
+      </div>
+      <div class="col-7 col-md-6 map-container">
 
+      </div>
+      <div class="col-12 col-md-6">
+        <h2>Messaggi ricevuti</h2>
+      </div>
+
+
+    </div>
+  </div>
+</section>
 @endsection

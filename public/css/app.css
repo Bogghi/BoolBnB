@@ -11257,10 +11257,63 @@ main #developers .developer .custom-social {
   }
 }
 
-#carousel-show .carousel-item .test {
+#show #carousel-show .carousel-item .test {
   height: 500px;
   background-position: center;
   background-size: cover;
+}
+
+#show .border-pers {
+  border-right: 2px ridge #001533;
+}
+
+#show .services h2 {
+  margin-left: 2rem;
+}
+
+#show .services ul {
+  list-style: none;
+  height: 75px;
+}
+
+#show .services ul li {
+  cursor: default;
+}
+
+#show .services ul li .dot-pers {
+  color: #001533;
+  transition: 0.5s;
+}
+
+#show .services ul li:hover .dot-pers {
+  color: #00F087;
+}
+
+#show .map-container {
+  border: 1px solid red;
+  height: 500px;
+}
+
+@media (max-width: 765px) {
+  #show .border-pers {
+    border-right: none;
+    border-bottom: 2px ridge #001533;
+    margin-bottom: 2rem;
+  }
+
+  #show .services h2 {
+    margin-left: 0;
+  }
+
+  #show .services ul {
+    margin-left: -3rem;
+    height: 400px;
+  }
+
+  #show .services ul li {
+    padding-bottom: 10px;
+    padding-right: 2rem;
+  }
 }
 
 footer {
