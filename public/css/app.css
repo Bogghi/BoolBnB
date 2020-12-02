@@ -11257,6 +11257,12 @@ main #developers .developer .custom-social {
   }
 }
 
+#carousel-show .carousel-item .test {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
 footer {
   border-top: 3px solid #00F087;
   height: 80px;
