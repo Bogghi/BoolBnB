@@ -1,6 +1,12 @@
 @import 'Partials/variables';
 body {
   font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+ 
+}
+
+.margin-top{
+  margin-top: 75px;
 }
 
 .color-primary {
@@ -33,3 +39,24 @@ body {
     transition: 0.5s;
   }
 }
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $greenbnb; 
+  border-radius:10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $greenbnb; 
+}
+

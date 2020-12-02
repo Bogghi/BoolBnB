@@ -51,7 +51,11 @@
 
         <a class="btn btn-info my-4 px-5 mx-auto d-block background-color-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza questo appartamento</a>
 
-        
+        <form action="{{route('admin.apartment.destroy', $apartment->id)}}" method="POST">
+          @method('DELETE')
+          @csrf
+          <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+        </form>
   
       </div>
 

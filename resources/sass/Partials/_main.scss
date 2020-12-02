@@ -1,30 +1,256 @@
 main {
-  min-height: calc(100vh - 80px) ;
+  min-height: $main-heigth;
+  margin-top: 80px;
 
-  #hero {
-    height: 400px;
-  }
   .jumbo-home {
-    height: 450px;
+    height: 600px;
+    background-image: url("/img/jumbo-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     .info-jumbo {
       padding-top: $spacer * 8;
+
+      h1 {
+        font-weight: 700;
+      }
+
       .btn-outline-primary {
-        border-color: $bluebnb;
-        color: $bluebnb;
+        border-color: $white;
+        color: $white;
+
         &:hover {
-          background-color: $bluebnb;
-          color: $white;
+          background-color: $white;
+          color: $black;
         }
+      }
+    }
+
+      .searchbar {
+
+        #search-input {
+          width:100%;
+          color: $white;
+
+          .tt-search-box {
+            background: none;
+
+            .tt-search-box-input-container {
+              padding: 10px 20px;
+              border-radius: 50px;
+              background-color: #fff;
+              fill: $greenbnb;
+
+              &:focus {
+                border-color: $greenbnb;
+              }
+
+              input.tt-search-box-input {
+                height: 40px;
+                padding: 3px 12px;
+                font-size: 20px;
+                color: $bluebnb;
+              }
+            }
+
+            .tt-search-box-close-icon {
+              fill: $bluebnb;
+
+              &:hover {
+                fill: $greenbnb;
+              }
+            }
+          }
+        }
+      }
+  }
+
+
+
+  #sponsorizations {
+
+    background-color: #fff;
+
+    h2 {
+      color: $bluebnb;
+      font-weight: 700;
+    }
+
+    .container-fluid {
+      overflow-x: scroll;
+      /* width */
+        &::-webkit-scrollbar {
+          height: 8px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: #fff;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $greenbnb;
+          border-radius:10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: $greenbnb;
+        }
+
+      .sponsored-item {
+        margin: 0 10px 20px;
+        border-radius: 5px;
+        height: 160px;
+        width: 240px;
+        background-size: cover;
+        background-position: center;
+
+        img {
+          width: 100%;
+          border-radius: 10px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+      }
+    }
+
+
+  }
+
+  #developers {
+
+    background-color: $bluebnb;
+    border-bottom: 5px solid #fff;
+    .developer {
+      height: 100%;
+      flex-wrap: wrap;
+
+      .pic {
+
+        margin-top: 30px;
+        padding-bottom: 30px;
+
+        &:not(:last-child) {
+          margin-right: 50px;
+        }
+      }
+
+      .footer-img {
+        width: 140px;
+
+      }
+      .custom-social {
+        color: $greenbnb;
+        font-size: 40px;
+        background-color: $white;
+        padding: 10px;
+
       }
     }
   }
 
-  #sponsorizations {
-    background-color: $greenbnb;
-    height: 400px;
-    .sponsored {
-      width: 13rem;
-      height: 13rem;
+}
+
+// homepage main
+
+
+// Search
+
+.search-container {
+
+  .row {
+
+    .list-apartment{
+      height: calc(100vh - 78px);
+      overflow-y: auto;
+      .container-apartment{
+        // height: 200px;
+        position: relative;
+
+        .search-image {
+
+          padding: 10px;
+
+        }
+        .info-apartment {
+          .info-text {
+            font-size: 13px;
+          }
+          .info-tag{
+
+            .list-info{
+              list-style: none;
+              margin-bottom: 0px !important;
+
+
+              li {
+                span {
+                  font-size: 10px;
+                  padding-right: 10px;
+                  padding-left: 10px;
+                }
+              }
+
+            }
+
+          }
+        }
+      }
+
+    }
+    .carousel-pers {
+      margin-top: 100px;
+    }
+
+
+
+  }
+}
+
+#sponsorized {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+//search end
+
+//Index Admin
+.title-pers{
+  color: $bluebnb !important;
+}
+#admin-index{
+
+
+    .rounded-personalized {
+      border-radius: 25px;
+      max-height: 150px;
+      max-width: 150px;
+      background-position: center;
+      background-size: cover;
+    }
+    .link-personalized {
+      justify-content: flex-end;
+    
+    .btn-personalized {
+      border-radius: 20px;
+      border-color: $bluebnb;
+      &:hover {
+        background-color: $bluebnb;
+        color: $white;
+      }
     }
   }
+    @media (max-width: 765px) {
+      .link-personalized {
+        justify-content: center;
+      }
+      .rounded-personalized {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+      }
+    }
 }

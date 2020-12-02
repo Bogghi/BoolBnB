@@ -1,24 +1,49 @@
 header {
   height: 80px;
   border-bottom: 2px solid $bluebnb;
-
+ 
   .navbar {
-    // height: 100%;
+    
+    height: 100%;
 
     .logo {
       img#logo {
-        width: 130px;
+        width: 200px;
       }
     }
 
     .navbar-nav {
-      a {
+
+      .nav-link {
+
         font-weight: 700;
+        color: $bluebnb;
+
+        &:hover {
+          color: $greenbnb;
+        }
       }
+
+      .nav-link.btn {
+        background-color: $bluebnb;
+        color: #fff;
+        &:hover {
+          background-color: $greenbnb;
+        }
+      }
+
+      
     }
+  }
+
+  .drop-right{
+    transform: translate(0px, 5px);
+    left: auto;
+    border-color: $greenbnb;
   }
 
   .zindex{
     z-index: 1;
   }
+  
 }

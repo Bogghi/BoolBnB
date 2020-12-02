@@ -1,0 +1,104 @@
+.sponsorization{
+
+    h1{
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .plan-container {
+        display: flex;
+    }
+    
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 33%;
+        padding: 5px;
+        
+        .label{
+            background: linear-gradient(43deg, rgb(0, 21, 51) 0%, rgb(0, 21, 51) 1%, rgb(0, 240, 135) 100%);
+            border-radius: 20px;
+            color: $white;
+            text-align: center;
+            
+            &.size{
+                min-width: $btn-size;
+
+                &:after{
+                    content: "";  
+                    display: block;
+                    padding-bottom: 100%;
+                }
+            }
+
+            #hours {
+                font-size: 60px;
+                font-weight: bold;
+            }
+    
+            #price {
+                font-size: 20px;
+                color: $gray;
+            }
+            
+        }
+        
+    
+        .radio {
+            height: 40px;
+            width: 100%;
+            
+            input {
+                transform: translateX(100%);
+                background-color: $greenbnb;
+            }
+        }
+    }
+
+    .desc {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    .sbm-button {
+        background: $bluebnb;
+        color: $white;
+        border-radius: 5px;
+        border: 2px soldi $white;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        transition: background 0.4s;
+
+        &:hover {
+            background: $greenbnb;
+            color: $dark-gray;
+        }
+    }
+}
+
+.spn-error{
+
+    h1{
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .sbm-button {
+        background: $bluebnb;
+        color: $white;
+        border-radius: 5px;
+        border: 2px soldi $white;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        transition: background 0.4s;
+
+        &:hover {
+            background: $greenbnb;
+            color: $dark-gray;
+        }
+    }
+
+}

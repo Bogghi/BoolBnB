@@ -22,8 +22,9 @@ class MessageController extends Controller
       $newMessage->apartment_id = $id;
       $newMessage->email = $data["email"];
       $newMessage->content = $data["content"];
+      $newMessage->date = date('Y-m-d H:i:s');
 
       $newMessage->save();
       return redirect()->route('apartment.show', $id);
-    } 
+    }
 }

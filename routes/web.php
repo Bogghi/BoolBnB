@@ -20,6 +20,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->group(function () {
     Route::resource('apartment', 'ApartmentController');
     Route::resource('sponsorization', 'SponsorizationController');
+    Route::delete('/image/{id}', 'ImageController@destroy')->name("image.destroy");
+    Route::get('/statistics/{id}', 'StatisticController@index')->name("statistics");
 });
 
 
@@ -27,5 +29,8 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->
 Route::get('/', 'ApartmentController@index')->name('homepage');
 Route::get('/show/{id}', 'ApartmentController@show')->name('apartment.show');
 
-//Route for store the message.
+//  Route for store the message.
 Route::post('/message/{id}', 'MessageController@store')->name('message.store');
+
+//  Route for search controller
+Route::post('/search', 'SearchController@search')->name('search');
