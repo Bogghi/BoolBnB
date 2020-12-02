@@ -177,13 +177,12 @@ function renderViews(views){
               pointRadius: 5,
               fill: 'false',
               data: views
-              // data: [0, 0.7, 5, 2, 20, 30, 45,0, 10, 5, 2, 20, 30, 45]
           }]
       },
 
       // Configuration options go here
       options: {
-          responsive: false
+
       }
   });
 }
@@ -200,7 +199,6 @@ function renderMessages(messages){
           datasets: [{
               label: 'Average Messages',
               data: messages,
-              // data: [12, 10, 3, 5, 2, 3, 12, 10, 3, 5, 2, 3],
               borderWidth: 1
           }]
       },
@@ -211,8 +209,7 @@ function renderMessages(messages){
                       beginAtZero: true
                   }
               }]
-          },
-          responsive: false
+          }
       },
   });
 }
