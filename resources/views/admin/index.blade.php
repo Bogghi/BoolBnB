@@ -38,11 +38,11 @@
                             <p class="card-text"><small class="text-muted">Created on {{$apartment->created_at->format('d-m-Y')}}.</small></p>
                         </div>
                         {{-- {{-- bottom for link pages --}}
-                       <div  class="d-flex flex-wrap justify-content-end">
-                            <a href="{{route('admin.apartment.show', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Show</a>
-                            <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Edit</a>
-                            <a href="{{route('admin.statistics',$apartment->id)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Statistic</a>
-                            <a href="{{route('admin.sponsorization.create', ["id"=>$apartment->id])}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Sponsorization</a>
+                        <div  class="d-flex flex-wrap link-personalized mb-1">
+                            <a href="{{route('admin.apartment.show', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Show</a>
+                            <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Edit</a>
+                            <a href="{{route('admin.statistics',$apartment->id)}}" class="btn-personalized btn mr-2 mb-2">Statistic</a>
+                            <a href="{{route('admin.sponsorization.create', ["id"=>$apartment->id])}}" class="btn-personalized btn mr-2 mb-2">Sponsorization</a>
                         </div>
 
                     </div>
