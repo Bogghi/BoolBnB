@@ -42361,206 +42361,204 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
-var options = {
-  searchOptions: {
-    key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-    language: 'en-GB',
-    limit: 5
-  },
-  autocompleteOptions: {
-    key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-    language: 'it-IT'
-  }
-};
-var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
-var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-var searchInput = document.getElementById("search-input");
-var element = $(".tt-search-box-input");
+if (window.location.pathname == '/' || window.location.pathname == '/search') {
+  var renderSponsorized = function renderSponsorized(data) {
+    $("#sponsorized-apartments").empty();
+    var source = $("#search-result-template").html();
+    var template = Handlebars.compile(source);
+    var sponsorized = data.all_sponsorized_apartments;
 
-if (isNull(element) && isNull(searchInput)) {
-  element.attr("name", "search");
-  searchInput.append(searchBoxHTML);
-}
+    for (var i = 0; i < 5 && i < sponsorized.length; i++) {
+      context = {
+        "sponsorized": true,
+        "cover_image": sponsorized[i].cover_image,
+        "title": sponsorized[i].title,
+        "description": sponsorized[i].description,
+        "address": sponsorized[i].address,
+        "beds_number": sponsorized[i].beds_number,
+        "square_meters": sponsorized[i].square_meters
+      };
 
-$("#search-button").click(function () {
-  var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
+      if (!sponsorized[i].cover_image.includes("placeholder")) {
+        context.asset = true;
+      }
 
-  $.ajax({
-    "url": 'https://api.tomtom.com/search/2/geocode/' + userInput + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-    "method": "GET",
-    "success": function success(data) {
-      var latitude = data.results[0].position.lat;
-      var longitude = data.results[0].position.lon;
-      var rooms = $("#rooms_number").val();
-      var beds = $("#beds_number").val();
-      var radius = $("#radius").val();
-      var services = "";
-      $(".services").each(function () {
-        if (this.checked) {
-          services += this.value + ",";
-        }
-      }); // seconda funzione ajax
+      ;
+      var html = template(context);
+      $("#sponsorized-apartments").append(html);
+    }
+  };
 
-      $.ajax({
-        "url": "http://localhost:8000/api/search",
-        "data": {
-          "latitude": latitude,
-          "longitude": longitude,
-          "radius": radius,
-          "rooms": rooms,
-          "beds": beds,
-          "services": services
-        },
-        "method": "GET",
-        "success": function success(data) {
-          console.log(data);
-          renderSponsorized(data);
-          renderResults(data);
-        },
-        "error": function error(_error) {
-          console.log(_error);
-        }
-      }); // seconda funzione ajax
+  var renderResults = function renderResults(data) {
+    $("#searched-apartments").empty();
+    var source = $("#search-result-template").html();
+    var template = Handlebars.compile(source);
+    var apartments = data.matched_apartments;
+    var sponsorized = data.all_sponsorized_apartments;
+    var sponsorizedIds = [];
+
+    for (var i = 0; i < sponsorized.length; i++) {
+      sponsorizedIds.push(sponsorized[i].id);
+    }
+
+    for (var i = 0; i < apartments.length; i++) {
+      context = {
+        "cover_image": apartments[i].cover_image,
+        "title": apartments[i].title,
+        "description": apartments[i].description,
+        "address": apartments[i].address,
+        "beds_number": apartments[i].beds_number,
+        "square_meters": apartments[i].square_meters
+      };
+
+      if (!apartments[i].cover_image.includes("placeholder")) {
+        context.asset = true;
+      }
+
+      ;
+
+      if (sponsorizedIds.includes(apartments[i].id)) {
+        context.sponsorized = true;
+      }
+
+      var html = template(context);
+      $("#searched-apartments").append(html);
+    }
+  };
+
+  var options = {
+    searchOptions: {
+      key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+      language: 'en-GB',
+      limit: 5
     },
-    "error": function error(_error2) {
-      console.log(_error2);
+    autocompleteOptions: {
+      key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+      language: 'it-IT'
     }
-  }); // prima funziona ajax
-});
+  };
+  var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+  var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+  document.getElementById("search-input").append(searchBoxHTML);
+  $(".tt-search-box-input").attr("name", "search");
+  $("#search-button").click(function () {
+    var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
 
-function renderSponsorized(data) {
-  $("#sponsorized-apartments").empty();
-  var source = $("#search-result-template").html();
-  var template = Handlebars.compile(source);
-  var sponsorized = data.all_sponsorized_apartments;
+    $.ajax({
+      "url": 'https://api.tomtom.com/search/2/geocode/' + userInput + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+      "method": "GET",
+      "success": function success(data) {
+        var latitude = data.results[0].position.lat;
+        var longitude = data.results[0].position.lon;
+        var rooms = $("#rooms_number").val();
+        var beds = $("#beds_number").val();
+        var radius = $("#radius").val();
+        var services = "";
+        $(".services").each(function () {
+          if (this.checked) {
+            services += this.value + ",";
+          }
+        }); // seconda funzione ajax
 
-  for (var i = 0; i < 5 && i < sponsorized.length; i++) {
-    context = {
-      "sponsorized": true,
-      "cover_image": sponsorized[i].cover_image,
-      "title": sponsorized[i].title,
-      "description": sponsorized[i].description,
-      "address": sponsorized[i].address,
-      "beds_number": sponsorized[i].beds_number,
-      "square_meters": sponsorized[i].square_meters
-    };
-
-    if (!sponsorized[i].cover_image.includes("placeholder")) {
-      context.asset = true;
-    }
-
-    ;
-    var html = template(context);
-    $("#sponsorized-apartments").append(html);
-  }
-}
-
-function renderResults(data) {
-  $("#searched-apartments").empty();
-  var source = $("#search-result-template").html();
-  var template = Handlebars.compile(source);
-  var apartments = data.matched_apartments;
-  var sponsorized = data.all_sponsorized_apartments;
-  var sponsorizedIds = [];
-
-  for (var i = 0; i < sponsorized.length; i++) {
-    sponsorizedIds.push(sponsorized[i].id);
-  }
-
-  for (var i = 0; i < apartments.length; i++) {
-    context = {
-      "cover_image": apartments[i].cover_image,
-      "title": apartments[i].title,
-      "description": apartments[i].description,
-      "address": apartments[i].address,
-      "beds_number": apartments[i].beds_number,
-      "square_meters": apartments[i].square_meters
-    };
-
-    if (!apartments[i].cover_image.includes("placeholder")) {
-      context.asset = true;
-    }
-
-    ;
-
-    if (sponsorizedIds.includes(apartments[i].id)) {
-      context.sponsorized = true;
-    }
-
-    var html = template(context);
-    $("#searched-apartments").append(html);
-  }
+        $.ajax({
+          "url": "http://localhost:8000/api/search",
+          "data": {
+            "latitude": latitude,
+            "longitude": longitude,
+            "radius": radius,
+            "rooms": rooms,
+            "beds": beds,
+            "services": services
+          },
+          "method": "GET",
+          "success": function success(data) {
+            console.log(data);
+            renderSponsorized(data);
+            renderResults(data);
+          },
+          "error": function error(_error) {
+            console.log(_error);
+          }
+        }); // seconda funzione ajax
+      },
+      "error": function error(_error2) {
+        console.log(_error2);
+      }
+    }); // prima funziona ajax
+  });
 } // ------------------------------------------------------------------------------------------------------ //
 // ----------------------------------------------statistc section---------------------------------------- //
 
 
-var apartment_id = window.location.pathname.split('/').pop();
-$(function () {
-  $.ajax({
-    "url": "http://localhost:8000/api/statistics",
-    "data": {
-      "apartment_id": apartment_id
-    },
-    "method": "GET",
-    "success": function success(data) {
-      var views = data.averageViews;
-      var messages = data.averageMessages;
-      renderViews(views);
-      renderMessages(messages);
-      $('#total-views').text(data.totalViews);
-      $('#total-messages').text(data.totalMessages);
-    },
-    "error": function error(_error3) {
-      console.log(_error3);
-    }
-  });
-});
-
-function renderViews(views) {
-  var ctx = document.getElementById('chartjs-0').getContext('2d');
-  var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-    // The data for our dataset
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      datasets: [{
-        label: 'Average Views',
-        borderColor: 'rgb(0, 240, 135)',
-        pointBackgroundColor: 'rgb(0, 21, 51)',
-        pointRadius: 5,
-        fill: 'false',
-        data: views
-      }]
-    },
-    // Configuration options go here
-    options: {}
-  });
-}
-
-function renderMessages(messages) {
-  var ctx = document.getElementById('myChart').getContext('2d');
-  Chart.defaults.global.elements.rectangle.backgroundColor = 'rgba(0, 240, 135, 0.2)';
-  Chart.defaults.global.elements.rectangle.borderColor = 'rgba(0, 21, 51, 1)';
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      datasets: [{
-        label: 'Average Messages',
-        data: messages,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
+if (window.location.pathname.includes("statistics")) {
+  var renderViews = function renderViews(views) {
+    var ctx = document.getElementById('chartjs-0').getContext('2d');
+    var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+      // The data for our dataset
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Average Views',
+          borderColor: 'rgb(0, 240, 135)',
+          pointBackgroundColor: 'rgb(0, 21, 51)',
+          pointRadius: 5,
+          fill: 'false',
+          data: views
         }]
+      },
+      // Configuration options go here
+      options: {}
+    });
+  };
+
+  var renderMessages = function renderMessages(messages) {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    Chart.defaults.global.elements.rectangle.backgroundColor = 'rgba(0, 240, 135, 0.2)';
+    Chart.defaults.global.elements.rectangle.borderColor = 'rgba(0, 21, 51, 1)';
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Average Messages',
+          data: messages,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
       }
-    }
+    });
+  };
+
+  var apartment_id = window.location.pathname.split('/').pop();
+  $(function () {
+    $.ajax({
+      "url": "http://localhost:8000/api/statistics",
+      "data": {
+        "apartment_id": apartment_id
+      },
+      "method": "GET",
+      "success": function success(data) {
+        var views = data.averageViews;
+        var messages = data.averageMessages;
+        renderViews(views);
+        renderMessages(messages);
+        $('#total-views').text(data.totalViews);
+        $('#total-messages').text(data.totalMessages);
+      },
+      "error": function error(_error3) {
+        console.log(_error3);
+      }
+    });
   });
 }
 
@@ -42629,8 +42627,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

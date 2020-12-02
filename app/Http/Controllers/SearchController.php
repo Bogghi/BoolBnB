@@ -9,6 +9,7 @@ use App\Service;
 class SearchController extends Controller
 {
     public function search(Request $request) {
+
       $services = Service::all();
       $data = $request->all();
       $request->validate([
