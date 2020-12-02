@@ -1,6 +1,7 @@
 header.jumbo-header {
 
   .searchbar {
+    height: 62px;
 
     #search-input {
       position: relative;
@@ -26,7 +27,7 @@ header.jumbo-header {
             padding: 3px 80px 3px 12px;
             font-size: 20px;
             color: $bluebnb;
-            transition: width 1s;
+            transition: width 0.6s;
 
             &:focus ~ .search-btn {
               width: 45px;
@@ -76,8 +77,12 @@ header.jumbo-header {
       outline: 0;
       border: none;
       border-radius: 30px;
-      transition: width 1s, border-radius 1s;
+      transition: width 0.6s, border-radius 0.6s;
     }
+  }
+
+  .searchbar.searchbar-nav {
+    margin-top: 0;
   }
 }
 

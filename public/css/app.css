@@ -11007,10 +11007,19 @@ header.jumbo-header .jumbo-content .cta a {
   color: #00F087;
 }
 
+header.jumbo-header .jumbo-content .cta.searchbar-margin {
+  margin-top: 82px;
+}
+
+header.margin-fixed > .container {
+  padding-top: 80px;
+}
+
 .navbar {
   height: 80px;
   padding: 0;
   padding: 20px 0;
+  transition: all 0.4s;
 }
 
 .navbar .logo img#logo {
@@ -11035,6 +11044,17 @@ header.jumbo-header .jumbo-content .cta a {
   background-color: #00F087;
 }
 
+.navbar-fixed {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+}
+
+.navbar-fixed .navbar-nav .nav-link {
+  color: #001533;
+}
+
 .drop-right {
   transform: translate(0px, 5px);
   left: auto;
@@ -11043,6 +11063,10 @@ header.jumbo-header .jumbo-content .cta a {
 
 .zindex {
   z-index: 1;
+}
+
+header.jumbo-header .searchbar {
+  height: 62px;
 }
 
 header.jumbo-header .searchbar #search-input {
@@ -11072,7 +11096,7 @@ header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input
   padding: 3px 80px 3px 12px;
   font-size: 20px;
   color: #001533;
-  transition: width 1s;
+  transition: width 0.6s;
 }
 
 header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
@@ -11127,7 +11151,11 @@ header.jumbo-header .searchbar .search-btn {
   outline: 0;
   border: none;
   border-radius: 30px;
-  transition: width 1s, border-radius 1s;
+  transition: width 0.6s, border-radius 0.6s;
+}
+
+header.jumbo-header .searchbar.searchbar-nav {
+  margin-top: 0;
 }
 
 main {

@@ -138,3 +138,31 @@ function renderResults(data) {
     $("#searched-apartments").append(html);
   }
 }
+
+var searchbarOffsetTop = $(".searchbar").offset().top;
+
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 0) {
+    $(".navbar").addClass("navbar-fixed");
+    $("header").addClass("margin-fixed");
+    $("#logo").attr("src", "/img/boolbnb-logo-dark.svg");
+
+
+  } else {
+    $(".navbar").removeClass("navbar-fixed");
+    $("header").removeClass("margin-fixed");
+    $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
+  }
+
+  if ($(window).scrollTop() > (searchbarOffsetTop - 40)) {
+    $("header .logo").after($(".searchbar"));
+    $(".cta").addClass("searchbar-margin");
+    $(".searchbar").addClass("searchbar-nav");
+  } else {
+    $("header .jumbo-text").after($(".searchbar"));
+    $(".cta").removeClass("searchbar-margin");
+    $(".searchbar").removeClass("searchbar-nav");
+
+  }
+});

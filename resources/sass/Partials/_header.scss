@@ -32,6 +32,17 @@ header.jumbo-header {
       a {
         color: $greenbnb;
       }
+
+      &.searchbar-margin {
+        margin-top: 82px;
+      }
     }
+  }
+
+}
+
+header.margin-fixed {
+  & > .container {
+    padding-top: 80px;
   }
 }
