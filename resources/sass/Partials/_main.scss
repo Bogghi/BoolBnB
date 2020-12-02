@@ -218,12 +218,22 @@ main {
 //search end
 
 //Index Admin
-
+.title-pers{
+  color: $bluebnb !important;
+}
 #admin-index{
+
 
     .rounded-personalized {
       border-radius: 25px;
+      max-height: 150px;
+      max-width: 150px;
+      background-position: center;
+      background-size: cover;
     }
+    .link-personalized {
+      justify-content: flex-end;
+    
     .btn-personalized {
       border-radius: 20px;
       border-color: $bluebnb;
@@ -232,5 +242,15 @@ main {
         color: $white;
       }
     }
-
+  }
+    @media (max-width: 765px) {
+      .link-personalized {
+        justify-content: center;
+      }
+      .rounded-personalized {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+      }
+    }
 }

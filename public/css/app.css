@@ -11219,18 +11219,42 @@ main #developers .developer .custom-social {
   left: 10px;
 }
 
-#admin-index .rounded-personalized {
-  border-radius: 25px;
+.title-pers {
+  color: #001533 !important;
 }
 
-#admin-index .btn-personalized {
+#admin-index .rounded-personalized {
+  border-radius: 25px;
+  max-height: 150px;
+  max-width: 150px;
+  background-position: center;
+  background-size: cover;
+}
+
+#admin-index .link-personalized {
+  justify-content: flex-end;
+}
+
+#admin-index .link-personalized .btn-personalized {
   border-radius: 20px;
   border-color: #001533;
 }
 
-#admin-index .btn-personalized:hover {
+#admin-index .link-personalized .btn-personalized:hover {
   background-color: #001533;
   color: white;
+}
+
+@media (max-width: 765px) {
+  #admin-index .link-personalized {
+    justify-content: center;
+  }
+
+  #admin-index .rounded-personalized {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+  }
 }
 
 footer {
