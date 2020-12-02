@@ -18,7 +18,7 @@ class ViewsTableSeeder extends Seeder
 
         foreach ($apartments as $apartment) {
 
-          $numberViews = rand(0, 50);
+          $numberViews = rand(50, 300);
 
           for ($i=0; $i < $numberViews; $i++) {
 

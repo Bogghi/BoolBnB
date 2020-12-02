@@ -22,7 +22,7 @@
                 pointBackgroundColor: 'rgb(0, 21, 51)',
                 pointRadius: 5,
                 fill: 'false',
-                data: [0, 10, 5, 2, 20, 30, 45,0, 10, 5, 2, 20, 30, 45]
+                data: [0, 0.7, 5, 2, 20, 30, 45,0, 10, 5, 2, 20, 30, 45]
             }]
         },
 
