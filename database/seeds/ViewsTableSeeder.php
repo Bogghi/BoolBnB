@@ -18,14 +18,14 @@ class ViewsTableSeeder extends Seeder
 
         foreach ($apartments as $apartment) {
 
-          $numberViews = rand(0, 20);
+          $numberViews = rand(0, 50);
 
           for ($i=0; $i < $numberViews; $i++) {
 
             $newView = new View();
 
             $newView->apartment_id = $apartment->id;
-            $newView->date = $faker->dateTimeThisYear('now', null);
+            $newView->date = $faker->dateTimeThisDecade('now', null);
 
             $newView->save();
 
