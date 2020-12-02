@@ -11248,7 +11248,10 @@ footer .social-links .social-links-item i {
   color: #fff;
 }
 
-<<<<<<< HEAD
+footer .social-links .social-links-item i:hover {
+  color: #00F087;
+}
+
 .sponsorization h1 {
   padding-top: 20px;
   padding-bottom: 50px;
@@ -11375,9 +11378,5 @@ footer .social-links .social-links-item i {
 
 #search-results .list-apartment {
   height: calc(100vh - 350px);
-=======
-footer .social-links .social-links-item i:hover {
-  color: #00F087;
->>>>>>> Footer
 }
 
