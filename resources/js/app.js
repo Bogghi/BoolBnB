@@ -46,7 +46,7 @@ $("#search-button").click(function () {
 
       })
 
-      // seconda funzione ajax 
+      // seconda funzione ajax
       $.ajax({
         "url": "http://localhost:8000/api/search",
         "data": {
@@ -68,7 +68,7 @@ $("#search-button").click(function () {
         },
 
       })
-      // seconda funzione ajax 
+      // seconda funzione ajax
 
 
     },
@@ -146,11 +146,13 @@ $(function(){
     },
     "method": "GET",
     "success": function (data) {
-      let views = data.totalViews;
-      let messages = data.totalMessages;
+      let views = data.averageViews;
+      let messages = data.averageMessages;
 
       renderViews(views);
       renderMessages(messages);
+      $('#total-views').text(data.totalViews);
+      $('#total-messages').text(data.totalMessages);
     },
     "error": function (error) {
       console.log(error);
@@ -196,7 +198,7 @@ function renderMessages(messages){
       data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','Aug','Sep','Oct','Nov','Dec'],
           datasets: [{
-              label: 'Average Messaggess',
+              label: 'Average Messages',
               data: messages,
               // data: [12, 10, 3, 5, 2, 3, 12, 10, 3, 5, 2, 3],
               borderWidth: 1

@@ -42399,7 +42399,7 @@ $("#search-button").click(function () {
         if (this.checked) {
           services += this.value + ",";
         }
-      }); // seconda funzione ajax 
+      }); // seconda funzione ajax
 
       $.ajax({
         "url": "http://localhost:8000/api/search",
@@ -42420,7 +42420,7 @@ $("#search-button").click(function () {
         "error": function error(_error) {
           console.log(_error);
         }
-      }); // seconda funzione ajax 
+      }); // seconda funzione ajax
     },
     "error": function error(_error2) {
       console.log(_error2);
@@ -42503,10 +42503,12 @@ $(function () {
     },
     "method": "GET",
     "success": function success(data) {
-      var views = data.totalViews;
-      var messages = data.totalMessages;
+      var views = data.averageViews;
+      var messages = data.averageMessages;
       renderViews(views);
       renderMessages(messages);
+      $('#total-views').text(data.totalViews);
+      $('#total-messages').text(data.totalMessages);
     },
     "error": function error(_error3) {
       console.log(_error3);
@@ -42548,7 +42550,7 @@ function renderMessages(messages) {
     data: {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [{
-        label: 'Average Messaggess',
+        label: 'Average Messages',
         data: messages,
         // data: [12, 10, 3, 5, 2, 3, 12, 10, 3, 5, 2, 3],
         borderWidth: 1
@@ -42632,8 +42634,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

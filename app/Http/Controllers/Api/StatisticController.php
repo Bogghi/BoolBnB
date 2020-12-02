@@ -15,11 +15,16 @@ class StatisticController extends Controller
     $period = date('Y-m-d', strtotime('-10 years'));
     $views = View::where('apartment_id', $apartment_id)->where('date', '>', $period)->get();
     $messages = Message::where('apartment_id', $apartment_id)->where('date', '>', $period)->get();
-    $totalViews = $this->filterResults($views);
-    $totalMessages = $this->filterResults($messages);
+    $averageViews = $this->filterResults($views);
+    $averageMessages = $this->filterResults($messages);
+    $totalViews = View::where('apartment_id', $apartment_id)->count();
+    $totalMessages = Message::where('apartment_id', $apartment_id)->count();
+
 
     $response = [
+      "averageViews" => $averageViews,
       "totalViews" => $totalViews,
+      "averageMessages" => $averageMessages,
       "totalMessages" => $totalMessages
     ];
 
