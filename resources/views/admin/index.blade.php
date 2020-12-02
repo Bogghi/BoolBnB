@@ -4,14 +4,14 @@
 
 @section('content')
     <div class="container margin-top ">
-        <h1>Your Apartments:</h1>
+        <h1 class="pl-3 title-pers pt-3">Your Apartments:</h1>
 
         {{-- Call to apartment's table and stamp apartment list of admin --}}
         @foreach ($apartments as $apartment)
 
-            <div class="mb-3" style="width: 100%;">
+            <div id="admin-index" class="container-fluid">
 
-                <div class="row shadow p-3 mb-5 bg-light rounded bordergreen">
+                <div class="row border-bottom">
 
                     <?php
                         $image = $apartment->cover_image;
@@ -19,17 +19,15 @@
                     ?> 
 
                     {{-- Cover Apartment --}}
-                    <div class="col-md-3 mx-auto my-auto">
-                        <?php if ($pos === false) {?>
-                            <img class="card-img" src="{{asset('storage/'.$image)}}" alt="image">
-                
-                            <?php } else {?>
-                                <img class="card-img" src="{{$apartment->cover_image}}" alt="image">
-                        <?php }?>
-                    </div>
+                    <?php if ($pos === false) {?>
+                    <div class="col-12 col-md-2 p-3 d-flex rounded-personalized mt-4" style="background-image: url({{asset('storage/'.$apartment->cover_image)}})"></div>
+                    <?php } else {?>
+                    <div class="col-12 col-md-2 p-3 d-flex rounded-personalized mt-4" style="background-image: url({{$apartment->cover_image}})"></div>    
+                    <?php }?>
+                    
                    
                     {{-- Description Apartments --}}
-                    <div class="col-md-8">
+                    <div class="col-12 col-md-10">
 
                         {{-- Description --}}
                         <div class="card-body">
@@ -39,13 +37,12 @@
                             
                             <p class="card-text"><small class="text-muted">Created on {{$apartment->created_at->format('d-m-Y')}}.</small></p>
                         </div>
-
                         {{-- {{-- bottom for link pages --}}
-                       <div  class="d-flex flex-wrap justify-content-end">
-                            <a href="{{route('admin.apartment.show', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Show</a>
-                            <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Edit</a>
-                            <a href="#" class="btn btn-outline-info mr-2 mb-2 btm-link">Statistic</a>
-                            <a href="{{route('admin.sponsorization.create', ["id"=>$apartment->id])}}" class="btn btn-outline-info mr-2 mb-2 btm-link">Sponsorization</a>
+                        <div  class="d-flex flex-wrap link-personalized mb-1">
+                            <a href="{{route('admin.apartment.show', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Show</a>
+                            <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Edit</a>
+                            <a href="#" class="btn-personalized btn mr-2 mb-2">Statistic</a>
+                            <a href="{{route('admin.sponsorization.create', ["id"=>$apartment->id])}}" class="btn-personalized btn mr-2 mb-2">Sponsorization</a>
                         </div>
 
                     </div>
