@@ -1,0 +1,42 @@
+.navbar {
+  height: 80px;
+  padding: 0;
+  padding: 20px 0;
+
+  .logo {
+    img#logo {
+      height: 40px;
+    }
+  }
+
+  .navbar-nav {
+
+    .nav-link {
+
+      font-weight: 700;
+      color: #fff;
+
+      &:hover {
+        color: $greenbnb;
+      }
+    }
+
+    .nav-link.btn {
+      background-color: $bluebnb;
+      color: #fff;
+      &:hover {
+        background-color: $greenbnb;
+      }
+    }
+  }
+}
+
+.drop-right{
+  transform: translate(0px, 5px);
+  left: auto;
+  border-color: $greenbnb;
+}
+
+.zindex{
+  z-index: 1;
+}

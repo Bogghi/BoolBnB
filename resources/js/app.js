@@ -4,22 +4,30 @@ require('./bootstrap');
 var $ = require('jquery');
 const Handlebars = require("handlebars");
 
+
 var options = {
   searchOptions: {
     key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-    language: 'en-GB',
+    language: 'it-IT',
     limit: 5
   },
   autocompleteOptions: {
     key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
     language: 'it-IT'
-  }
+  },
+  labels: {
+    placeholder: "Dove vuoi cercare?",
+    noResultsMessage: "Nessun risultato trovato."
+  },
+  language: "it-IT",
+  minNumberOfCharacters: 1,
+  resultSet: "resultSet=category"
 };
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 document.getElementById("search-input").append(searchBoxHTML);
 $(".tt-search-box-input").attr("name", "search");
-
+$('.tt-search-box-input-container').append($(".search-btn"));
 
 
 

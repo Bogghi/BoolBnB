@@ -42363,18 +42363,26 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 var options = {
   searchOptions: {
     key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-    language: 'en-GB',
+    language: 'it-IT',
     limit: 5
   },
   autocompleteOptions: {
     key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
     language: 'it-IT'
-  }
+  },
+  labels: {
+    placeholder: "Dove vuoi cercare?",
+    noResultsMessage: "Nessun risultato trovato."
+  },
+  language: "it-IT",
+  minNumberOfCharacters: 1,
+  resultSet: "resultSet=category"
 };
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 document.getElementById("search-input").append(searchBoxHTML);
 $(".tt-search-box-input").attr("name", "search");
+$('.tt-search-box-input-container').append($(".search-btn"));
 $("#search-button").click(function () {
   var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
 
@@ -42550,13 +42558,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! C:\Users\Administrator\Desktop\Boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Administrator\Desktop\Boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> Footer
+__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
