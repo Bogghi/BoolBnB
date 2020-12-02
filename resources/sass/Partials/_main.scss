@@ -296,6 +296,32 @@ main {
     border: 1px solid red;
     height: 500px;
   }
+  .message {
+    ul {
+      list-style: none;
+      li {
+        border: 1px solid $gray;
+        border-radius: 20px ;
+        cursor: pointer;
+        .dot-pers {
+          color: $greenbnb;
+          transition: 0.5s;
+          margin-left: 5px;
+          margin-top: 8px;
+          padding: 0;
+
+        }
+        &:hover .dot-pers {
+          color: $bluebnb;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
   // MEDIA QUERY
 
   @media (max-width: 765px) {
@@ -317,6 +343,14 @@ main {
         }
       }
 
+    }
+    .message {
+      margin-left: -30px;
+      h2 {
+        text-align: center;
+        padding-top: $spacer * 3;
+        margin-left: 30px;
+      }
     }
   }
 }

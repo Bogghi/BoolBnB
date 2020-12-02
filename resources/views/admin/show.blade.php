@@ -77,19 +77,23 @@
         <h2>Services</h2>
         <ul class="d-flex flex-column flex-wrap">
           @foreach ($apartment->services as $service)
-          <li><i class="fas fa-circle dot-pers mr-2"></i>{{$service->name}}</li>
+          <li><span><i class="fas fa-circle dot-pers mr-2"></i></span>{{$service->name}}</li>
           @endforeach
         </ul>
       </div>
       <div class="col-7 col-md-6 map-container">
 
       </div>
-      <div class="col-12 col-md-6">
-        <h2>Messaggi ricevuti</h2>
-        <ul>
-          <li></li>
+      
+      <div class="col-12 offset-md-1 col-md-5 message">
+        <h2 class="pb-3">Messaggi ricevuti</h2>
+        <ul class="">
+          @foreach ($apartment->messages as $message)
+          <li class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
+          @endforeach
         </ul>
       </div>
+      
 
 
     </div>
