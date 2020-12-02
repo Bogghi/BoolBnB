@@ -28,6 +28,8 @@
     <script src="https://js.braintreegateway.com/web/3.44.2/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.44.2/js/hosted-fields.min.js"></script>
     <script src="https://js.braintreegateway.com/web/dropin/1.25.0/js/dropin.min.js"></script>
+    <!-- includes the chart js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">

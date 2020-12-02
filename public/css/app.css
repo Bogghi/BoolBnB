@@ -11418,3 +11418,39 @@ footer .social-links .social-links-item i:hover {
   height: calc(100vh - 350px);
 }
 
+.charts .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.charts .content h1 {
+  padding: 20px 0px;
+}
+
+.charts .content .stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding: 0px 20px;
+}
+
+.charts .content .stats-box {
+  background-color: rgba(112, 112, 112, 0.4);
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.charts .content .stats-box h2 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.charts .content .stats-box canvas {
+  width: 100%;
+  padding: 5px;
+}
+

@@ -21,6 +21,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->
     Route::resource('apartment', 'ApartmentController');
     Route::resource('sponsorization', 'SponsorizationController');
     Route::delete('/image/{id}', 'ImageController@destroy')->name("image.destroy");
+    Route::get('/statistcs/{id}', 'StatisticController@index')->name("statistics");
 });
 
 

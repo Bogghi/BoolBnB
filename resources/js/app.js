@@ -1,4 +1,4 @@
-const { includes } = require('lodash');
+const { includes, isNull } = require('lodash');
 
 require('./bootstrap');
 var $ = require('jquery');
@@ -17,12 +17,13 @@ var options = {
 };
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-document.getElementById("search-input").append(searchBoxHTML);
-$(".tt-search-box-input").attr("name", "search");
+var searchInput = document.getElementById("search-input");
+var element = $(".tt-search-box-input");
 
-
-
-
+if(isNull(element) && isNull(searchInput)){
+  element.attr("name", "search");
+  searchInput.append(searchBoxHTML);
+}
 
 $("#search-button").click(function () {
   var userInput = $(".tt-search-box-input").val();
@@ -45,7 +46,7 @@ $("#search-button").click(function () {
 
       })
 
-      // seconda funzione ajax 
+      // seconda funzione ajax
       $.ajax({
         "url": "http://localhost:8000/api/search",
         "data": {
@@ -67,7 +68,7 @@ $("#search-button").click(function () {
         },
 
       })
-      // seconda funzione ajax 
+      // seconda funzione ajax
 
 
     },
@@ -129,4 +130,86 @@ function renderResults(data) {
     var html = template(context);
     $("#searched-apartments").append(html);
   }
+}
+
+// ------------------------------------------------------------------------------------------------------ //
+// ----------------------------------------------statistc section---------------------------------------- //
+
+const apartment_id = window.location.pathname.split('/').pop();
+
+$(function(){
+
+  $.ajax({
+    "url": "http://localhost:8000/api/statistics",
+    "data": {
+      "apartment_id": apartment_id
+    },
+    "method": "GET",
+    "success": function (data) {
+      let views = data.averageViews;
+      let messages = data.averageMessages;
+
+      renderViews(views);
+      renderMessages(messages);
+      $('#total-views').text(data.totalViews);
+      $('#total-messages').text(data.totalMessages);
+    },
+    "error": function (error) {
+      console.log(error);
+    }
+  })
+
+});
+
+function renderViews(views){
+  var ctx = document.getElementById('chartjs-0').getContext('2d');
+  var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+
+      // The data for our dataset
+      data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','Aug','Sep','Oct','Nov','Dec'],
+          datasets: [{
+              label: 'Average Views',
+              borderColor: 'rgb(0, 240, 135)',
+              pointBackgroundColor: 'rgb(0, 21, 51)',
+              pointRadius: 5,
+              fill: 'false',
+              data: views
+          }]
+      },
+
+      // Configuration options go here
+      options: {
+
+      }
+  });
+}
+
+function renderMessages(messages){
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  Chart.defaults.global.elements.rectangle.backgroundColor = 'rgba(0, 240, 135, 0.2)';
+  Chart.defaults.global.elements.rectangle.borderColor = 'rgba(0, 21, 51, 1)';
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','Aug','Sep','Oct','Nov','Dec'],
+          datasets: [{
+              label: 'Average Messages',
+              data: messages,
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      },
+  });
 }

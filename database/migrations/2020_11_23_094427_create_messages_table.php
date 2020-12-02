@@ -8,7 +8,7 @@ class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
-     * 
+     *
      * * Messages Table
      *
      * @return void
@@ -21,6 +21,7 @@ class CreateMessagesTable extends Migration
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
             $table->string('email');
             $table->text('content');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }
