@@ -86,6 +86,9 @@
       </div>
       <div class="col-12 col-md-6">
         <h2>Messaggi ricevuti</h2>
+        <ul>
+          <li></li>
+        </ul>
       </div>
 
 
