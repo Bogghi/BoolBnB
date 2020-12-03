@@ -29,7 +29,7 @@
     <section id="sponsorizations" class="py-5 ">
         <h2 class="text-center mb-5 text-white">Sponsored</h2>
         <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-pause="carousel">
                 <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -37,7 +37,7 @@
                 </ol>
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="d-flex container flex-wrap justify-content-space-between box-sponsor" id="sponsor">
+                    <div class="d-flex container flex-wrap justify-content-space-between" id="sponsor">
             
                         {{-- apartment with control if img is storaged in db else img default --}}                
                         @for ($i = 0; $i < 8 ; $i++)
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                   <div class="d-flex container flex-wrap justify-content-space-between box-sponsor" id="sponsor">
+                   <div class="d-flex container flex-wrap justify-content-space-between" id="sponsor">
             
                         {{-- apartment with control if img is storaged in db else img default --}}                
                         @for ($i = 0; $i < 8 ; $i++)
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                   <div class="d-flex container flex-wrap justify-content-space-between box-sponsor" id="sponsor">
+                   <div class="d-flex container flex-wrap justify-content-space-between" id="sponsor">
             
                         {{-- apartment with control if img is storaged in db else img default --}}                
                         @for ($i = 0; $i < 8 ; $i++)
