@@ -11085,8 +11085,6 @@ main #sponsorizations h2 {
 
 main #sponsorizations a {
   text-decoration: none;
-  color: white;
-  transition: 1s;
 }
 
 main #sponsorizations a .sponsored-item {
@@ -11096,22 +11094,26 @@ main #sponsorizations a .sponsored-item {
   width: 240px;
   background-size: 100%;
   background-position: center;
+  transition: 1s;
 }
 
 main #sponsorizations a .sponsored-item #hover-title {
-  display: none;
+  visibility: hidden;
   text-align: center;
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
-main #sponsorizations a:hover #hover-title {
-  display: block;
-  opacity: 1;
-}
-
-main #sponsorizations a:hover {
+main #sponsorizations a .sponsored-item:hover {
   background-size: 120%;
   background-position: center;
-  opacity: 0.5;
+  opacity: 0.7;
+}
+
+main #sponsorizations a .sponsored-item:hover #hover-title {
+  visibility: visible;
+  color: #00F087;
+  opacity: 1;
 }
 
 main #sponsorizations .box-sponsor {

@@ -40,16 +40,16 @@
             
                 <?php if ($pos === false) {?>
                 <a href="{{route('admin.apartment.show', $apartments)}}">
-                    <div class="sponsored-item flex-shrink-0" style="background-image: url({{asset('storage/'.$apartments->cover_image)}})">
+                    <div class="sponsored-item" style="background-image: url({{asset('storage/'.$apartments->cover_image)}})">
                         {{-- Info Apartment --}}
                         <h5 id="hover-title">{{$apartments->titl}}Prova titolo</h5>                     
                     </div>
                 </a>
                 <?php } else {?>
                 <a href="{{route('admin.apartment.show', $apartments)}}">
-                     <div class="sponsored-item flex-shrink-0" style="background-image: url({{$apartments->cover_image}})">
+                     <div class="sponsored-item" style="background-image: url({{$apartments->cover_image}})">
                         {{-- Info Apartment --}}
-                        <h5 id="hover-title">{{$apartments->titl}}Prova titolo</h5>
+                        <h5 id="hover-title" class="p-3">{{$apartments->title}}</h5>
                     </div>
                  </a>
                 <?php }?>
