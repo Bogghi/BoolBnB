@@ -11047,6 +11047,14 @@ header.margin-fixed > .container {
   color: #00F087;
 }
 
+.navbar .navbar-nav .nav-link.blue {
+  color: #001533;
+}
+
+.navbar .navbar-nav .nav-link.blue:hover {
+  color: #00F087;
+}
+
 .navbar .navbar-nav .nav-link.btn {
   background-color: #001533;
   color: #fff;
@@ -11054,6 +11062,63 @@ header.margin-fixed > .container {
 
 .navbar .navbar-nav .nav-link.btn:hover {
   background-color: #00F087;
+}
+
+.navbar .navbar-nav .dropdown-menu {
+  padding: 0;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+  padding: 10px 1.5rem;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-divider {
+  margin: 0;
+}
+
+.navbar .navbar-nav .dropdown-menu.drop-right {
+  transform: translate(-30%, 0);
+  border-color: #00F087;
+  left: auto;
+  top: 90%;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item.active,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:active {
+  color: #00F087;
+  font-weight: 400;
+  background-color: #00F087;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus {
+  color: #fff;
+  font-weight: 700;
+  background-color: #00F087;
+}
+
+.navbar .navbar-nav .dropdown-menu::after {
+  position: absolute;
+  top: -7px;
+  right: 24px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+
+.navbar .navbar-nav .dropdown-menu::before {
+  position: absolute;
+  top: -8px;
+  right: 24px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #00F087;
 }
 
 .navbar-fixed {
@@ -11065,12 +11130,6 @@ header.margin-fixed > .container {
 
 .navbar-fixed .navbar-nav .nav-link {
   color: #001533;
-}
-
-.drop-right {
-  transform: translate(0px, 5px);
-  left: auto;
-  border-color: #00F087;
 }
 
 .zindex {
@@ -11178,7 +11237,7 @@ header.jumbo-header .collapse.navbar-collapse {
 
 main {
   min-height: calc(100vh - 404px);
-  margin-top: 80px;
+  padding-top: 40px;
 }
 
 main #sponsorizations {
