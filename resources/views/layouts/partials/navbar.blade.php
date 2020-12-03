@@ -3,7 +3,11 @@
       {{-- logo --}}
       <div class="logo">
           <a href="{{ route('homepage') }}">
-              <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
+                @if (Route::currentRouteName() == 'homepage')
+                    <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
+                @else 
+                    <img id="logo" src="{{ asset('img/boolbnb-logo-dark.svg') }}" alt="BoolBnB">
+                @endif
           </a>
       </div>
 
@@ -22,14 +26,14 @@
 
               <!-- Authentication Links  only admin is log-->
               @if (Route::currentRouteName() == 'admin.apartment.index')
-                  <li class="nav-item zindex bg-light pl-5">
-                      <a class="nav-link" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
+                  <li class="nav-item zindex pl-2">
+                      <a class="nav-link @if(Route::currentRouteName() != 'homepage') blue @endif" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
                   </li>
               @endif
               <!-- Authentication Links  only admin is log-->
               @if (Route::currentRouteName() != 'homepage')
-                  <li class="nav-item zindex bg-light pl-5">
-                      <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+                  <li class="nav-item zindex pl-2">
+                      <a class="nav-link @if(Route::currentRouteName() != 'homepage') blue @endif" href="{{ route('homepage') }}">Home</a>
                   </li>
               @endif
 
@@ -43,16 +47,15 @@
                       </li>
                   @endif
               @else
-                  <li class="nav-item zindex bg-light pl-5">
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                  <li class="nav-item zindex pl-2">
+                      <a id="navbarDropdown" class="nav-link @if(Route::currentRouteName() != 'homepage') blue @endif dropdown-toggle" href="#" role="button"
                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                           {{ Auth::user()->name }}
                       </a>
 
                       {{-- dropdown menu --}}
                       <div class="dropdown-menu mr-5 mb-5 drop-right" aria-labelledby="navbarDropdown">
-
-                          <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your Apartmet</a>
+                          <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your apartments</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
