@@ -1,0 +1,81 @@
+.result {
+
+    .filter{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 2px solid $black;
+        border-right: 2px solid $black;
+        padding: 10px 20px;
+
+        a {
+            color: $white;
+            background-color: $bluebnb;
+            text-decoration: none;
+            padding: 5px 20px;
+            border-radius: 40px;
+            transition: background-color 0.5s, color 0.5s;
+
+            &:hover {
+                background-color: $greenbnb;
+                color: $bluebnb;
+            }
+        }
+    }
+
+    .filter-option{
+
+        .static-options {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid $black;
+            border-right: 2px solid $black;
+            padding-bottom: 10px;
+            padding-top: 3px;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0px 20px;
+
+                &:first-child {
+                    padding: 0px 0px 0px 20px;
+                }
+
+                &:last-child {
+                    padding: 0px 20px 0px 0px;
+                }
+
+                input{
+                    border-radius: 40px;
+                    text-align: center;
+                    background-color: $light-gray;
+                }
+            }
+        }
+
+        .label-options {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid $black;
+            border-right: 2px solid $black;
+
+            span {
+                min-width: 100px;
+                text-align: center;
+                background-color: $light-gray;
+                border: 1px $bluebnb solid;
+                margin: 5px;
+                padding: 5px 10px;
+                border-radius: 40px;
+
+                &.active {
+                    background-color: $greenbnb;
+                    color: $bluebnb;
+                }
+            }
+        }
+    }
+
+}

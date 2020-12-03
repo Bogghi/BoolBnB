@@ -11036,7 +11036,7 @@ main .jumbo-home .info-jumbo .btn-outline-primary {
 
 main .jumbo-home .info-jumbo .btn-outline-primary:hover {
   background-color: white;
-  color: #000;
+  color: black;
 }
 
 main .jumbo-home .searchbar #search-input {
@@ -11452,5 +11452,80 @@ footer .social-links .social-links-item i:hover {
 .charts .content .stats-box canvas {
   width: 100%;
   padding: 5px;
+}
+
+.result .filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  padding: 10px 20px;
+}
+
+.result .filter a {
+  color: white;
+  background-color: #001533;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 40px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.result .filter a:hover {
+  background-color: #00F087;
+  color: #001533;
+}
+
+.result .filter-option .static-options {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  padding-bottom: 10px;
+  padding-top: 3px;
+}
+
+.result .filter-option .static-options .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.result .filter-option .static-options .content:first-child {
+  padding: 0px 0px 0px 20px;
+}
+
+.result .filter-option .static-options .content:last-child {
+  padding: 0px 20px 0px 0px;
+}
+
+.result .filter-option .static-options .content input {
+  border-radius: 40px;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.result .filter-option .label-options {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.result .filter-option .label-options span {
+  min-width: 100px;
+  text-align: center;
+  background-color: #fafafa;
+  border: 1px #001533 solid;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 40px;
+}
+
+.result .filter-option .label-options span.active {
+  background-color: #00F087;
+  color: #001533;
 }
 
