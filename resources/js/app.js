@@ -264,4 +264,17 @@ $('.single-message').on('click', function(){
   var id = $(this).attr('data-id');
   console.log(id);
 
+  $.ajax({
+    "url": "http://localhost:8000/api/message?" + "id=" + id,
+
+    "method": "GET",
+    "success": function (data) {
+      $('#message-email').text(data.email);
+      $('#message-text').text(data.content);
+    },
+    "error": function (error) {
+      console.log(error);
+    }
+  })
+
 })

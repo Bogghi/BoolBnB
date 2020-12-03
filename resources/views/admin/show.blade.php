@@ -98,16 +98,15 @@
           <div class="modal-content">
               {{-- title Modal --}}
               <div class="modal-header">
-                  <h5 class="modal-title color-secondary" id="staticBackdropLabel">Privacy Policy
-                      BoolBnB</h5>
+                  <h5 class="modal-title color-secondary" id="staticBackdropLabel">Messaggio ricevuto</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               {{-- Model Privacy Policy --}}
               <div class="modal-body">
-                  <h6>Informativa sulla privacy,Ultimo aggiornamento: 30 ottobre 2020.</h6>
-                
+                  <h4 id="message-email"></h4>
+                  <p id="message-text"></p>
               </div>
               {{-- Buttom Close Modal --}}
               <div class="modal-footer">
