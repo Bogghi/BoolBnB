@@ -1,14 +1,29 @@
 .result {
 
+    .row {
+        [class*="col"]{
+            padding: 0px;
+        }
+    }
+
     .filter{
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         border-bottom: 2px solid $black;
         border-right: 2px solid $black;
         padding: 10px 20px;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        background-color: $white;
+
+        h4 {
+            white-space: nowrap;
+            overflow: hidden;
+        }
 
         a {
+            white-space: nowrap;
             color: $white;
             background-color: $bluebnb;
             text-decoration: none;
@@ -19,11 +34,23 @@
             &:hover {
                 background-color: $greenbnb;
                 color: $bluebnb;
+                cursor: pointer;
             }
         }
     }
 
     .filter-option{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        transform: translateY(-100%);
+        margin-top: 0px;
+        transition: transform 0.5s, margin-top 0.5s;
+
+        &.active {
+            transform: translateY(0%);
+            margin-top: 58.8px;
+        }
 
         .static-options {
             display: flex;

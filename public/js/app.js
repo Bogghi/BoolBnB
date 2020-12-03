@@ -42562,6 +42562,18 @@ if (window.location.pathname.includes("statistics")) {
   });
 }
 
+if (window.location.pathname.includes("test")) {
+  $("#more-option").on('click', function () {
+    var button = $('.filter-option');
+
+    if (button.hasClass('active')) {
+      button.removeClass('active');
+    } else {
+      button.addClass('active');
+    }
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

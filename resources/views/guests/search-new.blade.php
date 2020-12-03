@@ -1,7 +1,7 @@
 @extends('layouts.guests')
 
 @section('content')
-    <section class="result">
+    <section class="result container-fluid">
         <div class="row">
             <div class="col-lg-5">
                 <div class="filter">
@@ -11,8 +11,8 @@
                             <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
                         </div>
                     @endforeach --}}
-                    <h4>Accommodation in the arena</h4>
-                    <a href="#">More filter</a>
+                    <h4>Accommodation in the area</h4>
+                    <a id="more-option">More filter</a>
                 </div>
                 <div class="filter-option">
                     <div class="static-options">

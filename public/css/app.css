@@ -11454,16 +11454,29 @@ footer .social-links .social-links-item i:hover {
   padding: 5px;
 }
 
+.result .row [class*=col] {
+  padding: 0px;
+}
+
 .result .filter {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
   padding: 10px 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  background-color: white;
+}
+
+.result .filter h4 {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .result .filter a {
+  white-space: nowrap;
   color: white;
   background-color: #001533;
   text-decoration: none;
@@ -11475,6 +11488,21 @@ footer .social-links .social-links-item i:hover {
 .result .filter a:hover {
   background-color: #00F087;
   color: #001533;
+  cursor: pointer;
+}
+
+.result .filter-option {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  margin-top: 0px;
+  transition: transform 0.5s, margin-top 0.5s;
+}
+
+.result .filter-option.active {
+  transform: translateY(0%);
+  margin-top: 58.8px;
 }
 
 .result .filter-option .static-options {
