@@ -11008,7 +11008,7 @@ header.jumbo-header .jumbo-content .cta a {
 }
 
 header.jumbo-header .jumbo-content .cta.searchbar-margin {
-  margin-top: 82px;
+  margin-top: 122px;
 }
 
 header.margin-fixed > .container {
@@ -11020,6 +11020,12 @@ header.margin-fixed > .container {
   padding: 0;
   padding: 20px 0;
   transition: all 0.4s;
+}
+
+@media screen and (max-width: 575px) {
+  .navbar {
+    padding: 0 20px;
+  }
 }
 
 .navbar .logo img#logo {
@@ -11066,6 +11072,7 @@ header.margin-fixed > .container {
 }
 
 header.jumbo-header .searchbar {
+  margin-top: 20px;
   height: 62px;
 }
 
@@ -11154,8 +11161,13 @@ header.jumbo-header .searchbar .search-btn {
   transition: width 0.6s, border-radius 0.6s;
 }
 
-header.jumbo-header .searchbar.searchbar-nav {
-  margin-top: 0;
+header.jumbo-header .searchbar.searchbar-nav,
+header.jumbo-header form {
+  margin-top: 0 !important;
+}
+
+header.jumbo-header .collapse.navbar-collapse {
+  flex-grow: 0;
 }
 
 main {

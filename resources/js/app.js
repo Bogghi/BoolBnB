@@ -140,7 +140,7 @@ function renderResults(data) {
 }
 
 var searchbarOffsetTop = $(".searchbar").offset().top;
-
+var scrolled = 0;
 
 $(window).scroll(function () {
   if ($(window).scrollTop() > 0) {
@@ -155,14 +155,22 @@ $(window).scroll(function () {
     $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
   }
 
-  if ($(window).scrollTop() > (searchbarOffsetTop - 40)) {
-    $("header .logo").after($(".searchbar"));
-    $(".cta").addClass("searchbar-margin");
-    $(".searchbar").addClass("searchbar-nav");
-  } else {
-    $("header .jumbo-text").after($(".searchbar"));
-    $(".cta").removeClass("searchbar-margin");
-    $(".searchbar").removeClass("searchbar-nav");
+  if (($(window).scrollTop() > (searchbarOffsetTop - 40)) && scrolled == 0) {
+    scrolled = 1;
+    $(".searchbar").fadeOut(300, function () {
+      $("header .logo").after($(".searchbar"));
+      $(".cta").addClass("searchbar-margin");
+      $(".searchbar").addClass("searchbar-nav");
+      $(".searchbar").fadeIn(300);
+    });
 
+  } else if (($(window).scrollTop() < (searchbarOffsetTop - 40)) && scrolled == 1) {
+    scrolled = 0;
+    $(".searchbar").fadeOut(300, function () {
+      $("header .jumbo-text").after($(".searchbar"));
+      $(".cta").removeClass("searchbar-margin");
+      $(".searchbar").removeClass("searchbar-nav");
+      $(".searchbar").fadeIn(300);
+    });
   }
 });

@@ -1,6 +1,7 @@
 header.jumbo-header {
 
   .searchbar {
+    margin-top: 20px;
     height: 62px;
 
     #search-input {
@@ -81,8 +82,12 @@ header.jumbo-header {
     }
   }
 
-  .searchbar.searchbar-nav {
-    margin-top: 0;
+  .searchbar.searchbar-nav, form {
+    margin-top: 0 !important;
+  }
+
+  .collapse.navbar-collapse {
+    flex-grow: 0;
   }
 }
 

@@ -13,7 +13,7 @@
                     <h1 class="display-4">Programma la tua vacanza</h1>
                     <p class="lead">Trova il tuo appartamento ideale</p>
                 </div>
-                <div class="searchbar mt-3">
+                <div class="searchbar">
                     <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
                         @csrf
                         @method("POST")

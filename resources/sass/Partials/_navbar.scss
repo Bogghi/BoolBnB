@@ -4,6 +4,10 @@
   padding: 20px 0;
   transition: all 0.4s;
 
+  @media screen and (max-width: 575px) {
+    padding: 0 20px;
+  }
+
   .logo {
     img#logo {
       height: 40px;
