@@ -2,72 +2,6 @@ main {
   min-height: $main-heigth;
   margin-top: 80px;
 
-  .jumbo-home {
-    height: 600px;
-    background-image: url("/img/jumbo-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    .info-jumbo {
-      padding-top: $spacer * 8;
-
-      h1 {
-        font-weight: 700;
-      }
-
-      .btn-outline-primary {
-        border-color: $white;
-        color: $white;
-
-        &:hover {
-          background-color: $white;
-          color: $black;
-        }
-      }
-    }
-
-      .searchbar {
-
-        #search-input {
-          width:100%;
-          color: $white;
-
-          .tt-search-box {
-            background: none;
-
-            .tt-search-box-input-container {
-              padding: 10px 20px;
-              border-radius: 50px;
-              background-color: #fff;
-              fill: $greenbnb;
-
-              &:focus {
-                border-color: $greenbnb;
-              }
-
-              input.tt-search-box-input {
-                height: 40px;
-                padding: 3px 12px;
-                font-size: 20px;
-                color: $bluebnb;
-              }
-            }
-
-            .tt-search-box-close-icon {
-              fill: $bluebnb;
-
-              &:hover {
-                fill: $greenbnb;
-              }
-            }
-          }
-        }
-      }
-  }
-
-
-
   #sponsorizations {
 
     background-color: #fff;
@@ -152,6 +86,8 @@ main {
   }
 
 }
+
+
 
 // homepage main
 

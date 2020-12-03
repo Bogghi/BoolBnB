@@ -10968,110 +10968,211 @@ body {
 }
 
 header {
-  height: 80px;
   border-bottom: 2px solid #001533;
 }
 
-header .navbar {
-  height: 100%;
+header.jumbo-header {
+  height: 700px;
+  background-image: url("/img/jumbo-bg.png");
+  background-size: cover;
+  background-position: 100% 100%;
+  color: #fff;
 }
 
-header .navbar .logo img#logo {
-  width: 200px;
+header.jumbo-header .jumbo-content {
+  padding-top: 100px;
 }
 
-header .navbar .navbar-nav .nav-link {
-  font-weight: 700;
-  color: #001533;
+header.jumbo-header .jumbo-content .jumbo-text {
+  margin-bottom: 40px;
 }
 
-header .navbar .navbar-nav .nav-link:hover {
+header.jumbo-header .jumbo-content .jumbo-text,
+header.jumbo-header .jumbo-content .cta {
+  align-items: center;
+  padding-left: 10px;
+}
+
+header.jumbo-header .jumbo-content .cta {
+  display: flex;
+  margin-top: 20px;
+}
+
+header.jumbo-header .jumbo-content .cta p {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+header.jumbo-header .jumbo-content .cta a {
   color: #00F087;
 }
 
-header .navbar .navbar-nav .nav-link.btn {
+header.jumbo-header .jumbo-content .cta.searchbar-margin {
+  margin-top: 122px;
+}
+
+header.margin-fixed > .container {
+  padding-top: 80px;
+}
+
+.navbar {
+  height: 80px;
+  padding: 0;
+  padding: 20px 0;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 575px) {
+  .navbar {
+    padding: 0 20px;
+  }
+}
+
+.navbar .logo img#logo {
+  height: 40px;
+}
+
+.navbar .navbar-nav .nav-link {
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #00F087;
+}
+
+.navbar .navbar-nav .nav-link.btn {
   background-color: #001533;
   color: #fff;
 }
 
-header .navbar .navbar-nav .nav-link.btn:hover {
+.navbar .navbar-nav .nav-link.btn:hover {
   background-color: #00F087;
 }
 
-header .drop-right {
+.navbar-fixed {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+}
+
+.navbar-fixed .navbar-nav .nav-link {
+  color: #001533;
+}
+
+.drop-right {
   transform: translate(0px, 5px);
   left: auto;
   border-color: #00F087;
 }
 
-header .zindex {
+.zindex {
   z-index: 1;
 }
 
-main {
-  min-height: calc(100vh - 404px);
-  margin-top: 80px;
+header.jumbo-header .searchbar {
+  margin-top: 20px;
+  height: 62px;
 }
 
-main .jumbo-home {
-  height: 600px;
-  background-image: url("/img/jumbo-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-main .jumbo-home .info-jumbo {
-  padding-top: 8rem;
-}
-
-main .jumbo-home .info-jumbo h1 {
-  font-weight: 700;
-}
-
-main .jumbo-home .info-jumbo .btn-outline-primary {
-  border-color: white;
+header.jumbo-header .searchbar #search-input {
+  position: relative;
   color: white;
 }
 
-main .jumbo-home .info-jumbo .btn-outline-primary:hover {
-  background-color: white;
-  color: #000;
-}
-
-main .jumbo-home .searchbar #search-input {
-  width: 100%;
-  color: white;
-}
-
-main .jumbo-home .searchbar #search-input .tt-search-box {
+header.jumbo-header .searchbar #search-input .tt-search-box {
+  margin-top: 0;
   background: none;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container {
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container {
   padding: 10px 20px;
   border-radius: 50px;
   background-color: #fff;
   fill: #00F087;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
   border-color: #00F087;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
   height: 40px;
-  padding: 3px 12px;
+  width: 250px;
+  padding: 3px 80px 3px 12px;
   font-size: 20px;
   color: #001533;
+  transition: width 0.6s;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-close-icon {
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
+  width: 45px;
+  border-radius: 50%;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
+  width: 450px;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::-moz-placeholder {
+  font-size: 16px;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::placeholder {
+  font-size: 16px;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container div:first-child {
+  display: none;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container .tt-search-box-close-icon {
+  display: none;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-close-icon {
   fill: #001533;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
   fill: #00F087;
+}
+
+header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-result-list-container {
+  border-radius: 20px;
+}
+
+header.jumbo-header .searchbar .search-btn {
+  position: absolute;
+  right: 10px;
+  display: block;
+  height: 45px;
+  width: 80px;
+  background-color: #00F087;
+  color: #fff;
+  outline: 0;
+  border: none;
+  border-radius: 30px;
+  transition: width 0.6s, border-radius 0.6s;
+}
+
+header.jumbo-header .searchbar.searchbar-nav,
+header.jumbo-header form {
+  margin-top: 0 !important;
+}
+
+header.jumbo-header .collapse.navbar-collapse {
+  flex-grow: 0;
+}
+
+main {
+  min-height: calc(100vh - 404px);
+  margin-top: 80px;
 }
 
 main #sponsorizations {

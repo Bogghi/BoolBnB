@@ -42435,12 +42435,16 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
     autocompleteOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
       language: 'it-IT'
+    },
+    labels: {
+      placeholder: "Dove vuoi andare?"
     }
   };
   var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
   var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
   document.getElementById("search-input").append(searchBoxHTML);
   $(".tt-search-box-input").attr("name", "search");
+  $('.tt-search-box-input-container').append($(".search-btn"));
   $("#search-button").click(function () {
     var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
 
@@ -42562,6 +42566,38 @@ if (window.location.pathname.includes("statistics")) {
   });
 }
 
+var searchbarOffsetTop = $(".searchbar").offset().top;
+var scrolled = 0;
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 0) {
+    $(".navbar").addClass("navbar-fixed");
+    $("header").addClass("margin-fixed");
+    $("#logo").attr("src", "/img/boolbnb-logo-dark.svg");
+  } else {
+    $(".navbar").removeClass("navbar-fixed");
+    $("header").removeClass("margin-fixed");
+    $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
+  }
+
+  if ($(window).scrollTop() > searchbarOffsetTop - 40 && scrolled == 0) {
+    scrolled = 1;
+    $(".searchbar").fadeOut(300, function () {
+      $("header .logo").after($(".searchbar"));
+      $(".cta").addClass("searchbar-margin");
+      $(".searchbar").addClass("searchbar-nav");
+      $(".searchbar").fadeIn(300);
+    });
+  } else if ($(window).scrollTop() < searchbarOffsetTop - 40 && scrolled == 1) {
+    scrolled = 0;
+    $(".searchbar").fadeOut(300, function () {
+      $("header .jumbo-text").after($(".searchbar"));
+      $(".cta").removeClass("searchbar-margin");
+      $(".searchbar").removeClass("searchbar-nav");
+      $(".searchbar").fadeIn(300);
+    });
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -42627,8 +42663,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

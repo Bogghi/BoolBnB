@@ -1,0 +1,60 @@
+.navbar {
+  height: 80px;
+  padding: 0;
+  padding: 20px 0;
+  transition: all 0.4s;
+
+  @media screen and (max-width: 575px) {
+    padding: 0 20px;
+  }
+
+  .logo {
+    img#logo {
+      height: 40px;
+    }
+  }
+
+  .navbar-nav {
+
+    .nav-link {
+
+      font-weight: 700;
+      color: #fff;
+
+      &:hover {
+        color: $greenbnb;
+      }
+    }
+
+    .nav-link.btn {
+      background-color: $bluebnb;
+      color: #fff;
+      &:hover {
+        background-color: $greenbnb;
+      }
+    }
+  }
+}
+
+.navbar-fixed {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+
+  .navbar-nav {
+    .nav-link {
+      color: $bluebnb;
+    }
+  }
+}
+
+.drop-right{
+  transform: translate(0px, 5px);
+  left: auto;
+  border-color: $greenbnb;
+}
+
+.zindex{
+  z-index: 1;
+}

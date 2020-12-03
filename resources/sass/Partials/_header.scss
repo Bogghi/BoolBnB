@@ -1,49 +1,48 @@
 header {
-  height: 80px;
   border-bottom: 2px solid $bluebnb;
- 
-  .navbar {
-    
-    height: 100%;
+}
 
-    .logo {
-      img#logo {
-        width: 200px;
-      }
+header.jumbo-header {
+  height: 700px;
+  background-image: url("/img/jumbo-bg.png");
+  background-size: cover;
+  background-position: 100% 100%;
+  color: #fff;
+
+  .jumbo-content {
+    padding-top: 100px;
+
+    .jumbo-text {
+      margin-bottom: 40px;
     }
 
-    .navbar-nav {
+    .jumbo-text, .cta {
+      align-items: center;
+      padding-left: 10px;
+    }
 
-      .nav-link {
-
-        font-weight: 700;
-        color: $bluebnb;
-
-        &:hover {
-          color: $greenbnb;
-        }
+    .cta {
+      display: flex;
+      margin-top: 20px;
+      p {
+        margin-bottom: 0;
+        margin-right: 10px;
       }
 
-      .nav-link.btn {
-        background-color: $bluebnb;
-        color: #fff;
-        &:hover {
-          background-color: $greenbnb;
-        }
+      a {
+        color: $greenbnb;
       }
 
-      
+      &.searchbar-margin {
+        margin-top: 122px;
+      }
     }
   }
 
-  .drop-right{
-    transform: translate(0px, 5px);
-    left: auto;
-    border-color: $greenbnb;
-  }
+}
 
-  .zindex{
-    z-index: 1;
+header.margin-fixed {
+  & > .container {
+    padding-top: 80px;
   }
-  
 }
