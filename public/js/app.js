@@ -42490,6 +42490,40 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
       }
     }); // prima funziona ajax
   });
+}
+
+if (window.location.pathname == '/') {
+  var searchbarOffsetTop = $(".searchbar").offset().top;
+  var scrolled = 0;
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 0) {
+      $(".navbar").addClass("navbar-fixed");
+      $("header").addClass("margin-fixed");
+      $("#logo").attr("src", "/img/boolbnb-logo-dark.svg");
+    } else {
+      $(".navbar").removeClass("navbar-fixed");
+      $("header").removeClass("margin-fixed");
+      $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
+    }
+
+    if ($(window).scrollTop() > searchbarOffsetTop - 40 && scrolled == 0) {
+      scrolled = 1;
+      $(".searchbar").fadeOut(300, function () {
+        $("header .logo").after($(".searchbar"));
+        $(".cta").addClass("searchbar-margin");
+        $(".searchbar").addClass("searchbar-nav");
+        $(".searchbar").fadeIn(300);
+      });
+    } else if ($(window).scrollTop() < searchbarOffsetTop - 40 && scrolled == 1) {
+      scrolled = 0;
+      $(".searchbar").fadeOut(300, function () {
+        $("header .jumbo-text").after($(".searchbar"));
+        $(".cta").removeClass("searchbar-margin");
+        $(".searchbar").removeClass("searchbar-nav");
+        $(".searchbar").fadeIn(300);
+      });
+    }
+  });
 } // ------------------------------------------------------------------------------------------------------ //
 // ----------------------------------------------statistc section---------------------------------------- //
 
@@ -42564,38 +42598,12 @@ if (window.location.pathname.includes("statistics")) {
       }
     });
   });
-}
+} //Modal-api-show
 
-var searchbarOffsetTop = $(".searchbar").offset().top;
-var scrolled = 0;
-$(window).scroll(function () {
-  if ($(window).scrollTop() > 0) {
-    $(".navbar").addClass("navbar-fixed");
-    $("header").addClass("margin-fixed");
-    $("#logo").attr("src", "/img/boolbnb-logo-dark.svg");
-  } else {
-    $(".navbar").removeClass("navbar-fixed");
-    $("header").removeClass("margin-fixed");
-    $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
-  }
 
-  if ($(window).scrollTop() > searchbarOffsetTop - 40 && scrolled == 0) {
-    scrolled = 1;
-    $(".searchbar").fadeOut(300, function () {
-      $("header .logo").after($(".searchbar"));
-      $(".cta").addClass("searchbar-margin");
-      $(".searchbar").addClass("searchbar-nav");
-      $(".searchbar").fadeIn(300);
-    });
-  } else if ($(window).scrollTop() < searchbarOffsetTop - 40 && scrolled == 1) {
-    scrolled = 0;
-    $(".searchbar").fadeOut(300, function () {
-      $("header .jumbo-text").after($(".searchbar"));
-      $(".cta").removeClass("searchbar-margin");
-      $(".searchbar").removeClass("searchbar-nav");
-      $(".searchbar").fadeIn(300);
-    });
-  }
+$('.single-message').on('click', function () {
+  var id = $(this).attr('data-id');
+  console.log(id);
 });
 
 /***/ }),
@@ -42663,8 +42671,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -19,6 +19,7 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
       placeholder: "Dove vuoi andare?"
     }
   };
+  
 
   var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
   var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
@@ -133,6 +134,44 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
     }
   }
 }
+if (window.location.pathname == '/') {
+  var searchbarOffsetTop = $(".searchbar").offset().top;
+  var scrolled = 0;
+  
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 0) {
+      $(".navbar").addClass("navbar-fixed");
+      $("header").addClass("margin-fixed");
+      $("#logo").attr("src", "/img/boolbnb-logo-dark.svg");
+  
+  
+    } else {
+      $(".navbar").removeClass("navbar-fixed");
+      $("header").removeClass("margin-fixed");
+      $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
+    }
+  
+    if (($(window).scrollTop() > (searchbarOffsetTop - 40)) && scrolled == 0) {
+      scrolled = 1;
+      $(".searchbar").fadeOut(300, function () {
+        $("header .logo").after($(".searchbar"));
+        $(".cta").addClass("searchbar-margin");
+        $(".searchbar").addClass("searchbar-nav");
+        $(".searchbar").fadeIn(300);
+      });
+  
+    } else if (($(window).scrollTop() < (searchbarOffsetTop - 40)) && scrolled == 1) {
+      scrolled = 0;
+      $(".searchbar").fadeOut(300, function () {
+        $("header .jumbo-text").after($(".searchbar"));
+        $(".cta").removeClass("searchbar-margin");
+        $(".searchbar").removeClass("searchbar-nav");
+        $(".searchbar").fadeIn(300);
+      });
+    }
+  });
+  
+}
 // ------------------------------------------------------------------------------------------------------ //
 // ----------------------------------------------statistc section---------------------------------------- //
 if (window.location.pathname.includes("statistics")) {
@@ -218,38 +257,11 @@ if (window.location.pathname.includes("statistics")) {
   }
 }
 
-var searchbarOffsetTop = $(".searchbar").offset().top;
-var scrolled = 0;
 
-$(window).scroll(function () {
-  if ($(window).scrollTop() > 0) {
-    $(".navbar").addClass("navbar-fixed");
-    $("header").addClass("margin-fixed");
-    $("#logo").attr("src", "/img/boolbnb-logo-dark.svg");
+//Modal-api-show
 
+$('.single-message').on('click', function(){
+  var id = $(this).attr('data-id');
+  console.log(id);
 
-  } else {
-    $(".navbar").removeClass("navbar-fixed");
-    $("header").removeClass("margin-fixed");
-    $("#logo").attr("src", "/img/boolbnb-logo-light.svg");
-  }
-
-  if (($(window).scrollTop() > (searchbarOffsetTop - 40)) && scrolled == 0) {
-    scrolled = 1;
-    $(".searchbar").fadeOut(300, function () {
-      $("header .logo").after($(".searchbar"));
-      $(".cta").addClass("searchbar-margin");
-      $(".searchbar").addClass("searchbar-nav");
-      $(".searchbar").fadeIn(300);
-    });
-
-  } else if (($(window).scrollTop() < (searchbarOffsetTop - 40)) && scrolled == 1) {
-    scrolled = 0;
-    $(".searchbar").fadeOut(300, function () {
-      $("header .jumbo-text").after($(".searchbar"));
-      $(".cta").removeClass("searchbar-margin");
-      $(".searchbar").removeClass("searchbar-nav");
-      $(".searchbar").fadeIn(300);
-    });
-  }
-});
+})
