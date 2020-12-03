@@ -1,68 +1,125 @@
 @extends("layouts.guests")
 
 @section('content')
-<div class="container">
-  <section>
-    
-    <div class="card mb-4">
-      
-      <div class="row">
-  
-        <div class="col-md-6 m-auto">
-          <img class="img-fluid mx-auto d-block rounded-left" src="{{asset('storage/'.$apartment->cover_image)}}" alt="project image">
+<section id="show">
+  <div class="container">
+    {{-- row title  --}}
+    <div class="row">
+      <div class="col-12 d-flex pt-4">
+        <h1>{{$apartment->title}}</h1>
+        <div class="ml-auto">
+          <a class="btn btn-outline-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza il tuo appartamento</a>
         </div>
-  
-        <div class="col-md-6 p-5 align-self-center">
-  
-          <h5 class="font-weight-normal mb-3">{{$apartment->title}}</h5>
+      </div>
+    </div>
+    {{-- row title  --}}
+    {{-- row carousel  --}}
+    <div class="row mb-5">
+      <div class="col-12">
+        {{-- carousel --}}
+        <div id="carousel-show" class="carousel slide" data-pause="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-show" data-slide-to="0" class="active"></li>
+            @php
+            $i = 1;
+            @endphp
+            @foreach ($apartment->images as $image)
 
-          <p>{{$apartment->address}}</p>
+            <li data-target="#carousel-show" data-slide-to="{{$i}}"></li>
+            @php
+                $i++ ;
+            @endphp
+            @endforeach
+          </ol>
+          <div class="carousel-inner">
+            <?php
+            $image = $apartment->cover_image;
+            $pos = strpos($image, "placeholder");          
+            ?> 
+            <div class="carousel-item active">
+              <?php if ($pos === false) {?>
+                <div class="border rounded test" style="background-image: url({{asset('storage/'.$apartment->cover_image)}})"></div>
+              <?php } else {?>
+                <div class="border rounded test" style="background-image: url({{$apartment->cover_image}})"></div>    
+                <?php }?>
+            </div>  
+            @foreach ($apartment->images as $image)
+            <div class="carousel-item">
+              <?php if ($pos === false) {?>
+                <div class="border rounded test" style="background-image: url({{asset('storage/'.$image->image_path)}})"></div>
+              <?php } else {?>
+                <div class="border rounded test" style="background-image: url({{$image->image_path}})"></div>    
+              <?php }?>
+            </div>
+            @endforeach
+          </div>
 
-          <p class="text-muted">{{$apartment->description}}</p>
-          
-          <ul class="list-unstyled font-small mt-5 mb-0">
-            <li>
-              <p class="text-uppercase mb-2"><strong>DIMENSIONE</strong></p>
-              <p class="text-muted mb-4">{{$apartment->square_meters}}m²</p>
-            </li>
-            <li>
-              <p class="text-uppercase mb-2"><strong>N° STANZE</strong></p>
-              <p class="text-muted mb-4">{{$apartment->rooms_number}}</p>
-            </li>
-  
-            <li>
-              <p class="text-uppercase mb-2"><strong>N° LETTI</strong></p>
-              <p class="text-muted mb-4">{{$apartment->beds_number}}</p>
-            </li>
-  
-            <li>
-              <p class="text-uppercase mb-2"><strong>N° BAGNI</strong></p>
-              <p class="text-muted mb-4">{{$apartment->bathrooms_number}}</p>
-            </li>
-  
-          </ul>
-  
+          <a class="carousel-control-prev" href="#carousel-show" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-show" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-  
+        {{-- carousel --}}
       </div>
-      
-      <div class="row">
-        
-
-        <a class="btn btn-info my-4 px-5 mx-auto d-block background-color-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza questo appartamento</a>
-
-        <form action="{{route('admin.apartment.destroy', $apartment->id)}}" method="POST">
-          @method('DELETE')
-          @csrf
-          <button type="submit" value="delete" class="btn btn-danger">Delete</button>
-        </form>
-  
+    </div>
+    {{-- row carousel  --}}
+    {{-- row info --}}
+    <div class="row mb-5">
+      <div class="col-12 col-md-7 border-pers">
+        <h2 class="py-2">Description</h2>
+        <p>{{$apartment->description}}</p>
       </div>
+      <div class="col-5 col-md-5 services">
+        <h2>Services</h2>
+        <ul class="d-flex flex-column flex-wrap">
+          @foreach ($apartment->services as $service)
+          <li><span><i class="fas fa-circle dot-pers mr-2"></i></span>{{$service->name}}</li>
+          @endforeach
+        </ul>
+      </div>
+      <div class="col-7 col-md-6 map-container">
+
+      </div>
+      <div class="col-12 offset-md-1 col-md-5 message">
+        <h2 class="pb-3">Messaggi ricevuti</h2>
+        <ul class="">
+          @foreach ($apartment->messages as $message)
+          <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
+          @endforeach
+        </ul>
+      </div>
+      <div class="modal fade color-primary modal-tr" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              {{-- title Modal --}}
+              <div class="modal-header">
+                  <h5 class="modal-title color-secondary" id="staticBackdropLabel">Privacy Policy
+                      BoolBnB</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              {{-- Model Privacy Policy --}}
+              <div class="modal-body">
+                  <h6>Informativa sulla privacy,Ultimo aggiornamento: 30 ottobre 2020.</h6>
+                
+              </div>
+              {{-- Buttom Close Modal --}}
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-info btm-link"
+                      data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
 
     </div>
-
-    
-  </section>
-</div>
-
+  </div>
+</section>
 @endsection

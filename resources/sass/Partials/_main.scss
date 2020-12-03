@@ -190,3 +190,103 @@ main {
       }
     }
 }
+//Index Admin
+
+// Show guest 
+#show {
+
+  #carousel-show {
+    .carousel-item {
+      .test {
+        height: 500px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+  .border-pers {
+    border-right: 2px ridge $bluebnb;
+  }
+  .services {
+    h2 {
+      margin-left: $spacer *2 ;
+    }
+
+    ul {
+      list-style: none;
+      height: 75px;
+      li {
+        cursor: default;
+        .dot-pers {
+          color: $bluebnb;
+          transition: 0.5s;
+
+        }
+        &:hover .dot-pers {
+          color: $greenbnb;
+        }
+      }
+    }
+  }
+  .map-container {
+    border: 1px solid red;
+    height: 500px;
+  }
+  .message {
+    ul {
+      list-style: none;
+      li {
+        border: 1px solid $gray;
+        border-radius: 20px ;
+        cursor: pointer;
+        .dot-pers {
+          color: $greenbnb;
+          transition: 0.5s;
+          margin-left: 5px;
+          margin-top: 8px;
+          padding: 0;
+
+        }
+        &:hover .dot-pers {
+          color: $bluebnb;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+  // MEDIA QUERY
+
+  @media (max-width: 765px) {
+    .border-pers {
+      border-right: none;
+      border-bottom: 2px ridge $bluebnb;
+      margin-bottom: $spacer * 2;
+    }
+    .services {
+      h2 {
+        margin-left: 0;
+      }
+      ul{
+        margin-left: - $spacer * 3;
+        height: 400px;
+        li {
+          padding-bottom: 10px;
+          padding-right: $spacer * 2;
+        }
+      }
+
+    }
+    .message {
+      margin-left: -30px;
+      h2 {
+        text-align: center;
+        padding-top: $spacer * 3;
+        margin-left: 30px;
+      }
+    }
+  }
+}

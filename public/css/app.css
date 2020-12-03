@@ -11358,6 +11358,103 @@ main #developers .developer .custom-social {
   }
 }
 
+#show #carousel-show .carousel-item .test {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+#show .border-pers {
+  border-right: 2px ridge #001533;
+}
+
+#show .services h2 {
+  margin-left: 2rem;
+}
+
+#show .services ul {
+  list-style: none;
+  height: 75px;
+}
+
+#show .services ul li {
+  cursor: default;
+}
+
+#show .services ul li .dot-pers {
+  color: #001533;
+  transition: 0.5s;
+}
+
+#show .services ul li:hover .dot-pers {
+  color: #00F087;
+}
+
+#show .map-container {
+  border: 1px solid red;
+  height: 500px;
+}
+
+#show .message ul {
+  list-style: none;
+}
+
+#show .message ul li {
+  border: 1px solid #BDBDBD;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#show .message ul li .dot-pers {
+  color: #00F087;
+  transition: 0.5s;
+  margin-left: 5px;
+  margin-top: 8px;
+  padding: 0;
+}
+
+#show .message ul li:hover .dot-pers {
+  color: #001533;
+}
+
+#show .message ul li p {
+  margin: 0;
+  padding: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 765px) {
+  #show .border-pers {
+    border-right: none;
+    border-bottom: 2px ridge #001533;
+    margin-bottom: 2rem;
+  }
+
+  #show .services h2 {
+    margin-left: 0;
+  }
+
+  #show .services ul {
+    margin-left: -3rem;
+    height: 400px;
+  }
+
+  #show .services ul li {
+    padding-bottom: 10px;
+    padding-right: 2rem;
+  }
+
+  #show .message {
+    margin-left: -30px;
+  }
+
+  #show .message h2 {
+    text-align: center;
+    padding-top: 3rem;
+    margin-left: 30px;
+  }
+}
+
 footer {
   border-top: 3px solid #00F087;
   height: 80px;
