@@ -78,4 +78,71 @@
         }
     }
 
+    .results-wrapper {
+      border-right: 1px solid black;
+
+      .apartment-card {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 220px;
+        border-bottom: 1px solid black;
+
+
+        .image-wrapper {
+          width: 180px;
+          height: 180px;
+          border-radius: 10px;
+          flex-shrink: 0;
+        }
+
+        .info-wrapper {
+          padding: 5px;
+
+          ul {
+            margin-top: 30px;
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            padding: 0;
+
+            li {
+              margin: 0 5px;
+            }
+          }
+        }
+
+        .button-wrapper {
+          height: 100%;
+          padding: 5px 0 25px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+
+          .badge {
+            background-color: $greenbnb;
+            color: $bluebnb;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 18px;
+          }
+
+          .btn-details {
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid $bluebnb;
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: $bluebnb;
+            font-size: 18px;
+
+            &:hover {
+              background-color: $greenbnb;
+            }
+          }
+        }
+      }
+    }
+
 }

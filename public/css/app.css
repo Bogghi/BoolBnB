@@ -11529,3 +11529,69 @@ footer .social-links .social-links-item i:hover {
   color: #001533;
 }
 
+.result .results-wrapper {
+  border-right: 1px solid black;
+}
+
+.result .results-wrapper .apartment-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 220px;
+  border-bottom: 1px solid black;
+}
+
+.result .results-wrapper .apartment-card .image-wrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper {
+  padding: 5px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper ul {
+  margin-top: 30px;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper ul li {
+  margin: 0 5px;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper {
+  height: 100%;
+  padding: 5px 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper .badge {
+  background-color: #00F087;
+  color: #001533;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper .btn-details {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #001533;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: #001533;
+  font-size: 18px;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper .btn-details:hover {
+  background-color: #00F087;
+}
+
