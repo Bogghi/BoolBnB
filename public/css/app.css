@@ -11109,6 +11109,7 @@ header.margin-fixed > .container {
   border-bottom: 8px solid #fff;
 }
 
+<<<<<<< HEAD
 .navbar .navbar-nav .dropdown-menu::before {
   position: absolute;
   top: -8px;
@@ -11119,6 +11120,11 @@ header.margin-fixed > .container {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #00F087;
+=======
+main .jumbo-home .info-jumbo .btn-outline-primary:hover {
+  background-color: white;
+  color: black;
+>>>>>>> GuestMain
 }
 
 .navbar-fixed {
@@ -11241,145 +11247,138 @@ main {
 }
 
 main #sponsorizations {
-  background-color: #fff;
+  background-color: black;
+  position: relative;
 }
 
 main #sponsorizations h2 {
-  color: #001533;
   font-weight: 700;
 }
 
-main #sponsorizations .container-fluid,
-main #sponsorizations .container-sm,
-main #sponsorizations .container-md,
-main #sponsorizations .container-lg,
-main #sponsorizations .container-xl {
-  overflow-x: scroll;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
+main #sponsorizations a {
+  text-decoration: none;
 }
 
-main #sponsorizations .container-fluid::-webkit-scrollbar,
-main #sponsorizations .container-sm::-webkit-scrollbar,
-main #sponsorizations .container-md::-webkit-scrollbar,
-main #sponsorizations .container-lg::-webkit-scrollbar,
-main #sponsorizations .container-xl::-webkit-scrollbar {
-  height: 8px;
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar-track,
-main #sponsorizations .container-sm::-webkit-scrollbar-track,
-main #sponsorizations .container-md::-webkit-scrollbar-track,
-main #sponsorizations .container-lg::-webkit-scrollbar-track,
-main #sponsorizations .container-xl::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar-thumb,
-main #sponsorizations .container-sm::-webkit-scrollbar-thumb,
-main #sponsorizations .container-md::-webkit-scrollbar-thumb,
-main #sponsorizations .container-lg::-webkit-scrollbar-thumb,
-main #sponsorizations .container-xl::-webkit-scrollbar-thumb {
-  background: #00F087;
-  border-radius: 10px;
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-sm::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-md::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-lg::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-xl::-webkit-scrollbar-thumb:hover {
-  background: #00F087;
-}
-
-main #sponsorizations .container-fluid .sponsored-item,
-main #sponsorizations .container-sm .sponsored-item,
-main #sponsorizations .container-md .sponsored-item,
-main #sponsorizations .container-lg .sponsored-item,
-main #sponsorizations .container-xl .sponsored-item {
+main #sponsorizations a .sponsored-item {
   margin: 0 10px 20px;
   border-radius: 5px;
   height: 160px;
   width: 240px;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
+  transition: 1s;
 }
 
-main #sponsorizations .container-fluid .sponsored-item img,
-main #sponsorizations .container-sm .sponsored-item img,
-main #sponsorizations .container-md .sponsored-item img,
-main #sponsorizations .container-lg .sponsored-item img,
-main #sponsorizations .container-xl .sponsored-item img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+main #sponsorizations a .sponsored-item #hover-title {
+  visibility: hidden;
+  text-align: center;
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
-main #developers {
+main #sponsorizations a .sponsored-item:hover {
+  background-size: 120%;
+  background-position: center;
+  opacity: 0.7;
+}
+
+main #sponsorizations a .sponsored-item:hover #hover-title {
+  visibility: visible;
+  color: #00F087;
+  opacity: 1;
+}
+
+main #sponsorizations .box-sponsor {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+main #sponsorizations .box-sponsor::-webkit-scrollbar {
+  height: 8px;
+}
+
+main #sponsorizations .box-sponsor::-webkit-scrollbar {
+  height: 8px;
+}
+
+main #sponsorizations .angle {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+}
+
+main #sponsorizations .prev {
+  left: 280px;
+}
+
+main #sponsorizations .next {
+  right: 280px;
+}
+
+main #sponsorizations #developers {
   background-color: #001533;
   border-bottom: 5px solid #fff;
 }
 
-main #developers .developer {
+main #sponsorizations #developers .developer {
   height: 100%;
   flex-wrap: wrap;
 }
 
-main #developers .developer .pic {
+main #sponsorizations #developers .developer .pic {
   margin-top: 30px;
   padding-bottom: 30px;
 }
 
-main #developers .developer .pic:not(:last-child) {
+main #sponsorizations #developers .developer .pic:not(:last-child) {
   margin-right: 50px;
 }
 
-main #developers .developer .footer-img {
+main #sponsorizations #developers .developer .footer-img {
   width: 140px;
 }
 
-main #developers .developer .custom-social {
+main #sponsorizations #developers .developer .custom-social {
   color: #00F087;
   font-size: 40px;
   background-color: white;
   padding: 10px;
 }
 
-.search-container .row .list-apartment {
+main .search-container .row .list-apartment {
   height: calc(100vh - 78px);
   overflow-y: auto;
 }
 
-.search-container .row .list-apartment .container-apartment {
+main .search-container .row .list-apartment .container-apartment {
   position: relative;
 }
 
-.search-container .row .list-apartment .container-apartment .search-image {
+main .search-container .row .list-apartment .container-apartment .search-image {
   padding: 10px;
 }
 
-.search-container .row .list-apartment .container-apartment .info-apartment .info-text {
+main .search-container .row .list-apartment .container-apartment .info-apartment .info-text {
   font-size: 13px;
 }
 
-.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
+main .search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
   list-style: none;
   margin-bottom: 0px !important;
 }
 
-.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {
+main .search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {
   font-size: 10px;
   padding-right: 10px;
   padding-left: 10px;
 }
 
-.search-container .row .carousel-pers {
+main .search-container .row .carousel-pers {
   margin-top: 100px;
 }
 
-#sponsorized {
+main #sponsorized {
   position: absolute;
   top: 0;
   left: 10px;
@@ -11683,6 +11682,7 @@ footer .social-links .social-links-item i:hover {
 
 #search-results .list-apartment {
   height: calc(100vh - 350px);
+<<<<<<< HEAD
 }
 
 .charts .content {
@@ -11719,5 +11719,7 @@ footer .social-links .social-links-item i:hover {
 .charts .content .stats-box canvas {
   width: 100%;
   padding: 5px;
+=======
+>>>>>>> GuestMain
 }
 

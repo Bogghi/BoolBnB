@@ -42551,6 +42551,7 @@ if (window.location.pathname.includes("statistics")) {
     });
   };
 
+<<<<<<< HEAD
   var renderMessages = function renderMessages(messages) {
     var ctx = document.getElementById('myChart').getContext('2d');
     Chart.defaults.global.elements.rectangle.backgroundColor = 'rgba(0, 240, 135, 0.2)';
@@ -42616,6 +42617,29 @@ $('.single-message').on('click', function () {
     }
   });
 });
+=======
+    var html = template(context);
+    $("#searched-apartments").append(html);
+  }
+} // scrollHorizontal($("#sponsor");
+// function scrollHorizontal(lista, classeFreccia ) {
+//   var box = lista;
+//   var boxScroll;
+//   classeFreccia.click(function() {
+//     if ($(this).hasClass("next")) {
+//       boxScroll = ((box.width() / 2)) + box.scrollLeft();
+//       box.animate({
+//         scrollLeft: boxScroll,
+//       })
+//     } else {
+//       x = ((box.width() / 2)) - box.scrollLeft();
+//       box.animate({
+//         scrollLeft: -boxScroll,
+//       })
+//     }
+//   })
+// }
+>>>>>>> GuestMain
 
 /***/ }),
 
