@@ -84,16 +84,39 @@
       <div class="col-7 col-md-6 map-container">
 
       </div>
-      
       <div class="col-12 offset-md-1 col-md-5 message">
         <h2 class="pb-3">Messaggi ricevuti</h2>
         <ul class="">
           @foreach ($apartment->messages as $message)
-          <li class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
+          <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
           @endforeach
         </ul>
       </div>
-      
+      <div class="modal fade color-primary modal-tr" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              {{-- title Modal --}}
+              <div class="modal-header">
+                  <h5 class="modal-title color-secondary" id="staticBackdropLabel">Privacy Policy
+                      BoolBnB</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              {{-- Model Privacy Policy --}}
+              <div class="modal-body">
+                  <h6>Informativa sulla privacy,Ultimo aggiornamento: 30 ottobre 2020.</h6>
+                
+              </div>
+              {{-- Buttom Close Modal --}}
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-info btm-link"
+                      data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
     </div>
