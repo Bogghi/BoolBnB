@@ -224,4 +224,13 @@ if(window.location.pathname.includes("test")){
       button.addClass('active');
     }
   });
+
+  $(".label-options span").on('click',function(){
+    var label = $(this);
+    if(label.hasClass('active')){
+      label.removeClass('active');
+    }else {
+      label.addClass('active');
+    }
+  })
 }

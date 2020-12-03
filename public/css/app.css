@@ -11493,6 +11493,7 @@ footer .social-links .social-links-item i:hover {
 
 .result .filter-option {
   position: absolute;
+  background-color: white;
   z-index: 0;
   width: 100%;
   transform: translateY(-100%);
@@ -11533,6 +11534,12 @@ footer .social-links .social-links-item i:hover {
   border-radius: 40px;
   text-align: center;
   background-color: #fafafa;
+  transition: background-color 0.2s;
+}
+
+.result .filter-option .static-options .content input:hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
 }
 
 .result .filter-option .label-options {
@@ -11550,9 +11557,16 @@ footer .social-links .social-links-item i:hover {
   margin: 5px;
   padding: 5px 10px;
   border-radius: 40px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.result .filter-option .label-options span:hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
 }
 
 .result .filter-option .label-options span.active {
+  border: none;
   background-color: #00F087;
   color: #001533;
 }

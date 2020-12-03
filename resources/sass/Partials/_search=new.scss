@@ -41,6 +41,7 @@
 
     .filter-option{
         position: absolute;
+        background-color: $white;
         z-index: 0;
         width: 100%;
         transform: translateY(-100%);
@@ -78,6 +79,12 @@
                     border-radius: 40px;
                     text-align: center;
                     background-color: $light-gray;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $medium-gray;
+                    }
                 }
             }
         }
@@ -96,8 +103,15 @@
                 margin: 5px;
                 padding: 5px 10px;
                 border-radius: 40px;
+                transition: background-color 0.2s, border 0.2s, color 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $medium-gray;
+                }
 
                 &.active {
+                    border: none;
                     background-color: $greenbnb;
                     color: $bluebnb;
                 }
