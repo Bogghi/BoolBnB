@@ -28,44 +28,111 @@
     {{-- Apartment sponsorization --}}
     <section id="sponsorizations" class="py-5 ">
         <h2 class="text-center mb-5 text-white">Sponsored</h2>
-
-        <div class="d-flex container box-sponsor" id="sponsor">
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex container flex-wrap justify-content-space-between box-sponsor" id="sponsor">
             
-            {{-- apartment with control if img is storaged in db else img default --}}                
-            @foreach ($sponsored_apartments as $apartments)
-                <?php                  
-                $image = $apartments->cover_image;
-                $pos = strpos($image, "placeholder");
-                ?>
-            
-                <?php if ($pos === false) {?>
-                <a href="{{route('admin.apartment.show', $apartments)}}">
-                    <div class="sponsored-item" style="background-image: url({{asset('storage/'.$apartments->cover_image)}})">
-                        {{-- Info Apartment --}}
-                        <h5 id="hover-title">{{$apartments->titl}}Prova titolo</h5>                     
-                    </div>
-                </a>
-                <?php } else {?>
-                <a href="{{route('admin.apartment.show', $apartments)}}">
-                     <div class="sponsored-item" style="background-image: url({{$apartments->cover_image}})">
-                        {{-- Info Apartment --}}
-                        <h5 id="hover-title" class="p-3">{{$apartments->title}}</h5>
-                    </div>
-                 </a>
-                <?php }?>
-            @endforeach 
-
+                        {{-- apartment with control if img is storaged in db else img default --}}                
+                        @for ($i = 0; $i < 8 ; $i++)
+                            <?php                  
+                            $image = $sponsored_apartments[$i]->cover_image;
+                            $pos = strpos($image, "placeholder");
+                            ?>
                         
+                            <?php if ($pos === false) {?>
+                            <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
+                                <div class="sponsored-item" style="background-image: url({{asset('storage/'.$sponsored_apartments[$i]->cover_image)}})">
+                                    {{-- Info Apartment --}}
+                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}Prova titolo</h5>                     
+                                </div>
+                            </a>
+                            <?php } else {?>
+                            <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
+                                 <div class="sponsored-item" style="background-image: url({{$sponsored_apartments[$i]->cover_image}})">
+                                    {{-- Info Apartment --}}
+                                    <h5 id="hover-title" class="p-3">{{$sponsored_apartments[$i]->title}}</h5>
+                                </div>
+                             </a>
+                            <?php }?>
+                        @endfor
             
-        
+                    </div>
+                </div>
+                <div class="carousel-item">
+                   <div class="d-flex container flex-wrap justify-content-space-between box-sponsor" id="sponsor">
+            
+                        {{-- apartment with control if img is storaged in db else img default --}}                
+                        @for ($i = 0; $i < 8 ; $i++)
+                            <?php                  
+                            $image = $sponsored_apartments[$i]->cover_image;
+                            $pos = strpos($image, "placeholder");
+                            ?>
+                        
+                            <?php if ($pos === false) {?>
+                            <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
+                                <div class="sponsored-item" style="background-image: url({{asset('storage/'.$sponsored_apartments[$i]->cover_image)}})">
+                                    {{-- Info Apartment --}}
+                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}Prova titolo</h5>                     
+                                </div>
+                            </a>
+                            <?php } else {?>
+                            <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
+                                 <div class="sponsored-item" style="background-image: url({{$sponsored_apartments[$i]->cover_image}})">
+                                    {{-- Info Apartment --}}
+                                    <h5 id="hover-title" class="p-3">{{$sponsored_apartments[$i]->title}}</h5>
+                                </div>
+                             </a>
+                            <?php }?>
+                        @endfor
+            
+                    </div>
+                </div>
+                <div class="carousel-item">
+                   <div class="d-flex container flex-wrap justify-content-space-between box-sponsor" id="sponsor">
+            
+                        {{-- apartment with control if img is storaged in db else img default --}}                
+                        @for ($i = 0; $i < 8 ; $i++)
+                            <?php                  
+                            $image = $sponsored_apartments[$i]->cover_image;
+                            $pos = strpos($image, "placeholder");
+                            ?>
+                        
+                            <?php if ($pos === false) {?>
+                            <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
+                                <div class="sponsored-item" style="background-image: url({{asset('storage/'.$sponsored_apartments[$i]->cover_image)}})">
+                                    {{-- Info Apartment --}}
+                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}Prova titolo</h5>                     
+                                </div>
+                            </a>
+                            <?php } else {?>
+                            <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
+                                 <div class="sponsored-item" style="background-image: url({{$sponsored_apartments[$i]->cover_image}})">
+                                    {{-- Info Apartment --}}
+                                    <h5 id="hover-title" class="p-3">{{$sponsored_apartments[$i]->title}}</h5>
+                                </div>
+                             </a>
+                            <?php }?>
+                        @endfor
+            
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
 
         
           {{-- buttom sx --}}
-          <div class="angle prev" id="scroll-click"><i class="fas fa-angle-left"></i></div>
+          <a class="angle prev" id="scroll-click" href="#carouselExampleIndicators" role="button" data-slide="prev"><i class="fas fa-angle-left"></i></a>
        
           {{-- buttom dx --}}
-          <div class="angle next"><i class="fas fa-angle-right"></i></div>
+          <a class="angle next" href="#carouselExampleIndicators" role="button" data-slide="next"><i class="fas fa-angle-right"></i></a>
        
 
     </section>
