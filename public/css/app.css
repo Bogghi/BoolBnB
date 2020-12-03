@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);@charset "UTF-8";
 
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1350px !important;
+  }
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

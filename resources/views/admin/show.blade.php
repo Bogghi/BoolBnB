@@ -7,9 +7,11 @@
     <div class="row">
       <div class="col-12 d-flex pt-4">
         <h1>{{$apartment->title}}</h1>
+        @if (Auth::id() == $apartment->user_id )
         <div class="ml-auto">
           <a class="btn btn-outline-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza il tuo appartamento</a>
         </div>
+        @endif
       </div>
     </div>
     {{-- row title  --}}
@@ -84,6 +86,9 @@
       <div class="col-7 col-md-6 map-container">
 
       </div>
+
+
+      @if (Auth::id() == $apartment->user_id )
       <div class="col-12 offset-md-1 col-md-5 message">
         <h2 class="pb-3">Messaggi ricevuti</h2>
         <ul class="">
@@ -92,18 +97,16 @@
           @endforeach
         </ul>
       </div>
-      <div class="modal fade color-primary modal-tr" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
-      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
+
+      {{-- MODAL --}}
+      <div class="modal fade color-primary modal-tr" id="staticBackdrop" data-backdrop="static" data-keyboard="false"tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
           <div class="modal-content">
               {{-- title Modal --}}
               <div class="modal-header">
                   <h5 class="modal-title color-secondary" id="staticBackdropLabel">Messaggio ricevuto</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
-              {{-- Model Privacy Policy --}}
               <div class="modal-body">
                   <h4 id="message-email"></h4>
                   <p id="message-text"></p>
@@ -115,7 +118,39 @@
               </div>
           </div>
       </div>
-  </div>
+      {{-- MODAL --}}
+
+      @else
+
+      <div class="col-12 offset-md-1 col-md-5">
+
+        <form class="border border-light p-5" action="{{route("message.store", $apartment->id)}}" method="POST">
+          @csrf
+          @method('POST')
+          <p class="h4 mb-4 text-center">Contatta il proprietario</p>
+      
+          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Il tuo indirizzo e-mail" value="{{old("email") ?? old("email")}}" required>
+          @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+
+          <textarea class="form-control rounded-0" name="content" id="content" rows="3" placeholder="Il tuo messaggio..." required style="resize: none;">{{old("content") ?? old("content")}}</textarea>
+          @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+
+          <button class="btn btn-outline-primary mx-auto mt-4 d-block px-5" type="submit">Invia messaggio</button>
+
+        </form>
+
+      </div>
+      @endif
+
+
+
+
+
+
 
 
     </div>
