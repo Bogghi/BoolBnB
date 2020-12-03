@@ -11241,7 +11241,8 @@ main {
 }
 
 main #sponsorizations {
-  background-color: #fff;
+  background-color: black;
+  position: relative;
 }
 
 main #sponsorizations h2 {
