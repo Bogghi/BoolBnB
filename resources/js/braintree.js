@@ -1,6 +1,5 @@
 var form = $('form');
 
-alert("porcodio");
 
 braintree.client.create({
     authorization: 'sandbox_ktxk7zdp_74vbrq5qhfspbq2y'

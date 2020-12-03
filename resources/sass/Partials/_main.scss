@@ -1,6 +1,7 @@
 main {
   min-height: $main-heigth;
   margin-top: 80px;
+  
 
   .jumbo-home {
     height: 600px;
@@ -67,57 +68,98 @@ main {
   }
 
 
-
-  #sponsorizations {
-
-    background-color: #fff;
-
+  // Sponsorization
+  #sponsorizations {   
+    background-color: $black;
+    position:relative;
+    
     h2 {
-      color: $bluebnb;
       font-weight: 700;
     }
+    
+      
+      a{
+        text-decoration: none;
+        color: white;  
+        transition: 1s;
+        .sponsored-item {
+          margin: 0 10px 20px;
+          border-radius: 5px;
+          height: 160px;
+          width: 240px;
+          background-size: 100%;
+          background-position: center;
+          #hover-title{            
+            display: none;  
+            text-align: center;          
+          }        
+        }
+        
+        &:hover #hover-title{
+          display: block;
+          opacity: 1;
+        }
+        &:hover {        
+          background-size: 120%;
+          background-position: center;
+          opacity: 0.5;        
+          }     
+      }
+    
 
-    .container-fluid {
-      overflow-x: scroll;
-      /* width */
+    .box-sponsor {
+      height: 400px;
+        &::-webkit-scrollbar {
+                height: 8px;
+              }
+      overflow-y: scroll;
         &::-webkit-scrollbar {
           height: 8px;
         }
-
-        /* Track */
-        &::-webkit-scrollbar-track {
-          background: #fff;
-        }
-
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-          background: $greenbnb;
-          border-radius:10px;
-        }
-
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-          background: $greenbnb;
-        }
-
-      .sponsored-item {
-        margin: 0 10px 20px;
-        border-radius: 5px;
-        height: 160px;
-        width: 240px;
-        background-size: cover;
-        background-position: center;
-
-        img {
-          width: 100%;
-          border-radius: 10px;
-          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-        }
-      }
     }
 
-
+  .angle{
+    color:white;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
   }
+  .prev{
+    left: 280px;
+  }
+  .next{
+    right: 280px;
+  }
+
+    // .container-fluid {
+    //   overflow-x: scroll;
+    //   /* width */
+    //     &::-webkit-scrollbar {
+    //       height: 8px;
+    //     }
+
+    //     /* Track */
+    //     &::-webkit-scrollbar-track {
+    //       background: #fff;
+    //     }
+
+    //     /* Handle */
+    //     &::-webkit-scrollbar-thumb {
+    //       background: $greenbnb;
+    //       border-radius:10px;
+    //     }
+
+    //     /* Handle on hover */
+    //     &::-webkit-scrollbar-thumb:hover {
+    //       background: $greenbnb;
+    //     }
+
+    //   
+    //   }
+    // }
+
+
+  
 
   #developers {
 
@@ -128,7 +170,6 @@ main {
       flex-wrap: wrap;
 
       .pic {
-
         margin-top: 30px;
         padding-bottom: 30px;
 
@@ -136,7 +177,6 @@ main {
           margin-right: 50px;
         }
       }
-
       .footer-img {
         width: 140px;
 
@@ -207,10 +247,11 @@ main {
 
 
   }
-}
+  }
 
-#sponsorized {
+  #sponsorized {
   position: absolute;
   top: 0;
   left: 10px;
+  }
 }

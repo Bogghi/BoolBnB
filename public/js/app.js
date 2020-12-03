@@ -42483,7 +42483,24 @@ function renderResults(data) {
     var html = template(context);
     $("#searched-apartments").append(html);
   }
-}
+} // scrollHorizontal($("#sponsor");
+// function scrollHorizontal(lista, classeFreccia ) {
+//   var box = lista;
+//   var boxScroll;
+//   classeFreccia.click(function() {
+//     if ($(this).hasClass("next")) {
+//       boxScroll = ((box.width() / 2)) + box.scrollLeft();
+//       box.animate({
+//         scrollLeft: boxScroll,
+//       })
+//     } else {
+//       x = ((box.width() / 2)) - box.scrollLeft();
+//       box.animate({
+//         scrollLeft: -boxScroll,
+//       })
+//     }
+//   })
+// }
 
 /***/ }),
 
@@ -42550,13 +42567,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
 __webpack_require__(/*! C:\Users\Administrator\Desktop\Boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Administrator\Desktop\Boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> Footer
 
 
 /***/ })

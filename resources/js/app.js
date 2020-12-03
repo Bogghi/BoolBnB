@@ -130,3 +130,27 @@ function renderResults(data) {
     $("#searched-apartments").append(html);
   }
 }
+
+
+
+
+// scrollHorizontal($("#sponsor");
+
+// function scrollHorizontal(lista, classeFreccia ) {
+//   var box = lista;
+//   var boxScroll;
+//   classeFreccia.click(function() {
+//     if ($(this).hasClass("next")) {
+//       boxScroll = ((box.width() / 2)) + box.scrollLeft();
+//       box.animate({
+//         scrollLeft: boxScroll,
+//       })
+//     } else {
+//       x = ((box.width() / 2)) - box.scrollLeft();
+//       box.animate({
+//         scrollLeft: -boxScroll,
+//       })
+//     }
+//   })
+// }
+
