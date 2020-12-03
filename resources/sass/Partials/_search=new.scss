@@ -143,6 +143,29 @@
           }
         }
       }
+      @media screen and (max-width: 576px) {
+
+        .apartment-card {
+          height: auto;
+          flex-wrap: wrap;
+          padding: 10px;
+
+          .image-wrapper {
+            width: 100%;
+
+          }
+
+          .info-wrapper {
+            width: 100%;
+          }
+
+          .button-wrapper {
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+          }
+        }
+      }
     }
 
 }

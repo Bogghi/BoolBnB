@@ -11595,3 +11595,25 @@ footer .social-links .social-links-item i:hover {
   background-color: #00F087;
 }
 
+@media screen and (max-width: 576px) {
+  .result .results-wrapper .apartment-card {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .result .results-wrapper .apartment-card .image-wrapper {
+    width: 100%;
+  }
+
+  .result .results-wrapper .apartment-card .info-wrapper {
+    width: 100%;
+  }
+
+  .result .results-wrapper .apartment-card .button-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+}
+
