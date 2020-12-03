@@ -11109,7 +11109,6 @@ header.margin-fixed > .container {
   border-bottom: 8px solid #fff;
 }
 
-<<<<<<< HEAD
 .navbar .navbar-nav .dropdown-menu::before {
   position: absolute;
   top: -8px;
@@ -11120,11 +11119,6 @@ header.margin-fixed > .container {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #00F087;
-=======
-main .jumbo-home .info-jumbo .btn-outline-primary:hover {
-  background-color: white;
-  color: black;
->>>>>>> GuestMain
 }
 
 .navbar-fixed {
@@ -11247,8 +11241,7 @@ main {
 }
 
 main #sponsorizations {
-  background-color: black;
-  position: relative;
+  background-color: #fff;
 }
 
 main #sponsorizations h2 {
@@ -11682,7 +11675,6 @@ footer .social-links .social-links-item i:hover {
 
 #search-results .list-apartment {
   height: calc(100vh - 350px);
-<<<<<<< HEAD
 }
 
 .charts .content {
@@ -11719,7 +11711,5 @@ footer .social-links .social-links-item i:hover {
 .charts .content .stats-box canvas {
   width: 100%;
   padding: 5px;
-=======
->>>>>>> GuestMain
 }
 
