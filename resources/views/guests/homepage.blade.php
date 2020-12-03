@@ -29,7 +29,7 @@
     <section id="sponsorizations" class="py-5 ">
         <h2 class="text-center mb-5 text-white">Sponsored</h2>
 
-        <div class="d-flex justify-content-between flex-wrap container box-sponsor" id="sponsor">
+        <div class="d-flex container box-sponsor" id="sponsor">
             
             {{-- apartment with control if img is storaged in db else img default --}}                
             @foreach ($sponsored_apartments as $apartments)
