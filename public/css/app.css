@@ -11429,6 +11429,10 @@ main #developers .developer .custom-social {
   margin-top: 3px;
 }
 
+#show .contatti form {
+  padding: 2.1rem;
+}
+
 @media (max-width: 765px) {
   #show .border-pers {
     border-right: none;

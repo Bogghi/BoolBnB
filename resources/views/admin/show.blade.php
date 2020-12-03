@@ -122,12 +122,12 @@
 
       @else
 
-      <div class="col-12 offset-md-1 col-md-5">
+      <div class="col-12 offset-md-1 col-md-5 contatti">
 
-        <form class="border border-light p-5" action="{{route("message.store", $apartment->id)}}" method="POST">
+        <form class="padding-pers" action="{{route("message.store", $apartment->id)}}" method="POST">
           @csrf
           @method('POST')
-          <p class="h4 mb-4 text-center">Contatta il proprietario</p>
+          <p class="h4 mb-4 ">Contatta il proprietario</p>
       
           <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Il tuo indirizzo e-mail" value="{{old("email") ?? old("email")}}" required>
           @error('email')

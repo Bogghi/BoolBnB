@@ -258,6 +258,12 @@ main {
       }
     }
   }
+
+  .contatti {
+    form{
+      padding: $spacer * 2.1;
+    }
+  }
   // MEDIA QUERY
 
   @media (max-width: 765px) {
