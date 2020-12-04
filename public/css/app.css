@@ -11237,142 +11237,664 @@ header.jumbo-header .collapse.navbar-collapse {
 
 main {
   min-height: calc(100vh - 404px);
-  padding-top: 40px;
 }
 
 main #sponsorizations {
   background-color: black;
+}
+
+main #sponsorizations .container-fluid,
+main #sponsorizations .container-sm,
+main #sponsorizations .container-md,
+main #sponsorizations .container-lg,
+main #sponsorizations .container-xl {
+  width: 100%;
   position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-main #sponsorizations h2 {
-  font-weight: 700;
+main #sponsorizations .container-fluid .container-fluid,
+main #sponsorizations .container-sm .container-fluid,
+main #sponsorizations .container-md .container-fluid,
+main #sponsorizations .container-lg .container-fluid,
+main #sponsorizations .container-xl .container-fluid,
+main #sponsorizations .container-fluid .container-sm,
+main #sponsorizations .container-sm .container-sm,
+main #sponsorizations .container-md .container-sm,
+main #sponsorizations .container-lg .container-sm,
+main #sponsorizations .container-xl .container-sm,
+main #sponsorizations .container-fluid .container-md,
+main #sponsorizations .container-sm .container-md,
+main #sponsorizations .container-md .container-md,
+main #sponsorizations .container-lg .container-md,
+main #sponsorizations .container-xl .container-md,
+main #sponsorizations .container-fluid .container-lg,
+main #sponsorizations .container-sm .container-lg,
+main #sponsorizations .container-md .container-lg,
+main #sponsorizations .container-lg .container-lg,
+main #sponsorizations .container-xl .container-lg,
+main #sponsorizations .container-fluid .container-xl,
+main #sponsorizations .container-sm .container-xl,
+main #sponsorizations .container-md .container-xl,
+main #sponsorizations .container-lg .container-xl,
+main #sponsorizations .container-xl .container-xl {
+  width: 98% !important;
+  margin: 0px 30px;
 }
 
-main #sponsorizations a {
-  text-decoration: none;
-}
-
-main #sponsorizations a .sponsored-item {
-  margin: 0 10px 20px;
-  border-radius: 5px;
-  height: 160px;
-  width: 240px;
-  background-size: 100%;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment,
+main #sponsorizations .container-md .container-sm .sponsored-apartment,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment,
+main #sponsorizations .container-sm .container-md .sponsored-apartment,
+main #sponsorizations .container-md .container-md .sponsored-apartment,
+main #sponsorizations .container-lg .container-md .sponsored-apartment,
+main #sponsorizations .container-xl .container-md .sponsored-apartment,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment,
+main #sponsorizations .container-md .container-lg .sponsored-apartment,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment,
+main #sponsorizations .container-md .container-xl .sponsored-apartment,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment {
+  width: 350px;
+  height: 200px;
+  margin: 10px;
   background-position: center;
-  transition: 1s;
-}
-
-main #sponsorizations a .sponsored-item #hover-title {
-  visibility: hidden;
-  text-align: center;
-  opacity: 0.5;
+  background-size: 100%;
+  filter: grayscale(0%);
   transition: 0.5s;
 }
 
-main #sponsorizations a .sponsored-item:hover {
-  background-size: 120%;
-  background-position: center;
-  opacity: 0.7;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-md .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-md .sponsored-apartment h3,
+main #sponsorizations .container-md .container-md .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-md .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-md .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-md .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-md .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment h3 {
+  color: white;
+  visibility: hidden;
+  opacity: 0.1;
+  transition: 0.5s;
 }
 
-main #sponsorizations a .sponsored-item:hover #hover-title {
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment a,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment a,
+main #sponsorizations .container-md .container-sm .sponsored-apartment a,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment a,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment a,
+main #sponsorizations .container-sm .container-md .sponsored-apartment a,
+main #sponsorizations .container-md .container-md .sponsored-apartment a,
+main #sponsorizations .container-lg .container-md .sponsored-apartment a,
+main #sponsorizations .container-xl .container-md .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment a,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment a,
+main #sponsorizations .container-md .container-lg .sponsored-apartment a,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment a,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment a,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment a,
+main #sponsorizations .container-md .container-xl .sponsored-apartment a,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment a,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment a {
+  visibility: hidden;
+  color: black;
+  opacity: 0.1;
+  background-color: white;
+  transition: 0.5s;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment a:hover {
+  color: white;
+  background-color: #001533;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover h3 {
   visibility: visible;
-  color: #00F087;
   opacity: 1;
 }
 
-main #sponsorizations .box-sponsor {
-  height: 400px;
-  overflow-y: scroll;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover a {
+  visibility: visible;
+  opacity: 1;
 }
 
-main #sponsorizations .box-sponsor::-webkit-scrollbar {
-  height: 8px;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover {
+  filter: grayscale(100%);
+  background-size: 120%;
 }
 
-main #sponsorizations .box-sponsor::-webkit-scrollbar {
-  height: 8px;
+@media (max-width: 1200px) {
+  main #sponsorizations .container-fluid .container-fluid .container-fluid,
+  main #sponsorizations .container-sm .container-fluid .container-fluid,
+  main #sponsorizations .container-md .container-fluid .container-fluid,
+  main #sponsorizations .container-lg .container-fluid .container-fluid,
+  main #sponsorizations .container-xl .container-fluid .container-fluid,
+  main #sponsorizations .container-fluid .container-sm .container-fluid,
+  main #sponsorizations .container-sm .container-sm .container-fluid,
+  main #sponsorizations .container-md .container-sm .container-fluid,
+  main #sponsorizations .container-lg .container-sm .container-fluid,
+  main #sponsorizations .container-xl .container-sm .container-fluid,
+  main #sponsorizations .container-fluid .container-md .container-fluid,
+  main #sponsorizations .container-sm .container-md .container-fluid,
+  main #sponsorizations .container-md .container-md .container-fluid,
+  main #sponsorizations .container-lg .container-md .container-fluid,
+  main #sponsorizations .container-xl .container-md .container-fluid,
+  main #sponsorizations .container-fluid .container-lg .container-fluid,
+  main #sponsorizations .container-sm .container-lg .container-fluid,
+  main #sponsorizations .container-md .container-lg .container-fluid,
+  main #sponsorizations .container-lg .container-lg .container-fluid,
+  main #sponsorizations .container-xl .container-lg .container-fluid,
+  main #sponsorizations .container-fluid .container-xl .container-fluid,
+  main #sponsorizations .container-sm .container-xl .container-fluid,
+  main #sponsorizations .container-md .container-xl .container-fluid,
+  main #sponsorizations .container-lg .container-xl .container-fluid,
+  main #sponsorizations .container-xl .container-xl .container-fluid,
+  main #sponsorizations .container-fluid .container-fluid .container-sm,
+  main #sponsorizations .container-sm .container-fluid .container-sm,
+  main #sponsorizations .container-md .container-fluid .container-sm,
+  main #sponsorizations .container-lg .container-fluid .container-sm,
+  main #sponsorizations .container-xl .container-fluid .container-sm,
+  main #sponsorizations .container-fluid .container-sm .container-sm,
+  main #sponsorizations .container-sm .container-sm .container-sm,
+  main #sponsorizations .container-md .container-sm .container-sm,
+  main #sponsorizations .container-lg .container-sm .container-sm,
+  main #sponsorizations .container-xl .container-sm .container-sm,
+  main #sponsorizations .container-fluid .container-md .container-sm,
+  main #sponsorizations .container-sm .container-md .container-sm,
+  main #sponsorizations .container-md .container-md .container-sm,
+  main #sponsorizations .container-lg .container-md .container-sm,
+  main #sponsorizations .container-xl .container-md .container-sm,
+  main #sponsorizations .container-fluid .container-lg .container-sm,
+  main #sponsorizations .container-sm .container-lg .container-sm,
+  main #sponsorizations .container-md .container-lg .container-sm,
+  main #sponsorizations .container-lg .container-lg .container-sm,
+  main #sponsorizations .container-xl .container-lg .container-sm,
+  main #sponsorizations .container-fluid .container-xl .container-sm,
+  main #sponsorizations .container-sm .container-xl .container-sm,
+  main #sponsorizations .container-md .container-xl .container-sm,
+  main #sponsorizations .container-lg .container-xl .container-sm,
+  main #sponsorizations .container-xl .container-xl .container-sm,
+  main #sponsorizations .container-fluid .container-fluid .container-md,
+  main #sponsorizations .container-sm .container-fluid .container-md,
+  main #sponsorizations .container-md .container-fluid .container-md,
+  main #sponsorizations .container-lg .container-fluid .container-md,
+  main #sponsorizations .container-xl .container-fluid .container-md,
+  main #sponsorizations .container-fluid .container-sm .container-md,
+  main #sponsorizations .container-sm .container-sm .container-md,
+  main #sponsorizations .container-md .container-sm .container-md,
+  main #sponsorizations .container-lg .container-sm .container-md,
+  main #sponsorizations .container-xl .container-sm .container-md,
+  main #sponsorizations .container-fluid .container-md .container-md,
+  main #sponsorizations .container-sm .container-md .container-md,
+  main #sponsorizations .container-md .container-md .container-md,
+  main #sponsorizations .container-lg .container-md .container-md,
+  main #sponsorizations .container-xl .container-md .container-md,
+  main #sponsorizations .container-fluid .container-lg .container-md,
+  main #sponsorizations .container-sm .container-lg .container-md,
+  main #sponsorizations .container-md .container-lg .container-md,
+  main #sponsorizations .container-lg .container-lg .container-md,
+  main #sponsorizations .container-xl .container-lg .container-md,
+  main #sponsorizations .container-fluid .container-xl .container-md,
+  main #sponsorizations .container-sm .container-xl .container-md,
+  main #sponsorizations .container-md .container-xl .container-md,
+  main #sponsorizations .container-lg .container-xl .container-md,
+  main #sponsorizations .container-xl .container-xl .container-md,
+  main #sponsorizations .container-fluid .container-fluid .container-lg,
+  main #sponsorizations .container-sm .container-fluid .container-lg,
+  main #sponsorizations .container-md .container-fluid .container-lg,
+  main #sponsorizations .container-lg .container-fluid .container-lg,
+  main #sponsorizations .container-xl .container-fluid .container-lg,
+  main #sponsorizations .container-fluid .container-sm .container-lg,
+  main #sponsorizations .container-sm .container-sm .container-lg,
+  main #sponsorizations .container-md .container-sm .container-lg,
+  main #sponsorizations .container-lg .container-sm .container-lg,
+  main #sponsorizations .container-xl .container-sm .container-lg,
+  main #sponsorizations .container-fluid .container-md .container-lg,
+  main #sponsorizations .container-sm .container-md .container-lg,
+  main #sponsorizations .container-md .container-md .container-lg,
+  main #sponsorizations .container-lg .container-md .container-lg,
+  main #sponsorizations .container-xl .container-md .container-lg,
+  main #sponsorizations .container-fluid .container-lg .container-lg,
+  main #sponsorizations .container-sm .container-lg .container-lg,
+  main #sponsorizations .container-md .container-lg .container-lg,
+  main #sponsorizations .container-lg .container-lg .container-lg,
+  main #sponsorizations .container-xl .container-lg .container-lg,
+  main #sponsorizations .container-fluid .container-xl .container-lg,
+  main #sponsorizations .container-sm .container-xl .container-lg,
+  main #sponsorizations .container-md .container-xl .container-lg,
+  main #sponsorizations .container-lg .container-xl .container-lg,
+  main #sponsorizations .container-xl .container-xl .container-lg,
+  main #sponsorizations .container-fluid .container-fluid .container-xl,
+  main #sponsorizations .container-sm .container-fluid .container-xl,
+  main #sponsorizations .container-md .container-fluid .container-xl,
+  main #sponsorizations .container-lg .container-fluid .container-xl,
+  main #sponsorizations .container-xl .container-fluid .container-xl,
+  main #sponsorizations .container-fluid .container-sm .container-xl,
+  main #sponsorizations .container-sm .container-sm .container-xl,
+  main #sponsorizations .container-md .container-sm .container-xl,
+  main #sponsorizations .container-lg .container-sm .container-xl,
+  main #sponsorizations .container-xl .container-sm .container-xl,
+  main #sponsorizations .container-fluid .container-md .container-xl,
+  main #sponsorizations .container-sm .container-md .container-xl,
+  main #sponsorizations .container-md .container-md .container-xl,
+  main #sponsorizations .container-lg .container-md .container-xl,
+  main #sponsorizations .container-xl .container-md .container-xl,
+  main #sponsorizations .container-fluid .container-lg .container-xl,
+  main #sponsorizations .container-sm .container-lg .container-xl,
+  main #sponsorizations .container-md .container-lg .container-xl,
+  main #sponsorizations .container-lg .container-lg .container-xl,
+  main #sponsorizations .container-xl .container-lg .container-xl,
+  main #sponsorizations .container-fluid .container-xl .container-xl,
+  main #sponsorizations .container-sm .container-xl .container-xl,
+  main #sponsorizations .container-md .container-xl .container-xl,
+  main #sponsorizations .container-lg .container-xl .container-xl,
+  main #sponsorizations .container-xl .container-xl .container-xl {
+    overflow: auto;
+  }
+
+  main #sponsorizations .container-fluid .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-xl .container.fluid .sponsored-apartment {
+    width: 250px;
+  }
 }
 
-main #sponsorizations .angle {
-  color: white;
-  font-size: 50px;
+@media (max-width: 768px) {
+  main #sponsorizations .container-fluid .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .sponsored-apartment {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+main #sponsorizations .container-fluid .arrow,
+main #sponsorizations .container-sm .arrow,
+main #sponsorizations .container-md .arrow,
+main #sponsorizations .container-lg .arrow,
+main #sponsorizations .container-xl .arrow {
   position: absolute;
-  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  height: 100px;
 }
 
-main #sponsorizations .prev {
-  left: 280px;
+main #sponsorizations .container-fluid .prev,
+main #sponsorizations .container-sm .prev,
+main #sponsorizations .container-md .prev,
+main #sponsorizations .container-lg .prev,
+main #sponsorizations .container-xl .prev {
+  top: 30%;
+  left: 1%;
 }
 
-main #sponsorizations .next {
-  right: 280px;
+main #sponsorizations .container-fluid .prev .fas,
+main #sponsorizations .container-sm .prev .fas,
+main #sponsorizations .container-md .prev .fas,
+main #sponsorizations .container-lg .prev .fas,
+main #sponsorizations .container-xl .prev .fas {
+  margin-top: 30px;
 }
 
-main #sponsorizations #developers {
+main #sponsorizations .container-fluid .next,
+main #sponsorizations .container-sm .next,
+main #sponsorizations .container-md .next,
+main #sponsorizations .container-lg .next,
+main #sponsorizations .container-xl .next {
+  top: 30%;
+  right: 1%;
+}
+
+main #sponsorizations .container-fluid .next .fas,
+main #sponsorizations .container-sm .next .fas,
+main #sponsorizations .container-md .next .fas,
+main #sponsorizations .container-lg .next .fas,
+main #sponsorizations .container-xl .next .fas {
+  margin-top: 30px;
+}
+
+main #developers {
   background-color: #001533;
   border-bottom: 5px solid #fff;
 }
 
-main #sponsorizations #developers .developer {
+main #developers .developer {
   height: 100%;
   flex-wrap: wrap;
 }
 
-main #sponsorizations #developers .developer .pic {
+main #developers .developer .pic {
   margin-top: 30px;
   padding-bottom: 30px;
 }
 
-main #sponsorizations #developers .developer .pic:not(:last-child) {
+main #developers .developer .pic:not(:last-child) {
   margin-right: 50px;
 }
 
-main #sponsorizations #developers .developer .footer-img {
+main #developers .developer .footer-img {
   width: 140px;
 }
 
-main #sponsorizations #developers .developer .custom-social {
+main #developers .developer .custom-social {
   color: #00F087;
   font-size: 40px;
   background-color: white;
   padding: 10px;
 }
 
-main .search-container .row .list-apartment {
+.search-container .row .list-apartment {
   height: calc(100vh - 78px);
   overflow-y: auto;
 }
 
-main .search-container .row .list-apartment .container-apartment {
+.search-container .row .list-apartment .container-apartment {
   position: relative;
 }
 
-main .search-container .row .list-apartment .container-apartment .search-image {
+.search-container .row .list-apartment .container-apartment .search-image {
   padding: 10px;
 }
 
-main .search-container .row .list-apartment .container-apartment .info-apartment .info-text {
+.search-container .row .list-apartment .container-apartment .info-apartment .info-text {
   font-size: 13px;
 }
 
-main .search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
+.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info {
   list-style: none;
   margin-bottom: 0px !important;
 }
 
-main .search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {
+.search-container .row .list-apartment .container-apartment .info-apartment .info-tag .list-info li span {
   font-size: 10px;
   padding-right: 10px;
   padding-left: 10px;
 }
 
-main .search-container .row .carousel-pers {
+.search-container .row .carousel-pers {
   margin-top: 100px;
 }
 
-main #sponsorized {
+#sponsorized {
   position: absolute;
   top: 0;
   left: 10px;

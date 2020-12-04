@@ -1,73 +1,105 @@
 main {
   min-height: $main-heigth;
-  padding-top: 40px;
 
   #sponsorizations {
-
     background-color: $black;
-    position: relative;
-
-    h2 {
-      font-weight: 700;
-    }
-    
+    .container-fluid {
+      width: 100%;
+      position: relative;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .container-fluid{
+        width: 98% !important;
+        margin: 0px 30px;
       
-      a{
-        text-decoration: none;
-        .sponsored-item {
-          margin: 0 10px 20px;
-          border-radius: 5px;
-          height: 160px;
-          width: 240px;
-          background-size: 100%;
+        .sponsored-apartment{
+          width: 350px;
+          height: 200px;
+          margin: 10px;
           background-position: center;
-          transition: 1s;
-          #hover-title{   
-            visibility: hidden;         
-            text-align: center;
-            opacity: 0.5;          
+          background-size: 100%;
+          filter: grayscale(0%);
+          transition: 0.5s;
+          
+          h3 {
+            color: $white;
+            visibility: hidden;
+            opacity: 0.1;
             transition: 0.5s;
-          } 
-          &:hover {        
-            background-size: 120%;
-            background-position: center;
-            opacity: 0.7;        
-            }            
-          &:hover #hover-title{
+          }
+          a{
+            visibility: hidden;
+            color: $black;
+            opacity: 0.1;
+            background-color: $white;
+            transition: 0.5s;
+            &:hover{
+              color: $white;
+              background-color: $bluebnb;
+            }
+          }
+          
+          &:hover h3 {
             visibility: visible;
-            color: $greenbnb;
             opacity: 1;
           }
+          &:hover a {
+            visibility: visible;
+            opacity: 1;
 
+          }
+          &:hover {
+            filter: grayscale(100%);
+            background-size: 120%;
+          }
         }
-        
+        @media  (max-width: 1200px){
+          .container-fluid {
+            overflow: auto;
+            
+            .container.fluid {
 
-
-      }
-    
-
-    .box-sponsor {
-      height: 400px;
-        &::-webkit-scrollbar {
-                height: 8px;
+            
+              .sponsored-apartment{
+                width: 250px;
               }
-      overflow-y: scroll;
-        &::-webkit-scrollbar {
-          height: 8px;
+            }
+          }
         }
+        @media  (max-width: 768px){
+          .sponsored-apartment{
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+      .arrow {
+        position: absolute;
+        font-size: 40px;
+        color: $white;
+        cursor: pointer;
+        height: 100px;
+      }
+      .prev {
+        top: 30%;
+        left: 1%;
+        .fas {
+          margin-top: 30px;
+        }
+      }
+      .next {
+        top: 30%;
+        right: 1%;
+        .fas {
+          margin-top: 30px;
+        }
+      }
+
     }
 
-  .angle{
-    color:white;
-    font-size: 50px;
-    position: absolute;
-    top: 50%;
-  }
-  .prev{
-    left: 280px;
-  }
-  .next{
-    right: 280px;
+
+    
   }
 
   #developers {
@@ -164,7 +196,7 @@ main {
   top: 0;
   left: 10px;
   }
-}
+
 
 //search end
 

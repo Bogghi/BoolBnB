@@ -278,3 +278,24 @@ $('.single-message').on('click', function(){
   })
 
 })
+
+//HORIZONTAL SCROLL HOMEPAGE 
+// var winmed = window.matchMedia("(min-width: 1500px)");
+// if (winmed.matches){
+
+var box = $('#scroll');
+var boxScroll;
+$('.arrow').click(function() {
+  if ($(this).hasClass("next")) {
+    boxScroll = ((box.width() / 2)) + box.scrollLeft();
+    box.animate({
+      scrollLeft: boxScroll,
+    })
+  } else {
+    x = ((box.width() / 3)) - box.scrollLeft();
+    box.animate({
+      scrollLeft: -boxScroll,
+    })
+  }
+})
+// }
