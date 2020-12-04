@@ -12054,6 +12054,15 @@ main #developers .developer .custom-social {
   filter: grayscale(100%);
 }
 
+#edit .apartment-cover {
+  max-width: 50%;
+}
+
+#edit .apartment-cover img {
+  width: 100%;
+  height: 100%;
+}
+
 #edit .apartment-images .apartment-image {
   width: 23%;
   margin: 20px;
@@ -12063,10 +12072,6 @@ main #developers .developer .custom-social {
 #edit .apartment-images .apartment-image img {
   width: 100%;
   height: 100%;
-}
-
-#edit .apartment-images .apartment-image .delete-button {
-  margin-bottom: 20px;
 }
 
 footer {

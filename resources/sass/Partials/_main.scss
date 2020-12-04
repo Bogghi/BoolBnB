@@ -363,6 +363,13 @@ main {
 // edit 
 
 #edit {
+  .apartment-cover {
+    max-width: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   .apartment-images{
     .apartment-image {
       width: 23%;
@@ -372,9 +379,7 @@ main {
         width: 100%;
         height: 100%;
       }
-      .delete-button {
-        margin-bottom: 20px;
-      }
+
     }
   }
 }

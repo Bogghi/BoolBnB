@@ -121,7 +121,7 @@
       <div class="apartment-images my-sm-4 d-flex flex-wrap">
         @foreach ($apartment_images as $apartment_image)
           <div class="apartment-image">
-            <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
+            <img class="border rounded" src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
             <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
               @csrf
               @method("DELETE")
