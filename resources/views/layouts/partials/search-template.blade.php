@@ -1,33 +1,41 @@
 <script id="search-result-template" type="text/x-handlebars-template">
-    <div class="d-flex flex-column">
-        <div class="d-flex border rounded container-apartment">
-            @{{#if asset}}
-            <div class="search-image">
-                <img class="border rounded" width="180px" height="180px" src="http://localhost:8000/storage/@{{cover_image}}" alt="cover">
-            </div>
-            @{{else}}
-            <div class="search-image">
-                <img class="border rounded" width="180px" height="180px" src="@{{cover_image}}" alt="cover">
-            </div>
-            @{{/if}}
-                        
-            <div class="info-apartment d-flex flex-column">
 
-                <h5 class="text-center">@{{title}}</h5>
-                <p class="pl-2 info-text">@{{description}}</p>
-                <div class="info-tag d-flex">
-                    <ul class="list-info d-flex">
-                        <li><p><small> Address: @{{address}}</small> </p></li>
-                        <li><p><span><i class="fas fa-circle"></i></span><small> Beds number:</small> @{{beds_number}} </p></li>
-                        <li><p><span><i class="fas fa-circle"></i></span><small> Square meters:</small> @{{square_meters}}</p></li>
-                    </ul>
-                    @{{#if sponsorized}}
-                    <div id="sponsorized">
-                        <h4><span class="badge badge-success">Superhost</span></h4>
-                    </div>
-                    @{{/if}}           
+    <div class="apartment-card">
+        <div class="image-wrapper">
+            @{{#if asset}}
+                <img src="http://localhost:8000/storage/@{{cover_image}}" alt="immagine casa">
+            @{{else}}
+                <img src="@{{cover_image}}" alt="immagine casa">
+            @{{/if}}
+        </div>
+        <div class="info-wrapper">
+            <div class="main">
+                <div class="title">
+                    <h5>@{{title}}</h5>
                 </div>
+                <p>@{{address}}</p>
             </div>
+            <ul>
+                <li>
+                    <strong>Rooms:</strong> @{{rooms_number}}
+                </li>
+                <li>
+                    <strong>Bathrooms:</strong> @{{bathrooms_numbers}}
+                </li>
+                <li>
+                    <strong>Beds:</strong> @{{beds_number}}
+                </li>
+                <li>
+                    <strong>mq:</strong> @{{square_meters}}
+                </li>
+            </ul>
+        </div>
+        <div class="button-wrapper">
+            @{{#if sponsorized}}
+                <div class="badge">Superhost</div>
+            @{{/if}}
+            <a href="http://localhost:8000/admin/apartment/@{{id}}" class="btn-details">Details</a>
         </div>
     </div>
+    
 </script>
