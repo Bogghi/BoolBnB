@@ -42654,7 +42654,11 @@ if ($("#map-container").length > 0) {
         zoom: 12,
         center: [lon, lat]
       });
-      var marker = new tt.Marker().setLngLat([lon, lat]).addTo(map);
+      var element = document.createElement('div');
+      element.id = 'marker-house';
+      var marker = new tt.Marker({
+        element: element
+      }).setLngLat([lon, lat]).addTo(map);
     }
   });
   window.isMobileOrTablet = window.isMobileOrTablet || isMobileOrTablet;

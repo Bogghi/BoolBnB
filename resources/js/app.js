@@ -283,7 +283,10 @@ if ($("#map-container").length > 0) {
         center: [lon, lat]
       });
 
-      var marker = new tt.Marker()
+      var element = document.createElement('div');
+      element.id = 'marker-house';
+
+      var marker = new tt.Marker({ element: element })
         .setLngLat([lon, lat])
         .addTo(map);
 
