@@ -47,7 +47,9 @@
                             </div>
                             <div class="info-wrapper">
                                 <div class="main">
-                                    <h4>{{$all_sponsorized_apartments[$i]->title}}</h4>
+                                    <div class="title">
+                                        <h5>{{$all_sponsorized_apartments[$i]->title}}</h5>
+                                    </div>
                                     <p>{{$all_sponsorized_apartments[$i]->address}}</p>
                                 </div>
                                 <ul>

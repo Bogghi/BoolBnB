@@ -162,9 +162,14 @@
           justify-content: space-between;
           padding: 0px 20px 0px 20px;
 
-          h6 {
-            max-lines: 3;
-            overflow: hidden;
+          .main {
+            .title {
+              overflow: hidden;
+              max-height: 48px;
+              h5 {
+                font-weight: 900;
+              }
+            }
           }
 
           ul {

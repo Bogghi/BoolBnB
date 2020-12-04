@@ -11570,9 +11570,13 @@ footer .social-links .social-links-item i:hover {
   padding: 0px 20px 0px 20px;
 }
 
-.result .results-wrapper .apartment-card .info-wrapper h6 {
-  max-lines: 3;
+.result .results-wrapper .apartment-card .info-wrapper .main .title {
   overflow: hidden;
+  max-height: 48px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper .main .title h5 {
+  font-weight: 900;
 }
 
 .result .results-wrapper .apartment-card .info-wrapper ul {
