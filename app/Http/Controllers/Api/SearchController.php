@@ -52,6 +52,7 @@ class SearchController extends Controller
     foreach ($apartments as $apartment) {
 
       $services = [];
+      //add to the json the sponsorized apartment with laravel model
       $apartment->sponsorizations;
 
       foreach ($apartment->services as $service) {

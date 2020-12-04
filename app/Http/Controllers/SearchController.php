@@ -64,6 +64,6 @@ class SearchController extends Controller
       }
 
 
-      return view("guests.search", compact("apartments", "all_sponsorized_apartments", "services"));
+      return view("guests.search", compact("apartments", "all_sponsorized_apartments", "services", "address"));
     }
 }

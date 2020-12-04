@@ -7,16 +7,17 @@
                 <div class="filter">
                     <h6>Accommodation in the area</h6>
                     <a id="more-option">More filter</a>
+                    <input type="hidden" value="{{$address}}" id="address">
                 </div>
                 <div class="filter-option">
                     <div class="static-options">
                         <div class="content">
                             <label for="rooms_number">Rooms</label>
-                            <input name="rooms_number" id="rooms_number" class="form-control" type="number" placeholder="0">
+                            <input name="rooms_number" id="rooms_number" class="form-control" type="number" placeholder="0" value="2">
                         </div>
                         <div class="content">
                             <label for="beds_number">Beds</label>
-                            <input name="beds_number" id="beds_number" class="form-control" type="number" placeholder="0">
+                            <input name="beds_number" id="beds_number" class="form-control" type="number" placeholder="0" value="1">
                         </div>
                         <div class="content">
                             <label for="radius">Radius</label>
