@@ -280,8 +280,10 @@ $('.single-message').on('click', function(){
 })
 
 //HORIZONTAL SCROLL HOMEPAGE 
+// var winmed = window.matchMedia("(min-width: 1500px)");
+// if (winmed.matches){
 
-var box = $('#test');
+var box = $('#scroll');
 var boxScroll;
 $('.arrow').click(function() {
   if ($(this).hasClass("next")) {
@@ -296,3 +298,4 @@ $('.arrow').click(function() {
     })
   }
 })
+// }

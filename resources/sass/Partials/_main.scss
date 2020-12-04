@@ -9,13 +9,37 @@ main {
       overflow: scroll;
       overflow-x: hidden;
       overflow-y: hidden;
-      .sponsored-apartment{
-        width: 350px;
-        height: 200px;
-        margin: 10px;
-        background-position: center;
-        background-size: cover
-        
+      .container-fluid{
+        width: 98% !important;
+        margin: 0px 30px;
+      
+        .sponsored-apartment{
+          width: 350px;
+          height: 200px;
+          margin: 10px;
+          background-position: center;
+          background-size: cover
+          
+        }
+        @media  (max-width: 1200px){
+          .container-fluid {
+            overflow: auto;
+            
+            .container.fluid {
+
+            
+              .sponsored-apartment{
+                width: 250px;
+              }
+            }
+          }
+        }
+        @media  (max-width: 768px){
+          .sponsored-apartment{
+            width: 150px;
+            height: 150px;
+          }
+        }
       }
       .arrow {
         position: absolute;
@@ -26,29 +50,19 @@ main {
       }
       .prev {
         top: 30%;
-        left: 0;
+        left: 1%;
         .fas {
           margin-top: 30px;
         }
       }
       .next {
         top: 30%;
-        right: 0;
+        right: 1%;
         .fas {
           margin-top: 30px;
         }
       }
-      @media  (max-width: 1200px){
-        .sponsored-apartment{
-          width: 250px;
-        }
-      }
-      @media  (max-width: 768px){
-        .sponsored-apartment{
-          width: 150px;
-          height: 150px;
-        }
-      }
+
     }
 
 

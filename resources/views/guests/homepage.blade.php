@@ -3,10 +3,10 @@
 @section('content')
 
     {{-- Apartment sponsorization --}}
-    <section id="sponsorizations" class="py-5 ">
-        <h2 class="text-center mb-5 text-white">Sponsored</h2>
+    <section id="sponsorizations" class="py-4 ">
+        <h2 class="text-center mb-3 text-white">Sponsored</h2>
         <div  class="container-fluid d-flex">
-          <div id="test" class="container-fluid d-flex">
+          <div id="scroll" class="container-fluid d-flex">
             @foreach ($sponsored_apartments as $apartment)
             <?php
             $image = $apartment->cover_image;
