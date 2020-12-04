@@ -234,4 +234,19 @@ if(window.location.pathname == '/search'){
       label.addClass('active');
     }
   })
+
+  $(".content input").on('change',function () { 
+    var statOption = $(this);
+    var name = statOption.prop('name')
+
+    switch(name){
+      case 'rooms_number':
+        break;
+      case 'beds_number':
+        break;
+      case 'radius':
+        break;
+    }
+
+   })
 }

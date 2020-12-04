@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xl-5 col-lg-6">
                 <div class="filter">
-                    <h4>Accommodation in the area</h4>
+                    <h6>Accommodation in the area</h6>
                     <a id="more-option">More filter</a>
                 </div>
                 <div class="filter-option">
@@ -46,19 +46,28 @@
                                 @endif
                             </div>
                             <div class="info-wrapper">
-                            <h4>{{$all_sponsorized_apartments[$i]->title}}</h4>
-                            <p>{{$all_sponsorized_apartments[$i]->address}}</p>
-                            <ul>
-                                <li><strong>Rooms:</strong> 4</li>
-                                <li><strong>Bathrooms:</strong> 2</li>
-                                <li><strong>Beds:</strong> {{$all_sponsorized_apartments[$i]->beds_number}}</li>
-                                <li><strong>mq:</strong> 120</li>
-                            </ul>
-
+                                <div class="main">
+                                    <h4>{{$all_sponsorized_apartments[$i]->title}}</h4>
+                                    <p>{{$all_sponsorized_apartments[$i]->address}}</p>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <strong>Rooms:</strong> {{$all_sponsorized_apartments[$i]->rooms_number}}
+                                    </li>
+                                    <li>
+                                        <strong>Bathrooms:</strong> {{$all_sponsorized_apartments[$i]->bathrooms_numbers}}
+                                    </li>
+                                    <li>
+                                        <strong>Beds:</strong> {{$all_sponsorized_apartments[$i]->beds_number}}
+                                    </li>
+                                    <li>
+                                        <strong>mq:</strong> {{$all_sponsorized_apartments[$i]->square_meters}}
+                                    </li>
+                                </ul>
                             </div>
                             <div class="button-wrapper">
-                            <div class="badge">Superhost</div>
-                            <a href="#" class="btn-details">Dettagli</a>
+                                <div class="badge">Superhost</div>
+                                <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn-details">Details</a>
                             </div>
                         </div>
                     @endfor

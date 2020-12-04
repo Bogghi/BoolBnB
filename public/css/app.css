@@ -11445,7 +11445,7 @@ footer .social-links .social-links-item i:hover {
 
 .result .filter-option.active {
   transform: translateY(0%);
-  margin-top: 58.8px;
+  margin-top: 56px;
 }
 
 @media screen and (max-width: 444px) {
@@ -11520,8 +11520,11 @@ footer .social-links .social-links-item i:hover {
 }
 
 .result .results-wrapper {
-  margin-top: 58.8px;
+  margin-top: 56px;
   border-right: 1px solid black;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 444px) {
@@ -11532,11 +11535,13 @@ footer .social-links .social-links-item i:hover {
 
 .result .results-wrapper .apartment-card {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 200px;
+  width: 100%;
   border-bottom: 1px solid black;
-  padding: 10px;
+  padding: 10px 20px;
+  margin: 0px;
 }
 
 .result .results-wrapper .apartment-card .image-wrapper {
@@ -11557,15 +11562,22 @@ footer .social-links .social-links-item i:hover {
 }
 
 .result .results-wrapper .apartment-card .info-wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5px;
+  padding: 0px 20px 0px 20px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper h6 {
+  max-lines: 3;
+  overflow: hidden;
 }
 
 .result .results-wrapper .apartment-card .info-wrapper ul {
-  margin-top: 30px;
   display: flex;
+  align-items: flex-end;
   list-style: none;
   flex-wrap: wrap;
   padding: 0;
@@ -11577,11 +11589,11 @@ footer .social-links .social-links-item i:hover {
 
 .result .results-wrapper .apartment-card .button-wrapper {
   height: 100%;
-  padding: 5px 0 25px;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .result .results-wrapper .apartment-card .button-wrapper .badge {
@@ -11598,7 +11610,7 @@ footer .social-links .social-links-item i:hover {
   text-decoration: none;
   border: 2px solid #001533;
   border-radius: 20px;
-  padding: 10px 15px;
+  padding: 5px 10px;
   color: #001533;
   font-size: 18px;
 }
