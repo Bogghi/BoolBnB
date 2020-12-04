@@ -70,36 +70,6 @@ main {
     right: 280px;
   }
 
-    // .container-fluid {
-    //   overflow-x: scroll;
-    //   /* width */
-    //     &::-webkit-scrollbar {
-    //       height: 8px;
-    //     }
-
-    //     /* Track */
-    //     &::-webkit-scrollbar-track {
-    //       background: #fff;
-    //     }
-
-    //     /* Handle */
-    //     &::-webkit-scrollbar-thumb {
-    //       background: $greenbnb;
-    //       border-radius:10px;
-    //     }
-
-    //     /* Handle on hover */
-    //     &::-webkit-scrollbar-thumb:hover {
-    //       background: $greenbnb;
-    //     }
-
-    //   
-    //   }
-    // }
-
-
-  
-
   #developers {
 
     background-color: $bluebnb;
@@ -138,7 +108,6 @@ main {
 
 
 // Search
-
 .search-container {
 
   .row {
@@ -204,8 +173,6 @@ main {
   color: $bluebnb !important;
 }
 #admin-index{
-
-
     .rounded-personalized {
       border-radius: 25px;
       max-height: 150px;
@@ -340,5 +307,21 @@ main {
         margin-left: 30px;
       }
     }
+  }
+}
+
+// Cities Mix
+
+.box-cities{
+  border: 1px solid $greenbnb;
+  border-radius: 10px;
+  width: 100%;
+  height: 160px; 
+  background-size: cover;
+  transition: 1s;
+  background-color: $greenbnb;
+  background-position: center;
+  &:hover{
+    filter: grayscale(100%);    
   }
 }
