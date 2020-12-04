@@ -11,57 +11,55 @@ const Handlebars = require("handlebars");
 
 function renderSponsorized(data) {
   console.log("sponsorizzati");
-  // $("#sponsorized-apartments").empty();
-  // var source = $("#search-result-template").html();
-  // var template = Handlebars.compile(source);
-  // var sponsorized = data.all_sponsorized_apartments;
-  // for (var i = 0; i < 5 && i < sponsorized.length; i++) {
-  //   context = {
-  //     "sponsorized": true,
-  //     "cover_image": sponsorized[i].cover_image,
-  //     "title": sponsorized[i].title,
-  //     "description": sponsorized[i].description,
-  //     "address": sponsorized[i].address,
-  //     "beds_number": sponsorized[i].beds_number,
-  //     "square_meters": sponsorized[i].square_meters
-  //   }
-  //   if (!sponsorized[i].cover_image.includes("placeholder")) {
-  //     context.asset = true;
-  //   };
-  //   var html = template(context);
-  //   $("#sponsorized-apartments").append(html);
-  // }
+  var source = $("#search-result-template").html();
+  var template = Handlebars.compile(source);
+  for (var i = 0; i < 5 && i < data.length; i++) {
+    console.log(i+"sponsorizzati");
+    context = {
+      "sponsorized": true,
+      "cover_image": data[i].cover_image,
+      "title": data[i].title,
+      "description": data[i].description,
+      "address": data[i].address,
+      "beds_number": data[i].beds_number,
+      "square_meters": data[i].square_meters
+    }
+    if (!data[i].cover_image.includes("placeholder")) {
+      context.asset = true;
+    };
+    var html = template(context);
+    $(".results-wrapper").append(html);
+  }
 }
 
 function renderResults(data) {
   console.log("risultati");
-  // $("#searched-apartments").empty();
-  // var source = $("#search-result-template").html();
-  // var template = Handlebars.compile(source);
-  // var apartments = data.matched_apartments;
-  // var sponsorized = data.all_sponsorized_apartments;
-  // var sponsorizedIds = [];
-  // for (var i = 0; i < sponsorized.length; i++) {
-  //   sponsorizedIds.push(sponsorized[i].id);
-  // }
-  // for (var i = 0; i < apartments.length; i++) {
-  //   context = {
-  //     "cover_image": apartments[i].cover_image,
-  //     "title": apartments[i].title,
-  //     "description": apartments[i].description,
-  //     "address": apartments[i].address,
-  //     "beds_number": apartments[i].beds_number,
-  //     "square_meters": apartments[i].square_meters
-  //   }
-  //   if (!apartments[i].cover_image.includes("placeholder")) {
-  //     context.asset = true;
-  //   };
-  //   if (sponsorizedIds.includes(apartments[i].id)) {
-  //     context.sponsorized = true;
-  //   }
-  //   var html = template(context);
-  //   $("#searched-apartments").append(html);
-  // }
+  var source = $("#search-result-template").html();
+  var template = Handlebars.compile(source);
+  var apartments = data.matched_apartments;
+  var sponsorized = data.all_sponsorized_apartments;
+  var sponsorizedIds = [];
+  for (var i = 0; i < sponsorized.length; i++) {
+    sponsorizedIds.push(sponsorized[i].id);
+  }
+  for (var i = 0; i < apartments.length; i++) {
+    context = {
+      "cover_image": apartments[i].cover_image,
+      "title": apartments[i].title,
+      "description": apartments[i].description,
+      "address": apartments[i].address,
+      "beds_number": apartments[i].beds_number,
+      "square_meters": apartments[i].square_meters
+    }
+    if (!apartments[i].cover_image.includes("placeholder")) {
+      context.asset = true;
+    };
+    if (sponsorizedIds.includes(apartments[i].id)) {
+      context.sponsorized = true;
+    }
+    var html = template(context);
+    $(".results-wrapper").append(html);
+  }
 }
 
 function getFilter(){
@@ -116,7 +114,8 @@ function tomtomBoolbBnB(){
         "method": "GET",
         "success": function (data) {
           console.log(data);
-          renderSponsorized(data);
+          $(".results-wrapper").empty();
+          renderSponsorized(data.all_sponsorized_apartments);
           renderResults(data);
         },
         "error": function (error) {
