@@ -42359,9 +42359,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
+var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js"); // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 
-if (window.location.pathname == '/' || window.location.pathname == '/search') {
+
+if (window.location.pathname == '/') {
   var renderSponsorized = function renderSponsorized(data) {
     $("#sponsorized-apartments").empty();
     var source = $("#search-result-template").html();
@@ -42562,7 +42563,7 @@ if (window.location.pathname.includes("statistics")) {
   });
 }
 
-if (window.location.pathname.includes("test")) {
+if (window.location.pathname == '/search') {
   $("#more-option").on('click', function () {
     var button = $('.filter-option');
 
@@ -42648,8 +42649,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\lored\Desktop\boolean\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

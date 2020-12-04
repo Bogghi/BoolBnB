@@ -4,7 +4,8 @@ require('./bootstrap');
 var $ = require('jquery');
 const Handlebars = require("handlebars");
 
-if (window.location.pathname == '/' || window.location.pathname == '/search') {
+// if (window.location.pathname == '/' || window.location.pathname == '/search') {
+if (window.location.pathname == '/') {
   var options = {
     searchOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
@@ -215,7 +216,7 @@ if (window.location.pathname.includes("statistics")) {
   }
 }
 
-if(window.location.pathname.includes("test")){
+if(window.location.pathname == '/search'){
   $("#more-option").on('click',function(){
     var button = $('.filter-option');
     if(button.hasClass('active')){
