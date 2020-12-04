@@ -190,8 +190,15 @@
           padding-bottom: 15px;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           align-items: flex-end;
+
+          &.space-between {
+            justify-content: space-between;
+          }
+
+          &.flex-end{
+            justify-content: flex-end;
+          }
 
           .badge {
             background-color: $greenbnb;

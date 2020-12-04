@@ -68,12 +68,61 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="button-wrapper">
+                            <div class="button-wrapper space-between">
                                 <div class="badge">Superhost</div>
                                 <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn-details">Details</a>
                             </div>
                         </div>
                     @endfor
+                    @foreach ($apartments as $apartment)
+
+                        <?php
+                        $image = $apartment->cover_image;
+                        $pos = strpos($image, "placeholder");
+                        ?>
+
+                        <div class="apartment-card">
+                            <div class="image-wrapper">
+                                @if ($pos === false)
+                                    <img src="{{asset('storage/'.$image)}}" alt="immagine casa">
+                                @else
+                                    <img src="{{$apartment->cover_image}}" alt="immagine casa">
+                                @endif
+                            </div>
+                            <div class="info-wrapper">
+                                <div class="main">
+                                    <div class="title">
+                                        <h5>{{$apartment->title}}</h5>
+                                    </div>
+                                    <p>{{$apartment->address}}</p>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <strong>Rooms:</strong> {{$apartment->rooms_number}}
+                                    </li>
+                                    <li>
+                                        <strong>Bathrooms:</strong> {{$apartment->bathrooms_numbers}}
+                                    </li>
+                                    <li>
+                                        <strong>Beds:</strong> {{$apartment->beds_number}}
+                                    </li>
+                                    <li>
+                                        <strong>mq:</strong> {{$apartment->square_meters}}
+                                    </li>
+                                </ul>
+                            </div>
+                            @if (count($apartment->sponsorizations->where('end_date', '>', date('Y-m-d h:i:s'))) == 1)
+                                <div class="button-wrapper space-between>
+                                    <div class="badge">Superhost</div>
+                                    <a href="{{ route("apartment.show", $apartment->id) }}" class="btn-details">Details</a>
+                                </div>
+                            @else
+                                <div class="button-wrapper flex-end">
+                                    <a href="{{ route("apartment.show", $apartment->id) }}" class="btn-details">Details</a>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
             </div>
 

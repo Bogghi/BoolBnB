@@ -134,7 +134,7 @@
                                                     <div id="sponsorized">
                                                         <h4><span class="badge badge-success ">Superhost</span></h4>
                                                     </div>
-                                                 @endif
+                                                @endif
 
 
                                         </div>

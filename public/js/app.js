@@ -42444,6 +42444,7 @@ function getFilter() {
     'radius': radius,
     'services': services.toString()
   };
+  console.log(responses);
   return responses;
 } // tomtom api call nested with our api call
 
@@ -42456,7 +42457,9 @@ function tomtomBoolbBnB() {
     "success": function success(data) {
       var latitude = data.results[0].position.lat;
       var longitude = data.results[0].position.lon;
-      var filter = getFilter(); // seconda funzione ajax
+      var filter = getFilter();
+      console.log("filter");
+      console.log(filter); // seconda funzione ajax
 
       $.ajax({
         "url": "http://localhost:8000/api/search",

@@ -85,6 +85,8 @@ function getFilter(){
     'services': services.toString()
   };
 
+  console.log(responses);
+
   return responses;
 }
 
@@ -99,6 +101,9 @@ function tomtomBoolbBnB(){
       var latitude = data.results[0].position.lat;
       var longitude = data.results[0].position.lon;
       var filter = getFilter();
+
+      console.log("filter");
+      console.log(filter);
   
       // seconda funzione ajax
       $.ajax({

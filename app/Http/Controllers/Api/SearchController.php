@@ -11,6 +11,7 @@ class SearchController extends Controller
   public function search()
   {
 
+    // dd("ciao");
     // Take passed variable from the query string.
     $latitude = $_GET["latitude"];
     $longitude = $_GET["longitude"];
@@ -20,8 +21,9 @@ class SearchController extends Controller
     if ($_GET["services"] == "") {
       $requested_services = [];
     } else {
-      $services = substr($_GET["services"], 0, -1);
-      $requested_services = explode(",", $services);
+      // $services = substr($_GET["services"], 0, -1);
+      $requested_services = explode(",", $_GET["services"]);
+      // dd($requested_services);
     }
 
     // For debug

@@ -11596,8 +11596,15 @@ footer .social-links .social-links-item i:hover {
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-end;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper.space-between {
+  justify-content: space-between;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper.flex-end {
+  justify-content: flex-end;
 }
 
 .result .results-wrapper .apartment-card .button-wrapper .badge {
