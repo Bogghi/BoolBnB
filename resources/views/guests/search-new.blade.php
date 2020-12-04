@@ -38,10 +38,32 @@
                         <span>Sea view</span>
                     </div>
                 </div>
-                <div class="result">
 
+                <div class="results-wrapper">
+                  <div class="apartment-card">
+                    <div class="image-wrapper">
+                      <img src="https://blog.unioneprofessionisti.com/wp-content/uploads/2019/11/quali-sono-le-caratteristiche-e-i-benefici-del-bosco-verticale-bioedilizia-1024x1024.jpg" alt="immagine casa">
+                    </div>
+                    <div class="info-wrapper">
+                      <h4>Titolo Appartamento</h4>
+                      <p>Indirizzo appartamento</p>
+                      <ul>
+                        <li><strong>Stanze:</strong> 4</li>
+                        <li><strong>Bagni:</strong> 2</li>
+                        <li><strong>Letti:</strong> 3</li>
+                        <li><strong>mq:</strong> 120</li>
+                      </ul>
+
+                    </div>
+                    <div class="button-wrapper">
+                      <div class="badge">Superhost</div>
+                      <a href="#" class="btn-details">Dettagli</a>
+                    </div>
+                  </div>
                 </div>
             </div>
+
+
             <div class="col-lg-7 d-none d-lg-block " id="map">
                 mappa
             </div>
