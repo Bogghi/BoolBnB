@@ -45,7 +45,7 @@ class ApartmentsTableSeeder extends Seeder
 
       $newApartment = new Apartment;
       $newApartment->user_id = $randomUser;
-      $newApartment->cover_image = $faker->imageUrl(350, 350, 'city');
+      $newApartment->cover_image = $faker->imageUrl(350, 350);
       $newApartment->bathrooms_number = rand(1, 3);
       $newApartment->beds_number = rand(2, 8);
       $newApartment->square_meters = rand(40, 200);
