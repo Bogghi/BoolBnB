@@ -90,8 +90,8 @@
       @enderror
 
       <div class="form-check mt-sm-4">
-        <label for="visibility">Visibile</label>
-        <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="1" checked>
+        <label for="visibility">Non visibile</label>
+      <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="0" {{ $apartment->visibility == 0 ? "checked" : "" }}>
       </div>
       @error('visibility')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -108,7 +108,7 @@
       <div class="apartment-cover">
         <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="" style="width:200px; height:200px">
       </div>
-      
+
       <div class="form-group mt-sm-4">
         <label for="images">Immagini aggiuntive (fino a 5)</label>
         <input type="file" class="d-block" id="images" name="images[]" accept="image/*" multiple>
@@ -131,7 +131,7 @@
         @endforeach
       </div>
       @endif
-      
+
 
       <button type="submit" class="btn btn-primary">Salva</button>
     </form>

@@ -65,7 +65,7 @@
       <div class="form-check form-check-inline">
         @if (old("services"))
         <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
-        @else 
+        @else
         <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
         @endif
         <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
@@ -76,9 +76,9 @@
       @enderror
 
       <div class="form-check mt-sm-4">
-        <label for="visibility">Visibile</label>
+        <label for="visibility">Non visibile</label>
 
-      <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="1" checked>
+      <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="0">
       </div>
 
       <div class="form-group mt-sm-4">
