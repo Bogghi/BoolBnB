@@ -17,20 +17,27 @@ class SponsorizationSeeder extends Seeder
     public function run(Faker $fake)
     {
         //function to fill the promotion with fake record
+        $apartments = Apartment::all();
 
-        for($i = 0; $i < 10; $i++){
-            $aprId = Apartment::inRandomOrder()->first()->id;
-            $prcPlanId = PaymentPlan::inRandomOrder()->first();
-            $prcHour = $prcPlanId->hours_duration;
+        foreach ($apartments as $apartment) {
+
+          if (rand(0, 1) == 0) {
+
+            $paymentPlan = PaymentPlan::inRandomOrder()->first();
+            $prcHour = $paymentPlan->hours_duration;
 
             $newSpon = new Sponsorization;
-            $newSpon->start_date = date("Y-m-d H:m:s");
-            $newSpon->end_date = date("Y-m-d H:m:s",strtotime("+{$prcHour} hours"));
-            $newSpon->apartment_id = $aprId;
-            $newSpon->payment_plan_id = $prcPlanId->id;
-            $newSpon->save();
+            $newSpon->start_date = date("Y-m-d H:i:s");
+            $newSpon->end_date = date("Y-m-d H:i:s",strtotime("+{$prcHour} hours"));
+            $newSpon->apartment_id = $apartment->id;
+            $newSpon->payment_plan_id = $paymentPlan->id;
 
+            $newSpon->save();
+          }
         }
+
+
+
     }
 
 }
