@@ -36,7 +36,17 @@ class ApartmentsTableSeeder extends Seeder
       'Via Stanislao Esposito, 30, 00054 Fiumicino RM',
       'Piazza Mercato, 232, 80133 Napoli NA',
       'Via delle Donzelle, 6, 40126 Bologna BO',
-      'Via Giuseppe Lunati, 8, 00149 Roma RM'
+      'Via Giuseppe Lunati, 8, 00149 Roma RM',
+      'Viale Papiniano, 45, 20123 Milano MI',
+      'Via del Carmine, 7, 20121 Milano MI',
+      'Via Lodovico Il Moro, 91, 20143 Milano MI',
+      'Via Amedei, 8, 20123 Milano MI',
+      'Corso Como, 11, 20124 Milano MI',
+      'Via Topino, 18, 00199 Roma RM',
+      'Viale dei Parioli, 45, 00197 Roma RM',
+      'Viale Europa, 327, 00144 Roma RM',
+      'Piazza di Porta Maggiore, 23, Roma RM',
+      'Via del Corso, 477, 00187 Roma RM'
     ];
 
     foreach ($randomAddresses as $randomAddress) {
