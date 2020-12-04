@@ -76,7 +76,7 @@
       @enderror
 
       <div class="form-check mt-sm-4">
-        <label for="visibility">Not Visible</label>
+        <label for="visibility">Non visibile</label>
 
       <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="0">
       </div>

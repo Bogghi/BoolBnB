@@ -228,7 +228,16 @@ class ApartmentController extends Controller
         $apartment->description = $data['description'];
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
-        $apartment->visibility = $data['visibility'];
+
+        if ($request->visibility != null) {
+
+          $apartment->visibility = $data['visibility'];
+
+        } else {
+
+          $apartment->visibility = 1;
+        }
+
 
         if ($request->hasFile('images')) {
 
