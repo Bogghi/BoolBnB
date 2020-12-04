@@ -18,8 +18,41 @@ main {
           height: 200px;
           margin: 10px;
           background-position: center;
-          background-size: cover
+          background-size: 100%;
+          filter: grayscale(0%);
+          transition: 0.5s;
           
+          h3 {
+            color: $white;
+            visibility: hidden;
+            opacity: 0.1;
+            transition: 0.5s;
+          }
+          a{
+            visibility: hidden;
+            color: $black;
+            opacity: 0.1;
+            background-color: $white;
+            transition: 0.5s;
+            &:hover{
+              color: $white;
+              background-color: $bluebnb;
+            }
+          }
+          
+          &:hover h3 {
+            visibility: visible;
+            opacity: 1;
+          }
+          &:hover a {
+            visibility: visible;
+            opacity: 1;
+
+          }
+          &:hover {
+            filter: grayscale(100%);
+            background-size: 120%;
+          }
         }
         @media  (max-width: 1200px){
           .container-fluid {

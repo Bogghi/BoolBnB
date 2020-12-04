@@ -11313,7 +11313,188 @@ main #sponsorizations .container-xl .container-xl .sponsored-apartment {
   height: 200px;
   margin: 10px;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
+  filter: grayscale(0%);
+  transition: 0.5s;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-md .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-md .sponsored-apartment h3,
+main #sponsorizations .container-md .container-md .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-md .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-md .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-md .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-md .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment h3 {
+  color: white;
+  visibility: hidden;
+  opacity: 0.1;
+  transition: 0.5s;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment a,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment a,
+main #sponsorizations .container-md .container-sm .sponsored-apartment a,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment a,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment a,
+main #sponsorizations .container-sm .container-md .sponsored-apartment a,
+main #sponsorizations .container-md .container-md .sponsored-apartment a,
+main #sponsorizations .container-lg .container-md .sponsored-apartment a,
+main #sponsorizations .container-xl .container-md .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment a,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment a,
+main #sponsorizations .container-md .container-lg .sponsored-apartment a,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment a,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment a,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment a,
+main #sponsorizations .container-md .container-xl .sponsored-apartment a,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment a,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment a {
+  visibility: hidden;
+  color: black;
+  opacity: 0.1;
+  background-color: white;
+  transition: 0.5s;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment a:hover {
+  color: white;
+  background-color: #001533;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover h3 {
+  visibility: visible;
+  opacity: 1;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover a {
+  visibility: visible;
+  opacity: 1;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover {
+  filter: grayscale(100%);
+  background-size: 120%;
 }
 
 @media (max-width: 1200px) {
