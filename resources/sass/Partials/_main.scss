@@ -3,6 +3,56 @@ main {
 
   #sponsorizations {
     background-color: $black;
+    .container-fluid {
+      width: 100%;
+      position: relative;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .sponsored-apartment{
+        width: 350px;
+        height: 200px;
+        margin: 10px;
+        background-position: center;
+        background-size: cover
+        
+      }
+      .arrow {
+        position: absolute;
+        font-size: 40px;
+        color: $white;
+        cursor: pointer;
+        height: 100px;
+      }
+      .prev {
+        top: 30%;
+        left: 0;
+        .fas {
+          margin-top: 30px;
+        }
+      }
+      .next {
+        top: 30%;
+        right: 0;
+        .fas {
+          margin-top: 30px;
+        }
+      }
+      @media  (max-width: 1200px){
+        .sponsored-apartment{
+          width: 250px;
+        }
+      }
+      @media  (max-width: 768px){
+        .sponsored-apartment{
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+
+
+    
   }
 
 

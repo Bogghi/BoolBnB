@@ -42615,6 +42615,22 @@ $('.single-message').on('click', function () {
       console.log(_error4);
     }
   });
+}); //HORIZONTAL SCROLL HOMEPAGE 
+
+var box = $('#test');
+var boxScroll;
+$('.arrow').click(function () {
+  if ($(this).hasClass("next")) {
+    boxScroll = box.width() / 2 + box.scrollLeft();
+    box.animate({
+      scrollLeft: boxScroll
+    });
+  } else {
+    x = box.width() / 3 - box.scrollLeft();
+    box.animate({
+      scrollLeft: -boxScroll
+    });
+  }
 });
 
 /***/ }),

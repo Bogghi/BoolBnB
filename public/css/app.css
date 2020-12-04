@@ -11243,6 +11243,97 @@ main #sponsorizations {
   background-color: black;
 }
 
+main #sponsorizations .container-fluid,
+main #sponsorizations .container-sm,
+main #sponsorizations .container-md,
+main #sponsorizations .container-lg,
+main #sponsorizations .container-xl {
+  width: 100%;
+  position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+main #sponsorizations .container-fluid .sponsored-apartment,
+main #sponsorizations .container-sm .sponsored-apartment,
+main #sponsorizations .container-md .sponsored-apartment,
+main #sponsorizations .container-lg .sponsored-apartment,
+main #sponsorizations .container-xl .sponsored-apartment {
+  width: 350px;
+  height: 200px;
+  margin: 10px;
+  background-position: center;
+  background-size: cover;
+}
+
+main #sponsorizations .container-fluid .arrow,
+main #sponsorizations .container-sm .arrow,
+main #sponsorizations .container-md .arrow,
+main #sponsorizations .container-lg .arrow,
+main #sponsorizations .container-xl .arrow {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  height: 100px;
+}
+
+main #sponsorizations .container-fluid .prev,
+main #sponsorizations .container-sm .prev,
+main #sponsorizations .container-md .prev,
+main #sponsorizations .container-lg .prev,
+main #sponsorizations .container-xl .prev {
+  top: 30%;
+  left: 0;
+}
+
+main #sponsorizations .container-fluid .prev .fas,
+main #sponsorizations .container-sm .prev .fas,
+main #sponsorizations .container-md .prev .fas,
+main #sponsorizations .container-lg .prev .fas,
+main #sponsorizations .container-xl .prev .fas {
+  margin-top: 30px;
+}
+
+main #sponsorizations .container-fluid .next,
+main #sponsorizations .container-sm .next,
+main #sponsorizations .container-md .next,
+main #sponsorizations .container-lg .next,
+main #sponsorizations .container-xl .next {
+  top: 30%;
+  right: 0;
+}
+
+main #sponsorizations .container-fluid .next .fas,
+main #sponsorizations .container-sm .next .fas,
+main #sponsorizations .container-md .next .fas,
+main #sponsorizations .container-lg .next .fas,
+main #sponsorizations .container-xl .next .fas {
+  margin-top: 30px;
+}
+
+@media (max-width: 1200px) {
+  main #sponsorizations .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .sponsored-apartment,
+  main #sponsorizations .container-md .sponsored-apartment,
+  main #sponsorizations .container-lg .sponsored-apartment,
+  main #sponsorizations .container-xl .sponsored-apartment {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  main #sponsorizations .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .sponsored-apartment,
+  main #sponsorizations .container-md .sponsored-apartment,
+  main #sponsorizations .container-lg .sponsored-apartment,
+  main #sponsorizations .container-xl .sponsored-apartment {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 main #developers {
   background-color: #001533;
   border-bottom: 5px solid #fff;
