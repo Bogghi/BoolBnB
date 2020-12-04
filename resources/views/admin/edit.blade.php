@@ -1,7 +1,7 @@
 @extends('layouts.guests')
 
 @section('content')
-<div class="container">
+<div id="edit" class="container">
   <section>
     <h1>Aggiungi un appartamento</h1>
     <form action="{{route("admin.apartment.update", $apartment->id)}}" method="POST" enctype="multipart/form-data">
@@ -118,14 +118,14 @@
       @enderror
 
       @if ($apartment_images)
-      <div class="apartment-images my-sm-4 d-flex">
+      <div class="apartment-images my-sm-4 d-flex flex-wrap">
         @foreach ($apartment_images as $apartment_image)
           <div class="apartment-image">
             <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
             <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
               @csrf
               @method("DELETE")
-              <input type="submit" value="Elimina">
+              <input class="delete-button btn btn-outline-danger my-3" type="submit" value="Elimina">
             </form>
           </div>
         @endforeach
@@ -133,7 +133,7 @@
       @endif
 
 
-      <button type="submit" class="btn btn-primary">Salva</button>
+      <button type="submit" class="btn btn-primary my-5">Salva</button>
     </form>
   </section>
 </div>
