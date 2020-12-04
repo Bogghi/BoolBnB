@@ -39,10 +39,11 @@
                     </div>
                 </div>
 
-
                 <div class="results-wrapper">
                   <div class="apartment-card">
-                    <div class="image-wrapper" style="background-image: url('https://blog.unioneprofessionisti.com/wp-content/uploads/2019/11/quali-sono-le-caratteristiche-e-i-benefici-del-bosco-verticale-bioedilizia-1024x1024.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="image-wrapper">
+                      <img src="https://blog.unioneprofessionisti.com/wp-content/uploads/2019/11/quali-sono-le-caratteristiche-e-i-benefici-del-bosco-verticale-bioedilizia-1024x1024.jpg" alt="immagine casa">
+                    </div>
                     <div class="info-wrapper">
                       <h4>Titolo Appartamento</h4>
                       <p>Indirizzo appartamento</p>
