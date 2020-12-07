@@ -28,10 +28,10 @@ class UserSeeder extends Seeder
             "email" => "d.patane@gmail.com"
           ],
           [
-            "name" => "Matteo",
+            "name" => "Matteo Simone",
             "lastname" => "Borghi",
-            "date_of_birth" => "1999-04-25",
-            "email" => "matteoborghi@gmail.com"
+            "date_of_birth" => "1998-12-21",
+            "email" => "matteosimoneborghi@gmail.com"
           ],
           [
             "name" => "Gabriele",
