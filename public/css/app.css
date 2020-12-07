@@ -12405,6 +12405,11 @@ footer .social-links .social-links-item i:hover {
   font-weight: 900;
 }
 
+.result .results-wrapper .apartment-card .info-wrapper .main .address {
+  max-height: 48px;
+  overflow: hidden;
+}
+
 .result .results-wrapper .apartment-card .info-wrapper ul {
   display: flex;
   align-items: flex-end;
@@ -12422,7 +12427,6 @@ footer .social-links .social-links-item i:hover {
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 
 .result .results-wrapper .apartment-card .button-wrapper.space-between {
@@ -12443,13 +12447,17 @@ footer .social-links .social-links-item i:hover {
 }
 
 .result .results-wrapper .apartment-card .button-wrapper .btn-details {
-  display: inline-block;
+  text-align: center;
   text-decoration: none;
-  border: 2px solid #001533;
-  border-radius: 20px;
-  padding: 5px 10px;
   color: #001533;
+  font-weight: bold;
+  border: 2px #001533 solid;
+  margin-top: 10px;
+  padding: 2px 10px;
+  border-radius: 20px;
   font-size: 18px;
+  background-color: white;
+  transition: background-color 0.3s;
 }
 
 .result .results-wrapper .apartment-card .button-wrapper .btn-details:hover {
@@ -12458,9 +12466,8 @@ footer .social-links .social-links-item i:hover {
 
 @media screen and (max-width: 576px) {
   .result .results-wrapper .apartment-card {
-    height: auto;
-    flex-wrap: wrap;
-    padding: 10px;
+    height: 100%;
+    flex-direction: column;
   }
 
   .result .results-wrapper .apartment-card .image-wrapper {
@@ -12468,12 +12475,15 @@ footer .social-links .social-links-item i:hover {
   }
 
   .result .results-wrapper .apartment-card .info-wrapper {
-    width: 100%;
+    padding: 0px;
+  }
+
+  .result .results-wrapper .apartment-card .info-wrapper .main h5 {
+    margin: 20px 0px;
   }
 
   .result .results-wrapper .apartment-card .button-wrapper {
     width: 100%;
-    height: auto;
     flex-direction: row;
   }
 }
@@ -12575,23 +12585,5 @@ footer .social-links .social-links-item i:hover {
   transform: rotate(-45deg);
   border-radius: 50% 50% 50% 0;
   border: 2px solid #00F087;
-}
-
-#search-results {
-  height: calc(100vh - 80px);
-}
-
-#search-results .searchbar {
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 270px;
-  padding: 10px;
-  background-color: #001533;
-  color: #fff;
-  font-weight: 700;
-}
-
-#search-results .list-apartment {
-  height: calc(100vh - 350px);
 }
 

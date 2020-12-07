@@ -51,7 +51,9 @@
                                     <div class="title">
                                         <h5>{{$all_sponsorized_apartments[$i]->title}}</h5>
                                     </div>
-                                    <p>{{$all_sponsorized_apartments[$i]->address}}</p>
+                                    <div class="address">
+                                        <p>{{$all_sponsorized_apartments[$i]->address}}</p>
+                                    </div>
                                 </div>
                                 <ul>
                                     <li>
@@ -94,7 +96,9 @@
                                     <div class="title">
                                         <h5>{{$apartment->title}}</h5>
                                     </div>
-                                    <p>{{$apartment->address}}</p>
+                                    <div class="address">
+                                        <p>{{$apartment->address}}</p>
+                                    </div>
                                 </div>
                                 <ul>
                                     <li>
