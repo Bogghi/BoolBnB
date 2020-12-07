@@ -15,7 +15,7 @@
 
                     <?php
                         $image = $apartment->cover_image;
-                        $pos = strpos($image, "placeholder");          
+                        $pos = strpos($image, "http");          
                     ?> 
 
                     {{-- Cover Apartment --}}

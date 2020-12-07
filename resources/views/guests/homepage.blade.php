@@ -10,7 +10,7 @@
             @foreach ($sponsored_apartments as $apartment)
             <?php
             $image = $apartment->cover_image;
-            $pos = strpos($image, "placeholder");          
+            $pos = strpos($image, "http");          
             ?> 
             <?php if ($pos === false) {?>
               <div class="border rounded d-flex flex-column flex-shrink-0 sponsored-apartment" style="background-image: url({{asset('storage/'.$apartment->cover_image)}})">
