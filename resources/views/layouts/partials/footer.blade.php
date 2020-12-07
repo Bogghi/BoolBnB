@@ -1,10 +1,9 @@
 <footer class="pt-3 text-white">  
-
+    
     {{-- @if (Route::currentRouteName() == 'homepage')
     bordo none
     @endif
      --}}
-     
     <div class="container">
         {{-- Section-end with links to company and social-network--}}
         <div class="d-flex flex-row flex-wrap align-items-center justify-content-between">

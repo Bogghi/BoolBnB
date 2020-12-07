@@ -119,7 +119,7 @@
         <h2 class="text-center font-xl">Best Cities</h2>
         <div class="row">
             {{-- box cities --}}
-            <div class="col-lg-4 col-md-4 col-sm-6 text-center my-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center my-5">
                 <h3>Parigi</h3>                
                 <a href="#">
                     <div class="box-cities mx-auto" style="background-image: url(http://www.competitiontravel.it/wp-content/uploads/2014/09/Parigi-2-1024x683.jpg)">
@@ -127,7 +127,7 @@
                 </a> 
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 text-center my-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center my-5">
                 <h3>Roma</h3>                
                 <a  href="#">
                     <div class="box-cities mx-auto" style="background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg)">
@@ -135,28 +135,28 @@
                 </a> 
             </div>
             
-            <div class="col-lg-4 col-md-4 col-sm-6 text-center my-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center my-5">
                 <h3>Londra</h3>                
                 <a  href="#">
                     <div class="box-cities mx-auto" style="background-image: url(https://www.metamorphic.co.uk/wp-content/uploads/2018/05/london-1900x1080.jpg)">
                     </div>
                 </a> 
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 text-center my-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center my-5">
                 <h3>Barcellona</h3>                
                 <a  href="#">
                     <div class="box-cities mx-auto" style="background-image: url(https://www.voglioviverecosi.com/wp-content/uploads/2019/09/LAVORO-BARCELLONA-1900x1080.jpg)">
                     </div>
                 </a> 
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 text-center my-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center my-5">
                 <h3>Berlino</h3>                
                 <a  href="#">
                     <div class="box-cities mx-auto" style="background-image: url(https://www.robintur.it/img/viaggi/germania/image-thumb__6491__galleryCarousel/germania-berlino-porta-di-brandeburgo~-~300w.pjpeg)">
                     </div>
                 </a> 
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 text-center my-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center my-5">
                 <h2>Vienna</h2>                
                 <a  href="#">
                     <div class="box-cities mx-auto" style="background-image: url(https://www.10cose.it/wp-content/uploads/2015/11/vienna-696x456.jpg)">
@@ -171,11 +171,11 @@
 
     {{-- Developer pics team --}}
     <section id="developers" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/15/25/galaxies-2604911_960_720.jpg)">
-        <div class="box-ghost">
+        <div class="box-ghost ">
         </div>
         <div class="container pt-5">
             <div class="developer-container mx-auto py-5">
-                <h1 class="text-center text-white mb-4">Our Team</h1>
+                <h1 class="text-center text-white mb-4 mt-5">Our Team</h1>
                 <div class="developer d-flex justify-content-center ">
 
                     <div class="pic d-flex flex-column text-center pt-3">

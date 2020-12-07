@@ -283,7 +283,7 @@ main {
 .box-cities{
   border: 1px solid $greenbnb;
   border-radius: 10px;
-  width: 425px;
+  max-width: 425px;
   height: 250px; 
   background-size: cover;
   transition: 1s;
@@ -297,6 +297,7 @@ main {
 // Developer pics team
 #developers {
   position: relative;
+  min-height: 600px;
   z-index: 0;
   background-size: cover;
   background-position: bottom;
