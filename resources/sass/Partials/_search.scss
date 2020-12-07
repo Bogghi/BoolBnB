@@ -132,6 +132,7 @@
       overflow: scroll;
       display: flex;
       flex-direction: column;
+      height: $result-wrapper-heigth;
 
       .apartment-card {
         display: flex;

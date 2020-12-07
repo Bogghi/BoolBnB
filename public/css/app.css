@@ -11530,6 +11530,7 @@ footer .social-links .social-links-item i:hover {
   overflow: scroll;
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 56px - 80px);
 }
 
 @media screen and (max-width: 444px) {
