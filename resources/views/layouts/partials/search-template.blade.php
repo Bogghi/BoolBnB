@@ -14,6 +14,8 @@
                     <h5>@{{title}}</h5>
                 </div>
                 <p>@{{address}}</p>
+                <input type="hidden" value="@{{longitude}}" class="apartment-lon">
+                <input type="hidden" value="@{{latitude}}" class="apartment-lat">
             </div>
             <ul>
                 <li>

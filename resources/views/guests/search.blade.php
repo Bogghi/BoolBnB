@@ -7,7 +7,7 @@
                 <div class="filter">
                     <h6>Accommodation in the area</h6>
                     <a id="more-option">More filter</a>
-                    <input type="hidden" value="{{$address}}" id="address">
+                    <input type="hidden" value="{{$address}}" id="user-search">  
                 </div>
                 <div class="filter-option">
                     <div class="static-options">
@@ -51,7 +51,9 @@
                                     <div class="title">
                                         <h5>{{$all_sponsorized_apartments[$i]->title}}</h5>
                                     </div>
-                                    <p>{{$all_sponsorized_apartments[$i]->address}}</p>
+                                    <p class="apartment-address">{{$all_sponsorized_apartments[$i]->address}}</p>
+                                    <input type="hidden" value="{{$all_sponsorized_apartments[$i]->longitude}}" class="apartment-lon">
+                                    <input type="hidden" value="{{$all_sponsorized_apartments[$i]->latitude}}" class="apartment-lat">
                                 </div>
                                 <ul>
                                     <li>
@@ -94,7 +96,9 @@
                                     <div class="title">
                                         <h5>{{$apartment->title}}</h5>
                                     </div>
-                                    <p>{{$apartment->address}}</p>
+                                    <p class="apartment-address">{{$apartment->address}}</p>
+                                    <input type="hidden" value="{{$apartment->longitude}}" class="apartment-lon">
+                                    <input type="hidden" value="{{$apartment->latitude}}" class="apartment-lat">
                                 </div>
                                 <ul>
                                     <li>
@@ -127,9 +131,7 @@
             </div>
 
 
-            <div class="col-xl-7 col-lg-6 d-none d-lg-block " id="map">
-                mappa
-            </div>
+            <div class="col-xl-7 col-lg-6 d-none d-lg-block " id="map-container"></div>
         </div>
     </section>
 @endsection
