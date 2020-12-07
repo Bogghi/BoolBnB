@@ -402,7 +402,7 @@ if (window.location.pathname.includes("statistics")) {
 }
 
 // Map generation in show view
-if (($("#map-container").length > 0) && (window.location.pathname.includes("apartment"))) {
+if (($("#map-container").length > 0) && (window.location.pathname.includes("show"))) {
   var address = $("#address").text();
 
   console.log(address);
