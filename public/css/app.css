@@ -11531,9 +11531,23 @@ main #sponsorized {
   margin-right: 50px;
 }
 
-#developers .developer .footer-img {
+#developers .developer .pic .hiden {
+  display: none;
+  color: white;
+}
+
+#developers .developer .pic .footer-img {
   width: 140px;
   border: 2px solid #00F087;
+}
+
+#developers .developer .pic .footer-img:hover {
+  filter: grayscale(100%);
+}
+
+#developers .developer .pic .footer-img:hover.hiden {
+  display: block;
+  text-align: center;
 }
 
 footer {

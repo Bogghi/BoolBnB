@@ -1,10 +1,13 @@
-<footer class="pt-3 text-white">
+<footer class="pt-3 text-white">  
+
+    {{-- @if (Route::currentRouteName() == 'homepage')
+    bordo none
+    @endif
+     --}}
+     
     <div class="container">
-        {{-- Section-end with links to company and
-        social-network--}}
+        {{-- Section-end with links to company and social-network--}}
         <div class="d-flex flex-row flex-wrap align-items-center justify-content-between">
-
-
 
             {{-- Privacy Policy --}}
             <div class="d-flex">
@@ -115,7 +118,7 @@
                 </div>
             </div>
 
-
+            {{-- Social Network --}}
             <div class="social-links d-flex">
                 <div class="social-links-item">
                     <i class="fab fa-facebook"></i>
@@ -132,11 +135,6 @@
             </div>
 
         </div>
-
-
-
-
-
 
 
     </div>

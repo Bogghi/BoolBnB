@@ -311,22 +311,34 @@ main {
   
   .developer {
     height: 100%;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 
     .pic {
       margin-top: 30px;
       padding-bottom: 30px;
-      
-
       &:not(:last-child) {
         margin-right: 50px;
       }
+      .hiden{
+        display: none;
+        color: white;
+      }
+      
+      .footer-img {
+        width: 140px;
+        border:2px solid #00F087;
+        &:hover{
+          filter: grayscale(100%);
+        }       
+        &:hover.hiden{
+          display: block;       
+          text-align: center;
+        }
+      }
+    
     }
-    .footer-img {
-      width: 140px;
-      border:2px solid #00F087;;
 
-    }
+    
     
   }
 }
