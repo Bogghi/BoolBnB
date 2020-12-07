@@ -16,6 +16,8 @@
                 <div class="address">
                     <p>@{{address}}</p>
                 </div>
+                <input type="hidden" value="@{{longitude}}" class="apartment-lon">
+                <input type="hidden" value="@{{latitude}}" class="apartment-lat">
             </div>
             <ul>
                 <li>
