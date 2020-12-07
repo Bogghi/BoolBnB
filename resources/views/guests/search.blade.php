@@ -35,7 +35,7 @@
                     @for ($i = 0; $i < 5 && $i < count($all_sponsorized_apartments); $i++)
                         <?php
                             $image = $all_sponsorized_apartments[$i]->cover_image;
-                            $pos = strpos($image, "placeholder");
+                            $pos = strpos($image, "http");
                         ?>
 
                         <div class="apartment-card">
@@ -80,7 +80,7 @@
 
                         <?php
                         $image = $apartment->cover_image;
-                        $pos = strpos($image, "placeholder");
+                        $pos = strpos($image, "http");
                         ?>
 
                         <div class="apartment-card">
