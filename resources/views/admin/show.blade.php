@@ -6,7 +6,10 @@
     {{-- row title  --}}
     <div class="row">
       <div class="col-12 d-flex pt-4">
-        <h1>{{$apartment->title}}</h1>
+        <div class="apartment-header">
+          <h1>{{$apartment->title}}</h1>
+          <p id="address">{{$apartment->address}}</p>
+        </div>
         @if (Auth::id() == $apartment->user_id )
         <div class="ml-auto">
           <a class="btn btn-outline-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza il tuo appartamento</a>
@@ -83,7 +86,7 @@
           @endforeach
         </ul>
       </div>
-      <div class="col-7 col-md-6 map-container">
+      <div class="col-7 col-md-6" id="map-container">
 
       </div>
 
