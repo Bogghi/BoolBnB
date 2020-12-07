@@ -1,5 +1,11 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
+<nav class="navbar @if (Route::currentRouteName()  != 'homepage')
+    nav-white
+@endif navbar-expand-lg">
+  <div class="@if (Route::currentRouteName() == 'homepage')
+      container
+  @else
+      container-fluid
+  @endif">
       {{-- logo --}}
       <div class="logo">
           <a href="{{ route('homepage') }}">

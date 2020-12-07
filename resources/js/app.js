@@ -142,6 +142,7 @@ function tomtomBoolbBnB(){
 
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 if (window.location.pathname == '/') {
+
   var options = {
     searchOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
@@ -169,10 +170,9 @@ if (window.location.pathname == '/') {
     
   });
 
-  
-
-
 }
+
+
 if (window.location.pathname == '/') {
   var searchbarOffsetTop = $(".searchbar").offset().top;
   var scrolled = 0;
@@ -311,6 +311,7 @@ if ($("#map-container").length > 0) {
       "limit": 1
     },
     "success": function (data) {
+      console.log(data);
       var lon = data.results[0].position.lon;
       var lat = data.results[0].position.lat;
 
@@ -410,6 +411,8 @@ $('.arrow').click(function() {
 // }
 
 if(window.location.pathname == '/search'){
+
+  console.log(window.location.pathname);
 
   $("#more-option").on('click',function(){
     var button = $('.filter-option');

@@ -5,9 +5,10 @@
   transition: all 0.4s;
   position: relative;
   z-index: 1;
-
-  .nav-white {
+  
+  &.nav-white {
     background-color: $white;
+    border-bottom: 2px solid $bluebnb;
   }
 
   @media screen and (max-width: 575px) {

@@ -10973,10 +10973,6 @@ body {
   background: #00F087;
 }
 
-header {
-  border-bottom: 2px solid #001533;
-}
-
 header.jumbo-header {
   height: 700px;
   background-image: url("/img/jumbo-bg.png");
@@ -11030,8 +11026,9 @@ header.margin-fixed > .container {
   z-index: 1;
 }
 
-.navbar .nav-white {
+.navbar.nav-white {
   background-color: white;
+  border-bottom: 2px solid #001533;
 }
 
 @media screen and (max-width: 575px) {

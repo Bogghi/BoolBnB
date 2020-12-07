@@ -42668,6 +42668,7 @@ if ($("#map-container").length > 0) {
       "limit": 1
     },
     "success": function success(data) {
+      console.log(data);
       var lon = data.results[0].position.lon;
       var lat = data.results[0].position.lat;
       var map = tt.map({
@@ -42723,6 +42724,7 @@ $('.arrow').click(function () {
 }); // }
 
 if (window.location.pathname == '/search') {
+  console.log(window.location.pathname);
   $("#more-option").on('click', function () {
     var button = $('.filter-option');
 
