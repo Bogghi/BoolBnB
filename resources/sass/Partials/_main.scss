@@ -320,20 +320,20 @@ main {
         margin-right: 50px;
       }
       .hiden{
-        display: none;
+        visibility: hidden;
         color: white;
       }
       
-      .footer-img {
+      .img-personalized {
         width: 140px;
         border:2px solid #00F087;
         &:hover{
           filter: grayscale(100%);
         }       
-        &:hover.hiden{
-          display: block;       
-          text-align: center;
-        }
+      }
+      &:hover .hiden{
+        visibility: visible;     
+        text-align: center;
       }
     
     }

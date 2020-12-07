@@ -180,32 +180,32 @@
 
                     <div class="pic d-flex flex-column">
                         <a class="text-center pt-3" href="https://www.linkedin.com/in/lorenzo-d-amico/">
-                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHC1dg3x4RwGw/profile-displayphoto-shrink_800_800/0/1606154522135?e=1613001600&v=beta&t=Fq6DEI1on8aJ5yvjqdOeMEPTInquQ7M4-Sf6g5QokAM" alt="Lorenzo">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHC1dg3x4RwGw/profile-displayphoto-shrink_800_800/0/1606154522135?e=1613001600&v=beta&t=Fq6DEI1on8aJ5yvjqdOeMEPTInquQ7M4-Sf6g5QokAM" alt="Lorenzo">
                         </a>
                     </div>
 
                     <div class="pic d-flex flex-column">
                         <a class="text-center pt-3" href="https://www.linkedin.com/in/matteosimoneborghi/">
-                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQFHvqD8mzSazg/profile-displayphoto-shrink_800_800/0/1556965358340?e=1613001600&v=beta&t=OfUd69bBZwxHTx-Z7z4b6zbR64kS0kbAxBb_Bc-FvpU" alt="Matteo">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQFHvqD8mzSazg/profile-displayphoto-shrink_800_800/0/1556965358340?e=1613001600&v=beta&t=OfUd69bBZwxHTx-Z7z4b6zbR64kS0kbAxBb_Bc-FvpU" alt="Matteo">
                         </a>
                     </div>
 
                     <div class="pic d-flex flex-column">
                         <a class="text-center pt-3" href="https://www.linkedin.com/in/andreacontestabile/">
-                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQH5nLXiQOM5MQ/profile-displayphoto-shrink_800_800/0/1562578629282?e=1613001600&v=beta&t=WameMQLa_d5aZqGC_DODhCWWiBnMWno1bVMhDJs9rCs" alt="Andrea">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQH5nLXiQOM5MQ/profile-displayphoto-shrink_800_800/0/1562578629282?e=1613001600&v=beta&t=WameMQLa_d5aZqGC_DODhCWWiBnMWno1bVMhDJs9rCs" alt="Andrea">
                         </a>
                     </div>
 
                     <div class="pic d-flex flex-column">
                         <a class="text-center pt-3" href="https://www.linkedin.com/in/danilo-patan%C3%A9/">
-                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGY6ORkDSHAMQ/profile-displayphoto-shrink_800_800/0/1605979378804?e=1613001600&v=beta&t=UxCDvkF9I28q_Sn1AmmmfqvtxfrXiBnaAbNpoXhvud4" alt="Danilo">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGY6ORkDSHAMQ/profile-displayphoto-shrink_800_800/0/1605979378804?e=1613001600&v=beta&t=UxCDvkF9I28q_Sn1AmmmfqvtxfrXiBnaAbNpoXhvud4" alt="Danilo">
                         </a>
                     </div>
 
                     <div class="pic d-flex flex-column-reverse text-center pt-3">
                         <h3 class="hiden">Gabriele</h3>
                         {{-- <a class="text-center pt-3" href="https://www.linkedin.com/in/gabriele-musumeci-51aa551bb/"> --}}
-                        <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQEX0dlhwkuIgg/profile-displayphoto-shrink_200_200/0/1605545011980?e=1613001600&v=beta&t=THh1-d5d6eHobVi474AIKn6urQNeiiePLXp0Xs9KcSs" alt="Gabriele">
+                        <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQEX0dlhwkuIgg/profile-displayphoto-shrink_200_200/0/1605545011980?e=1613001600&v=beta&t=THh1-d5d6eHobVi474AIKn6urQNeiiePLXp0Xs9KcSs" alt="Gabriele">
                          {{-- </a> --}}
                         
                     </div>

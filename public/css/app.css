@@ -11532,21 +11532,21 @@ main #sponsorized {
 }
 
 #developers .developer .pic .hiden {
-  display: none;
+  visibility: hidden;
   color: white;
 }
 
-#developers .developer .pic .footer-img {
+#developers .developer .pic .img-personalized {
   width: 140px;
   border: 2px solid #00F087;
 }
 
-#developers .developer .pic .footer-img:hover {
+#developers .developer .pic .img-personalized:hover {
   filter: grayscale(100%);
 }
 
-#developers .developer .pic .footer-img:hover.hiden {
-  display: block;
+#developers .developer .pic:hover .hiden {
+  visibility: visible;
   text-align: center;
 }
 
