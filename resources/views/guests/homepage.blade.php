@@ -15,12 +15,12 @@
             <?php if ($pos === false) {?>
               <div class="border rounded d-flex flex-column flex-shrink-0 sponsored-apartment" style="background-image: url({{asset('storage/'.$apartment->cover_image)}})">
               <h3 class="text-center mt-5 ">{{$apartment->address}}</h3>
-              <a href="{{route('admin.apartment.show', $apartment->id)}}" class="m-auto btn">Show the apartment</a>
+              <a href="{{route('apartment.show', $apartment->id)}}" class="m-auto btn">Show the apartment</a>
               </div>
             <?php } else {?>
               <div class="border rounded d-flex flex-column flex-shrink-0 sponsored-apartment" style="background-image: url({{$apartment->cover_image}})">
                 <h3 class="text-center mt-5">{{$apartment->address}}</h3>
-                <a href="{{route('admin.apartment.show', $apartment->id)}}" class="m-auto btn">Show the apartment</a>
+                <a href="{{route('apartment.show', $apartment->id)}}" class="m-auto btn">Show the apartment</a>
               </div>    
               <?php }?>
                

@@ -50,6 +50,6 @@ class ApartmentController extends Controller
 
       }
 
-      return view('guests.show', compact('apartment'));
+      return view('admin.show', compact('apartment'));
     }
 }
