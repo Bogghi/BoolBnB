@@ -122,7 +122,7 @@
                                 </div>
                             @else
                                 <div class="button-wrapper flex-end">
-                                    <a href="{{ route("apartment.show", $apartment->id) }}" class="btn-details">Details</a>
+                                    <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn-details">Details</a>
                                 </div>
                             @endif
                         </div>
