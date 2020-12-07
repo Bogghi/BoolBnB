@@ -277,11 +277,14 @@ main {
 }
 
 // Cities Mix
+.font-xl{
+  font-weight: $font-cities;
+}
 .box-cities{
   border: 1px solid $greenbnb;
   border-radius: 10px;
-  width: 100%;
-  height: 160px; 
+  width: 425px;
+  height: 250px; 
   background-size: cover;
   transition: 1s;
   background-position: center;
@@ -318,28 +321,19 @@ main {
       padding-bottom: 30px;
       &:not(:last-child) {
         margin-right: 50px;
-      }
-      .hiden{
-        visibility: hidden;
-        color: white;
-      }
-      
-      .img-personalized {
-        width: 140px;
-        border:2px solid #00F087;
-        &:hover{
-          filter: grayscale(100%);
-        }       
-      }
-      &:hover .hiden{
-        visibility: visible;     
-        text-align: center;
-      }
-    
+      }           
     }
-
+        
     
+    .img-personalized {
+      width: 140px;
+      border:2px solid #00F087;
+      &:hover{
+        filter: grayscale(100%);          
+      }        
+    }
     
   }
+
 }
 // Developer pics team end
