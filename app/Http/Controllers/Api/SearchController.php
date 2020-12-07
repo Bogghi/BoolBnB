@@ -11,8 +11,6 @@ class SearchController extends Controller
   public function search()
   {
 
-    // dd("ciao");
-    // Take passed variable from the query string.
     $latitude = $_GET["latitude"];
     $longitude = $_GET["longitude"];
     $radius = $_GET["radius"];
@@ -21,9 +19,7 @@ class SearchController extends Controller
     if ($_GET["services"] == "") {
       $requested_services = [];
     } else {
-      // $services = substr($_GET["services"], 0, -1);
       $requested_services = explode(",", $_GET["services"]);
-      // dd($requested_services);
     }
 
     // For debug
@@ -54,16 +50,23 @@ class SearchController extends Controller
     foreach ($apartments as $apartment) {
 
       $services = [];
-      //add to the json the sponsorized apartment with laravel model
       $apartment->sponsorizations;
 
       foreach ($apartment->services as $service) {
         $services[] = $service->id;
       }
 
+      $service_quantity = count($requested_services);
+      $counter = 0;
+      foreach ($requested_services as $requested_service) {
 
+        if(in_array($requested_service, $services)) {
 
-      if (count(array_diff_assoc($requested_services, $services)) == 0) {
+          $counter++;
+        }
+      }
+
+      if ($counter == $service_quantity) {
 
         $matched_apartments[] = $apartment;
       }

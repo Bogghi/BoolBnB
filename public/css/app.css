@@ -11417,6 +11417,11 @@ footer .social-links .social-links-item i:hover {
   background-color: white;
 }
 
+.result .filter h6 {
+  font-weight: bold;
+  padding-right: 10px;
+}
+
 .result .filter a {
   white-space: nowrap;
   color: white;
@@ -11448,9 +11453,9 @@ footer .social-links .social-links-item i:hover {
   margin-top: 56px;
 }
 
-@media screen and (max-width: 444px) {
+@media screen and (max-width: 367px) {
   .result .filter-option.active {
-    margin-top: 87.6px;
+    margin-top: 68.4px;
   }
 }
 

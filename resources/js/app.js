@@ -10,11 +10,9 @@ const Handlebars = require("handlebars");
 // QUI VANNO LE FUNZIONI !!!!!!!!!
 
 function renderSponsorized(data) {
-  console.log("sponsorizzati");
   var source = $("#search-result-template").html();
   var template = Handlebars.compile(source);
   for (var i = 0; i < 5 && i < data.length; i++) {
-    console.log(i+"sponsorizzati");
     context = {
       "sponsorized": true,
       "cover_image": data[i].cover_image,
@@ -22,7 +20,8 @@ function renderSponsorized(data) {
       "description": data[i].description,
       "address": data[i].address,
       "beds_number": data[i].beds_number,
-      "square_meters": data[i].square_meters
+      "square_meters": data[i].square_meters,
+      "id": data[i].id
     }
     if (!data[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -33,7 +32,6 @@ function renderSponsorized(data) {
 }
 
 function renderResults(data) {
-  console.log("risultati");
   var source = $("#search-result-template").html();
   var template = Handlebars.compile(source);
   var apartments = data.matched_apartments;
@@ -49,7 +47,8 @@ function renderResults(data) {
       "description": apartments[i].description,
       "address": apartments[i].address,
       "beds_number": apartments[i].beds_number,
-      "square_meters": apartments[i].square_meters
+      "square_meters": apartments[i].square_meters,
+      "id": apartments[i].id
     }
     if (!apartments[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -101,9 +100,7 @@ function tomtomBoolbBnB(){
       var latitude = data.results[0].position.lat;
       var longitude = data.results[0].position.lon;
       var filter = getFilter();
-
-      console.log("filter");
-      console.log(filter);
+      console.log(latitude + " " + longitude);
   
       // seconda funzione ajax
       $.ajax({
@@ -279,6 +276,10 @@ if(window.location.pathname == '/search'){
   });
 
   $(".content input").on('change',function () { 
+    tomtomBoolbBnB();
+  });
+
+  $(".content input").on('keyup',function () {
     tomtomBoolbBnB();
   });
    

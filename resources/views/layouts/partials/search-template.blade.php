@@ -30,12 +30,16 @@
                 </li>
             </ul>
         </div>
-        <div class="button-wrapper">
-            @{{#if sponsorized}}
+        @{{#if sponsorized}}
+            <div class="button-wrapper space-between">
                 <div class="badge">Superhost</div>
-            @{{/if}}
-            <a href="http://localhost:8000/admin/apartment/@{{id}}" class="btn-details">Details</a>
-        </div>
+                <a href="http://localhost:8000/show/@{{id}}" class="btn-details">Details</a>
+            </div>
+        @{{else}}
+            <div class="button-wrapper flex-end">
+                <a href="http://localhost:8000/show/@{{id}}" class="btn-details">Details</a>
+            </div>
+        @{{/if}}
     </div>
     
 </script>

@@ -12,11 +12,11 @@
                 <div class="filter-option">
                     <div class="static-options">
                         <div class="content">
-                            <label for="rooms_number">Rooms</label>
+                            <label for="rooms_number">Min Rooms</label>
                             <input name="rooms_number" id="rooms_number" class="form-control" type="number" placeholder="0" value="2">
                         </div>
                         <div class="content">
-                            <label for="beds_number">Beds</label>
+                            <label for="beds_number">Min Beds</label>
                             <input name="beds_number" id="beds_number" class="form-control" type="number" placeholder="0" value="1">
                         </div>
                         <div class="content">
@@ -112,7 +112,7 @@
                                 </ul>
                             </div>
                             @if (count($apartment->sponsorizations->where('end_date', '>', date('Y-m-d h:i:s'))) == 1)
-                                <div class="button-wrapper space-between>
+                                <div class="button-wrapper space-between">
                                     <div class="badge">Superhost</div>
                                     <a href="{{ route("apartment.show", $apartment->id) }}" class="btn-details">Details</a>
                                 </div>
