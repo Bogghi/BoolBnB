@@ -13,14 +13,16 @@
                 <div class="title">
                     <h5>@{{title}}</h5>
                 </div>
-                <p>@{{address}}</p>
+                <div class="address">
+                    <p>@{{address}}</p>
+                </div>
             </div>
             <ul>
                 <li>
                     <strong>Rooms:</strong> @{{rooms_number}}
                 </li>
                 <li>
-                    <strong>Bathrooms:</strong> @{{bathrooms_numbers}}
+                    <strong>Bathrooms:</strong> @{{bathrooms_number}}
                 </li>
                 <li>
                     <strong>Beds:</strong> @{{beds_number}}

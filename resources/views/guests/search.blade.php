@@ -60,7 +60,7 @@
                                         <strong>Rooms:</strong> {{$all_sponsorized_apartments[$i]->rooms_number}}
                                     </li>
                                     <li>
-                                        <strong>Bathrooms:</strong> {{$all_sponsorized_apartments[$i]->bathrooms_numbers}}
+                                        <strong>Bathrooms:</strong> {{$all_sponsorized_apartments[$i]->bathrooms_number}}
                                     </li>
                                     <li>
                                         <strong>Beds:</strong> {{$all_sponsorized_apartments[$i]->beds_number}}
@@ -105,7 +105,7 @@
                                         <strong>Rooms:</strong> {{$apartment->rooms_number}}
                                     </li>
                                     <li>
-                                        <strong>Bathrooms:</strong> {{$apartment->bathrooms_numbers}}
+                                        <strong>Bathrooms:</strong> {{$apartment->bathrooms_number}}
                                     </li>
                                     <li>
                                         <strong>Beds:</strong> {{$apartment->beds_number}}
