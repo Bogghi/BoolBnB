@@ -104,9 +104,17 @@
       @error('cover_image')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
+      <?php
+      $image = $apartment->cover_image;
+      $pos = strpos($image, "http");          
+       ?> 
 
       <div class="apartment-cover">
+        <?php if ($pos === false) {?>
         <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="" style="width:200px; height:200px">
+        <?php } else {?>
+        <img src="{{$apartment->cover_image}}" alt="" style="width:200px; height:200px">
+          <?php }?>
       </div>
 
       <div class="form-group mt-sm-4">
@@ -120,8 +128,21 @@
       @if ($apartment_images)
       <div class="apartment-images my-sm-4 d-flex flex-wrap">
         @foreach ($apartment_images as $apartment_image)
+        <?php
+          $additional_images = $apartment_image->image_path;
+          $pos = strpos($additional_images, "http");          
+        ?> 
           <div class="apartment-image">
+            <?php if ($pos === false) {?>
+
             <img class="border rounded" src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
+
+            <?php } else {?>
+            <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
+            <?php }?>
+
+
+
             <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
               @csrf
               @method("DELETE")
