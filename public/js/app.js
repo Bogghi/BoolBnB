@@ -42359,73 +42359,138 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
+var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js"); // QUI VANNO LE FUNZIONI !!!!!!!!!
 
-if (window.location.pathname == '/' || window.location.pathname == '/search') {
-  var renderSponsorized = function renderSponsorized(data) {
-    $("#sponsorized-apartments").empty();
-    var source = $("#search-result-template").html();
-    var template = Handlebars.compile(source);
-    var sponsorized = data.all_sponsorized_apartments;
 
-    for (var i = 0; i < 5 && i < sponsorized.length; i++) {
-      context = {
-        "sponsorized": true,
-        "cover_image": sponsorized[i].cover_image,
-        "title": sponsorized[i].title,
-        "description": sponsorized[i].description,
-        "address": sponsorized[i].address,
-        "beds_number": sponsorized[i].beds_number,
-        "square_meters": sponsorized[i].square_meters
-      };
+function renderSponsorized(data) {
+  var source = $("#search-result-template").html();
+  var template = Handlebars.compile(source);
 
-      if (!sponsorized[i].cover_image.includes("placeholder")) {
-        context.asset = true;
-      }
+  for (var i = 0; i < 5 && i < data.length; i++) {
+    context = {
+      "sponsorized": true,
+      "cover_image": data[i].cover_image,
+      "title": data[i].title,
+      "description": data[i].description,
+      "address": data[i].address,
+      "beds_number": data[i].beds_number,
+      "square_meters": data[i].square_meters,
+      "id": data[i].id
+    };
 
-      ;
-      var html = template(context);
-      $("#sponsorized-apartments").append(html);
+    if (!data[i].cover_image.includes("placeholder")) {
+      context.asset = true;
     }
+
+    ;
+    var html = template(context);
+    $(".results-wrapper").append(html);
+  }
+}
+
+function renderResults(data) {
+  var source = $("#search-result-template").html();
+  var template = Handlebars.compile(source);
+  var apartments = data.matched_apartments;
+  var sponsorized = data.all_sponsorized_apartments;
+  var sponsorizedIds = [];
+
+  for (var i = 0; i < sponsorized.length; i++) {
+    sponsorizedIds.push(sponsorized[i].id);
+  }
+
+  for (var i = 0; i < apartments.length; i++) {
+    context = {
+      "cover_image": apartments[i].cover_image,
+      "title": apartments[i].title,
+      "description": apartments[i].description,
+      "address": apartments[i].address,
+      "beds_number": apartments[i].beds_number,
+      "square_meters": apartments[i].square_meters,
+      "id": apartments[i].id
+    };
+
+    if (!apartments[i].cover_image.includes("placeholder")) {
+      context.asset = true;
+    }
+
+    ;
+
+    if (sponsorizedIds.includes(apartments[i].id)) {
+      context.sponsorized = true;
+    }
+
+    var html = template(context);
+    $(".results-wrapper").append(html);
+  }
+}
+
+function getFilter() {
+  var roomsNumber = $(".content input#rooms_number").prop('value');
+  var bedsNumber = $(".content input#beds_number").prop('value');
+  var radius = $(".content input#radius").prop('value');
+  var labels = $(".label-options span");
+  var services = [];
+  labels.each(function () {
+    if ($(this).hasClass('active')) {
+      var id = $(this).prop('id');
+      services.push(id);
+    }
+  });
+  responses = {
+    'roomsNumber': roomsNumber,
+    'bedsNumber': bedsNumber,
+    'radius': radius,
+    'services': services.toString()
   };
+  console.log(responses);
+  return responses;
+} // tomtom api call nested with our api call
 
-  var renderResults = function renderResults(data) {
-    $("#searched-apartments").empty();
-    var source = $("#search-result-template").html();
-    var template = Handlebars.compile(source);
-    var apartments = data.matched_apartments;
-    var sponsorized = data.all_sponsorized_apartments;
-    var sponsorizedIds = [];
 
-    for (var i = 0; i < sponsorized.length; i++) {
-      sponsorizedIds.push(sponsorized[i].id);
+function tomtomBoolbBnB() {
+  var address = $(".filter #address").prop('value');
+  $.ajax({
+    "url": 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
+    "method": "GET",
+    "success": function success(data) {
+      var latitude = data.results[0].position.lat;
+      var longitude = data.results[0].position.lon;
+      var filter = getFilter();
+      console.log(latitude + " " + longitude); // seconda funzione ajax
+
+      $.ajax({
+        "url": "http://localhost:8000/api/search",
+        "data": {
+          "latitude": latitude,
+          "longitude": longitude,
+          "radius": filter.radius,
+          "rooms": filter.roomsNumber,
+          "beds": filter.bedsNumber,
+          "services": filter.services
+        },
+        "method": "GET",
+        "success": function success(data) {
+          console.log(data);
+          $(".results-wrapper").empty();
+          renderSponsorized(data.all_sponsorized_apartments);
+          renderResults(data);
+        },
+        "error": function error(_error) {
+          console.log(_error);
+        }
+      }); // seconda funzione ajax
+    },
+    "error": function error(_error2) {
+      console.log(_error2);
     }
+  });
+} // tomtom api call nested with our api call
+// QUI VANNO LE FUNZIONI !!!!!!!!!
+// if (window.location.pathname == '/' || window.location.pathname == '/search') {
 
-    for (var i = 0; i < apartments.length; i++) {
-      context = {
-        "cover_image": apartments[i].cover_image,
-        "title": apartments[i].title,
-        "description": apartments[i].description,
-        "address": apartments[i].address,
-        "beds_number": apartments[i].beds_number,
-        "square_meters": apartments[i].square_meters
-      };
 
-      if (!apartments[i].cover_image.includes("placeholder")) {
-        context.asset = true;
-      }
-
-      ;
-
-      if (sponsorizedIds.includes(apartments[i].id)) {
-        context.sponsorized = true;
-      }
-
-      var html = template(context);
-      $("#searched-apartments").append(html);
-    }
-  };
-
+if (window.location.pathname == '/') {
   var options = {
     searchOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
@@ -42446,49 +42511,7 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
   $(".tt-search-box-input").attr("name", "search");
   $('.tt-search-box-input-container').append($(".search-btn"));
   $("#search-button").click(function () {
-    var userInput = $(".tt-search-box-input").val(); // prima funziona ajax
-
-    $.ajax({
-      "url": 'https://api.tomtom.com/search/2/geocode/' + userInput + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-      "method": "GET",
-      "success": function success(data) {
-        var latitude = data.results[0].position.lat;
-        var longitude = data.results[0].position.lon;
-        var rooms = $("#rooms_number").val();
-        var beds = $("#beds_number").val();
-        var radius = $("#radius").val();
-        var services = "";
-        $(".services").each(function () {
-          if (this.checked) {
-            services += this.value + ",";
-          }
-        }); // seconda funzione ajax
-
-        $.ajax({
-          "url": "http://localhost:8000/api/search",
-          "data": {
-            "latitude": latitude,
-            "longitude": longitude,
-            "radius": radius,
-            "rooms": rooms,
-            "beds": beds,
-            "services": services
-          },
-          "method": "GET",
-          "success": function success(data) {
-            console.log(data);
-            renderSponsorized(data);
-            renderResults(data);
-          },
-          "error": function error(_error) {
-            console.log(_error);
-          }
-        }); // seconda funzione ajax
-      },
-      "error": function error(_error2) {
-        console.log(_error2);
-      }
-    }); // prima funziona ajax
+    var userInput = $(".tt-search-box-input").val();
   });
 }
 
@@ -42699,6 +42722,35 @@ $('.arrow').click(function () {
   }
 }); // }
 
+if (window.location.pathname == '/search') {
+  $("#more-option").on('click', function () {
+    var button = $('.filter-option');
+
+    if (button.hasClass('active')) {
+      button.removeClass('active');
+    } else {
+      button.addClass('active');
+    }
+  });
+  $(".label-options span").on('click', function () {
+    var label = $(this);
+
+    if (label.hasClass('active')) {
+      label.removeClass('active');
+    } else {
+      label.addClass('active');
+    }
+
+    tomtomBoolbBnB();
+  });
+  $(".content input").on('change', function () {
+    tomtomBoolbBnB();
+  });
+  $(".content input").on('keyup', function () {
+    tomtomBoolbBnB();
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -42764,8 +42816,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> index-guest-update
 
 
 /***/ })

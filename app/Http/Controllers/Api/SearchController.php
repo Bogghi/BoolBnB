@@ -11,7 +11,6 @@ class SearchController extends Controller
   public function search()
   {
 
-    // Take passed variable from the query string.
     $latitude = $_GET["latitude"];
     $longitude = $_GET["longitude"];
     $radius = $_GET["radius"];
