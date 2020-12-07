@@ -12,16 +12,16 @@ class SearchController extends Controller
   {
 
     // Take passed variable from the query string.
-    // $latitude = $_GET["latitude"];
-    // $longitude = $_GET["longitude"];
-    // $radius = $_GET["radius"];
-    // $rooms = $_GET["rooms"];
-    // $beds = $_GET["beds"];
-    // if ($_GET["services"] == "") {
-    //   $requested_services = [];
-    // } else {
-    //   $requested_services = explode(",", $_GET["services"]);
-    // }
+    $latitude = $_GET["latitude"];
+    $longitude = $_GET["longitude"];
+    $radius = $_GET["radius"];
+    $rooms = $_GET["rooms"];
+    $beds = $_GET["beds"];
+    if ($_GET["services"] == "") {
+      $requested_services = [];
+    } else {
+      $requested_services = explode(",", $_GET["services"]);
+    }
 
     // For debug
 
