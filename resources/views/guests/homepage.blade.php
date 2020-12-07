@@ -8,9 +8,9 @@
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-pause="carousel">
                 <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -20,14 +20,14 @@
                         @for ($i = 0; $i < 8 ; $i++)
                             <?php                  
                             $image = $sponsored_apartments[$i]->cover_image;
-                            $pos = strpos($image, "placeholder");
+                            $pos = strpos($image, "http");
                             ?>
                         
                             <?php if ($pos === false) {?>
                             <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
                                 <div class="sponsored-item" style="background-image: url({{asset('storage/'.$sponsored_apartments[$i]->cover_image)}})">
                                     {{-- Info Apartment --}}
-                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}Prova titolo</h5>                     
+                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}</h5>                     
                                 </div>
                             </a>
                             <?php } else {?>
@@ -49,14 +49,14 @@
                         @for ($i = 0; $i < 8 ; $i++)
                             <?php                  
                             $image = $sponsored_apartments[$i]->cover_image;
-                            $pos = strpos($image, "placeholder");
+                            $pos = strpos($image, "http");
                             ?>
                         
                             <?php if ($pos === false) {?>
                             <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
                                 <div class="sponsored-item" style="background-image: url({{asset('storage/'.$sponsored_apartments[$i]->cover_image)}})">
                                     {{-- Info Apartment --}}
-                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}Prova titolo</h5>                     
+                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}</h5>                     
                                 </div>
                             </a>
                             <?php } else {?>
@@ -78,14 +78,14 @@
                         @for ($i = 0; $i < 8 ; $i++)
                             <?php                  
                             $image = $sponsored_apartments[$i]->cover_image;
-                            $pos = strpos($image, "placeholder");
+                            $pos = strpos($image, "http");
                             ?>
                         
                             <?php if ($pos === false) {?>
                             <a href="{{route('admin.apartment.show', $sponsored_apartments)}}">
                                 <div class="sponsored-item" style="background-image: url({{asset('storage/'.$sponsored_apartments[$i]->cover_image)}})">
                                     {{-- Info Apartment --}}
-                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}Prova titolo</h5>                     
+                                    <h5 id="hover-title">{{$sponsored_apartments[$i]->title}}</h5>                     
                                 </div>
                             </a>
                             <?php } else {?>
@@ -114,13 +114,12 @@
 
     </section>
 
-
      {{-- Cities mix --}}
-     <section class="pt-5 bg-ligth container-fluid">
+     <section class="py-5 mb-5 bg-ligth container-fluid">
         <h2 class="text-center mb-5">Best Cities</h2>
-        <div class="row">
+        <div class="row ">
             {{-- box cities --}}
-            <div class="col-lg-2 col-md-4 col-6 text-center">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
                 <h2>Parigi</h2>                
                 <a  href="#">
                     <div class="box-cities" style="background-image: url(http://www.competitiontravel.it/wp-content/uploads/2014/09/Parigi-2-1024x683.jpg)">
@@ -128,7 +127,7 @@
                 </a> 
             </div>
 
-            <div class="col-lg-2 col-md-4 col-6 text-center">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
                 <h2>Roma</h2>                
                 <a  href="#">
                     <div class="box-cities" style="background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg)">
@@ -136,28 +135,28 @@
                 </a> 
             </div>
             
-            <div class="col-lg-2 col-md-4 col-6 text-center">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
                 <h2>Londra</h2>                
                 <a  href="#">
-                    <div class="box-cities" style="background-image: url(https://lh3.googleusercontent.com/proxy/b-7H2WubUDt70ycwlYPDPDo0EpdmHfIDPPLsvnpQgChscpS_1P4AdmAgNtBx7gfAz0VzrHIxomwUWObz3LNcjAy8enyHEZSsmu2dxbhN9TRR0IQIIxGS2Fsl3xkRxP0J6MISWZAcYS29RHOVqFGeotZSggsFJXQn7GYsw_XY8OA6yQp8qDWazoE6jw)">
+                    <div class="box-cities" style="background-image: url(https://www.metamorphic.co.uk/wp-content/uploads/2018/05/london-1900x1080.jpg)">
                     </div>
                 </a> 
             </div>
-            <div class="col-lg-2 col-md-4 col-6 text-center">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
                 <h2>Barcellona</h2>                
                 <a  href="#">
                     <div class="box-cities" style="background-image: url(https://www.voglioviverecosi.com/wp-content/uploads/2019/09/LAVORO-BARCELLONA-1900x1080.jpg)">
                     </div>
                 </a> 
             </div>
-            <div class="col-lg-2 col-md-4 col-6 text-center">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
                 <h2>Berlino</h2>                
                 <a  href="#">
                     <div class="box-cities" style="background-image: url(https://www.robintur.it/img/viaggi/germania/image-thumb__6491__galleryCarousel/germania-berlino-porta-di-brandeburgo~-~300w.pjpeg)">
                     </div>
                 </a> 
             </div>
-            <div class="col-lg-2 col-md-4 col-6 text-center">
+            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
                 <h2>Vienna</h2>                
                 <a  href="#">
                     <div class="box-cities" style="background-image: url(https://www.10cose.it/wp-content/uploads/2015/11/vienna-696x456.jpg)">
@@ -171,44 +170,42 @@
     </section>
 
     {{-- Developer pics team --}}
-    <section id="developers">
-        <div class="container">
+    <section id="developers" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/15/25/galaxies-2604911_960_720.jpg)">
+        <div class="box-ghost">
+        </div>
+        <div class="container pt-5">
             <div class="developer-container mx-auto py-5">
-                <h2 class="text-center text-white mb-4">Our Team</h2>
+                <h1 class="text-center text-white mb-4">Our Team</h1>
                 <div class="developer d-flex justify-content-center ">
 
                     <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                        <a class="text-center pt-3" href="https://www.linkedin.com/in/lorenzo-d-amico/">
+                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHC1dg3x4RwGw/profile-displayphoto-shrink_800_800/0/1606154522135?e=1613001600&v=beta&t=Fq6DEI1on8aJ5yvjqdOeMEPTInquQ7M4-Sf6g5QokAM" alt="Lorenzo">
+                        </a>
                     </div>
 
                     <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                        <a class="text-center pt-3" href="https://www.linkedin.com/in/matteosimoneborghi/">
+                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQFHvqD8mzSazg/profile-displayphoto-shrink_800_800/0/1556965358340?e=1613001600&v=beta&t=OfUd69bBZwxHTx-Z7z4b6zbR64kS0kbAxBb_Bc-FvpU" alt="Matteo">
+                        </a>
                     </div>
 
                     <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                        <a class="text-center pt-3" href="https://www.linkedin.com/in/andreacontestabile/">
+                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQH5nLXiQOM5MQ/profile-displayphoto-shrink_800_800/0/1562578629282?e=1613001600&v=beta&t=WameMQLa_d5aZqGC_DODhCWWiBnMWno1bVMhDJs9rCs" alt="Andrea">
+                        </a>
                     </div>
 
                     <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                        <a class="text-center pt-3" href="https://www.linkedin.com/in/danilo-patan%C3%A9/">
+                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGY6ORkDSHAMQ/profile-displayphoto-shrink_800_800/0/1605979378804?e=1613001600&v=beta&t=UxCDvkF9I28q_Sn1AmmmfqvtxfrXiBnaAbNpoXhvud4" alt="Danilo">
+                        </a>
                     </div>
 
-                    <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                    <div class="pic d-flex flex-column ">
+                        <a class="text-center pt-3" href="https://www.linkedin.com/in/gabriele-musumeci-51aa551bb/">
+                            <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQEX0dlhwkuIgg/profile-displayphoto-shrink_200_200/0/1605545011980?e=1613001600&v=beta&t=THh1-d5d6eHobVi474AIKn6urQNeiiePLXp0Xs9KcSs" alt="Gabriele">
+                        </a>
                     </div>
 
                 </div>

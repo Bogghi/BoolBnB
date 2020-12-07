@@ -70,42 +70,9 @@ main {
     right: 280px;
   }
 
-  #developers {
-
-    background-color: $bluebnb;
-    border-bottom: 5px solid #fff;
-    .developer {
-      height: 100%;
-      flex-wrap: wrap;
-
-      .pic {
-        margin-top: 30px;
-        padding-bottom: 30px;
-
-        &:not(:last-child) {
-          margin-right: 50px;
-        }
-      }
-      .footer-img {
-        width: 140px;
-
-      }
-      .custom-social {
-        color: $greenbnb;
-        font-size: 40px;
-        background-color: $white;
-        padding: 10px;
-
-      }
-    }
-  }
+  
 
 }
-
-
-
-// homepage main
-
 
 // Search
 .search-container {
@@ -165,7 +132,6 @@ main {
   left: 10px;
   }
 }
-
 //search end
 
 //Index Admin
@@ -311,7 +277,6 @@ main {
 }
 
 // Cities Mix
-
 .box-cities{
   border: 1px solid $greenbnb;
   border-radius: 10px;
@@ -319,9 +284,50 @@ main {
   height: 160px; 
   background-size: cover;
   transition: 1s;
-  background-color: $greenbnb;
   background-position: center;
   &:hover{
     filter: grayscale(100%);    
   }
 }
+// Cities Mix end
+
+// Developer pics team
+#developers {
+  position: relative;
+  z-index: 0;
+  background-size: cover;
+  background-position: bottom;
+  
+
+  .box-ghost{
+    position:absolute;
+    z-index: 1;
+    height: 100px;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%)
+    
+  }
+  
+  .developer {
+    height: 100%;
+    flex-wrap: wrap;
+
+    .pic {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      
+
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+    .footer-img {
+      width: 140px;
+      border:2px solid #00F087;;
+
+    }
+    
+  }
+}
+// Developer pics team end

@@ -11310,36 +11310,6 @@ main #sponsorizations .next {
   right: 280px;
 }
 
-main #sponsorizations #developers {
-  background-color: #001533;
-  border-bottom: 5px solid #fff;
-}
-
-main #sponsorizations #developers .developer {
-  height: 100%;
-  flex-wrap: wrap;
-}
-
-main #sponsorizations #developers .developer .pic {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-main #sponsorizations #developers .developer .pic:not(:last-child) {
-  margin-right: 50px;
-}
-
-main #sponsorizations #developers .developer .footer-img {
-  width: 140px;
-}
-
-main #sponsorizations #developers .developer .custom-social {
-  color: #00F087;
-  font-size: 40px;
-  background-color: white;
-  padding: 10px;
-}
-
 main .search-container .row .list-apartment {
   height: calc(100vh - 78px);
   overflow-y: auto;
@@ -11524,7 +11494,6 @@ main #sponsorized {
   height: 160px;
   background-size: cover;
   transition: 1s;
-  background-color: #00F087;
   background-position: center;
 }
 
@@ -11532,9 +11501,45 @@ main #sponsorized {
   filter: grayscale(100%);
 }
 
+#developers {
+  position: relative;
+  z-index: 0;
+  background-size: cover;
+  background-position: bottom;
+}
+
+#developers .box-ghost {
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  background: white;
+  background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+#developers .developer {
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+#developers .developer .pic {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+#developers .developer .pic:not(:last-child) {
+  margin-right: 50px;
+}
+
+#developers .developer .footer-img {
+  width: 140px;
+  border: 2px solid #00F087;
+}
+
 footer {
   border-top: 3px solid #00F087;
   height: 80px;
+  background-color: black;
 }
 
 footer .modal-tr {

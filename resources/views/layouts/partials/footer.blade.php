@@ -1,4 +1,4 @@
-<footer class="pt-3 bg-secondary text-white">
+<footer class="pt-3 text-white">
     <div class="container">
         {{-- Section-end with links to company and
         social-network--}}
