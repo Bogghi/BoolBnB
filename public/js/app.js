@@ -42351,6 +42351,8 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
     includes = _require.includes,
     isNull = _require.isNull;
@@ -42367,7 +42369,8 @@ function renderSponsorized(data) {
   var template = Handlebars.compile(source);
 
   for (var i = 0; i < 5 && i < data.length; i++) {
-    context = {
+    context = _defineProperty({
+      "id": data[i].id,
       "sponsorized": true,
       "cover_image": data[i].cover_image,
       "title": data[i].title,
@@ -42378,9 +42381,8 @@ function renderSponsorized(data) {
       "beds_number": data[i].beds_number,
       "bathrooms_number": data[i].bathrooms_number,
       "rooms_number": data[i].rooms_number,
-      "square_meters": data[i].square_meters,
-      "id": data[i].id
-    };
+      "square_meters": data[i].square_meters
+    }, "id", data[i].id);
 
     if (!data[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -42404,7 +42406,8 @@ function renderResults(data) {
   }
 
   for (var i = 0; i < apartments.length; i++) {
-    context = {
+    context = _defineProperty({
+      "id": apartments[i].id,
       "sponsorized": true,
       "cover_image": apartments[i].cover_image,
       "title": apartments[i].title,
@@ -42415,9 +42418,8 @@ function renderResults(data) {
       "beds_number": apartments[i].beds_number,
       "bathrooms_number": apartments[i].bathrooms_number,
       "rooms_number": apartments[i].rooms_number,
-      "square_meters": apartments[i].square_meters,
-      "id": apartments[i].id
-    };
+      "square_meters": apartments[i].square_meters
+    }, "id", apartments[i].id);
 
     if (!apartments[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -42530,13 +42532,18 @@ function renderResultsMap() {
       $(".apartment-card").each(function () {
         var markerLon = $(this).find(".apartment-lon").val();
         var markerLat = $(this).find(".apartment-lat").val();
-        console.log(markerLon);
-        console.log(markerLat);
+        var markerId = $(this).find(".apartment-id").val();
         var element = document.createElement('div');
         element.classList.add("marker-house");
+        $(element).attr("data-id", markerId);
         var marker = new tt.Marker({
           element: element
         }).setLngLat([markerLon, markerLat]).addTo(map);
+        $(marker._element).on("click", function () {
+          var dataId = $(this).attr("data-id");
+          $(".apartment-card").removeClass("selected");
+          $("input[value='" + dataId + "']").parents(".apartment-card").addClass("selected");
+        });
       });
     }
   });
@@ -42714,7 +42721,7 @@ if (window.location.pathname.includes("statistics")) {
 } // Map generation in show view
 
 
-if ($("#map-container").length > 0 && window.location.pathname.includes("apartment")) {
+if ($("#map-container").length > 0 && window.location.pathname.includes("show")) {
   var address = $("#address").text();
   console.log(address);
   $.ajax({
@@ -42808,6 +42815,9 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
   $(".content input").on('keyup', function () {
     tomtomBoolbBnB();
   });
+  $(".marker-house::after").on("click", function () {
+    console.log("ciao");
+  });
 }
 
 /***/ }),
@@ -42875,13 +42885,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
 __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> search-results-view-map
 
 
 /***/ })

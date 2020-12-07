@@ -50,6 +50,7 @@
                                 <div class="main">
                                     <div class="title">
                                         <h5>{{$all_sponsorized_apartments[$i]->title}}</h5>
+                                        <input type="hidden" value="{{$all_sponsorized_apartments[$i]->id}}" class="apartment-id">
                                     </div>
                                     <div class="address">
                                         <p>{{$all_sponsorized_apartments[$i]->address}}</p>
@@ -97,6 +98,8 @@
                                 <div class="main">
                                     <div class="title">
                                         <h5>{{$apartment->title}}</h5>
+                                        <input type="hidden" value="{{$apartment->id}}" class="apartment-id">
+
                                     </div>
                                     <div class="address">
                                         <p>{{$apartment->address}}</p>
