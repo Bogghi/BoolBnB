@@ -3,6 +3,12 @@
   padding: 0;
   padding: 20px 0;
   transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+
+  .nav-white {
+    background-color: $white;
+  }
 
   @media screen and (max-width: 575px) {
     padding: 0 20px;

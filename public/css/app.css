@@ -11026,6 +11026,12 @@ header.margin-fixed > .container {
   padding: 0;
   padding: 20px 0;
   transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .nav-white {
+  background-color: white;
 }
 
 @media screen and (max-width: 575px) {
@@ -12572,5 +12578,23 @@ footer .social-links .social-links-item i:hover {
   transform: rotate(-45deg);
   border-radius: 50% 50% 50% 0;
   border: 2px solid #00F087;
+}
+
+#search-results {
+  height: calc(100vh - 80px);
+}
+
+#search-results .searchbar {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 270px;
+  padding: 10px;
+  background-color: #001533;
+  color: #fff;
+  font-weight: 700;
+}
+
+#search-results .list-apartment {
+  height: calc(100vh - 350px);
 }
 
