@@ -39,7 +39,7 @@
           <div class="carousel-inner">
             <?php
             $image = $apartment->cover_image;
-            $pos = strpos($image, "placeholder");          
+            $pos = strpos($image, "http");          
             ?> 
             <div class="carousel-item active">
               <?php if ($pos === false) {?>

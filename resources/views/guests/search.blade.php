@@ -51,7 +51,7 @@
                             <div class="d-flex flex-column">
                                     <?php
                                         $image = $all_sponsorized_apartments[$i]->cover_image;
-                                        $pos = strpos($image, "placeholder");
+                                        $pos = strpos($image, "http");
 
                                     ?>
                                 <div class="d-flex border rounded  container-apartment">
@@ -105,7 +105,7 @@
                             <div class="d-flex flex-column">
                                     <?php
                                         $image = $apartment->cover_image;
-                                        $pos = strpos($image, "placeholder");
+                                        $pos = strpos($image, "http");
 
                                     ?>
                                 <div class="d-flex border rounded container-apartment">
