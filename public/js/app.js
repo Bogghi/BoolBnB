@@ -42374,6 +42374,8 @@ function renderSponsorized(data) {
       "description": data[i].description,
       "address": data[i].address,
       "beds_number": data[i].beds_number,
+      "bathrooms_number": data[i].bathrooms_number,
+      "rooms_number": data[i].rooms_number,
       "square_meters": data[i].square_meters,
       "id": data[i].id
     };
@@ -42401,11 +42403,14 @@ function renderResults(data) {
 
   for (var i = 0; i < apartments.length; i++) {
     context = {
+      "sponsorized": true,
       "cover_image": apartments[i].cover_image,
       "title": apartments[i].title,
       "description": apartments[i].description,
       "address": apartments[i].address,
       "beds_number": apartments[i].beds_number,
+      "bathrooms_number": apartments[i].bathrooms_number,
+      "rooms_number": apartments[i].rooms_number,
       "square_meters": apartments[i].square_meters,
       "id": apartments[i].id
     };

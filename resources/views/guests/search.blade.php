@@ -35,7 +35,7 @@
                     @for ($i = 0; $i < 5 && $i < count($all_sponsorized_apartments); $i++)
                         <?php
                             $image = $all_sponsorized_apartments[$i]->cover_image;
-                            $pos = strpos($image, "placeholder");
+                            $pos = strpos($image, "http");
                         ?>
 
                         <div class="apartment-card">
@@ -51,14 +51,16 @@
                                     <div class="title">
                                         <h5>{{$all_sponsorized_apartments[$i]->title}}</h5>
                                     </div>
-                                    <p>{{$all_sponsorized_apartments[$i]->address}}</p>
+                                    <div class="address">
+                                        <p>{{$all_sponsorized_apartments[$i]->address}}</p>
+                                    </div>
                                 </div>
                                 <ul>
                                     <li>
                                         <strong>Rooms:</strong> {{$all_sponsorized_apartments[$i]->rooms_number}}
                                     </li>
                                     <li>
-                                        <strong>Bathrooms:</strong> {{$all_sponsorized_apartments[$i]->bathrooms_numbers}}
+                                        <strong>Bathrooms:</strong> {{$all_sponsorized_apartments[$i]->bathrooms_number}}
                                     </li>
                                     <li>
                                         <strong>Beds:</strong> {{$all_sponsorized_apartments[$i]->beds_number}}
@@ -78,7 +80,7 @@
 
                         <?php
                         $image = $apartment->cover_image;
-                        $pos = strpos($image, "placeholder");
+                        $pos = strpos($image, "http");
                         ?>
 
                         <div class="apartment-card">
@@ -94,14 +96,16 @@
                                     <div class="title">
                                         <h5>{{$apartment->title}}</h5>
                                     </div>
-                                    <p>{{$apartment->address}}</p>
+                                    <div class="address">
+                                        <p>{{$apartment->address}}</p>
+                                    </div>
                                 </div>
                                 <ul>
                                     <li>
                                         <strong>Rooms:</strong> {{$apartment->rooms_number}}
                                     </li>
                                     <li>
-                                        <strong>Bathrooms:</strong> {{$apartment->bathrooms_numbers}}
+                                        <strong>Bathrooms:</strong> {{$apartment->bathrooms_number}}
                                     </li>
                                     <li>
                                         <strong>Beds:</strong> {{$apartment->beds_number}}
@@ -118,7 +122,7 @@
                                 </div>
                             @else
                                 <div class="button-wrapper flex-end">
-                                    <a href="{{ route("apartment.show", $apartment->id) }}" class="btn-details">Details</a>
+                                    <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn-details">Details</a>
                                 </div>
                             @endif
                         </div>
