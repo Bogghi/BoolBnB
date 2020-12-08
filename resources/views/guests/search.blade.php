@@ -32,13 +32,14 @@
                 </div>
 
                 <div class="results-wrapper">
+                    <?php $delay = 0; ?>
                     @for ($i = 0; $i < 5 && $i < count($all_sponsorized_apartments); $i++)
                         <?php
                             $image = $all_sponsorized_apartments[$i]->cover_image;
                             $pos = strpos($image, "http");
                         ?>
 
-                        <div class="apartment-card">
+                    <div class="apartment-card" data-aos="fade-right" data-aos-delay="{{$delay}}" data-aos-anchor=".navbar">
                             <div class="image-wrapper">
                                 @if ($pos === false)
                                     <img src="{{asset('storage/'.$image)}}" alt="immagine casa">
@@ -78,6 +79,7 @@
                                 <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn-details">Details</a>
                             </div>
                         </div>
+                        <?php $delay += 150; ?>
                     @endfor
                     @foreach ($apartments as $apartment)
 
@@ -86,7 +88,7 @@
                         $pos = strpos($image, "http");
                         ?>
 
-                        <div class="apartment-card">
+                        <div class="apartment-card" data-aos="fade-right" data-aos-delay="{{$delay}}"" data-aos-anchor=".navbar">
                             <div class="image-wrapper">
                                 @if ($pos === false)
                                     <img src="{{asset('storage/'.$image)}}" alt="immagine casa">
@@ -134,6 +136,7 @@
                                 </div>
                             @endif
                         </div>
+                        <?php $delay += 150;?>
                     @endforeach
                 </div>
             </div>

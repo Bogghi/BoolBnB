@@ -145,7 +145,7 @@
 
 @include('layouts.partials.search-template')
 
-@if (Route::currentRouteName()  == 'homepage')
+@if ((Route::currentRouteName()  == 'homepage') || (Route::currentRouteName()  == 'search'))
 <script>
     AOS.init();
 </script>

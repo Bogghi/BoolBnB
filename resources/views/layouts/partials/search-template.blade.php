@@ -1,6 +1,6 @@
 <script id="search-result-template" type="text/x-handlebars-template">
 
-    <div class="apartment-card">
+    <div class="apartment-card" data-aos="fade-right" data-aos-anchor=".navbar" data-aos-delay="@{{delay}}">
         <div class="image-wrapper">            
             <img src="@{{cover_image}}" alt="immagine casa">
         </div>
