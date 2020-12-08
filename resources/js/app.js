@@ -102,7 +102,7 @@ function getFilter() {
 
 // tomtom api call nested with our api call
 function tomtomBoolbBnB() {
-  var address = $(".filter #user-search").prop('value');
+  var address = $("#search-input .tt-search-box-input").val();
 
   $.ajax({
     "url": 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
@@ -152,7 +152,7 @@ function tomtomBoolbBnB() {
 // Generate map on Search Results page
 function renderResultsMap() {
 
-  var search = $("#user-search").val();
+  var search = $("#search-input .tt-search-box-input").val();
 
   $.ajax({
     "url": "https://api.tomtom.com/search/2/search/" + search + ".json",
@@ -490,6 +490,14 @@ $('.arrow').click(function () {
 
 if (($("#map-container").length > 0) && (window.location.pathname == '/search')) {
 
+  var userSearch = $("#user-search").val();
+  var searchInput = $("#search-input .tt-search-box-input");
+  searchInput.val(userSearch);
+
+  $(".searchbar form").on("submit", function (e) {
+    e.preventDefault();
+  });
+
   renderResultsMap();
 
   $("#more-option").on('click', function () {
@@ -508,6 +516,10 @@ if (($("#map-container").length > 0) && (window.location.pathname == '/search'))
     } else {
       label.addClass('active');
     }
+    tomtomBoolbBnB();
+  });
+
+  $("button.search-btn").on("click", function (e) {
     tomtomBoolbBnB();
   });
 
