@@ -127,7 +127,7 @@
                     @method("POST")
 
                     <input type="hidden" value="parigi" name="search">
-                    <button type="submit" class="box-cities" style="background-image: url(http://www.competitiontravel.it/wp-content/uploads/2014/09/Parigi-2-1024x683.jpg)"></button>
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(http://www.competitiontravel.it/wp-content/uploads/2014/09/Parigi-2-1024x683.jpg)"></button>
                 </form>
             </div>
 
@@ -137,8 +137,8 @@
                     @csrf
                     @method("POST")
 
-                    <input type="hidden" value="parigi" name="search">
-                    <button type="submit" class="box-cities" style="background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg)"></button>
+                    <input type="hidden" value="roma" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg)"></button>
                 </form>             
             </div>
             
@@ -149,7 +149,7 @@
                     @csrf
                     @method("POST")
 
-                    <input type="hidden" value="parigi" name="search">
+                    <input type="hidden" value="londra" name="search">
                     <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.metamorphic.co.uk/wp-content/uploads/2018/05/london-1900x1080.jpg)"></button>
                 </form>        
             </div>
@@ -160,7 +160,7 @@
                     @csrf
                     @method("POST")
 
-                    <input type="hidden" value="parigi" name="search">
+                    <input type="hidden" value="barcellona" name="search">
                     <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.voglioviverecosi.com/wp-content/uploads/2019/09/LAVORO-BARCELLONA-1900x1080.jpg)"></button>
                 </form>          
             </div>
@@ -171,7 +171,7 @@
                     @csrf
                     @method("POST")
 
-                    <input type="hidden" value="parigi" name="search">
+                    <input type="hidden" value="berlino" name="search">
                     <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.robintur.it/img/viaggi/germania/image-thumb__6491__galleryCarousel/germania-berlino-porta-di-brandeburgo~-~300w.pjpeg)"></button>
                 </form>          
             </div>
@@ -182,7 +182,7 @@
                     @csrf
                     @method("POST")
 
-                    <input type="hidden" value="parigi" name="search">
+                    <input type="hidden" value="vienna" name="search">
                     <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.10cose.it/wp-content/uploads/2015/11/vienna-696x456.jpg)"></button>
                 </form>              
             </div>
