@@ -7,7 +7,7 @@
                 <div class="filter">
                     <h6>Accommodation in the area</h6>
                     <a id="more-option">More filter</a>
-                    <input type="hidden" value="{{$address}}" id="user-search">  
+                    <input type="hidden" value="{{$address}}" id="user-search">
                 </div>
                 <div class="filter-option">
                     <div class="static-options">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="label-options">
                         @foreach ($services as $service)
-                            <span id="{{$service->id}}">{{$service->name}}</span>    
+                            <span id="{{$service->id}}">{{$service->name}}</span>
                         @endforeach
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                                     <div class="address">
                                         <p>{{$all_sponsorized_apartments[$i]->address}}</p>
                                         <input type="hidden" value="{{$all_sponsorized_apartments[$i]->longitude}}" class="apartment-lon">
-                                        <input type="hidden" value="{{$all_sponsorized_apartments[$i]->latitude}}" class="apartment-lat">    
+                                        <input type="hidden" value="{{$all_sponsorized_apartments[$i]->latitude}}" class="apartment-lat">
                                     </div>
                                 </div>
                                 <ul>
@@ -106,7 +106,7 @@
                                         <input type="hidden" value="{{$apartment->latitude}}" class="apartment-lat">
                                         <input type="hidden" value="{{$apartment->longitude}}" class="apartment-lon">
                                     </div>
-                                    
+
                                 </div>
                                 <ul>
                                     <li>
@@ -130,7 +130,7 @@
                                 </div>
                             @else
                                 <div class="button-wrapper flex-end">
-                                    <a href="{{ route("apartment.show", $all_sponsorized_apartments[$i]->id) }}" class="btn-details">Details</a>
+                                    <a href="{{ route("apartment.show", $apartment->id) }}" class="btn-details">Details</a>
                                 </div>
                             @endif
                         </div>
