@@ -1,9 +1,6 @@
-<footer class="pt-3 text-white">  
+
+<footer class="pt-3 text-white" @if (Route::currentRouteName() == 'homepage') style="border-top: 3px solid black" @endif>    
     
-    {{-- @if (Route::currentRouteName() == 'homepage')
-    bordo none
-    @endif
-     --}}
     <div class="container">
         {{-- Section-end with links to company and social-network--}}
         <div class="d-flex flex-row flex-wrap align-items-center justify-content-between">
@@ -139,5 +136,6 @@
     </div>
 
 </footer>
+
 
 @include('layouts.partials.search-template')
