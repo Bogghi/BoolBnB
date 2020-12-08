@@ -12610,11 +12610,14 @@ footer .social-links .social-links-item i:hover {
   border: 2px solid #00F087;
 }
 
+<<<<<<< Updated upstream
 .marker-house:hover::after {
   background-color: #00F087;
   cursor: pointer;
 }
 
+=======
+>>>>>>> Stashed changes
 #error-500 {
   height: 100vh;
   margin: 0;
@@ -12684,6 +12687,7 @@ footer .social-links .social-links-item i:hover {
   transform: scale(1.05);
 }
 
+<<<<<<< Updated upstream
 #auth .color-pers {
   background-color: #001533;
   color: white;
@@ -12701,3 +12705,5 @@ footer .social-links .social-links-item i:hover {
   color: white;
 }
 
+=======
+>>>>>>> Stashed changes

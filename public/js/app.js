@@ -42733,7 +42733,11 @@ if (window.location.pathname.includes("statistics")) {
 } // Map generation in show view
 
 
+<<<<<<< Updated upstream
 if ($("#map-container").length > 0 && window.location.pathname.includes("show") || window.location.pathname.includes("apartment")) {
+=======
+if ($("#map-container").length > 0 && window.location.pathname.includes("show")) {
+>>>>>>> Stashed changes
   var address = $("#address").text();
   $.ajax({
     "url": "https://api.tomtom.com/search/2/search/" + address + ".json",
