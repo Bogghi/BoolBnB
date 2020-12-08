@@ -283,7 +283,7 @@ main {
 .box-cities{
   border: 1px solid $greenbnb;
   border-radius: 10px;
-  max-width: 425px;
+  width: 425px;
   height: 250px; 
   background-size: cover;
   transition: 1s;
@@ -320,9 +320,9 @@ main {
     .pic {
       margin-top: 30px;
       padding-bottom: 30px;
-      &:not(:last-child) {
-        margin-right: 50px;
-      }           
+      // &:not(:last-child) {
+      //   margin-right: 50px;
+      // }           
     }
         
     
