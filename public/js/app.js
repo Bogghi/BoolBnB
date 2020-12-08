@@ -42460,7 +42460,7 @@ function getFilter() {
 
 
 function tomtomBoolbBnB() {
-  var address = $(".filter #user-search").prop('value');
+  var address = $("#search-input .tt-search-box-input").val();
   $.ajax({
     "url": 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
     "method": "GET",
@@ -42502,13 +42502,12 @@ function tomtomBoolbBnB() {
 
 
 function renderResultsMap() {
-  var search = $("#user-search").val();
+  var search = $("#search-input .tt-search-box-input").val();
   $.ajax({
     "url": "https://api.tomtom.com/search/2/search/" + search + ".json",
     "method": "GET",
     "data": {
       "key": "sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo",
-      "countrySet": "IT",
       "limit": 1
     },
     "success": function success(data) {
@@ -42592,7 +42591,7 @@ function createMarker(icon, position, color, popupText) {
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 
 
-if (window.location.pathname == '/') {
+if (window.location.pathname == '/' || window.location.pathname == '/search') {
   var options = {
     searchOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
@@ -42726,15 +42725,13 @@ if (window.location.pathname.includes("statistics")) {
 } // Map generation in show view
 
 
-if ($("#map-container").length > 0 && window.location.pathname.includes("show")) {
+if ($("#map-container").length > 0 && window.location.pathname.includes("show") || window.location.pathname.includes("apartment")) {
   var address = $("#address").text();
-  console.log(address);
   $.ajax({
     "url": "https://api.tomtom.com/search/2/search/" + address + ".json",
     "method": "GET",
     "data": {
       "key": "sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo",
-      "countrySet": "IT",
       "limit": 1
     },
     "success": function success(data) {
@@ -42793,6 +42790,12 @@ $('.arrow').click(function () {
 }); // }
 
 if ($("#map-container").length > 0 && window.location.pathname == '/search') {
+  var userSearch = $("#user-search").val();
+  var searchInput = $("#search-input .tt-search-box-input");
+  searchInput.val(userSearch);
+  $(".searchbar form").on("submit", function (e) {
+    e.preventDefault();
+  });
   renderResultsMap();
   $("#more-option").on('click', function () {
     var button = $('.filter-option');
@@ -42812,6 +42815,9 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
       label.addClass('active');
     }
 
+    tomtomBoolbBnB();
+  });
+  $("button.search-btn").on("click", function (e) {
     tomtomBoolbBnB();
   });
   $(".content input").on('change', function () {
@@ -42890,8 +42896,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -9,11 +9,11 @@
         @include("layouts.partials.navbar")
         <div class="container">
             <div class="jumbo-content col-12 px-0">
-                <div class="jumbo-text">
+                <div class="jumbo-text" data-aos="fade-right" data-aos-duration="1000">
                     <h1 class="display-4">Programma la tua vacanza</h1>
                     <p class="lead">Trova il tuo appartamento ideale</p>
                 </div>
-                <div class="searchbar">
+                <div class="searchbar" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
                         @csrf
                         @method("POST")
@@ -23,7 +23,7 @@
                         </button>
                     </form>
                 </div>
-                <div class="cta">
+                <div class="cta" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                     <p>Visualizza gli appartamenti in evidenza</p>
                     <a href="#sponsorizations"><i class="fas fa-chevron-down"></i></a> 
                 </div>

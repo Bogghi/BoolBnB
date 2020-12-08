@@ -144,3 +144,9 @@
 </footer>
 
 @include('layouts.partials.search-template')
+
+@if (Route::currentRouteName()  == 'homepage')
+<script>
+    AOS.init();
+</script>
+@endif

@@ -11000,6 +11000,7 @@ header.jumbo-header .jumbo-content .cta {
 }
 
 header.jumbo-header .jumbo-content .cta p {
+  font-size: 18px;
   margin-bottom: 0;
   margin-right: 10px;
 }
@@ -11022,12 +11023,12 @@ header.margin-fixed > .container {
   padding: 20px 0;
   transition: all 0.4s;
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
-.navbar.nav-white {
-  background-color: white;
-  border-bottom: 2px solid #001533;
+.navbar.nav-blue {
+  padding: 0 10px;
+  background-color: #001533;
 }
 
 @media screen and (max-width: 575px) {
@@ -11138,33 +11139,33 @@ header.margin-fixed > .container {
   z-index: 1;
 }
 
-header.jumbo-header .searchbar {
+.searchbar {
   margin-top: 20px;
   height: 62px;
 }
 
-header.jumbo-header .searchbar #search-input {
+.searchbar #search-input {
   position: relative;
   color: white;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box {
+.searchbar #search-input .tt-search-box {
   margin-top: 0;
   background: none;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container {
   padding: 10px 20px;
   border-radius: 50px;
   background-color: #fff;
   fill: #00F087;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
   border-color: #00F087;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
   height: 40px;
   width: 250px;
   padding: 3px 80px 3px 12px;
@@ -11173,48 +11174,48 @@ header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input
   transition: width 0.6s;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
   width: 45px;
   border-radius: 50%;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
   width: 450px;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::-moz-placeholder {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::-moz-placeholder {
   font-size: 16px;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:-ms-input-placeholder {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:-ms-input-placeholder {
   font-size: 16px;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::placeholder {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::placeholder {
   font-size: 16px;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container div:first-child {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container div:first-child {
   display: none;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-input-container .tt-search-box-close-icon {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container .tt-search-box-close-icon {
   display: none;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-close-icon {
+.searchbar #search-input .tt-search-box .tt-search-box-close-icon {
   fill: #001533;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
+.searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
   fill: #00F087;
 }
 
-header.jumbo-header .searchbar #search-input .tt-search-box .tt-search-box-result-list-container {
+.searchbar #search-input .tt-search-box .tt-search-box-result-list-container {
   border-radius: 20px;
 }
 
-header.jumbo-header .searchbar .search-btn {
+.searchbar .search-btn {
   position: absolute;
   right: 10px;
   display: block;
@@ -11228,12 +11229,12 @@ header.jumbo-header .searchbar .search-btn {
   transition: width 0.6s, border-radius 0.6s;
 }
 
-header.jumbo-header .searchbar.searchbar-nav,
-header.jumbo-header form {
+.searchbar.searchbar-nav,
+.searchbar.searchbar-nav form {
   margin-top: 0 !important;
 }
 
-header.jumbo-header .collapse.navbar-collapse {
+.collapse.navbar-collapse {
   flex-grow: 0;
 }
 
@@ -12261,8 +12262,8 @@ footer .social-links .social-links-item i:hover {
 
 .result .filter a:hover {
   background-color: #00F087;
-  color: #001533;
   cursor: pointer;
+  color: white;
 }
 
 .result .filter-option {
@@ -12293,6 +12294,7 @@ footer .social-links .social-links-item i:hover {
   border-right: 2px solid black;
   padding-bottom: 10px;
   padding-top: 3px;
+  color: #001533;
 }
 
 .result .filter-option .static-options .content {
@@ -12348,12 +12350,12 @@ footer .social-links .social-links-item i:hover {
 .result .filter-option .label-options span.active {
   border: none;
   background-color: #00F087;
-  color: #001533;
+  color: white;
 }
 
 .result .results-wrapper {
   margin-top: 56px;
-  border-right: 1px solid black;
+  border-right: 1px solid #001533;
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -12372,7 +12374,7 @@ footer .social-links .social-links-item i:hover {
   align-items: center;
   height: 200px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #d6d6d6;
   padding: 10px 20px;
   margin: 0px;
 }
@@ -12409,6 +12411,7 @@ footer .social-links .social-links-item i:hover {
 
 .result .results-wrapper .apartment-card .info-wrapper .main .title {
   overflow: hidden;
+  color: #001533;
   max-height: 48px;
 }
 
@@ -12417,7 +12420,9 @@ footer .social-links .social-links-item i:hover {
 }
 
 .result .results-wrapper .apartment-card .info-wrapper .main .address {
+  margin-top: 10px;
   max-height: 48px;
+  font-style: italic;
   overflow: hidden;
 }
 
@@ -12431,6 +12436,10 @@ footer .social-links .social-links-item i:hover {
 
 .result .results-wrapper .apartment-card .info-wrapper ul li {
   margin: 0 5px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper ul li strong {
+  color: #001533;
 }
 
 .result .results-wrapper .apartment-card .button-wrapper {
@@ -12450,7 +12459,7 @@ footer .social-links .social-links-item i:hover {
 
 .result .results-wrapper .apartment-card .button-wrapper .badge {
   background-color: #00F087;
-  color: #001533;
+  color: #fff;
   padding: 10px 15px;
   margin-top: 10px;
   border-radius: 20px;
@@ -12461,19 +12470,20 @@ footer .social-links .social-links-item i:hover {
   text-align: center;
   text-decoration: none;
   color: #001533;
-  font-weight: bold;
-  border: 2px #001533 solid;
+  font-weight: 600;
+  background-color: #fff;
   margin-top: 10px;
   padding: 2px 10px;
   border-radius: 20px;
+  border: 1px solid #001533;
   font-size: 18px;
-  background-color: white;
   transition: background-color 0.3s;
   width: 114px;
 }
 
 .result .results-wrapper .apartment-card .button-wrapper .btn-details:hover {
-  background-color: #00F087;
+  background-color: #001533;
+  color: #fff;
 }
 
 @media screen and (max-width: 576px) {
