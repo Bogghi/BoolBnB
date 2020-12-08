@@ -11838,41 +11838,7 @@ main #sponsorizations .container-xl .next .fas {
   margin-top: 30px;
 }
 
-<<<<<<< HEAD
-main #developers {
-  background-color: #001533;
-  border-bottom: 5px solid #fff;
-}
-
-main #developers .developer {
-  height: 100%;
-  flex-wrap: wrap;
-}
-
-main #developers .developer .pic {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-main #developers .developer .pic:not(:last-child) {
-  margin-right: 50px;
-}
-
-main #developers .developer .footer-img {
-  width: 140px;
-}
-
-main #developers .developer .custom-social {
-  color: #00F087;
-  font-size: 40px;
-  background-color: white;
-  padding: 10px;
-}
-
 .search-container .row .list-apartment {
-=======
-main .search-container .row .list-apartment {
->>>>>>> GuestMain2.0
   height: calc(100vh - 78px);
   overflow-y: auto;
 }
@@ -12072,7 +12038,6 @@ main .search-container .row .list-apartment {
   filter: grayscale(100%);
 }
 
-<<<<<<< HEAD
 #edit .apartment-cover {
   max-width: 50%;
 }
@@ -12088,16 +12053,39 @@ main .search-container .row .list-apartment {
   height: 400px;
 }
 
-<<<<<<< Updated upstream
 #edit .apartment-images .apartment-image img {
   width: 100%;
   height: 100%;
-=======
-#developers .developer .pic .footer-img:hover .hiden {
+}
+
+#edit .apartment-images .apartment-image .pic {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+#edit .apartment-images .apartment-image .pic:not(:last-child) {
+  margin-right: 50px;
+}
+
+#edit .apartment-images .apartment-image .pic .hiden {
+  display: none;
+  color: white;
+}
+
+#edit .apartment-images .apartment-image .pic .footer-img {
+  width: 140px;
+  border: 2px solid #00F087;
+}
+
+#edit .apartment-images .apartment-image .pic .footer-img:hover {
+  filter: grayscale(100%);
+}
+
+#edit .apartment-images .apartment-image .pic .footer-img:hover .hiden {
   display: block;
   text-align: center;
->>>>>>> Stashed changes
-=======
+}
+
 #developers {
   position: relative;
   min-height: 600px;
@@ -12132,7 +12120,6 @@ main .search-container .row .list-apartment {
 
 #developers .developer .img-personalized:hover {
   filter: grayscale(100%);
->>>>>>> GuestMain2.0
 }
 
 footer {
@@ -12661,14 +12648,11 @@ footer .social-links .social-links-item i:hover {
   border: 2px solid #00F087;
 }
 
-<<<<<<< Updated upstream
 .marker-house:hover::after {
   background-color: #00F087;
   cursor: pointer;
 }
 
-=======
->>>>>>> Stashed changes
 #error-500 {
   height: 100vh;
   margin: 0;
@@ -12738,7 +12722,6 @@ footer .social-links .social-links-item i:hover {
   transform: scale(1.05);
 }
 
-<<<<<<< Updated upstream
 #auth .color-pers {
   background-color: #001533;
   color: white;
@@ -12756,5 +12739,3 @@ footer .social-links .social-links-item i:hover {
   color: white;
 }
 
-=======
->>>>>>> Stashed changes

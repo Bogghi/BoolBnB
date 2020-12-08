@@ -383,4 +383,50 @@ main {
     
     }
   }
+  }
+  // Developer pics team
+
 }
+#developers {
+  position: relative;
+  min-height: 600px;
+  z-index: 0;
+  background-size: cover;
+  background-position: bottom;
+  
+
+  .box-ghost{
+    position:absolute;
+    z-index: 1;
+    height: 100px;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%)
+    
+  }
+  
+  .developer {
+    height: 100%;
+    flex-wrap: wrap; 
+
+    .pic {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      // &:not(:last-child) {
+      //   margin-right: 50px;
+      // }           
+    }
+        
+    
+    .img-personalized {
+      width: 140px;
+      border:2px solid #00F087;
+      &:hover{
+        filter: grayscale(100%);          
+      }        
+    }
+    
+  }
+
+}
+// Developer pics team end

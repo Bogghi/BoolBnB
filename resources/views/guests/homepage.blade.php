@@ -149,11 +149,11 @@
                         <h4 class="text-white">Danilo</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column text-center pt-3">
-                        <a class="text-center pt-3" href="https://www.linkedin.com/in/gabriele-musumeci-51aa551bb/">
-                        <img class="img-responsive footer-img rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQEX0dlhwkuIgg/profile-displayphoto-shrink_200_200/0/1605545011980?e=1613001600&v=beta&t=THh1-d5d6eHobVi474AIKn6urQNeiiePLXp0Xs9KcSs" alt="Gabriele">
+                    <div class="pic d-flex flex-column text-center p-3">
+                        <a href="https://www.linkedin.com/in/gabriele-musumeci-51aa551bb/">
+                        <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQEX0dlhwkuIgg/profile-displayphoto-shrink_200_200/0/1605545011980?e=1613001600&v=beta&t=THh1-d5d6eHobVi474AIKn6urQNeiiePLXp0Xs9KcSs" alt="Gabriele">
                          </a>
-                        <h3 class="hiden">Gabriele</h3>
+                        <h4 class="text-white">Gabriele</h4>
                     </div>
 
                 </div>
