@@ -42364,12 +42364,15 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js"); // QUI VANNO LE FUNZIONI !!!!!!!!!
 
 
+var delay = 0;
+
 function renderSponsorized(data) {
   var source = $("#search-result-template").html();
   var template = Handlebars.compile(source);
+  delay = 0;
 
   for (var i = 0; i < 5 && i < data.length; i++) {
-    context = _defineProperty({
+    context = {
       "id": data[i].id,
       "sponsorized": true,
       "cover_image": data[i].cover_image,
@@ -42381,8 +42384,9 @@ function renderSponsorized(data) {
       "beds_number": data[i].beds_number,
       "bathrooms_number": data[i].bathrooms_number,
       "rooms_number": data[i].rooms_number,
-      "square_meters": data[i].square_meters
-    }, "id", data[i].id);
+      "square_meters": data[i].square_meters,
+      "delay": delay
+    };
 
     if (!data[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -42391,6 +42395,7 @@ function renderSponsorized(data) {
     ;
     var html = template(context);
     $(".results-wrapper").append(html);
+    delay += 150;
   }
 }
 
@@ -42406,9 +42411,11 @@ function renderResults(data) {
   }
 
   for (var i = 0; i < apartments.length; i++) {
-    context = _defineProperty({
+    var _context;
+
+    context = (_context = {
       "id": apartments[i].id,
-      "sponsorized": true,
+      "sponsorized": false,
       "cover_image": apartments[i].cover_image,
       "title": apartments[i].title,
       "description": apartments[i].description,
@@ -42419,7 +42426,7 @@ function renderResults(data) {
       "bathrooms_number": apartments[i].bathrooms_number,
       "rooms_number": apartments[i].rooms_number,
       "square_meters": apartments[i].square_meters
-    }, "id", apartments[i].id);
+    }, _defineProperty(_context, "id", apartments[i].id), _defineProperty(_context, "delay", delay), _context);
 
     if (!apartments[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -42433,6 +42440,7 @@ function renderResults(data) {
 
     var html = template(context);
     $(".results-wrapper").append(html);
+    delay += 150;
   }
 }
 

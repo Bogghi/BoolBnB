@@ -8,10 +8,12 @@ const Handlebars = require("handlebars");
 
 
 // QUI VANNO LE FUNZIONI !!!!!!!!!
+var delay = 0;
 
 function renderSponsorized(data) {
   var source = $("#search-result-template").html();
   var template = Handlebars.compile(source);
+  delay = 0;
   for (var i = 0; i < 5 && i < data.length; i++) {
     context = {
       "id": data[i].id,
@@ -26,13 +28,14 @@ function renderSponsorized(data) {
       "bathrooms_number": data[i].bathrooms_number,
       "rooms_number": data[i].rooms_number,
       "square_meters": data[i].square_meters,
-      "id": data[i].id
+      "delay": delay
     }
     if (!data[i].cover_image.includes("placeholder")) {
       context.asset = true;
     };
     var html = template(context);
     $(".results-wrapper").append(html);
+    delay += 150;
   }
 }
 
@@ -48,7 +51,7 @@ function renderResults(data) {
   for (var i = 0; i < apartments.length; i++) {
     context = {
       "id": apartments[i].id,
-      "sponsorized": true,
+      "sponsorized": false,
       "cover_image": apartments[i].cover_image,
       "title": apartments[i].title,
       "description": apartments[i].description,
@@ -59,7 +62,8 @@ function renderResults(data) {
       "bathrooms_number": apartments[i].bathrooms_number,
       "rooms_number": apartments[i].rooms_number,
       "square_meters": apartments[i].square_meters,
-      "id": apartments[i].id
+      "id": apartments[i].id,
+      "delay": delay
     }
     if (!apartments[i].cover_image.includes("placeholder")) {
       context.asset = true;
@@ -69,6 +73,7 @@ function renderResults(data) {
     }
     var html = template(context);
     $(".results-wrapper").append(html);
+    delay += 150;
   }
 }
 
