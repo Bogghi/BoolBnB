@@ -69,7 +69,7 @@
                                         <strong>Beds:</strong> {{$all_sponsorized_apartments[$i]->beds_number}}
                                     </li>
                                     <li>
-                                        <strong>mq:</strong> {{$all_sponsorized_apartments[$i]->square_meters}}
+                                        <strong>m&sup2;:</strong> {{$all_sponsorized_apartments[$i]->square_meters}}
                                     </li>
                                 </ul>
                             </div>
@@ -119,7 +119,7 @@
                                         <strong>Beds:</strong> {{$apartment->beds_number}}
                                     </li>
                                     <li>
-                                        <strong>mq:</strong> {{$apartment->square_meters}}
+                                        <strong>m&sup2;:</strong> {{$apartment->square_meters}}
                                     </li>
                                 </ul>
                             </div>

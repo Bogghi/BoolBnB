@@ -159,7 +159,6 @@ function renderResultsMap() {
     "method": "GET",
     "data": {
       "key": "sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo",
-      "countrySet": "IT",
       "limit": 1
     },
     "success": function (data) {
@@ -257,7 +256,7 @@ function createMarker(icon, position, color, popupText) {
 
 
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {
-if (window.location.pathname == '/') {
+if ((window.location.pathname == '/') || (window.location.pathname == '/search')) {
 
   var options = {
     searchOptions: {
@@ -413,17 +412,14 @@ if (window.location.pathname.includes("statistics")) {
 }
 
 // Map generation in show view
-if (($("#map-container").length > 0) && (window.location.pathname.includes("show"))) {
+if (($("#map-container").length > 0) && (window.location.pathname.includes("show")) || (window.location.pathname.includes("apartment"))) {
   var address = $("#address").text();
-
-  console.log(address);
 
   $.ajax({
     "url": "https://api.tomtom.com/search/2/search/" + address + ".json",
     "method": "GET",
     "data": {
       "key": "sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo",
-      "countrySet": "IT",
       "limit": 1
     },
     "success": function (data) {

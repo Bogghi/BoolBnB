@@ -1,21 +1,28 @@
 <nav class="navbar @if (Route::currentRouteName()  != 'homepage')
-    nav-white
+    nav-blue
 @endif navbar-expand-lg">
-  <div class="@if (Route::currentRouteName() == 'homepage')
-      container
-  @else
-      container-fluid
-  @endif">
+  <div class="@if (Route::currentRouteName()  == 'search') container-fluid
+            @else container 
+            @endif">
       {{-- logo --}}
       <div class="logo">
           <a href="{{ route('homepage') }}">
-                @if (Route::currentRouteName() == 'homepage')
                     <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
-                @else 
-                    <img id="logo" src="{{ asset('img/boolbnb-logo-dark.svg') }}" alt="BoolBnB">
-                @endif
           </a>
       </div>
+
+        @if (Route::currentRouteName()  == 'search')
+        <div class="searchbar searchbar-nav">
+            <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
+                @csrf
+                @method("POST")
+                <div id="search-input"></div>
+                <button class="search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        @endif
 
       {{-- hamburger --}}
       <button class="navbar-toggler border border-dark text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -33,13 +40,13 @@
               <!-- Authentication Links  only admin is log-->
               @if (Route::currentRouteName() == 'admin.apartment.index')
                   <li class="nav-item zindex pl-2">
-                      <a class="nav-link @if(Route::currentRouteName() != 'homepage') blue @endif" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
+                      <a class="nav-link" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
                   </li>
               @endif
               <!-- Authentication Links  only admin is log-->
               @if (Route::currentRouteName() != 'homepage')
                   <li class="nav-item zindex pl-2">
-                      <a class="nav-link @if(Route::currentRouteName() != 'homepage') blue @endif" href="{{ route('homepage') }}">Home</a>
+                      <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                   </li>
               @endif
 
@@ -54,7 +61,7 @@
                   @endif
               @else
                   <li class="nav-item zindex pl-2">
-                      <a id="navbarDropdown" class="nav-link @if(Route::currentRouteName() != 'homepage') blue @endif dropdown-toggle" href="#" role="button"
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                           {{ Auth::user()->name }}
                       </a>

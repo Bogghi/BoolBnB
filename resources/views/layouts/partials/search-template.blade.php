@@ -1,12 +1,8 @@
 <script id="search-result-template" type="text/x-handlebars-template">
 
     <div class="apartment-card">
-        <div class="image-wrapper">
-            @{{#if asset}}
-                <img src="http://localhost:8000/storage/@{{cover_image}}" alt="immagine casa">
-            @{{else}}
-                <img src="@{{cover_image}}" alt="immagine casa">
-            @{{/if}}
+        <div class="image-wrapper">            
+            <img src="@{{cover_image}}" alt="immagine casa">
         </div>
         <div class="info-wrapper">
             <div class="main">
@@ -31,7 +27,7 @@
                     <strong>Beds:</strong> @{{beds_number}}
                 </li>
                 <li>
-                    <strong>mq:</strong> @{{square_meters}}
+                    <strong>m&sup2;:</strong> @{{square_meters}}
                 </li>
             </ul>
         </div>

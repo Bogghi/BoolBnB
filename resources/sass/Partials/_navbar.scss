@@ -4,11 +4,12 @@
   padding: 20px 0;
   transition: all 0.4s;
   position: relative;
-  z-index: 1;
+  z-index: 5;
   
-  &.nav-white {
-    background-color: $white;
-    border-bottom: 2px solid $bluebnb;
+  &.nav-blue {
+    padding: 0 10px;
+    background-color: $bluebnb;
+    
   }
 
   @media screen and (max-width: 575px) {
