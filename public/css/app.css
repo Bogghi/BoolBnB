@@ -11940,7 +11940,12 @@ main #developers .developer .custom-social {
   }
 }
 
-#show #carousel-show .carousel-item .test {
+#show .apartment-header .ovr-hid {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+#show #carousel-show .carousel-item .image-car-person {
   height: 500px;
   background-position: center;
   background-size: cover;
