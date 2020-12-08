@@ -7,12 +7,19 @@
     <div class="row">
       <div class="col-12 d-flex pt-4">
         <div class="apartment-header">
+          <div class="ovr-hid">
           <h1>{{$apartment->title}}</h1>
+          </div>  
           <p id="address">{{$apartment->address}}</p>
         </div>
         @if (Auth::id() == $apartment->user_id )
         <div class="ml-auto">
-          <a class="btn btn-outline-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza il tuo appartamento</a>
+          <a class="btn btn-outline-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza</a>
+          <form action="{{route("admin.apartment.destroy", $apartment->id)}}" method="POST">
+            @method("DELETE")
+            @csrf
+            <input class="btn btn-outline-danger my-2 ml-2" type="submit" value="Cancella">
+          </form>
         </div>
         @endif
       </div>
@@ -43,17 +50,17 @@
             ?> 
             <div class="carousel-item active">
               <?php if ($pos === false) {?>
-                <div class="border rounded test" style="background-image: url({{asset('storage/'.$apartment->cover_image)}})"></div>
+                <div class="border rounded image-car-person" style="background-image: url({{asset('storage/'.$apartment->cover_image)}})"></div>
               <?php } else {?>
-                <div class="border rounded test" style="background-image: url({{$apartment->cover_image}})"></div>    
+                <div class="border rounded image-car-person" style="background-image: url({{$apartment->cover_image}})"></div>    
                 <?php }?>
             </div>  
             @foreach ($apartment->images as $image)
             <div class="carousel-item">
               <?php if ($pos === false) {?>
-                <div class="border rounded test" style="background-image: url({{asset('storage/'.$image->image_path)}})"></div>
+                <div class="border rounded image-car-person" style="background-image: url({{asset('storage/'.$image->image_path)}})"></div>
               <?php } else {?>
-                <div class="border rounded test" style="background-image: url({{$image->image_path}})"></div>    
+                <div class="border rounded image-car-person" style="background-image: url({{$image->image_path}})"></div>    
               <?php }?>
             </div>
             @endforeach

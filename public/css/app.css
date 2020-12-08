@@ -11940,7 +11940,12 @@ main #developers .developer .custom-social {
   }
 }
 
-#show #carousel-show .carousel-item .test {
+#show .apartment-header .ovr-hid {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+#show #carousel-show .carousel-item .image-car-person {
   height: 500px;
   background-position: center;
   background-size: cover;
@@ -12667,5 +12672,22 @@ footer .social-links .social-links-item i:hover {
   color: #111;
   cursor: pointer;
   transform: scale(1.05);
+}
+
+#auth .color-pers {
+  background-color: #001533;
+  color: white;
+  font-size: 20px;
+}
+
+#auth .card-body .form-group .btn-primary {
+  background-color: white;
+  color: black;
+  border: 1px solid #001533;
+}
+
+#auth .card-body .form-group .btn-primary:hover {
+  background-color: #001533;
+  color: white;
 }
 

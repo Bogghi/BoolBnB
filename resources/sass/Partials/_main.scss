@@ -237,12 +237,18 @@ main {
 }
 //Index Admin
 
-// Show guest 
+// Show admin 
 #show {
+  .apartment-header{
+    .ovr-hid{
+      max-height: 100px;
+      overflow: hidden;
+    }
+  }
 
   #carousel-show {
     .carousel-item {
-      .test {
+      .image-car-person {
         height: 500px;
         background-position: center;
         background-size: cover;
