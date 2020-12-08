@@ -34,8 +34,8 @@
 
             &:hover {
                 background-color: $greenbnb;
-                color: $bluebnb;
                 cursor: pointer;
+                color: $white;
             }
         }
     }
@@ -64,6 +64,7 @@
             border-right: 2px solid $black;
             padding-bottom: 10px;
             padding-top: 3px;
+            color: $bluebnb;
 
             .content {
                 display: flex;
@@ -117,7 +118,7 @@
                 &.active {
                     border: none;
                     background-color: $greenbnb;
-                    color: $bluebnb;
+                    color: $white;
                 }
             }
         }
@@ -128,7 +129,7 @@
       @media screen and (max-width: 444px){
         margin-top: 87.6px;
       }
-      border-right: 1px solid black;
+      border-right: 1px solid $bluebnb;
       overflow: scroll;
       display: flex;
       flex-direction: column;
@@ -140,7 +141,7 @@
         align-items: center;
         height: 200px;
         width: 100%;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #d6d6d6;
         padding: 10px 20px;
         margin: 0px;
 
@@ -175,13 +176,16 @@
           .main {
             .title {
               overflow: hidden;
+              color: $bluebnb;
               max-height: 48px;
               h5 {
                 font-weight: 900;
               }
             }
             .address {
+              margin-top: 10px;
               max-height: 48px;
+              font-style: italic;
               overflow: hidden;
             }
           }
@@ -195,6 +199,10 @@
 
             li {
               margin: 0 5px;
+
+              strong {
+                color: $bluebnb;
+              }
             }
           }
         }
@@ -216,7 +224,7 @@
 
           .badge {
             background-color: $greenbnb;
-            color: $bluebnb;
+            color: #fff;
             padding: 10px 15px;
             margin-top: 10px;
             border-radius: 20px;
@@ -227,18 +235,19 @@
             text-align: center;
             text-decoration: none;
             color: $bluebnb;
-            font-weight: bold;
-            border: 2px $bluebnb solid;
+            font-weight: 600;
+            background-color: #fff;
             margin-top: 10px;
             padding: 2px 10px;
             border-radius: 20px;
+            border: 1px solid $bluebnb;
             font-size: 18px;
-            background-color: $white;
             transition: background-color 0.3s;
             width: 114px;
 
             &:hover{
-              background-color: $greenbnb;
+              background-color: $bluebnb;
+              color: #fff;
             }
 
           }
