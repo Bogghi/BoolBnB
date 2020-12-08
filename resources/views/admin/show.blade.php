@@ -19,7 +19,7 @@
             @method("DELETE")
             @csrf
             <input class="btn btn-outline-danger my-2 ml-2" type="submit" value="Cancella">
-        </form>
+          </form>
         </div>
         @endif
       </div>

@@ -12671,3 +12671,20 @@ footer .social-links .social-links-item i:hover {
   transform: scale(1.05);
 }
 
+#auth .color-pers {
+  background-color: #001533;
+  color: white;
+  font-size: 20px;
+}
+
+#auth .card-body .form-group .btn-primary {
+  background-color: white;
+  color: black;
+  border: 1px solid #001533;
+}
+
+#auth .card-body .form-group .btn-primary:hover {
+  background-color: #001533;
+  color: white;
+}
+
