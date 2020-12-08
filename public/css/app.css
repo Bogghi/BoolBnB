@@ -10963,8 +10963,7 @@ body {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-  background: #00F087;
-  border-radius: 10px;
+  background: #001533;
 }
 
 /* Handle on hover */
@@ -12370,6 +12369,10 @@ footer .social-links .social-links-item i:hover {
   margin: 0px;
 }
 
+.result .results-wrapper .apartment-card.selected {
+  background-color: #b6ffdf;
+}
+
 .result .results-wrapper .apartment-card .image-wrapper {
   width: 180px;
   height: 180px;
@@ -12591,6 +12594,7 @@ footer .social-links .social-links-item i:hover {
 
 .marker-house:hover::after {
   background-color: #00F087;
+  cursor: pointer;
 }
 
 #error-500 {

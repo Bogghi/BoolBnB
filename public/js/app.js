@@ -42543,6 +42543,11 @@ function renderResultsMap() {
           var dataId = $(this).attr("data-id");
           $(".apartment-card").removeClass("selected");
           $("input[value='" + dataId + "']").parents(".apartment-card").addClass("selected");
+          var card = $("input[value='" + dataId + "']").parents(".apartment-card");
+          var positionTop = card.get(0).offsetTop;
+          $(".results-wrapper").animate({
+            scrollTop: positionTop - 60 + "px"
+          });
         });
       });
     }
