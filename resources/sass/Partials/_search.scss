@@ -144,6 +144,10 @@
         padding: 10px 20px;
         margin: 0px;
 
+        &.selected {
+          background-color: #b6ffdf;
+        }
+
 
         .image-wrapper {
           width: 180px;

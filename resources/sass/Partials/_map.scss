@@ -52,6 +52,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   content:"";
   background-image: url('/img/home-solid-white.svg');
   background-color: $bluebnb;
@@ -61,4 +62,9 @@
   transform: rotate(-45deg);
   border-radius: 50% 50% 50% 0;
   border: 2px solid $greenbnb;
+}
+
+.marker-house:hover::after {
+  background-color: $greenbnb;
+  cursor: pointer;
 }

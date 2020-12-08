@@ -14,6 +14,7 @@ function renderSponsorized(data) {
   var template = Handlebars.compile(source);
   for (var i = 0; i < 5 && i < data.length; i++) {
     context = {
+      "id": data[i].id,
       "sponsorized": true,
       "cover_image": data[i].cover_image,
       "title": data[i].title,
@@ -46,6 +47,7 @@ function renderResults(data) {
   }
   for (var i = 0; i < apartments.length; i++) {
     context = {
+      "id": apartments[i].id,
       "sponsorized": true,
       "cover_image": apartments[i].cover_image,
       "title": apartments[i].title,
@@ -189,15 +191,24 @@ function renderResultsMap() {
 
         var markerLon = $(this).find(".apartment-lon").val();
         var markerLat = $(this).find(".apartment-lat").val();
-        console.log(markerLon);
-        console.log(markerLat);
+        var markerId = $(this).find(".apartment-id").val();
+
         var element = document.createElement('div');
         element.classList.add("marker-house");
+        $(element).attr("data-id", markerId);
 
         var marker = new tt.Marker({ element: element })
           .setLngLat([markerLon, markerLat])
           .addTo(map);
 
+        $(marker._element).on("click", function () {
+          var dataId = $(this).attr("data-id");
+          $(".apartment-card").removeClass("selected");
+          $("input[value='" + dataId + "']").parents(".apartment-card").addClass("selected");
+          var card = $("input[value='" + dataId + "']").parents(".apartment-card");
+          var positionTop = card.get(0).offsetTop;
+          $(".results-wrapper").animate({ scrollTop: positionTop - 60 + "px" });
+        });
       });
     }
   });
@@ -512,6 +523,9 @@ if (($("#map-container").length > 0) && (window.location.pathname == '/search'))
     tomtomBoolbBnB();
   });
 
+  $(".marker-house::after").on("click", function () {
+    console.log("ciao");
+  });
 }
 
 

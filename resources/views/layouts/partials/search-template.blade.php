@@ -12,6 +12,7 @@
             <div class="main">
                 <div class="title">
                     <h5>@{{title}}</h5>
+                    <input type="hidden" value="@{{id}}" class="apartment-id">
                 </div>
                 <div class="address">
                     <p>@{{address}}</p>

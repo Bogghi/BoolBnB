@@ -10963,8 +10963,7 @@ body {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-  background: #00F087;
-  border-radius: 10px;
+  background: #001533;
 }
 
 /* Handle on hover */
@@ -12370,6 +12369,10 @@ footer .social-links .social-links-item i:hover {
   margin: 0px;
 }
 
+.result .results-wrapper .apartment-card.selected {
+  background-color: #b6ffdf;
+}
+
 .result .results-wrapper .apartment-card .image-wrapper {
   width: 180px;
   height: 180px;
@@ -12577,6 +12580,7 @@ footer .social-links .social-links-item i:hover {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   content: "";
   background-image: url("/img/home-solid-white.svg");
   background-color: #001533;
@@ -12586,5 +12590,79 @@ footer .social-links .social-links-item i:hover {
   transform: rotate(-45deg);
   border-radius: 50% 50% 50% 0;
   border: 2px solid #00F087;
+}
+
+.marker-house:hover::after {
+  background-color: #00F087;
+  cursor: pointer;
+}
+
+#error-500 {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(#111, #333, #111);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #eee;
+  position: relative;
+}
+
+#error-500 .message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#error-500 .message h1,
+#error-500 .message h2,
+#error-500 .message h3 {
+  margin: 0;
+  line-height: 0.8;
+}
+
+#error-500 .message h2,
+#error-500 .message h3 {
+  font-weight: 300;
+  color: white;
+}
+
+#error-500 .message h1 {
+  font-weight: 700;
+  color: #00F087;
+  font-size: 8em;
+}
+
+#error-500 .message h2 {
+  margin: 30px 0;
+}
+
+#error-500 .message h3 {
+  font-size: 2.5em;
+}
+
+#error-500 .message h4 {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+#error-500 .message a {
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 15px;
+  font-size: 1.25em;
+  transition: all 0.15s ease;
+  border-radius: 3px;
+}
+
+#error-500 .message a:hover {
+  background: #00F087;
+  border: 2px solid #00F087;
+  color: #111;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
