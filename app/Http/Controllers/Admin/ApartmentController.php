@@ -203,10 +203,13 @@ class ApartmentController extends Controller
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
+        $apartment = Apartment::find($id);
+        Storage::disk('public')->delete($apartment->cover_image);
+
         // Save cover_image in the storage with original name.
         $cover_image_name = $request->cover_image->getClientOriginalName();
 
-        $apartment_id = $id;
+        $apartment_id = $apartment->id;
 
         $path_cover_image = $request->cover_image->storeAs(
             "images/" . $apartment_id,
@@ -214,8 +217,8 @@ class ApartmentController extends Controller
             "public"
         );
 
+
         $user_id = Auth::id();
-        $apartment = Apartment::find($id);
         $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
@@ -242,7 +245,6 @@ class ApartmentController extends Controller
         if ($request->hasFile('images')) {
 
             $images = $request->file('images');
-            dd($images);
 
             foreach ($images as $image) {
 
@@ -285,6 +287,13 @@ class ApartmentController extends Controller
         $apartment = Apartment::find($id);
 
         Storage::disk('public')->delete($apartment->cover_image);
+
+        $images = Image::where('apartment_id', $id)->get();
+
+        foreach ($images as $image) {
+
+          Storage::disk('public')->delete($image->image_path);
+        }
 
         $apartment->services()->detach();
         $apartment->delete();
