@@ -12080,9 +12080,15 @@ main #developers .developer .custom-social {
   height: 400px;
 }
 
+<<<<<<< Updated upstream
 #edit .apartment-images .apartment-image img {
   width: 100%;
   height: 100%;
+=======
+#developers .developer .pic .footer-img:hover .hiden {
+  display: block;
+  text-align: center;
+>>>>>>> Stashed changes
 }
 
 footer {

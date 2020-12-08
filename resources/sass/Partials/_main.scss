@@ -389,6 +389,30 @@ main {
         height: 100%;
       }
 
+    .pic {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+      .hiden{
+        display: none;
+        color: white;
+      }
+      
+      .footer-img {
+        width: 140px;
+        border:2px solid #00F087;
+        &:hover{
+          filter: grayscale(100%);
+          .hiden{
+            display: block;       
+            text-align: center;
+          }
+        }       
+        
+      }
+    
     }
   }
 }
