@@ -106,8 +106,8 @@
       @enderror
       <?php
       $image = $apartment->cover_image;
-      $pos = strpos($image, "http");          
-       ?> 
+      $pos = strpos($image, "http");
+       ?>
 
       <div class="apartment-cover">
         <?php if ($pos === false) {?>
@@ -130,8 +130,8 @@
         @foreach ($apartment_images as $apartment_image)
         <?php
           $additional_images = $apartment_image->image_path;
-          $pos = strpos($additional_images, "http");          
-        ?> 
+          $pos = strpos($additional_images, "http");
+        ?>
           <div class="apartment-image">
             <?php if ($pos === false) {?>
 
