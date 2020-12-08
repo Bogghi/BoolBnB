@@ -1,6 +1,7 @@
 footer {
   border-top: 3px solid $greenbnb;
   height: 80px;
+  background-color: $black;
   
   .modal-tr{
     transition: 0.5s;
@@ -13,8 +14,7 @@ footer {
       text-decoration: none;
       cursor: pointer;
     }
-  }
-  
+  }  
   
 
   .social-links {

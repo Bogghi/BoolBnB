@@ -11838,6 +11838,7 @@ main #sponsorizations .container-xl .next .fas {
   margin-top: 30px;
 }
 
+<<<<<<< HEAD
 main #developers {
   background-color: #001533;
   border-bottom: 5px solid #fff;
@@ -11869,6 +11870,9 @@ main #developers .developer .custom-social {
 }
 
 .search-container .row .list-apartment {
+=======
+main .search-container .row .list-apartment {
+>>>>>>> GuestMain2.0
   height: calc(100vh - 78px);
   overflow-y: auto;
 }
@@ -12050,14 +12054,17 @@ main #developers .developer .custom-social {
   }
 }
 
+.font-xl {
+  font-weight: 900;
+}
+
 .box-cities {
   border: 1px solid #00F087;
   border-radius: 10px;
-  width: 100%;
-  height: 160px;
+  width: 90%;
+  height: 250px;
   background-size: cover;
   transition: 1s;
-  background-color: #00F087;
   background-position: center;
 }
 
@@ -12065,6 +12072,7 @@ main #developers .developer .custom-social {
   filter: grayscale(100%);
 }
 
+<<<<<<< HEAD
 #edit .apartment-cover {
   max-width: 50%;
 }
@@ -12089,11 +12097,48 @@ main #developers .developer .custom-social {
   display: block;
   text-align: center;
 >>>>>>> Stashed changes
+=======
+#developers {
+  position: relative;
+  min-height: 600px;
+  z-index: 0;
+  background-size: cover;
+  background-position: bottom;
+}
+
+#developers .box-ghost {
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  background: white;
+  background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+#developers .developer {
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+#developers .developer .pic {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+#developers .developer .img-personalized {
+  width: 140px;
+  border: 2px solid #00F087;
+}
+
+#developers .developer .img-personalized:hover {
+  filter: grayscale(100%);
+>>>>>>> GuestMain2.0
 }
 
 footer {
   border-top: 3px solid #00F087;
   height: 80px;
+  background-color: black;
 }
 
 footer .modal-tr {

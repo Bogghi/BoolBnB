@@ -105,42 +105,9 @@ main {
     
   }
 
-  #developers {
-
-    background-color: $bluebnb;
-    border-bottom: 5px solid #fff;
-    .developer {
-      height: 100%;
-      flex-wrap: wrap;
-
-      .pic {
-        margin-top: 30px;
-        padding-bottom: 30px;
-
-        &:not(:last-child) {
-          margin-right: 50px;
-        }
-      }
-      .footer-img {
-        width: 140px;
-
-      }
-      .custom-social {
-        color: $greenbnb;
-        font-size: 40px;
-        background-color: $white;
-        padding: 10px;
-
-      }
-    }
-  }
+  
 
 }
-
-
-
-// homepage main
-
 
 // Search
 .search-container {
@@ -352,15 +319,16 @@ main {
 }
 
 // Cities Mix
-
+.font-xl{
+  font-weight: $font-cities;
+}
 .box-cities{
   border: 1px solid $greenbnb;
   border-radius: 10px;
-  width: 100%;
-  height: 160px; 
+  width: 90%;
+  height: 250px; 
   background-size: cover;
   transition: 1s;
-  background-color: $greenbnb;
   background-position: center;
   &:hover{
     filter: grayscale(100%);    

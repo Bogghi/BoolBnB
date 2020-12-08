@@ -35,95 +35,118 @@
 
     </section>
 
-
      {{-- Cities mix --}}
-     <section class="pt-5 bg-ligth container-fluid">
-        <h2 class="text-center mb-5">Best Cities</h2>
+     <section class="py-5 mb-5 bg-ligth container-fluid">
+        <h2 class="text-center font-xl">Best Cities</h2>
         <div class="row">
+
             {{-- box cities --}}
-            <div class="col-lg-2 col-md-4 col-6 text-center">
-                <h2>Parigi</h2>                
-                <a  href="#">
-                    <div class="box-cities" style="background-image: url(http://www.competitiontravel.it/wp-content/uploads/2014/09/Parigi-2-1024x683.jpg)">
-                    </div>
-                </a> 
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
+                <h3>Parigi</h3>    
+                <form action="{{route('search')}}" method="post">
+                    @csrf
+                    @method("POST")
+
+                    <input type="hidden" value="parigi" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(http://www.competitiontravel.it/wp-content/uploads/2014/09/Parigi-2-1024x683.jpg)"></button>
+                </form>
             </div>
 
-            <div class="col-lg-2 col-md-4 col-6 text-center">
-                <h2>Roma</h2>                
-                <a  href="#">
-                    <div class="box-cities" style="background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg)">
-                    </div>
-                </a> 
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
+                <h3>Roma</h3> 
+                <form action="{{route('search')}}" method="post">
+                    @csrf
+                    @method("POST")
+
+                    <input type="hidden" value="roma" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg)"></button>
+                </form>             
             </div>
             
-            <div class="col-lg-2 col-md-4 col-6 text-center">
-                <h2>Londra</h2>                
-                <a  href="#">
-                    <div class="box-cities" style="background-image: url(https://lh3.googleusercontent.com/proxy/b-7H2WubUDt70ycwlYPDPDo0EpdmHfIDPPLsvnpQgChscpS_1P4AdmAgNtBx7gfAz0VzrHIxomwUWObz3LNcjAy8enyHEZSsmu2dxbhN9TRR0IQIIxGS2Fsl3xkRxP0J6MISWZAcYS29RHOVqFGeotZSggsFJXQn7GYsw_XY8OA6yQp8qDWazoE6jw)">
-                    </div>
-                </a> 
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 text-center">
-                <h2>Barcellona</h2>                
-                <a  href="#">
-                    <div class="box-cities" style="background-image: url(https://www.voglioviverecosi.com/wp-content/uploads/2019/09/LAVORO-BARCELLONA-1900x1080.jpg)">
-                    </div>
-                </a> 
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 text-center">
-                <h2>Berlino</h2>                
-                <a  href="#">
-                    <div class="box-cities" style="background-image: url(https://www.robintur.it/img/viaggi/germania/image-thumb__6491__galleryCarousel/germania-berlino-porta-di-brandeburgo~-~300w.pjpeg)">
-                    </div>
-                </a> 
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 text-center">
-                <h2>Vienna</h2>                
-                <a  href="#">
-                    <div class="box-cities" style="background-image: url(https://www.10cose.it/wp-content/uploads/2015/11/vienna-696x456.jpg)">
-                    </div>
-                </a> 
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
+                <h3>Londra</h3> 
+
+                <form action="{{route('search')}}" method="post">
+                    @csrf
+                    @method("POST")
+
+                    <input type="hidden" value="londra" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.metamorphic.co.uk/wp-content/uploads/2018/05/london-1900x1080.jpg)"></button>
+                </form>        
             </div>
 
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
+                <h3>Barcellona</h3>
+                <form action="{{route('search')}}" method="post">
+                    @csrf
+                    @method("POST")
+
+                    <input type="hidden" value="barcellona" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.voglioviverecosi.com/wp-content/uploads/2019/09/LAVORO-BARCELLONA-1900x1080.jpg)"></button>
+                </form>          
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
+                <h3>Berlino</h3>  
+                <form action="{{route('search')}}" method="post">
+                    @csrf
+                    @method("POST")
+
+                    <input type="hidden" value="berlino" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.robintur.it/img/viaggi/germania/image-thumb__6491__galleryCarousel/germania-berlino-porta-di-brandeburgo~-~300w.pjpeg)"></button>
+                </form>          
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
+                <h2>Vienna</h2>
+                <form action="{{route('search')}}" method="post">
+                    @csrf
+                    @method("POST")
+
+                    <input type="hidden" value="vienna" name="search">
+                    <button type="submit" class="box-cities mx-auto" style="background-image: url(https://www.10cose.it/wp-content/uploads/2015/11/vienna-696x456.jpg)"></button>
+                </form>              
+            </div>
 
         </div>
 
     </section>
 
     {{-- Developer pics team --}}
-    <section id="developers">
-        <div class="container">
-            <div class="developer-container mx-auto py-5">
-                <h2 class="text-center text-white mb-4">Our Team</h2>
-                <div class="developer d-flex justify-content-center ">
+    <section id="developers" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/15/25/galaxies-2604911_960_720.jpg)">
+        <div class="box-ghost ">
+        </div>
+        <div class="container pt-5">
+            <div class="developer-container py-5">
+                <h1 class="text-center text-white mb-4 mt-5">Our Team</h1>
+                <div class="developer d-flex justify-content-center">
 
-                    <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                    <div class="pic d-flex flex-column text-center p-3">
+                        <a href="https://www.linkedin.com/in/lorenzo-d-amico/">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHC1dg3x4RwGw/profile-displayphoto-shrink_800_800/0/1606154522135?e=1613001600&v=beta&t=Fq6DEI1on8aJ5yvjqdOeMEPTInquQ7M4-Sf6g5QokAM" alt="Lorenzo">
+                        </a>
+                        <h4 class="text-white">Lorenzo</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                    <div class="pic d-flex flex-column text-center p-3">
+                        <a href="https://www.linkedin.com/in/matteosimoneborghi/">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQFHvqD8mzSazg/profile-displayphoto-shrink_800_800/0/1556965358340?e=1613001600&v=beta&t=OfUd69bBZwxHTx-Z7z4b6zbR64kS0kbAxBb_Bc-FvpU" alt="Matteo">
+                        </a>
+                        <h4 class="text-white">Matteo</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                    <div class="pic d-flex flex-column text-center p-3">
+                        <a href="https://www.linkedin.com/in/andreacontestabile/">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQH5nLXiQOM5MQ/profile-displayphoto-shrink_800_800/0/1562578629282?e=1613001600&v=beta&t=WameMQLa_d5aZqGC_DODhCWWiBnMWno1bVMhDJs9rCs" alt="Andrea">
+                        </a>
+                        <h4 class="text-white">Andrea</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column">
-                        <img class="img-responsive footer-img rounded-circle border" src="https://via.placeholder.com/300"
-                            alt="">
-                        <a class="text-center pt-3" href="#"> <span><i
-                                    class="fab fa-linkedin-in custom-social rounded-circle"></i></span></a>
+                    <div class="pic d-flex flex-column text-center p-3">
+                        <a href="https://www.linkedin.com/in/danilo-patan%C3%A9/">
+                            <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGY6ORkDSHAMQ/profile-displayphoto-shrink_800_800/0/1605979378804?e=1613001600&v=beta&t=UxCDvkF9I28q_Sn1AmmmfqvtxfrXiBnaAbNpoXhvud4" alt="Danilo">
+                        </a>
+                        <h4 class="text-white">Danilo</h4>
                     </div>
 
                     <div class="pic d-flex flex-column text-center pt-3">

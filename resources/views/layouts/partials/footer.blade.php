@@ -1,17 +1,15 @@
-<footer class="pt-3 bg-secondary text-white">
+<footer class="pt-3 text-white" @if (Route::currentRouteName() == 'homepage') style="border-top: 3px solid black" @endif>    
+    
     <div class="container">
-        {{-- Section-end with links to company and
-        social-network--}}
+        {{-- Section-end with links to company and social-network--}}
         <div class="d-flex flex-row flex-wrap align-items-center justify-content-between">
 
-
-
             {{-- Privacy Policy --}}
-            <div class="d-flex">
-                <label class="mr-3">© 2020 BoolBnB, Inc. All rights reserved</label>
+            <div class="d-flex col-lg-8 col-md-8 col-sm-12">
+                <label class="mr-3 col-5">© 2020 BoolBnB, Inc. All rights reserved</label>
 
                 <!-- Button trigger modal -->
-                <a class="hover" data-toggle="modal" data-target="#staticBackdrop">Privacy Policy</a>
+                <a class="hover col-7" data-toggle="modal" data-target="#staticBackdrop">Privacy Policy</a>
 
                 <!-- Modal -->
                 <div class="modal fade color-primary modal-tr" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
@@ -115,8 +113,8 @@
                 </div>
             </div>
 
-
-            <div class="social-links d-flex">
+            {{-- Social Network --}}
+            <div class="social-links d-flex col-lg-4 col-md-4 col-sm-12">
                 <div class="social-links-item">
                     <i class="fab fa-facebook"></i>
                 </div>
@@ -134,14 +132,10 @@
         </div>
 
 
-
-
-
-
-
     </div>
 
 </footer>
+
 
 @include('layouts.partials.search-template')
 
