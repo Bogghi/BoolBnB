@@ -42825,6 +42825,31 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
   });
 }
 
+if (window.location.pathname.includes("edit")) {
+  $(function () {
+    // console.log($(".label .label-style input"));
+    var inputs = $(".label .label-style input");
+    inputs.each(function () {
+      if ($(this).is(":checked")) {
+        var label = $(this).parent();
+        label.addClass("active");
+      } else {
+        var label = $(this).parent();
+        label.removeClass("active");
+      }
+    });
+  });
+  $(".label-style input").on('click', function () {
+    var label = $(this).parent();
+
+    if ($(this).is(":checked")) {
+      label.addClass('active');
+    } else {
+      label.removeClass('active');
+    }
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

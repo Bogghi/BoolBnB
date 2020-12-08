@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <section>
+  <section class="form">
     <h1>Aggiungi un appartamento</h1>
     <form action="{{route("admin.apartment.store")}}" method="POST" enctype="multipart/form-data">
 
@@ -65,9 +65,10 @@
       @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
-        <div>
-          <label>Servizi</label>
-        </div>
+      
+      <div>
+        <label>Servizi</label>
+      </div>
 
       @foreach ($services as $service)
       <div class="form-check form-check-inline">

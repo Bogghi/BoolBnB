@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="edit" class="container">
-  <section>
+  <section class="form">
     <h1>Aggiungi un appartamento</h1>
     <form action="{{route("admin.apartment.update", $apartment->id)}}" method="POST" enctype="multipart/form-data">
 
@@ -65,9 +65,6 @@
       @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
-        <div>
-          <label>Servizi</label>
-        </div>
 
       @php
       if (!old("services")) {
@@ -78,21 +75,29 @@
         }
       @endphp
 
-      @if(!old("services"))
+      <div class="label">
+        <label id="primary">Servizi</label>
+        @if(!old("services"))
         @foreach ($services as $service)
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}">
-          <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+          <div class="label-style">
+            <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}">
+            <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+          </div>
         </div>
         @endforeach
-      @else
-        @foreach ($services as $service)
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
-          <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
-        </div>
-        @endforeach
-      @endif
+        @else
+          @foreach ($services as $service)
+          <div class="form-check form-check-inline">
+            <div class="label-style">
+              <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
+              <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+            </div>
+          </div>
+          @endforeach
+        @endif
+      </div>
+      
       @error('services')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror

@@ -1,0 +1,33 @@
+.form {
+
+    .label {
+        display: flex;
+        align-items: center;
+        
+        #primary {
+            padding-right: 10px;
+        }
+
+        .label-style {
+            border: 2px $bluebnb solid;
+            border-radius: 20px;
+            padding: 5px 15px;
+            background-color: $light-gray;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+    
+            &:hover {
+                background-color: $medium-gray;
+                cursor: pointer;
+            }
+    
+            &.active {
+                background-color: $bluebnb;
+                color: $white;
+            }
+
+        }
+
+    }
+
+}
