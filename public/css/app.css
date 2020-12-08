@@ -11315,6 +11315,7 @@ main #sponsorizations .container-xl .container-xl .sponsored-apartment {
   height: 200px;
   margin: 10px;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: 100%;
   filter: grayscale(0%);
   transition: 0.5s;
@@ -11345,6 +11346,8 @@ main #sponsorizations .container-sm .container-xl .sponsored-apartment h3,
 main #sponsorizations .container-md .container-xl .sponsored-apartment h3,
 main #sponsorizations .container-lg .container-xl .sponsored-apartment h3,
 main #sponsorizations .container-xl .container-xl .sponsored-apartment h3 {
+  height: 65px;
+  overflow: hidden;
   color: white;
   visibility: hidden;
   opacity: 0.1;

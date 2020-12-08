@@ -18,11 +18,14 @@ main {
           height: 200px;
           margin: 10px;
           background-position: center;
+          background-repeat: no-repeat;
           background-size: 100%;
           filter: grayscale(0%);
           transition: 0.5s;
           
           h3 {
+            height: 65px;
+            overflow: hidden;
             color: $white;
             visibility: hidden;
             opacity: 0.1;
