@@ -11927,6 +11927,12 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .border-pers {
   border-right: 2px ridge #001533;
+  height: 150px;
+}
+
+#show .border-pers p {
+  height: 80px;
+  overflow: auto;
 }
 
 #show .services h2 {

@@ -227,6 +227,11 @@ main {
   }
   .border-pers {
     border-right: 2px ridge $bluebnb;
+    height: 150px;
+    p {
+      height: 80px;
+      overflow: auto;
+    }
   }
   .services {
     h2 {
