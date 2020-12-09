@@ -12721,6 +12721,30 @@ footer .social-links .social-links-item i:hover {
      object-position: top;
 }
 
+.form .apartment-images p {
+  font-style: italic;
+}
+
+.form .btn-custom {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.form .btn-custom button {
+  background-color: #3490dc;
+  border: 2px white solid;
+  border-radius: 25px;
+  padding: 3px 25px;
+  font-size: 30px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.form .btn-custom button:hover {
+  background-color: #0b61a9;
+}
+
 #error-500 {
   height: 100vh;
   margin: 0;

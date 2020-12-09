@@ -139,6 +139,30 @@
                 object-position: top;
             }
         }
+
+        p {
+            font-style: italic;
+        }
+    }
+
+    .btn-custom {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+
+        button {
+            background-color: $blue;
+            border: 2px $white solid;
+            border-radius: 25px;
+            padding: 3px 25px;
+            font-size: 30px;
+            color: white;
+            transition: background-color 0.3s;
+
+            &:hover { 
+                background-color: $dark-blue;
+            }
+        }
     }
 
 }

@@ -68,24 +68,24 @@
 
       @php
       if (!old("services")) {
-          $apartmentServices = [];
-          foreach($apartment->services as $service) {
-            $apartmentServices[] = $service->id;
-          }
+        $apartmentServices = [];
+        foreach($apartment->services as $service) {
+          $apartmentServices[] = $service->id;
         }
+      }
       @endphp
 
       <div class="label">
         <label id="primary">Services</label>
         @if(!old("services"))
-        @foreach ($services as $service)
-        <div class="form-check form-check-inline">
-          <div class="label-style">
-            <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}" hidden>
-            <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+          @foreach ($services as $service)
+          <div class="form-check form-check-inline">
+            <div class="label-style">
+              <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}" hidden>
+              <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+            </div>
           </div>
-        </div>
-        @endforeach
+          @endforeach
         @else
           @foreach ($services as $service)
           <div class="form-check form-check-inline">
@@ -96,6 +96,7 @@
           </div>
           @endforeach
         @endif
+
       </div>
       
       @error('services')
@@ -144,8 +145,11 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          @if ($apartment_images)
           <div class="apartment-images">
+          @if ($apartment_images)
+            @php
+                $size = count($apartment_images);
+            @endphp
             @foreach ($apartment_images as $apartment_image)
             <?php
               $additional_images = $apartment_image->image_path;
@@ -159,9 +163,11 @@
                   </div>
 
                 <?php } else {?>
+
                   <div class="img">
                     <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
                   </div>
+
                 <?php }?>
 
 
@@ -173,14 +179,18 @@
                 </form> --}}
                 </div>
             @endforeach
-          </div>
+            @if ($size == 0)
+              <p>No extra images</p>
+            @endif
           @endif
+        </div>
 
         </div>
       </div>
 
-
-      <button type="submit" class="btn btn-primary">Save</button>
+      <div class="btn-custom">
+        <button type="submit" class="">Save</button>
+      </div>
     </form>
   </section>
 </div>

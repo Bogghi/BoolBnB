@@ -11,14 +11,14 @@
 
       <div class="form-group">
         <label for="title">Titolo</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Digita un titolo per questo annuncio" max="100" value="{{old("title") ?? old("title")}}">
+        <input type="text" class="form-control input-style" id="title" name="title" placeholder="Digita un titolo per questo annuncio" max="100" value="{{old("title") ?? old("title")}}">
       </div>
       @error('title')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <div class="form-group">
         <label for="address">Indirizzo</label>
-        <input type="text" class="form-control" id="address" name="address" placeholder="Digita l'indirizzo del tuo appartamento" value="{{old("address") ?? old("address")}}">
+        <input type="text" class="form-control input-style" id="address" name="address" placeholder="Digita l'indirizzo del tuo appartamento" value="{{old("address") ?? old("address")}}">
       </div>
       @error('address')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -27,25 +27,25 @@
         <div class="col-3">
           <div class="form-group">
             <label for="rooms_number">Numero di stanze</label>
-            <input type="number" class="form-control" id="rooms_number" name="rooms_number" min="1" value="{{old("rooms_number") ? old("rooms_number") : 1}}" required>
+            <input type="number" class="form-control input-style" id="rooms_number" name="rooms_number" min="1" value="{{old("rooms_number") ? old("rooms_number") : 1}}" required>
           </div>
         </div>
         <div class="col-3">
           <div class="form-group">
             <label for="beds_number">Numeri di posti letto</label>
-            <input type="number" class="form-control" id="beds_number" name="beds_number" min="1" value="{{old("beds_number") ? old("beds_number") : 1}}" required>
+            <input type="number" class="form-control input-style" id="beds_number" name="beds_number" min="1" value="{{old("beds_number") ? old("beds_number") : 1}}" required>
           </div>
         </div>
         <div class="col-3">
           <div class="form-group">
             <label for="bathrooms_number">Numero di bagni</label>
-            <input type="number" class="form-control" id="bathrooms_number" name="bathrooms_number" min="1" value="{{old("bathrooms_number") ? old("bathrooms_number") : 1}}" required>
+            <input type="number" class="form-control input-style" id="bathrooms_number" name="bathrooms_number" min="1" value="{{old("bathrooms_number") ? old("bathrooms_number") : 1}}" required>
           </div>
         </div>
         <div class="col-3">
           <div class="form-group">
             <label for="square_meters">Dimensione in metri quadrati</label>
-        <input type="number" class="form-control" id="square_meters" name="square_meters" value="{{old("square_meters") ? old("square_meters") : 1}}" required>
+            <input type="number" class="form-control input-style" id="square_meters" name="square_meters" value="{{old("square_meters") ? old("square_meters") : 1}}" required>
           </div>
         </div>
       </div>
@@ -60,53 +60,87 @@
       @enderror
       <div class="form-group">
         <label for="description">Descrizione</label>
-        <textarea class="form-control" id="description" name="description" rows="5" min="50" max="150" placeholder="Scrivi una descrizione del tuo appartamento...">{{old("description") ?? old("description")}}</textarea>
+        <textarea class="form-control input-style" id="description" name="description" rows="5" min="50" max="150" placeholder="Scrivi una descrizione del tuo appartamento...">{{old("description") ?? old("description")}}</textarea>
       </div>
       @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       
-      <div>
-        <label>Servizi</label>
+      <div class="label">
+        <label id="primary">Services</label>
+        @foreach ($services as $service)
+        <div class="form-check form-check-inline">
+          @if (old("services"))
+            <div class="label-style">
+              <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}" hidden>
+              {{-- <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}"> --}}
+              <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+            </div>
+            
+          @else
+            <div class="label-style">
+              <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}" hidden>
+              {{-- <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}"> --}}
+              <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
+            </div>
+          @endif
+        </div>
+        @endforeach
       </div>
-
-      @foreach ($services as $service)
-      <div class="form-check form-check-inline">
-        @if (old("services"))
-        <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
-        @else
-        <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" value="{{$service->id}}">
-        @endif
-        <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
-      </div>
-      @endforeach
+    
       @error('services')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
-      <div class="form-check mt-sm-4">
-        <label for="visibility">Non visibile</label>
+      <div class="row">
+        <div class="col-4">
+          <div class="visibility">
+            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value="0" hidden>
+            <label for="visibility">Visible</label>
+            @error('visibility')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="browse">
+            <input type="file" id="cover_image" name="cover_image" accept="image/*" hidden>
+            <label for="cover_image">Cover Image</label>
+          </div>
+          
+          @error('cover_image')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
 
-      <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="0">
+          {{-- <div class="apartment-cover">
+            <?php if ($pos === false) {?>
+              <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="">
+              <?php } else {?>
+              <img src="{{$apartment->cover_image}}" alt="">
+            <?php }?>
+          </div> --}}
+        </div> 
+        <div class="col-4">
+          <div class="browse">
+            <label for="images">Extra images <span>max 5 images</span></label>
+            <input type="file" id="images" name="images[]" accept="image/*" multiple hidden>
+          </div>
+
+          @error('images')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+
+          
+
+        </div>
       </div>
 
-      <div class="form-group mt-sm-4">
-        <label for="cover_image">Immagine di copertina</label>
-        <input type="file" class="d-block" id="cover_image" name="cover_image" accept="image/*">
+      <div class="btn-custom">
+        <button type="submit" class="">Save</button>
       </div>
-      @error('cover_image')
-        <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-      <div class="form-group mt-sm-4">
-        <label for="images">Immagini aggiuntive (fino a 5)</label>
-        <input type="file" class="d-block" id="images" name="images[]" accept="image/*" multiple>
-      </div>
-      @error('images')
-        <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-      <button type="submit" class="btn btn-primary">Salva</button>
     </form>
   </section>
+
 </div>
 
 @endsection

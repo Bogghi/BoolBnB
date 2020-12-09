@@ -42841,7 +42841,7 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
   });
 }
 
-if (window.location.pathname.includes("edit")) {
+if (window.location.pathname.includes("edit") || window.location.pathname.includes("create")) {
   $(function () {
     var inputs = $(".label .label-style input");
     visibilitControll();
