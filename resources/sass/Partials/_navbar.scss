@@ -1,7 +1,6 @@
 .navbar {
-  height: 80px;
   padding: 0;
-  padding: 20px 0;
+  padding: 10px;
   transition: all 0.4s;
   position: relative;
   z-index: 5;
@@ -21,14 +20,22 @@
       height: 40px;
     }
   }
+  .navbar-toggler{
+    background-color: white;
+    .hambu{
+      height: 20px;
+      width: 20px;
+      color: $greenbnb;
+    }
+
+  }
+  
 
   .navbar-nav {
 
     .nav-link {
-
       font-weight: 700;
-      color: #fff;
-
+      color: white;
       &:hover {
         color: $greenbnb;
       }
@@ -110,13 +117,20 @@
     position: fixed;
     z-index: 1;
     width: 100%;
+    height: auto;
     background-color: #fff;
     .searchbar{
       @media screen and (max-width:600px){
         display:none;
       }
     }
-
+    .navbar-toggler{
+      background-color: $bluebnb;
+      .hambu{      
+        color: $white;  
+      }
+    }
+   
     .navbar-nav {
       .nav-link {
         color: $bluebnb;

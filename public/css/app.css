@@ -11018,9 +11018,8 @@ header.margin-fixed > .container {
 }
 
 .navbar {
-  height: 80px;
   padding: 0;
-  padding: 20px 0;
+  padding: 10px;
   transition: all 0.4s;
   position: relative;
   z-index: 5;
@@ -11041,9 +11040,19 @@ header.margin-fixed > .container {
   height: 40px;
 }
 
+.navbar .navbar-toggler {
+  background-color: white;
+}
+
+.navbar .navbar-toggler .hambu {
+  height: 20px;
+  width: 20px;
+  color: #00F087;
+}
+
 .navbar .navbar-nav .nav-link {
   font-weight: 700;
-  color: #fff;
+  color: white;
 }
 
 .navbar .navbar-nav .nav-link:hover {
@@ -11128,6 +11137,7 @@ header.margin-fixed > .container {
   position: fixed;
   z-index: 1;
   width: 100%;
+  height: auto;
   background-color: #fff;
 }
 
@@ -11135,6 +11145,14 @@ header.margin-fixed > .container {
   .navbar.navbar-fixed .searchbar {
     display: none;
   }
+}
+
+.navbar.navbar-fixed .navbar-toggler {
+  background-color: #001533;
+}
+
+.navbar.navbar-fixed .navbar-toggler .hambu {
+  color: white;
 }
 
 .navbar.navbar-fixed .navbar-nav .nav-link {
