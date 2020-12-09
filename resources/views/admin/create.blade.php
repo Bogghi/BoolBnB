@@ -112,13 +112,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          {{-- <div class="apartment-cover">
-            <?php if ($pos === false) {?>
-              <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="">
-              <?php } else {?>
-              <img src="{{$apartment->cover_image}}" alt="">
-            <?php }?>
-          </div> --}}
+          <div class="apartment-cover">
+            <p>None image selected</p>
+          </div>
         </div> 
         <div class="col-4">
           <div class="browse">
@@ -130,7 +126,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          
+          <div class="apartment-images" id="preview">
+            <p>None images selected</p>
+          </div>
 
         </div>
       </div>

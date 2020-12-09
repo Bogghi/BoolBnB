@@ -145,38 +145,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <div class="apartment-images">
-          @if ($apartment_images)
-            @php
-                $size = count($apartment_images);
-            @endphp
-            @foreach ($apartment_images as $apartment_image)
-            <?php
-              $additional_images = $apartment_image->image_path;
-              $pos = strpos($additional_images, "http");          
-            ?> 
-              <div class="apartment-image">
-                <?php if ($pos === false) {?>
-
-                  <div class="img">
-                    <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
-                  </div>
-
-                <?php } else {?>
-
-                  <div class="img">
-                    <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
-                  </div>
-
-                <?php }?>
-                
-                </div>
-            @endforeach
-            @if ($size == 0)
-              <p>No extra images</p>
-            @endif
-          @endif
-        </div>
+          <div class="apartment-images" id="preview">
+            <p>None images selected</p>
+          </div>
 
         </div>
       </div>
@@ -185,7 +156,8 @@
         <button type="submit" class="">Save</button>
       </div>
     </form>
-
+    
+    <h2>Delete your saved images</h2>
     <div class="apartment-images">
       <div class="apartment-image container-fluid">
         <div class="row">
@@ -208,7 +180,7 @@
                   <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
-                    <input class="delete-button btn btn-outline-danger my-3" type="submit" value="Elimina">
+                    <input class="delete-button btn btn-outline-danger" type="submit" value="Elimina">
                   </form>
                 </div>
               </div>

@@ -243,7 +243,6 @@ class ApartmentController extends Controller
         if ($request->hasFile('images')) {
 
             $images = $request->file('images');
-            dd($images);
 
             foreach ($images as $image) {
 

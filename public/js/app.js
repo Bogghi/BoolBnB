@@ -42844,6 +42844,47 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
 if (window.location.pathname.includes("edit") || window.location.pathname.includes("create")) {
   $(function () {
     var inputs = $(".label .label-style input");
+
+    var imagesPreview = function imagesPreview(input, placeToInsertImagePreview, fatherImg) {
+      if (input.files) {
+        $("#preview p").remove();
+        var filesAmount = input.files.length;
+
+        for (i = 0; i < filesAmount; i++) {
+          var reader = new FileReader();
+          var template = "<div class='img'></div>";
+
+          reader.onload = function (event) {
+            $($.parseHTML(template)).appendTo(fatherImg);
+            $($.parseHTML("<img>")).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+          };
+
+          reader.readAsDataURL(input.files[i]);
+        }
+      }
+    };
+
+    var coverImage = function coverImage(input, placeToInsertImagePreview) {
+      if (input.files) {
+        // console.log("porcodio");
+        $(".apartment-cover img").remove();
+        $(".apartment-cover p").remove();
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+          $($.parseHTML("<img>")).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    };
+
+    $('#images').on('change', function () {
+      imagesPreview(this, '#preview .img:last-child', '#preview');
+    });
+    $('#cover_image').on('change', function () {
+      coverImage(this, '.apartment-cover');
+    });
     visibilitControll();
     inputs.each(function () {
       if ($(this).is(":checked")) {
