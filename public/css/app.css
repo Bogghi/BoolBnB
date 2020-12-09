@@ -12705,8 +12705,11 @@ footer .social-links .social-links-item i:hover {
   padding: 10px 10px 0px 10px;
 }
 
+.form .apartment-images [class*=col-] {
+  padding: 0px;
+}
+
 .form .apartment-images .img {
-  position: relative;
   border-radius: 15px;
   margin-bottom: 10px;
   max-width: 190px;
@@ -12724,6 +12727,14 @@ footer .social-links .social-links-item i:hover {
 
 .form .apartment-images p {
   font-style: italic;
+}
+
+.form .apartment-images.container-fluid,
+.form .apartment-images.container-sm,
+.form .apartment-images.container-md,
+.form .apartment-images.container-lg,
+.form .apartment-images.container-xl {
+  padding: 0px;
 }
 
 .form .btn-custom {
@@ -12746,9 +12757,16 @@ footer .social-links .social-links-item i:hover {
   background-color: #0b61a9;
 }
 
-.form .delete-image img {
-  width: 500px;
-  height: 500px;
+.form .delete-img {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.form .delete-img img {
+  border: 1px #fafafa solid;
+  box-shadow: 0px 0px 8px;
+  width: 100%;
+  height: 300px;
 }
 
 #error-500 {

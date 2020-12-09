@@ -186,6 +186,41 @@
       </div>
     </form>
 
+    <div class="apartment-images">
+      <div class="apartment-image container-fluid">
+        <div class="row">
+          @if ($apartment_images)
+            @php
+                $size = count($apartment_images);
+            @endphp
+              @foreach ($apartment_images as $apartment_image)
+              <?php
+                $additional_images = $apartment_image->image_path;
+                $pos = strpos($additional_images, "http");          
+              ?> 
+              <div class="col-4">
+                <div class="delete-img">
+                  <?php if ($pos === false) {?>
+                    <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
+                  <?php } else {?>
+                    <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
+                  <?php }?>
+                  <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <input class="delete-button btn btn-outline-danger my-3" type="submit" value="Elimina">
+                  </form>
+                </div>
+              </div>
+              @endforeach
+            @if ($size == 0)
+              <p>No extra images</p>
+            @endif
+          @endif
+        </div>
+      </div>
+    </div>
+
 
 
   </section>
