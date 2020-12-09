@@ -106,11 +106,16 @@
     }
   }
 }
-  .navbar-fixed {
+  .navbar.navbar-fixed {
     position: fixed;
     z-index: 1;
     width: 100%;
     background-color: #fff;
+    .searchbar{
+      @media screen and (max-width:600px){
+        display:none;
+      }
+    }
 
     .navbar-nav {
       .nav-link {

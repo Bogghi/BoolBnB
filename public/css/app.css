@@ -11124,14 +11124,20 @@ header.margin-fixed > .container {
   border-bottom: 8px solid #00F087;
 }
 
-.navbar-fixed {
+.navbar.navbar-fixed {
   position: fixed;
   z-index: 1;
   width: 100%;
   background-color: #fff;
 }
 
-.navbar-fixed .navbar-nav .nav-link {
+@media screen and (max-width: 600px) {
+  .navbar.navbar-fixed .searchbar {
+    display: none;
+  }
+}
+
+.navbar.navbar-fixed .navbar-nav .nav-link {
   color: #001533;
 }
 

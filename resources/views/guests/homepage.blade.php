@@ -3,9 +3,9 @@
 @section('content')
 
     {{-- Apartment sponsorization --}}
-    <section id="sponsorizations" class="py-4 ">
+    <section id="sponsorizations" class="py-5">
         <h2 class="text-center mb-3 text-white">Sponsored</h2>
-        <div  class="container-fluid d-flex">
+        <div  class="container-fluid d-flex pb-4">
           <div id="scroll" class="container-fluid d-flex">
             @foreach ($sponsored_apartments as $apartment)
             <?php

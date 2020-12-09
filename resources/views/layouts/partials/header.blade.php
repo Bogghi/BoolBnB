@@ -9,9 +9,10 @@
         @include("layouts.partials.navbar")
         <div class="container">
             <div class="jumbo-content col-12 px-0">
+                {{-- title --}}
                 <div class="jumbo-text" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="display-4">Programma la tua vacanza</h1>
-                    <p class="lead">Trova il tuo appartamento ideale</p>
+                    <h1 class="display-4">Book your holiday</h1>
+                    <p class="lead">Find your apartment</p>
                 </div>
                 <div class="searchbar" >
                     <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
@@ -23,8 +24,10 @@
                         </button>
                     </form>
                 </div>
+
+                {{-- Scroll to Apartment in evidence --}}
                 <div class="cta" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                    <p>Visualizza gli appartamenti in evidenza</p>
+                    <p>View the apartments in evidence</p>
                     <a href="#sponsorizations"><i class="fas fa-chevron-down"></i></a> 
                 </div>
                 
