@@ -25,8 +25,8 @@
         @endif
 
       {{-- hamburger --}}
-      <button class="navbar-toggler border border-dark text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler border border-dark bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon text-dark"></span>
       </button>
 
       <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">

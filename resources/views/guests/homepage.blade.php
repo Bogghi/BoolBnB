@@ -42,7 +42,7 @@
 
             {{-- box cities --}}
             <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
-                <h3>Parigi</h3>    
+                <h3>Paris</h3>    
                 <form action="{{route('search')}}" method="post">
                     @csrf
                     @method("POST")
@@ -53,7 +53,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
-                <h3>Roma</h3> 
+                <h3>Rome</h3> 
                 <form action="{{route('search')}}" method="post">
                     @csrf
                     @method("POST")
@@ -64,7 +64,7 @@
             </div>
             
             <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
-                <h3>Londra</h3> 
+                <h3>London</h3> 
 
                 <form action="{{route('search')}}" method="post">
                     @csrf
@@ -76,7 +76,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
-                <h3>Barcellona</h3>
+                <h3>Barcelona</h3>
                 <form action="{{route('search')}}" method="post">
                     @csrf
                     @method("POST")
@@ -87,7 +87,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5">
-                <h3>Berlino</h3>  
+                <h3>Berlin</h3>  
                 <form action="{{route('search')}}" method="post">
                     @csrf
                     @method("POST")
