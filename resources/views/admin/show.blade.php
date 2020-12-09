@@ -85,7 +85,7 @@
         <h2 class="py-2">Description</h2>
         <p>{{$apartment->description}}</p>
       </div>
-      <div class="col-5 col-md-5 services">
+      <div class="col-12 col-md-5 services">
         <h2>Services</h2>
         <ul class="d-flex flex-column flex-wrap">
           @foreach ($apartment->services as $service)
@@ -93,15 +93,17 @@
           @endforeach
         </ul>
       </div>
-      <div class="col-7 col-md-6" id="map-container">
+      
+      <div class="col-12 col-md-6">
+        <div id="map-container"></div>
 
       </div>
 
 
       @if (Auth::id() == $apartment->user_id )
       <div class="col-12 offset-md-1 col-md-5 message">
-        <h2 class="pb-3">Messaggi ricevuti</h2>
-        <ul class="">
+        <h2 class="pb-3 pt-3">Messaggi ricevuti</h2>
+        <ul>
           @foreach ($apartment->messages as $message)
           <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
           @endforeach

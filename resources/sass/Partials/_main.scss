@@ -250,12 +250,19 @@ main {
     }
   }
   #map-container {
-    border: 1px solid red;
-    height: 500px;
+    width: 100%;
+    height: 75%;
+    margin-top: 30px;
+
   }
   .message {
+    h2{
+      padding-left: 45px;
+    }
     ul {
       list-style: none;
+      height: 400px;
+      overflow: auto;
       li {
         border: 1px solid $gray;
         border-radius: 20px ;
@@ -295,17 +302,25 @@ main {
     }
     .services {
       h2 {
-        margin-left: 0;
+        text-align: center;
+        padding-bottom: $spacer * 1;
       }
       ul{
         margin-left: - $spacer * 3;
-        height: 400px;
+        height: 250px;
         li {
           padding-bottom: 10px;
           padding-right: $spacer * 2;
+          padding-left: 30px;
         }
       }
 
+    }
+    .col-12 {
+      #map-container{
+        height: 300px;
+        margin-bottom: 20px;
+      }
     }
     .message {
       margin-left: -30px;
@@ -313,6 +328,10 @@ main {
         text-align: center;
         padding-top: $spacer * 3;
         margin-left: 30px;
+      }
+      ul {
+        height: 100%;
+        overflow: none;
       }
     }
   }
