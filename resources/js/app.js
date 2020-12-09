@@ -266,7 +266,7 @@ if ((window.location.pathname == '/') || (window.location.pathname == '/search')
   var options = {
     searchOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-      language: 'en-GB',
+      language: 'it-IT',
       limit: 5
     },
     autocompleteOptions: {
@@ -274,7 +274,7 @@ if ((window.location.pathname == '/') || (window.location.pathname == '/search')
       language: 'it-IT'
     },
     labels: {
-      placeholder: "Dove vuoi andare?"
+      placeholder: "Where shall we go?"
     }
   };
 
@@ -294,6 +294,13 @@ if ((window.location.pathname == '/') || (window.location.pathname == '/search')
 
 
 if (window.location.pathname == '/') {
+
+  $('input.tt-search-box-input').on('keydown', function (e) {
+    if (e.which == 13) {
+      $('.searchbar form').trigger("submit");
+    }
+  });
+
   var searchbarOffsetTop = $(".searchbar").offset().top;
   var scrolled = 0;
 
@@ -312,20 +319,20 @@ if (window.location.pathname == '/') {
 
     if (($(window).scrollTop() > (searchbarOffsetTop - 40)) && scrolled == 0) {
       scrolled = 1;
-      $(".searchbar").fadeOut(300, function () {
+      $(".searchbar").fadeOut(150, function () {
         $("header .logo").after($(".searchbar"));
         $(".cta").addClass("searchbar-margin");
         $(".searchbar").addClass("searchbar-nav");
-        $(".searchbar").fadeIn(300);
+        $(".searchbar").fadeIn(150);
       });
 
     } else if (($(window).scrollTop() < (searchbarOffsetTop - 40)) && scrolled == 1) {
       scrolled = 0;
-      $(".searchbar").fadeOut(300, function () {
+      $(".searchbar").fadeOut(150, function () {
         $("header .jumbo-text").after($(".searchbar"));
         $(".cta").removeClass("searchbar-margin");
         $(".searchbar").removeClass("searchbar-nav");
-        $(".searchbar").fadeIn(300);
+        $(".searchbar").fadeIn(150);
       });
     }
   });
@@ -501,6 +508,12 @@ if (($("#map-container").length > 0) && (window.location.pathname == '/search'))
 
   $(".searchbar form").on("submit", function (e) {
     e.preventDefault();
+  });
+
+  $('input.tt-search-box-input').on('keydown', function (e) {
+    if (e.which == 13) {
+      tomtomBoolbBnB();
+    }
   });
 
   renderResultsMap();
