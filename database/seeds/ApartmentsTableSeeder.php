@@ -114,7 +114,7 @@ class ApartmentsTableSeeder extends Seeder
       ],
       [
         "address" => "Corso Como, 11, 20124 Milano MI",
-        "image" => "https://www.milanoevents.it/wp-content/uploads/2016/05/01-1.jpg"
+        "image" => "https://www.pedestal-eternoivica.com/uploads/images/posts/1887/col12_bosco-verticale-a0941311763418c605b94e7d708c3752.jpg"
       ],
       [
         "address" => "Via Topino, 18, 00199 Roma RM",
