@@ -12706,6 +12706,7 @@ footer .social-links .social-links-item i:hover {
 }
 
 .form .apartment-images .img {
+  position: relative;
   border-radius: 15px;
   margin-bottom: 10px;
   max-width: 190px;
@@ -12743,6 +12744,11 @@ footer .social-links .social-links-item i:hover {
 
 .form .btn-custom button:hover {
   background-color: #0b61a9;
+}
+
+.form .delete-image img {
+  width: 500px;
+  height: 500px;
 }
 
 #error-500 {

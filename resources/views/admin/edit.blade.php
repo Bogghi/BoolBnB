@@ -169,14 +169,7 @@
                   </div>
 
                 <?php }?>
-
-
-
-                {{-- <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
-                  @csrf
-                  @method("DELETE")
-                  <input class="delete-button btn btn-outline-danger my-3" type="submit" value="Elimina">
-                </form> --}}
+                
                 </div>
             @endforeach
             @if ($size == 0)
@@ -192,6 +185,9 @@
         <button type="submit" class="">Save</button>
       </div>
     </form>
+
+
+
   </section>
 </div>
 

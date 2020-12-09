@@ -165,6 +165,7 @@ class ApartmentController extends Controller
 
         $services = Service::all();
         $apartment_images = $apartment->images;
+        // dd($apartment_images);
 
         return view('admin.edit', compact('apartment', 'services', 'apartment_images'));
     }

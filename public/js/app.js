@@ -42867,6 +42867,9 @@ if (window.location.pathname.includes("edit") || window.location.pathname.includ
       label.removeClass('active');
     }
   });
+  $(".apartment-images").on('hover', function () {
+    console.log($(this));
+  });
 }
 
 /***/ }),

@@ -579,4 +579,7 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
     }
   });
 
+  $(".apartment-images").on('hover',function () { 
+    console.log($(this));
+  })
 }

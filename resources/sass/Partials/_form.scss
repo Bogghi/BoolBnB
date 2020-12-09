@@ -126,6 +126,7 @@
         border-radius: 20px;
         padding: 10px 10px 0px 10px;
         .img {
+            position: relative;
             border-radius: 15px;
             margin-bottom: 10px;
             max-width: 190px;
@@ -164,5 +165,12 @@
             }
         }
     }
+
+    .delete-image {
+        img{
+            width: 500px;
+            height: 500px;
+        }
+    }    
 
 }
