@@ -269,13 +269,11 @@ if ((window.location.pathname == '/') || (window.location.pathname == '/search')
       language: 'it-IT',
       limit: 5
     },
-    autocompleteOptions: {
-      key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-      language: 'it-IT'
-    },
     labels: {
       placeholder: "Where shall we go?"
-    }
+    },
+    minNumberOfCharacters: 1,
+    idleTimePress: 0,
   };
 
 

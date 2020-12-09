@@ -1,10 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);@charset "UTF-8";
-
-@media (min-width: 1500px) {
-  .container {
-    max-width: 1350px !important;
-  }
-}
+@import url(https://fonts.googleapis.com/css?family=Lato);@import url(https://fonts.googleapis.com/css?family=Raleway);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -11126,7 +11120,7 @@ header.margin-fixed > .container {
 
 .navbar.navbar-fixed {
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
   background-color: #fff;
 }
@@ -11146,6 +11140,8 @@ header.margin-fixed > .container {
 }
 
 .searchbar {
+  position: relative;
+  z-index: 2;
   margin-top: 20px;
   height: 62px;
 }
@@ -11246,6 +11242,22 @@ header.margin-fixed > .container {
 
 main {
   min-height: calc(100vh - 404px);
+}
+
+main h2 {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+main #show,
+main #your-apartments {
+  background-image: url("/img/pattern-bg.svg");
+}
+
+main #show .container,
+main #your-apartments .container {
+  background-color: white;
+  padding: 20px 40px 40px;
 }
 
 main #sponsorizations {
@@ -12137,8 +12149,10 @@ main #sponsorizations .container-xl .next .fas {
   }
 }
 
-.font-xl {
-  font-weight: 900;
+#cities h3 {
+  font-size: 40px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
 }
 
 .box-cities {
@@ -12207,6 +12221,7 @@ main #sponsorizations .container-xl .next .fas {
   position: relative;
   min-height: 600px;
   z-index: 0;
+  background-image: url("/img/developers-bg.jpg");
   background-size: cover;
   background-position: bottom;
 }
@@ -12230,9 +12245,21 @@ main #sponsorizations .container-xl .next .fas {
   padding-bottom: 30px;
 }
 
+#developers .developer .pic h4 {
+  color: white;
+  font-weight: 600;
+  transition: color 0.4s;
+}
+
+#developers .developer .pic:hover > h4 {
+  color: #00F087;
+}
+
 #developers .developer .img-personalized {
   width: 140px;
+  margin-bottom: 15px;
   border: 2px solid #00F087;
+  transition: filter 0.4s;
 }
 
 #developers .developer .img-personalized:hover {

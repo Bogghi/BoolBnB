@@ -1,6 +1,20 @@
 main {
   min-height: $main-heigth;
 
+  h2 {
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  #show,
+  #your-apartments {
+    background-image: url('/img/pattern-bg.svg');
+    .container {
+      background-color: $white;
+      padding: 20px 40px 40px;
+    }
+  }
+
   #sponsorizations {
     background-color: $black;
     .container-fluid {
@@ -209,14 +223,7 @@ main {
 
 // Show admin 
 #show {
-  background-image: url('/img/pattern-bg.svg');
-  .container {
-    padding: 0 60px;
-    background-color: $white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-
-  }
-
+  
   .apartment-header{
     .ovr-hid{
       max-height: 100px;
@@ -432,9 +439,17 @@ main {
 }
 
 // Cities Mix
-.font-xl{
-  font-weight: $font-cities;
+
+#cities {
+
+  h3 {
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
 }
+
+
 .box-cities{
   border: 1px solid $greenbnb;
   border-radius: 10px;
@@ -504,6 +519,7 @@ main {
   position: relative;
   min-height: 600px;
   z-index: 0;
+  background-image: url('/img/developers-bg.jpg');
   background-size: cover;
   background-position: bottom;
   
@@ -527,16 +543,30 @@ main {
       padding-bottom: 30px;
       // &:not(:last-child) {
       //   margin-right: 50px;
-      // }           
+      // }
+
+      h4 {
+        color: $white;
+        font-weight: 600;
+        transition: color 0.4s;
+      }
+
+      &:hover > h4 {
+        color: $greenbnb;
+      }
     }
         
     
     .img-personalized {
       width: 140px;
+      margin-bottom: 15px;
       border:2px solid #00F087;
+      transition: filter 0.4s;
+
       &:hover{
         filter: grayscale(100%);          
-      }        
+      }
+      
     }
     
   }
