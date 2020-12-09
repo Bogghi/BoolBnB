@@ -187,7 +187,7 @@ class ApartmentController extends Controller
             'services' => "required|array|min:1",
             'services.*' => "required|integer|min:1|max:" . $services->id,
             'address' => "required|max:255",
-            'cover_image' => "required|unique:apartments|image",
+            'cover_image' => "unique:apartments|image",
             'bathrooms_number' => "required|integer",
             'beds_number' => "required|integer",
             'square_meters' => "required|integer",
@@ -204,25 +204,31 @@ class ApartmentController extends Controller
         $longitude = $output->results[0]->position->lon;
 
         $apartment = Apartment::find($id);
-        Storage::disk('public')->delete($apartment->cover_image);
 
-        // Save cover_image in the storage with original name.
-        $cover_image_name = $request->cover_image->getClientOriginalName();
+        if ($request->cover_image != null) {
 
-        $apartment_id = $apartment->id;
+          Storage::disk('public')->delete($apartment->cover_image);
 
-        $path_cover_image = $request->cover_image->storeAs(
-            "images/" . $apartment_id,
-            $cover_image_name,
-            "public"
-        );
+          // Save cover_image in the storage with original name.
+          $cover_image_name = $request->cover_image->getClientOriginalName();
+
+          $apartment_id = $apartment->id;
+
+          $path_cover_image = $request->cover_image->storeAs(
+              "images/" . $apartment_id,
+              $cover_image_name,
+              "public"
+          );
+
+          $apartment->cover_image = $path_cover_image;
+        }
+
 
 
         $user_id = Auth::id();
         $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
-        $apartment->cover_image = $path_cover_image;
         $apartment->bathrooms_number = $data['bathrooms_number'];
         $apartment->beds_number = $data['beds_number'];
         $apartment->square_meters = $data['square_meters'];
