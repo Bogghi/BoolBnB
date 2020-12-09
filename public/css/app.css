@@ -12056,15 +12056,6 @@ main #developers .developer .custom-social {
   filter: grayscale(100%);
 }
 
-#edit .apartment-cover {
-  max-width: 50%;
-}
-
-#edit .apartment-cover img {
-  width: 100%;
-  height: 100%;
-}
-
 #edit .apartment-images .apartment-image {
   width: 23%;
   margin: 20px;
@@ -12600,6 +12591,7 @@ footer .social-links .social-links-item i:hover {
 .form .label {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .form .label #primary {
@@ -12615,6 +12607,10 @@ footer .social-links .social-links-item i:hover {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.form .label .label-style input {
+  background-color: #e3342f;
+}
+
 .form .label .label-style:hover {
   background-color: #e8e8e8;
   cursor: pointer;
@@ -12623,6 +12619,73 @@ footer .social-links .social-links-item i:hover {
 .form .label .label-style.active {
   background-color: #001533;
   color: white;
+}
+
+.form .visibility {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0px 15px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.form .visibility:hover {
+  cursor: pointer;
+}
+
+.form .visibility label {
+  padding: 7px 0px 0px 7px;
+  width: 100%;
+}
+
+.form .visibility label:hover {
+  cursor: pointer;
+}
+
+.form .visibility.bg-red {
+  background-color: #e3342f;
+  border: none;
+  color: white;
+}
+
+.form .visibility.bg-green {
+  background-color: #38c172;
+  border: none;
+  color: white;
+}
+
+.form .browse {
+  display: flex;
+}
+
+.form .browse label {
+  background-color: #fafafa;
+  border: 2px #001533 solid;
+  padding: 5px 15px;
+  border-radius: 20px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.form .browse label:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.form .apartment-cover {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 20px;
+  border: 2px solid #001533;
+  overflow: hidden;
+}
+
+.form .apartment-cover img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 #error-500 {

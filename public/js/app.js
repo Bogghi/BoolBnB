@@ -42588,7 +42588,23 @@ function createMarker(icon, position, color, popupText) {
     anchor: 'bottom'
   }).setLngLat(position).setPopup(popup).addTo(map);
 } // TomTom utility functions
-// QUI VANNO LE FUNZIONI !!!!!!!!!
+
+
+function visibilitControll() {
+  var visibility = $(".visibility");
+  var input = visibility.find("input");
+  var label = visibility.find("label");
+
+  if (input.is(":checked")) {
+    visibility.removeClass("bg-red");
+    visibility.addClass("bg-green");
+    label.text("Visible");
+  } else {
+    visibility.removeClass("bg-green");
+    visibility.addClass("bg-red");
+    label.text("Invisible");
+  }
+} // QUI VANNO LE FUNZIONI !!!!!!!!!
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 
 
@@ -42827,8 +42843,8 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
 
 if (window.location.pathname.includes("edit")) {
   $(function () {
-    // console.log($(".label .label-style input"));
     var inputs = $(".label .label-style input");
+    visibilitControll();
     inputs.each(function () {
       if ($(this).is(":checked")) {
         var label = $(this).parent();
@@ -42838,6 +42854,9 @@ if (window.location.pathname.includes("edit")) {
         label.removeClass("active");
       }
     });
+  });
+  $(".visibility input").on('click', function () {
+    visibilitControll();
   });
   $(".label-style input").on('click', function () {
     var label = $(this).parent();

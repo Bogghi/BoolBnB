@@ -3,21 +3,21 @@
 @section('content')
 <div id="edit" class="container">
   <section class="form">
-    <h1>Aggiungi un appartamento</h1>
+    <h1>Add an apartment</h1>
     <form action="{{route("admin.apartment.update", $apartment->id)}}" method="POST" enctype="multipart/form-data">
 
       @csrf
       @method("PUT")
 
       <div class="form-group">
-        <label for="title">Titolo</label>
+        <label for="title">Title</label>
         <input type="text" class="form-control" id="title" name="title" placeholder="Digita un titolo per questo annuncio" max="100" value="{{old("title") ? old("title") : $apartment->title}}">
       </div>
       @error('title')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <div class="form-group">
-        <label for="address">Indirizzo</label>
+        <label for="address">Address</label>
         <input type="text" class="form-control" id="address" name="address" placeholder="Digita l'indirizzo del tuo appartamento" value="{{old("address") ? old("address") : $apartment->address}}">
       </div>
       @error('address')
@@ -26,25 +26,25 @@
       <div class="row">
         <div class="col-3">
           <div class="form-group">
-            <label for="rooms_number">Numero di stanze</label>
+            <label for="rooms_number">Number of rooms</label>
             <input type="number" class="form-control" id="rooms_number" name="rooms_number" min="1" value="{{old("rooms_number") ? old("rooms_number") : $apartment->rooms_number}}" required>
           </div>
         </div>
         <div class="col-3">
           <div class="form-group">
-            <label for="beds_number">Numeri di posti letto</label>
+            <label for="beds_number">Number of beds</label>
             <input type="number" class="form-control" id="beds_number" name="beds_number" min="1" value="{{old("beds_number") ? old("beds_number") : $apartment->beds_number}}" required>
           </div>
         </div>
         <div class="col-3">
           <div class="form-group">
-            <label for="bathrooms_number">Numero di bagni</label>
+            <label for="bathrooms_number">Number of bathrooms</label>
             <input type="number" class="form-control" id="bathrooms_number" name="bathrooms_number" min="1" value="{{old("bathrooms_number") ? old("bathrooms_number") : $apartment->bathrooms_number}}" required>
           </div>
         </div>
         <div class="col-3">
           <div class="form-group">
-            <label for="square_meters">Dimensione in metri quadrati</label>
+            <label for="square_meters">Size in square meters</label>
             <input type="number" class="form-control" id="square_meters" name="square_meters" value="{{old("square_meters") ? old("square_meters") : $apartment->square_meters}}" required>
           </div>
         </div>
@@ -59,7 +59,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <div class="form-group">
-        <label for="description">Descrizione</label>
+        <label for="description">Description</label>
         <textarea class="form-control" id="description" name="description" rows="5" placeholder="Scrivi una descrizione del tuo appartamento...">{{old("description") ? old("description") : $apartment->description}}</textarea>
       </div>
       @error('description')
@@ -76,12 +76,12 @@
       @endphp
 
       <div class="label">
-        <label id="primary">Servizi</label>
+        <label id="primary">Services</label>
         @if(!old("services"))
         @foreach ($services as $service)
         <div class="form-check form-check-inline">
           <div class="label-style">
-            <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}">
+            <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, $apartmentServices) ? "checked" : ""}} value="{{$service->id}}" hidden>
             <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
           </div>
         </div>
@@ -90,7 +90,7 @@
           @foreach ($services as $service)
           <div class="form-check form-check-inline">
             <div class="label-style">
-              <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}">
+              <input class="form-check-input" type="checkbox" id="{{$service->id}}" name="services[]" {{in_array($service->id, old("services")) ? "checked" : ""}} value="{{$service->id}}" hidden>
               <label class="form-check-label" for="{{$service->id}}">{{$service->name}}</label>
             </div>
           </div>
@@ -99,75 +99,82 @@
       </div>
       
       @error('services')
-          <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-
-      <div class="form-check mt-sm-4">
-        <label for="visibility">Non visibile</label>
-      <input type="checkbox" class="form-controll mb-2 m-sm-2" id="visibility" name="visibility" value="0" {{ $apartment->visibility == 0 ? "checked" : "" }}>
-      </div>
-      @error('visibility')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
-      <div class="form-group mt-sm-4">
-        <label for="cover_image">Immagine di copertina</label>
-        <input type="file" class="d-block" id="cover_image" name="cover_image" accept="image/*">
-      </div>
-      @error('cover_image')
-          <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-      <?php
-      $image = $apartment->cover_image;
-      $pos = strpos($image, "http");          
-       ?> 
-
-      <div class="apartment-cover">
-        <?php if ($pos === false) {?>
-        <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="" style="width:200px; height:200px">
-        <?php } else {?>
-        <img src="{{$apartment->cover_image}}" alt="" style="width:200px; height:200px">
-          <?php }?>
-      </div>
-
-      <div class="form-group mt-sm-4">
-        <label for="images">Immagini aggiuntive (fino a 5)</label>
-        <input type="file" class="d-block" id="images" name="images[]" accept="image/*" multiple>
-      </div>
-      @error('images')
-        <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
-
-      @if ($apartment_images)
-      <div class="apartment-images my-sm-4 d-flex flex-wrap">
-        @foreach ($apartment_images as $apartment_image)
-        <?php
-          $additional_images = $apartment_image->image_path;
-          $pos = strpos($additional_images, "http");          
-        ?> 
-          <div class="apartment-image">
-            <?php if ($pos === false) {?>
-
-            <img class="border rounded" src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
-
-            <?php } else {?>
-            <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
-            <?php }?>
-
-
-
-            <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
-              @csrf
-              @method("DELETE")
-              <input class="delete-button btn btn-outline-danger my-3" type="submit" value="Elimina">
-            </form>
+      <div class="row">
+        <div class="col-4">
+          <div class="visibility">
+            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value="0" {{ $apartment->visibility == 0 ? "checked" : "" }} hidden>
+            <label for="visibility">Visible</label>
+            @error('visibility')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
-        @endforeach
+        </div>
+        <div class="col-4">
+          <div class="browse">
+            <input type="file" id="cover_image" name="cover_image" accept="image/*" hidden>
+            <label for="cover_image">Cover Image</label>
+          </div>
+          
+          @error('cover_image')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+          <?php
+          $image = $apartment->cover_image;
+          $pos = strpos($image, "http");          
+          ?> 
+
+          <div class="apartment-cover">
+            <?php if ($pos === false) {?>
+              <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="">
+              <?php } else {?>
+              <img src="{{$apartment->cover_image}}" alt="">
+            <?php }?>
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="images">Extra images <span>(Max 5)</span></label>
+          <input type="file" class="d-block" id="images" name="images[]" accept="image/*" multiple>
+
+          @error('images')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+
+          @if ($apartment_images)
+          <div class="apartment-images my-sm-4 d-flex flex-wrap">
+            @foreach ($apartment_images as $apartment_image)
+            <?php
+              $additional_images = $apartment_image->image_path;
+              $pos = strpos($additional_images, "http");          
+            ?> 
+              <div class="apartment-image">
+                <?php if ($pos === false) {?>
+
+                <img class="border rounded" src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
+
+                <?php } else {?>
+                <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
+                <?php }?>
+
+
+
+                <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
+                  @csrf
+                  @method("DELETE")
+                  <input class="delete-button btn btn-outline-danger my-3" type="submit" value="Elimina">
+                </form>
+                </div>
+            @endforeach
+          </div>
+          @endif
+
+        </div>
       </div>
-      @endif
 
 
-      <button type="submit" class="btn btn-primary my-5">Salva</button>
+      <button type="submit" class="btn btn-primary my-5">Save</button>
     </form>
   </section>
 </div>
