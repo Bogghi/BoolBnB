@@ -36,12 +36,12 @@
     </section>
 
      {{-- Cities mix --}}
-     <section class="py-5 mb-5 bg-ligth container-fluid">
-        <h2 class="text-center font-xl">Best Cities</h2>
+     <section id="cities" class="py-5 mb-5 bg-ligth container-fluid">
+        <h2 class="text-center">Best Cities</h2>
         <div class="row">
 
             {{-- box cities --}}
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="0">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true">
                 <h3>Parigi</h3>    
                 <form action="{{route('search')}}" method="post">
                     @csrf
@@ -52,7 +52,7 @@
                 </form>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="150">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
                 <h3>Roma</h3> 
                 <form action="{{route('search')}}" method="post">
                     @csrf
@@ -63,7 +63,7 @@
                 </form>             
             </div>
             
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
                 <h3>Londra</h3> 
 
                 <form action="{{route('search')}}" method="post">
@@ -75,7 +75,7 @@
                 </form>        
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="0">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true">
                 <h3>Barcellona</h3>
                 <form action="{{route('search')}}" method="post">
                     @csrf
@@ -86,7 +86,7 @@
                 </form>          
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="150">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
                 <h3>Berlino</h3>  
                 <form action="{{route('search')}}" method="post">
                     @csrf
@@ -97,8 +97,8 @@
                 </form>          
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300">
-                <h2>Vienna</h2>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center my-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
+                <h3>Vienna</h3>
                 <form action="{{route('search')}}" method="post">
                     @csrf
                     @method("POST")
@@ -113,47 +113,47 @@
     </section>
 
     {{-- Developer pics team --}}
-    <section id="developers" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/15/25/galaxies-2604911_960_720.jpg)">
+    <section id="developers">
         <div class="box-ghost ">
         </div>
         <div class="container pt-5">
             <div class="developer-container py-5">
-                <h1 class="text-center text-white mb-4 mt-5">Our Team</h1>
+                <h2 class="text-center text-white mb-4 mt-5">Our Team</h2>
                 <div class="developer d-flex justify-content-center">
 
-                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="0">
+                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true">
                         <a href="https://www.linkedin.com/in/lorenzo-d-amico/">
                             <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHC1dg3x4RwGw/profile-displayphoto-shrink_800_800/0/1606154522135?e=1613001600&v=beta&t=Fq6DEI1on8aJ5yvjqdOeMEPTInquQ7M4-Sf6g5QokAM" alt="Lorenzo">
                         </a>
-                        <h4 class="text-white">Lorenzo</h4>
+                        <h4>Lorenzo</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="150">
+                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
                         <a href="https://www.linkedin.com/in/matteosimoneborghi/">
                             <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQFHvqD8mzSazg/profile-displayphoto-shrink_800_800/0/1556965358340?e=1613001600&v=beta&t=OfUd69bBZwxHTx-Z7z4b6zbR64kS0kbAxBb_Bc-FvpU" alt="Matteo">
                         </a>
-                        <h4 class="text-white">Matteo</h4>
+                        <h4>Matteo</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
                         <a href="https://www.linkedin.com/in/andreacontestabile/">
                             <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQH5nLXiQOM5MQ/profile-displayphoto-shrink_800_800/0/1562578629282?e=1613001600&v=beta&t=WameMQLa_d5aZqGC_DODhCWWiBnMWno1bVMhDJs9rCs" alt="Andrea">
                         </a>
-                        <h4 class="text-white">Andrea</h4>
+                        <h4>Andrea</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="450">
+                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="450" data-aos-once="true">
                         <a href="https://www.linkedin.com/in/danilo-patan%C3%A9/">
                             <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGY6ORkDSHAMQ/profile-displayphoto-shrink_800_800/0/1605979378804?e=1613001600&v=beta&t=UxCDvkF9I28q_Sn1AmmmfqvtxfrXiBnaAbNpoXhvud4" alt="Danilo">
                         </a>
-                        <h4 class="text-white">Danilo</h4>
+                        <h4>Danilo</h4>
                     </div>
 
-                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="pic d-flex flex-column text-center p-3" data-aos="zoom-out-down" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
                         <a href="https://www.linkedin.com/in/gabriele-musumeci-51aa551bb/">
                         <img class="img-responsive img-personalized rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQEX0dlhwkuIgg/profile-displayphoto-shrink_200_200/0/1605545011980?e=1613001600&v=beta&t=THh1-d5d6eHobVi474AIKn6urQNeiiePLXp0Xs9KcSs" alt="Gabriele">
                          </a>
-                        <h4 class="text-white">Gabriele</h4>
+                        <h4>Gabriele</h4>
                     </div>
 
                 </div>

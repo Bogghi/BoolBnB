@@ -3,6 +3,7 @@
 @extends('layouts.guests')
 
 @section('content')
+<div class="section" id="your-apartments">
     <div class="container">
         <h1 class="pl-3 title-pers pt-3">Your Apartments:</h1>
 
@@ -54,4 +55,6 @@
 
 
     </div>
+</div>
+    
 @endsection

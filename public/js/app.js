@@ -42603,16 +42603,14 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
   var options = {
     searchOptions: {
       key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-      language: 'en-GB',
+      language: 'it-IT',
       limit: 5
     },
-    autocompleteOptions: {
-      key: 'sVorgm5GUAIyuOOj6t6WLNHniiKmKUSo',
-      language: 'it-IT'
-    },
     labels: {
-      placeholder: "Dove vuoi andare?"
-    }
+      placeholder: "Where shall we go?"
+    },
+    minNumberOfCharacters: 1,
+    idleTimePress: 0
   };
   var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
   var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
@@ -42625,6 +42623,11 @@ if (window.location.pathname == '/' || window.location.pathname == '/search') {
 }
 
 if (window.location.pathname == '/') {
+  $('input.tt-search-box-input').on('keydown', function (e) {
+    if (e.which == 13) {
+      $('.searchbar form').trigger("submit");
+    }
+  });
   var searchbarOffsetTop = $(".searchbar").offset().top;
   var scrolled = 0;
   $(window).scroll(function () {
@@ -42640,19 +42643,19 @@ if (window.location.pathname == '/') {
 
     if ($(window).scrollTop() > searchbarOffsetTop - 40 && scrolled == 0) {
       scrolled = 1;
-      $(".searchbar").fadeOut(300, function () {
+      $(".searchbar").fadeOut(150, function () {
         $("header .logo").after($(".searchbar"));
         $(".cta").addClass("searchbar-margin");
         $(".searchbar").addClass("searchbar-nav");
-        $(".searchbar").fadeIn(300);
+        $(".searchbar").fadeIn(150);
       });
     } else if ($(window).scrollTop() < searchbarOffsetTop - 40 && scrolled == 1) {
       scrolled = 0;
-      $(".searchbar").fadeOut(300, function () {
+      $(".searchbar").fadeOut(150, function () {
         $("header .jumbo-text").after($(".searchbar"));
         $(".cta").removeClass("searchbar-margin");
         $(".searchbar").removeClass("searchbar-nav");
-        $(".searchbar").fadeIn(300);
+        $(".searchbar").fadeIn(150);
       });
     }
   });
@@ -42804,6 +42807,11 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
   $(".searchbar form").on("submit", function (e) {
     e.preventDefault();
   });
+  $('input.tt-search-box-input').on('keydown', function (e) {
+    if (e.which == 13) {
+      tomtomBoolbBnB();
+    }
+  });
   renderResultsMap();
   $("#more-option").on('click', function () {
     var button = $('.filter-option');
@@ -42904,8 +42912,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Danilo\Desktop\Boolean\progetto-finale\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
