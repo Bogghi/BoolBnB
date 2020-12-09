@@ -11919,67 +11919,99 @@ main #sponsorizations .container-xl .next .fas {
   overflow: hidden;
 }
 
+#show .ml-auto .btn-outline-primary {
+  border-color: #00F087;
+  color: #00F087;
+}
+
+#show .ml-auto .btn-outline-primary:hover {
+  background-color: #00F087;
+  color: white;
+}
+
+#show .ml-auto form .btn-outline-danger {
+  margin-top: 50px;
+}
+
 #show #carousel-show .carousel-item .image-car-person {
   height: 500px;
   background-position: center;
   background-size: cover;
 }
 
-#show .border-pers {
-  border-right: 2px ridge #001533;
-  height: 150px;
+#show .container-info {
+  width: 100%;
+  display: flex;
 }
 
-#show .border-pers p {
+#show .container-info .container-show {
+  width: 65%;
+}
+
+#show .container-info .container-show .row {
+  width: 100%;
+}
+
+#show .container-info .container-show .row .border-pers {
+  border-bottom: 2px ridge #001533;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+#show .container-info .container-show .row .border-pers p {
   height: 80px;
   overflow: auto;
 }
 
-#show .services h2 {
+#show .container-info .container-show .row .services h2 {
   margin-left: 2rem;
 }
 
-#show .services ul {
+#show .container-info .container-show .row .services ul {
   list-style: none;
-  height: 75px;
+  height: 200px;
 }
 
-#show .services ul li {
+#show .container-info .container-show .row .services ul li {
   cursor: default;
 }
 
-#show .services ul li .dot-pers {
+#show .container-info .container-show .row .services ul li .dot-pers {
   color: #001533;
   transition: 0.5s;
 }
 
-#show .services ul li:hover .dot-pers {
+#show .container-info .container-show .row .services ul li:hover .dot-pers {
   color: #00F087;
 }
 
-#show #map-container {
+#show .container-info .container-show .row #map-container {
   width: 100%;
-  height: 75%;
+  height: 500px;
   margin-top: 30px;
 }
 
-#show .message h2 {
+#show .container-info .message {
+  width: 35%;
+}
+
+#show .container-info .message h2 {
+  text-align: center;
   padding-left: 45px;
 }
 
-#show .message ul {
+#show .container-info .message ul {
   list-style: none;
-  height: 400px;
-  overflow: auto;
 }
 
-#show .message ul li {
+#show .container-info .message ul li {
   border: 1px solid #BDBDBD;
   border-radius: 20px;
+  overflow: hidden;
   cursor: pointer;
 }
 
-#show .message ul li .dot-pers {
+#show .container-info .message ul li .dot-pers {
   color: #00F087;
   transition: 0.5s;
   margin-left: 5px;
@@ -11987,61 +12019,115 @@ main #sponsorizations .container-xl .next .fas {
   padding: 0;
 }
 
-#show .message ul li:hover .dot-pers {
+#show .container-info .message ul li:hover .dot-pers {
   color: #001533;
 }
 
-#show .message ul li p {
+#show .container-info .message ul li p {
   margin: 0;
   padding: 0;
   margin-top: 3px;
 }
 
-#show .contatti form {
+#show .container-info .contatti {
+  width: 35%;
+}
+
+#show .container-info .contatti form {
+  background-color: #001533;
+  border-radius: 10px;
   padding: 2.1rem;
+  color: white;
+}
+
+#show .container-info .contatti form .btn-outline-primary {
+  border-color: #00F087;
+  color: #00F087;
+}
+
+#show .container-info .contatti form .btn-outline-primary:hover {
+  background-color: #00F087;
+  color: white;
 }
 
 @media (max-width: 765px) {
-  #show .border-pers {
+  #show .container-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #show .container-info .container-show {
+    width: 100%;
+  }
+
+  #show .container-info .container-show .border-pers {
     border-right: none;
     border-bottom: 2px ridge #001533;
     margin-bottom: 2rem;
   }
 
-  #show .services h2 {
+  #show .container-info .container-show .services h2 {
     text-align: center;
     padding-bottom: 1rem;
   }
 
-  #show .services ul {
+  #show .container-info .container-show .services ul {
     margin-left: -3rem;
-    height: 250px;
+    height: 400px;
+    width: 100%;
   }
 
-  #show .services ul li {
+  #show .container-info .container-show .services ul li {
+    width: 100%;
     padding-bottom: 10px;
-    padding-right: 2rem;
-    padding-left: 30px;
+    padding-right: 1rem;
   }
 
-  #show .col-12 #map-container {
+  #show .container-info .container-show .col-12 #map-container {
     height: 300px;
     margin-bottom: 20px;
   }
 
-  #show .message {
-    margin-left: -30px;
+  #show .container-info .message {
+    width: 100%;
+    margin-left: 0;
   }
 
-  #show .message h2 {
+  #show .container-info .message h2 {
     text-align: center;
     padding-top: 3rem;
-    margin-left: 30px;
+    margin-left: 0px;
   }
 
-  #show .message ul {
+  #show .container-info .message ul {
+    margin-left: 0px;
     height: 100%;
     overflow: none;
+  }
+
+  #show .container-info .message ul li {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #show .container-info .contatti {
+    width: 100%;
+  }
+
+  #show .container-info .contatti .btn {
+    padding: 0;
+    width: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  #show .message ul {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  #show .message ul li {
+    margin-left: -30px;
   }
 }
 

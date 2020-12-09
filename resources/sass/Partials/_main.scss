@@ -215,6 +215,23 @@ main {
       overflow: hidden;
     }
   }
+  .ml-auto {
+    .btn-outline-primary {
+      border-color: $greenbnb;
+      color:$greenbnb;
+      &:hover{
+        background-color: $greenbnb;
+        color: $white;
+        
+      }
+    }
+    form {
+      .btn-outline-danger {
+        margin-top: 50px;
+      }
+    }
+
+  }
 
   #carousel-show {
     .carousel-item {
@@ -225,118 +242,182 @@ main {
       }
     }
   }
-  .border-pers {
-    border-right: 2px ridge $bluebnb;
-    height: 150px;
-    p {
-      height: 80px;
-      overflow: auto;
-    }
-  }
-  .services {
-    h2 {
-      margin-left: $spacer *2 ;
-    }
-
-    ul {
-      list-style: none;
-      height: 75px;
-      li {
-        cursor: default;
-        .dot-pers {
-          color: $bluebnb;
-          transition: 0.5s;
-
-        }
-        &:hover .dot-pers {
-          color: $greenbnb;
-        }
-      }
-    }
-  }
-  #map-container {
+  .container-info {
     width: 100%;
-    height: 75%;
-    margin-top: 30px;
+    display: flex;
+  
+    .container-show{
+      width: 65%;
+      .row {
+        width: 100%;
+      
+        .border-pers {
+          border-bottom: 2px ridge $bluebnb;
+          height: 150px;
+          margin-bottom: 20px;
+          p {
+            height: 80px;
+            overflow: auto;
+          }
+        }
+        .services {
+          h2 {
+            margin-left: $spacer *2 ;
+          }
 
-  }
-  .message {
-    h2{
-      padding-left: 45px;
+          ul {
+            list-style: none;
+            height: 200px;
+            li {
+              cursor: default;
+              .dot-pers {
+                color: $bluebnb;
+                transition: 0.5s;
+
+              }
+              &:hover .dot-pers {
+                color: $greenbnb;
+              }
+            }
+          }
+        }
+        #map-container {
+          width: 100%;
+          height: 500px;
+          margin-top: 30px;
+
+        }
+      }
+
+
     }
-    ul {
-      list-style: none;
-      height: 400px;
-      overflow: auto;
-      li {
-        border: 1px solid $gray;
-        border-radius: 20px ;
-        cursor: pointer;
-        .dot-pers {
-          color: $greenbnb;
-          transition: 0.5s;
-          margin-left: 5px;
-          margin-top: 8px;
-          padding: 0;
+    
+    .message {
+      width: 35%;
+      h2{
+        text-align: center;
+        padding-left: 45px;
+      }
+      ul {
+        list-style: none;
+        li {
+          border: 1px solid $gray;
+          border-radius: 20px ;
+          overflow: hidden;
+          cursor: pointer;
+          .dot-pers {
+            color: $greenbnb;
+            transition: 0.5s;
+            margin-left: 5px;
+            margin-top: 8px;
+            padding: 0;
 
-        }
-        &:hover .dot-pers {
-          color: $bluebnb;
-        }
-        p {
-          margin: 0;
-          padding: 0;
-          margin-top: 3px;
+          }
+          &:hover .dot-pers {
+            color: $bluebnb;
+          }
+          p {
+            margin: 0;
+            padding: 0;
+            margin-top: 3px;
+          }
         }
       }
     }
-  }
 
-  .contatti {
-    form{
-      padding: $spacer * 2.1;
+    .contatti {
+      width: 35%;
+      form{
+        background-color: $bluebnb;
+        border-radius: 10px;
+        padding: $spacer * 2.1;
+        color: $white;
+        .btn-outline-primary {
+          border-color: $greenbnb;
+          color:$greenbnb;
+          &:hover{
+            background-color: $greenbnb;
+            color: $white;
+            
+          }
+        }
+      }
     }
   }
   // MEDIA QUERY
 
   @media (max-width: 765px) {
-    .border-pers {
-      border-right: none;
-      border-bottom: 2px ridge $bluebnb;
-      margin-bottom: $spacer * 2;
-    }
-    .services {
-      h2 {
-        text-align: center;
-        padding-bottom: $spacer * 1;
+    .container-info {
+      display: flex;
+      flex-direction: column;
+    
+      .container-show{
+        width: 100%;
+        .border-pers {
+          border-right: none;
+          border-bottom: 2px ridge $bluebnb;
+          margin-bottom: $spacer * 2;
+        }
+        .services {
+          h2 {
+            text-align: center;
+            padding-bottom: $spacer * 1;
+          }
+          ul{
+            margin-left: - $spacer * 3;
+            height: 400px;
+            width: 100%;
+            li {
+              width: 100%;
+              padding-bottom: 10px;
+              padding-right: $spacer * 1;
+            }
+          }
+
+        }
+        .col-12 {
+          #map-container{
+            height: 300px;
+            margin-bottom: 20px;
+          }
+        }
+
       }
-      ul{
-        margin-left: - $spacer * 3;
-        height: 250px;
-        li {
-          padding-bottom: 10px;
-          padding-right: $spacer * 2;
-          padding-left: 30px;
+      .message {
+        width: 100%;
+        margin-left: 0;
+        h2 {
+          text-align: center;
+          padding-top: $spacer * 3;
+          margin-left: 0px;
+        }
+        ul {
+          margin-left: 0px;
+          height: 100%;
+          overflow: none;
+          li {
+            width: 100%;
+            overflow: hidden;
+          }
         }
       }
-
-    }
-    .col-12 {
-      #map-container{
-        height: 300px;
-        margin-bottom: 20px;
+      .contatti {
+        width: 100%;
+        .btn {
+          padding: 0;
+          width: 50%;
+        }
       }
     }
+  }
+  @media (max-width: 375px) {
     .message {
-      margin-left: -30px;
-      h2 {
-        text-align: center;
-        padding-top: $spacer * 3;
-        margin-left: 30px;
-      }
       ul {
-        height: 100%;
-        overflow: none;
+        margin-left: 0px;
+        width: 100%;
+        li {
+          margin-left: -30px;
+        }
       }
     }
   }
