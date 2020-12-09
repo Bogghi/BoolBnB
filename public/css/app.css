@@ -12056,17 +12056,6 @@ main #developers .developer .custom-social {
   filter: grayscale(100%);
 }
 
-#edit .apartment-images .apartment-image {
-  width: 23%;
-  margin: 20px;
-  height: 400px;
-}
-
-#edit .apartment-images .apartment-image img {
-  width: 100%;
-  height: 100%;
-}
-
 footer {
   border-top: 3px solid #00F087;
   height: 80px;
@@ -12588,6 +12577,19 @@ footer .social-links .social-links-item i:hover {
   cursor: pointer;
 }
 
+.form {
+  border: 2px #BDBDBD solid;
+  box-shadow: 0px 0px 10px #e8e8e8;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 20px 0px;
+}
+
+.form .input-style {
+  border: 2px #001533 solid;
+  border-radius: 15px;
+}
+
 .form .label {
   display: flex;
   align-items: center;
@@ -12665,6 +12667,12 @@ footer .social-links .social-links-item i:hover {
   border-radius: 20px;
   width: 100%;
   transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .browse label span {
+  font-style: italic;
 }
 
 .form .browse label:hover {
@@ -12686,6 +12694,31 @@ footer .social-links .social-links-item i:hover {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.form .apartment-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 2px #001533 solid;
+  border-radius: 20px;
+  padding: 10px 10px 0px 10px;
+}
+
+.form .apartment-images .img {
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 190px;
+  max-height: 100px;
+  overflow: hidden;
+  border: 2px #5a5a5a solid;
+  box-shadow: 3px 3px 20px #f1f1f1;
+}
+
+.form .apartment-images .img img {
+  width: 100%;
+  -o-object-position: top;
+     object-position: top;
 }
 
 #error-500 {
