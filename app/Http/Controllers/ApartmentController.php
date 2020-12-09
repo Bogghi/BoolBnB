@@ -33,7 +33,7 @@ class ApartmentController extends Controller
 
     public function show($id) {
 
-      $apartment = Apartment::find($id);
+      $apartment = Apartment::findOrFail($id);
 
       $owner_id = $apartment->user_id;
 
