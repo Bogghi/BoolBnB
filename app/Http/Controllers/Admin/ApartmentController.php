@@ -148,7 +148,7 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        $apartment = Apartment::find($id);
+        $apartment = Apartment::where('user_id', Auth::id())->where('id', $id)->firstOrFail();
 
         return view("admin.show", ["apartment" => $apartment]);
     }
