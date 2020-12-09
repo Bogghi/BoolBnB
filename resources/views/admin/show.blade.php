@@ -143,24 +143,24 @@
 
       @else
 
-      <div class="col-12 col-md-12 contatti">
+      <div class="contatti">
 
         <form class="padding-pers" action="{{route("message.store", $apartment->id)}}" method="POST">
           @csrf
           @method('POST')
-          <p class="h4 mb-4 ">Contatta il proprietario</p>
+          <p class="h4 mb-4 ">Get in touch</p>
       
-          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Il tuo indirizzo e-mail" value="{{old("email") ?? old("email")}}" required>
+          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value="{{old("email") ?? old("email")}}" required>
           @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <textarea class="form-control rounded-0" name="content" id="content" rows="3" placeholder="Il tuo messaggio..." required style="resize: none;">{{old("content") ?? old("content")}}</textarea>
+          <textarea class="form-control rounded-0" name="content" id="content" rows="3" placeholder="Message..." required style="resize: none;">{{old("content") ?? old("content")}}</textarea>
           @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <button class="btn btn-outline-primary mx-auto mt-4 d-block px-5" type="submit">Invia messaggio</button>
+          <button class="btn btn-outline-primary mx-auto mt-4 d-block" type="submit">Send</button>
 
         </form>
 

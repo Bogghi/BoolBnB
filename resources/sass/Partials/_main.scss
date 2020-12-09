@@ -227,9 +227,10 @@ main {
   }
   .container-info {
     width: 100%;
+    display: flex;
   
     .container-show{
-      width: 50%;
+      width: 65%;
       .row {
         width: 100%;
       
@@ -275,7 +276,7 @@ main {
     }
     
     .message {
-      width: 50%;
+      width: 35%;
       h2{
         padding-left: 45px;
       }
@@ -284,6 +285,7 @@ main {
         li {
           border: 1px solid $gray;
           border-radius: 20px ;
+          overflow: hidden;
           cursor: pointer;
           .dot-pers {
             color: $greenbnb;
@@ -306,57 +308,83 @@ main {
     }
 
     .contatti {
+      width: 35%;
       form{
         padding: $spacer * 2.1;
+        .btn-outline-primary {
+          border-color: $bluebnb;
+          color:$bluebnb;
+          &:hover{
+            background-color: $bluebnb;
+            color: $white;
+            
+          }
+        }
       }
     }
   }
   // MEDIA QUERY
 
   @media (max-width: 765px) {
-    .container-show{
-      .border-pers {
-        border-right: none;
-        border-bottom: 2px ridge $bluebnb;
-        margin-bottom: $spacer * 2;
-      }
-      .services {
-        h2 {
-          text-align: center;
-          padding-bottom: $spacer * 1;
+    .container-info {
+      display: flex;
+      flex-direction: column;
+    
+      .container-show{
+        width: 100%;
+        .border-pers {
+          border-right: none;
+          border-bottom: 2px ridge $bluebnb;
+          margin-bottom: $spacer * 2;
         }
-        ul{
-          margin-left: - $spacer * 3;
-          height: 400px;
-          width: 100%;
-          li {
-            padding-bottom: 10px;
-            padding-right: $spacer * 1;
+        .services {
+          h2 {
+            text-align: center;
+            padding-bottom: $spacer * 1;
+          }
+          ul{
+            margin-left: - $spacer * 3;
+            height: 400px;
+            width: 100%;
+            li {
+              width: 100%;
+              padding-bottom: 10px;
+              padding-right: $spacer * 1;
+            }
+          }
+
+        }
+        .col-12 {
+          #map-container{
+            height: 300px;
+            margin-bottom: 20px;
           }
         }
 
       }
-      .col-12 {
-        #map-container{
-          height: 300px;
-          margin-bottom: 20px;
+      .message {
+        width: 100%;
+        margin-left: 0;
+        h2 {
+          text-align: center;
+          padding-top: $spacer * 3;
+          margin-left: 0px;
+        }
+        ul {
+          margin-left: 0px;
+          height: 100%;
+          overflow: none;
+          li {
+            width: 100%;
+            overflow: hidden;
+          }
         }
       }
-
-    }
-    .message {
-      margin-left: -30px;
-      h2 {
-        text-align: center;
-        padding-top: $spacer * 3;
-        margin-left: 30px;
-      }
-      ul {
-        height: 100%;
-        overflow: none;
-        li {
-          width: 100%;
-          overflow: hidden;
+      .contatti {
+        width: 100%;
+        .btn {
+          padding: 0;
+          width: 50%;
         }
       }
     }
@@ -364,9 +392,11 @@ main {
   @media (max-width: 375px) {
     .message {
       ul {
-        margin-left: 30px;
+        margin-left: 0px;
         width: 100%;
-
+        li {
+          margin-left: -30px;
+        }
       }
     }
   }

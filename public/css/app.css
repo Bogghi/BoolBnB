@@ -11927,10 +11927,11 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .container-info {
   width: 100%;
+  display: flex;
 }
 
 #show .container-info .container-show {
-  width: 50%;
+  width: 65%;
 }
 
 #show .container-info .container-show .row {
@@ -11977,7 +11978,7 @@ main #sponsorizations .container-xl .next .fas {
 }
 
 #show .container-info .message {
-  width: 50%;
+  width: 35%;
 }
 
 #show .container-info .message h2 {
@@ -11991,6 +11992,7 @@ main #sponsorizations .container-xl .next .fas {
 #show .container-info .message ul li {
   border: 1px solid #BDBDBD;
   border-radius: 20px;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -12012,63 +12014,102 @@ main #sponsorizations .container-xl .next .fas {
   margin-top: 3px;
 }
 
+#show .container-info .contatti {
+  width: 35%;
+}
+
 #show .container-info .contatti form {
   padding: 2.1rem;
 }
 
+#show .container-info .contatti form .btn-outline-primary {
+  border-color: #001533;
+  color: #001533;
+}
+
+#show .container-info .contatti form .btn-outline-primary:hover {
+  background-color: #001533;
+  color: white;
+}
+
 @media (max-width: 765px) {
-  #show .container-show .border-pers {
+  #show .container-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #show .container-info .container-show {
+    width: 100%;
+  }
+
+  #show .container-info .container-show .border-pers {
     border-right: none;
     border-bottom: 2px ridge #001533;
     margin-bottom: 2rem;
   }
 
-  #show .container-show .services h2 {
+  #show .container-info .container-show .services h2 {
     text-align: center;
     padding-bottom: 1rem;
   }
 
-  #show .container-show .services ul {
+  #show .container-info .container-show .services ul {
     margin-left: -3rem;
     height: 400px;
     width: 100%;
   }
 
-  #show .container-show .services ul li {
+  #show .container-info .container-show .services ul li {
+    width: 100%;
     padding-bottom: 10px;
     padding-right: 1rem;
   }
 
-  #show .container-show .col-12 #map-container {
+  #show .container-info .container-show .col-12 #map-container {
     height: 300px;
     margin-bottom: 20px;
   }
 
-  #show .message {
-    margin-left: -30px;
+  #show .container-info .message {
+    width: 100%;
+    margin-left: 0;
   }
 
-  #show .message h2 {
+  #show .container-info .message h2 {
     text-align: center;
     padding-top: 3rem;
-    margin-left: 30px;
+    margin-left: 0px;
   }
 
-  #show .message ul {
+  #show .container-info .message ul {
+    margin-left: 0px;
     height: 100%;
     overflow: none;
   }
 
-  #show .message ul li {
+  #show .container-info .message ul li {
     width: 100%;
     overflow: hidden;
+  }
+
+  #show .container-info .contatti {
+    width: 100%;
+  }
+
+  #show .container-info .contatti .btn {
+    padding: 0;
+    width: 50%;
   }
 }
 
 @media (max-width: 375px) {
   #show .message ul {
-    margin-left: 30px;
+    margin-left: 0px;
     width: 100%;
+  }
+
+  #show .message ul li {
+    margin-left: -30px;
   }
 }
 
