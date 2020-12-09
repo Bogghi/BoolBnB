@@ -11932,6 +11932,16 @@ main #sponsorizations .container-xl .next .fas {
   }
 }
 
+#show {
+  background-image: url("/img/pattern-bg.svg");
+}
+
+#show .container {
+  padding: 0 60px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
 #show .apartment-header .ovr-hid {
   max-height: 100px;
   overflow: hidden;
