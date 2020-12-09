@@ -215,6 +215,23 @@ main {
       overflow: hidden;
     }
   }
+  .ml-auto {
+    .btn-outline-primary {
+      border-color: $greenbnb;
+      color:$greenbnb;
+      &:hover{
+        background-color: $greenbnb;
+        color: $white;
+        
+      }
+    }
+    form {
+      .btn-outline-danger {
+        margin-top: 50px;
+      }
+    }
+
+  }
 
   #carousel-show {
     .carousel-item {
@@ -278,6 +295,7 @@ main {
     .message {
       width: 35%;
       h2{
+        text-align: center;
         padding-left: 45px;
       }
       ul {
@@ -310,12 +328,15 @@ main {
     .contatti {
       width: 35%;
       form{
+        background-color: $bluebnb;
+        border-radius: 10px;
         padding: $spacer * 2.1;
+        color: $white;
         .btn-outline-primary {
-          border-color: $bluebnb;
-          color:$bluebnb;
+          border-color: $greenbnb;
+          color:$greenbnb;
           &:hover{
-            background-color: $bluebnb;
+            background-color: $greenbnb;
             color: $white;
             
           }

@@ -11919,6 +11919,20 @@ main #sponsorizations .container-xl .next .fas {
   overflow: hidden;
 }
 
+#show .ml-auto .btn-outline-primary {
+  border-color: #00F087;
+  color: #00F087;
+}
+
+#show .ml-auto .btn-outline-primary:hover {
+  background-color: #00F087;
+  color: white;
+}
+
+#show .ml-auto form .btn-outline-danger {
+  margin-top: 50px;
+}
+
 #show #carousel-show .carousel-item .image-car-person {
   height: 500px;
   background-position: center;
@@ -11982,6 +11996,7 @@ main #sponsorizations .container-xl .next .fas {
 }
 
 #show .container-info .message h2 {
+  text-align: center;
   padding-left: 45px;
 }
 
@@ -12019,16 +12034,19 @@ main #sponsorizations .container-xl .next .fas {
 }
 
 #show .container-info .contatti form {
+  background-color: #001533;
+  border-radius: 10px;
   padding: 2.1rem;
+  color: white;
 }
 
 #show .container-info .contatti form .btn-outline-primary {
-  border-color: #001533;
-  color: #001533;
+  border-color: #00F087;
+  color: #00F087;
 }
 
 #show .container-info .contatti form .btn-outline-primary:hover {
-  background-color: #001533;
+  background-color: #00F087;
   color: white;
 }
 

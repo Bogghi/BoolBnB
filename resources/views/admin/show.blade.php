@@ -18,7 +18,7 @@
           <form action="{{route("admin.apartment.destroy", $apartment->id)}}" method="POST">
             @method("DELETE")
             @csrf
-            <input class="btn btn-outline-danger my-2 ml-2" type="submit" value="Cancella">
+            <input class="btn btn-outline-danger" type="submit" value="Cancella">
           </form>
         </div>
         @endif
@@ -80,7 +80,7 @@
     </div>
     {{-- row carousel  --}}
     {{-- row info --}}
-    <div class="container-info d-flex">
+    <div class="container-info">
       <div class="container-show" >
         <div class="row mb-5">
           <div class="col-12 col-md-12 border-pers">
