@@ -11241,7 +11241,8 @@ header.margin-fixed > .container {
 }
 
 main {
-  min-height: calc(100vh - 404px);
+  position: relative;
+  min-height: calc(100vh - 160px);
 }
 
 main h2 {
@@ -11250,14 +11251,31 @@ main h2 {
 }
 
 main #show,
-main #your-apartments {
+main #your-apartments,
+main #login,
+main #register {
   background-image: url("/img/pattern-bg.svg");
 }
 
 main #show .container,
-main #your-apartments .container {
+main #your-apartments .container,
+main #login .container,
+main #register .container {
+  height: 100%;
   background-color: white;
   padding: 20px 40px 40px;
+}
+
+main #login,
+main #register {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+main #login .container,
+main #register .container {
+  background-color: transparent;
 }
 
 main #sponsorizations {
@@ -11932,16 +11950,6 @@ main #sponsorizations .container-xl .next .fas {
   }
 }
 
-#show {
-  background-image: url("/img/pattern-bg.svg");
-}
-
-#show .container {
-  padding: 0 60px;
-  background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
 #show .apartment-header .ovr-hid {
   max-height: 100px;
   overflow: hidden;
@@ -12279,6 +12287,7 @@ main #sponsorizations .container-xl .next .fas {
 footer {
   border-top: 3px solid #00F087;
   background-color: black;
+  height: 80px;
 }
 
 footer .modal-tr {
