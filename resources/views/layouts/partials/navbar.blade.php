@@ -1,28 +1,15 @@
-<nav class="navbar @if (Route::currentRouteName()  != 'homepage')
-    nav-blue
-@endif navbar-expand-lg">
+<nav class="navbar @if (Route::currentRouteName()  != 'homepage') nav-blue @endif navbar-expand-lg">
   <div class="@if (Route::currentRouteName()  == 'search') container-fluid
-            @else container 
+             @else container 
             @endif">
       {{-- logo --}}
       <div class="logo">
           <a href="{{ route('homepage') }}">
-                    <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
+            <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
           </a>
       </div>
 
-        @if (Route::currentRouteName()  == 'search')
-        <div class="searchbar searchbar-nav">
-            <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
-                @csrf
-                @method("POST")
-                <div id="search-input"></div>
-                <button class="search-btn" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
-        @endif
+       
 
       {{-- hamburger --}}
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -51,6 +38,7 @@
               @endif
 
               @guest
+                  {{-- Rgister & Log --}}
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                   </li>
@@ -60,28 +48,44 @@
                       </li>
                   @endif
               @else
-                  <li class="nav-item zindex">
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex justify-content-end" href="#" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                          {{ Auth::user()->name }}
-                      </a>
+                {{-- User --}}
+                <li class="nav-item zindex">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex justify-content-end" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
 
-                      {{-- dropdown menu --}}
-                      <div class="dropdown-menu mr-5 mb-5 drop-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your apartments</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}
-                          </a>
+                    {{-- dropdown menu --}}
+                    <div class="dropdown-menu drop-right mx-5" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('admin.apartment.index') }}">Your apartments</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
 
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                              @csrf
-                          </form>
-                      </div>
-                  </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
               @endguest
           </ul>
       </div>
+
+      {{-- Search Bar --}}
+      @if (Route::currentRouteName()  == 'search')
+      <div class="searchbar searchbar-nav">
+          <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
+              @csrf
+              @method("POST")
+              <div id="search-input"></div>
+              <button class="search-btn" type="submit">
+                  <i class="fas fa-search"></i>
+              </button>
+          </form>
+      </div>
+      @endif
+
   </div>
 </nav>

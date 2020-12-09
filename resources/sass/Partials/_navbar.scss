@@ -3,14 +3,11 @@
   padding: 10px;
   transition: all 0.4s;
   position: relative;
-  z-index: 5;
-  
+  z-index: 5;  
   &.nav-blue {
     padding: 0 10px;
-    background-color: $bluebnb;
-    
+    background-color: $bluebnb;    
   }  
-
   .logo {
     img#logo {
       height: 40px;
@@ -23,12 +20,10 @@
       width: 20px;
       color: $greenbnb;
     }
-
   }
   
 
   .navbar-nav {
-
     .nav-link {
       font-weight: 700;
       color: white;
@@ -36,14 +31,12 @@
         color: $greenbnb;
       }
     }
-
     .nav-link.blue {
       color: $bluebnb;
       &:hover {
         color: $greenbnb;
       }
     }
-
     .nav-link.btn {
       background-color: $bluebnb;
       color: #fff;
@@ -55,6 +48,7 @@
 
     .dropdown-menu {
       padding: 0;
+      left: auto;
 
       .dropdown-item {
         padding: 10px 1.5rem;
@@ -64,8 +58,7 @@
         margin: 0;
       }
 
-      &.drop-right {
-        transform: translate(15%, 0);
+      &.drop-right {        
         border-color: $greenbnb;        
         
       }

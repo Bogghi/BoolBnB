@@ -11072,6 +11072,7 @@ header.margin-fixed > .container {
 
 .navbar .navbar-nav .dropdown-menu {
   padding: 0;
+  left: auto;
 }
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item {
@@ -11083,7 +11084,6 @@ header.margin-fixed > .container {
 }
 
 .navbar .navbar-nav .dropdown-menu.drop-right {
-  transform: translate(15%, 0);
   border-color: #00F087;
 }
 
