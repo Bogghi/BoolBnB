@@ -85,7 +85,8 @@
         <div class="row mb-5">
           <div class="col-12 col-md-12 mb-5">
             <h2 class="py-2">Description</h2>
-            <p>{{$apartment->description}}</p>
+            <p class="mb-5">{{$apartment->description}}</p>
+            <p>Rooms: <span class="font-weight-bold ml-1 mr-3">{{$apartment->rooms_number}}</span> Beds: <span class="font-weight-bold ml-1 mr-3">{{$apartment->beds_number}}</span> Bathrooms: <span class="font-weight-bold ml-1 mr-3">{{$apartment->bathrooms_number}}</span> m&sup2;: <span class="font-weight-bold ml-1 mr-3">{{$apartment->square_meters}}</span>  </p>
           </div>
           <div class="col-12 col-md-12 services">
             <h2 class="pb-2">Services</h2>
@@ -171,7 +172,7 @@
           @method('POST')
           <p class="h4 mb-4 ">Contact the owner</p>
       
-          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value="{{old("email") ?? old("email")}}" required>
+          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value=@guest " {{old("email") ? old("email") : ''}} " @else{{Auth::user()->email}}" readonly @endguest required>
           @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
