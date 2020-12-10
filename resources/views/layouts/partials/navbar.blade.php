@@ -9,6 +9,19 @@
           </a>
       </div>
 
+      {{-- Search Bar --}}
+      @if (Route::currentRouteName()  == 'search')
+      <div class="searchbar searchbar-nav">
+          <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
+              @csrf
+              @method("POST")
+              <div id="search-input"></div>
+              <button class="search-btn" type="submit">
+                  <i class="fas fa-search"></i>
+              </button>
+          </form>
+      </div>
+      @endif
        
 
       {{-- hamburger --}}
@@ -73,19 +86,7 @@
           </ul>
       </div>
 
-      {{-- Search Bar --}}
-      @if (Route::currentRouteName()  == 'search')
-      <div class="searchbar searchbar-nav py-2 my-2">
-          <form class="form-inline d-flex md-form form-sm form-color mt-2 " action="{{route('search')}}" method="POST" autocomplete="off">
-              @csrf
-              @method("POST")
-              <div id="search-input"></div>
-              <button class="search-btn" type="submit">
-                  <i class="fas fa-search"></i>
-              </button>
-          </form>
-      </div>
-      @endif
+      
 
   </div>
 </nav>
