@@ -42595,7 +42595,23 @@ function createMarker(icon, position, color, popupText) {
     anchor: 'bottom'
   }).setLngLat(position).setPopup(popup).addTo(map);
 } // TomTom utility functions
-// QUI VANNO LE FUNZIONI !!!!!!!!!
+
+
+function visibilitControll() {
+  var visibility = $(".visibility");
+  var input = visibility.find("input");
+  var label = visibility.find("label");
+
+  if (input.is(":checked")) {
+    visibility.removeClass("bg-red");
+    visibility.addClass("bg-green");
+    label.text("Visible");
+  } else {
+    visibility.removeClass("bg-green");
+    visibility.addClass("bg-red");
+    label.text("Invisible");
+  }
+} // QUI VANNO LE FUNZIONI !!!!!!!!!
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 
 
@@ -42847,6 +42863,78 @@ if ($("#map-container").length > 0 && window.location.pathname == '/search') {
   });
 }
 
+if (window.location.pathname.includes("edit") || window.location.pathname.includes("create")) {
+  $(function () {
+    var inputs = $(".label .label-style input");
+
+    var imagesPreview = function imagesPreview(input, placeToInsertImagePreview, fatherImg) {
+      if (input.files) {
+        $("#preview p").remove();
+        var filesAmount = input.files.length;
+
+        for (i = 0; i < filesAmount; i++) {
+          var reader = new FileReader();
+          var template = "<div class='img'></div>";
+
+          reader.onload = function (event) {
+            $($.parseHTML(template)).appendTo(fatherImg);
+            $($.parseHTML("<img>")).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+          };
+
+          reader.readAsDataURL(input.files[i]);
+        }
+      }
+    };
+
+    var coverImage = function coverImage(input, placeToInsertImagePreview) {
+      if (input.files) {
+        // console.log("porcodio");
+        $(".apartment-cover img").remove();
+        $(".apartment-cover p").remove();
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+          $($.parseHTML("<img>")).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    };
+
+    $('#images').on('change', function () {
+      imagesPreview(this, '#preview .img:last-child', '#preview');
+    });
+    $('#cover_image').on('change', function () {
+      coverImage(this, '.apartment-cover');
+    });
+    visibilitControll();
+    inputs.each(function () {
+      if ($(this).is(":checked")) {
+        var label = $(this).parent();
+        label.addClass("active");
+      } else {
+        var label = $(this).parent();
+        label.removeClass("active");
+      }
+    });
+  });
+  $(".visibility input").on('click', function () {
+    visibilitControll();
+  });
+  $(".label-style input").on('click', function () {
+    var label = $(this).parent();
+
+    if ($(this).is(":checked")) {
+      label.addClass('active');
+    } else {
+      label.removeClass('active');
+    }
+  });
+  $(".apartment-images").on('hover', function () {
+    console.log($(this));
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -42912,8 +43000,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

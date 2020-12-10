@@ -12187,103 +12187,6 @@ main #sponsorizations .container-xl .next .fas {
   filter: grayscale(100%);
 }
 
-#edit .apartment-cover {
-  max-width: 50%;
-}
-
-#edit .apartment-cover img {
-  width: 100%;
-  height: 100%;
-}
-
-#edit .apartment-images .apartment-image {
-  width: 23%;
-  margin: 20px;
-  height: 400px;
-}
-
-#edit .apartment-images .apartment-image img {
-  width: 100%;
-  height: 100%;
-}
-
-#edit .apartment-images .apartment-image .pic {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-#edit .apartment-images .apartment-image .pic:not(:last-child) {
-  margin-right: 50px;
-}
-
-#edit .apartment-images .apartment-image .pic .hiden {
-  display: none;
-  color: white;
-}
-
-#edit .apartment-images .apartment-image .pic .footer-img {
-  width: 140px;
-  border: 2px solid #00F087;
-}
-
-#edit .apartment-images .apartment-image .pic .footer-img:hover {
-  filter: grayscale(100%);
-}
-
-#edit .apartment-images .apartment-image .pic .footer-img:hover .hiden {
-  display: block;
-  text-align: center;
-}
-
-#developers {
-  position: relative;
-  min-height: 600px;
-  z-index: 0;
-  background-image: url("/img/developers-bg.jpg");
-  background-size: cover;
-  background-position: bottom;
-}
-
-#developers .box-ghost {
-  position: absolute;
-  z-index: 1;
-  height: 100px;
-  width: 100%;
-  background: white;
-  background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%);
-}
-
-#developers .developer {
-  height: 100%;
-  flex-wrap: wrap;
-}
-
-#developers .developer .pic {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-#developers .developer .pic h4 {
-  color: white;
-  font-weight: 600;
-  transition: color 0.4s;
-}
-
-#developers .developer .pic:hover > h4 {
-  color: #00F087;
-}
-
-#developers .developer .img-personalized {
-  width: 140px;
-  margin-bottom: 15px;
-  border: 2px solid #00F087;
-  transition: filter 0.4s;
-}
-
-#developers .developer .img-personalized:hover {
-  filter: grayscale(100%);
-}
-
 footer {
   border-top: 3px solid #00F087;
   background-color: black;
@@ -12813,6 +12716,224 @@ footer .social-links .social-links-item i:hover {
 .marker-house:hover::after {
   background-color: #00F087;
   cursor: pointer;
+}
+
+.form {
+  border: 2px #BDBDBD solid;
+  box-shadow: 0px 0px 20px #aaa7a9;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 20px 0px;
+}
+
+.form h2 {
+  padding: 10px 0px;
+}
+
+.form .input-style {
+  border: 2px #001533 solid;
+  border-radius: 15px;
+}
+
+.form .label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form .label #primary {
+  padding-right: 10px;
+}
+
+.form .label .label-style {
+  border: 2px #001533 solid;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form .label .label-style input {
+  background-color: #e3342f;
+}
+
+.form .label .label-style:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.form .label .label-style.active {
+  background-color: #001533;
+  color: white;
+}
+
+.form .visibility {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0px 15px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.form .visibility:hover {
+  cursor: pointer;
+}
+
+.form .visibility label {
+  padding: 7px 0px 0px 7px;
+  width: 100%;
+}
+
+.form .visibility label:hover {
+  cursor: pointer;
+}
+
+.form .visibility.bg-red {
+  background-color: #e3342f;
+  border: none;
+  color: white;
+}
+
+.form .visibility.bg-green {
+  background-color: #38c172;
+  border: none;
+  color: white;
+}
+
+.form .browse {
+  display: flex;
+  margin-top: 10px;
+}
+
+.form .browse label {
+  background-color: #fafafa;
+  border: 2px #001533 solid;
+  padding: 5px 15px;
+  border-radius: 20px;
+  width: 100%;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .browse label span {
+  font-style: italic;
+}
+
+.form .browse label:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.form .apartment-cover {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 20px;
+  border: 2px solid #001533;
+  overflow: hidden;
+}
+
+.form .apartment-cover img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.form .apartment-cover p {
+  padding: 5px 20px;
+  font-style: italic;
+}
+
+.form .apartment-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 2px #001533 solid;
+  border-radius: 20px;
+  padding: 10px 10px 0px 10px;
+}
+
+.form .apartment-images [class*=col-] {
+  padding: 0px;
+}
+
+.form .apartment-images .img {
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 190px;
+  max-height: 100px;
+  overflow: hidden;
+  border: 2px #5a5a5a solid;
+  box-shadow: 3px 3px 20px #f1f1f1;
+}
+
+.form .apartment-images .img img {
+  width: 100%;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.form .apartment-images p {
+  font-style: italic;
+}
+
+.form .apartment-images.container-fluid,
+.form .apartment-images.container-sm,
+.form .apartment-images.container-md,
+.form .apartment-images.container-lg,
+.form .apartment-images.container-xl {
+  padding: 0px;
+}
+
+.form .btn-custom {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.form .btn-custom button {
+  background-color: #3490dc;
+  border: 2px white solid;
+  border-radius: 25px;
+  padding: 3px 25px;
+  font-size: 30px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.form .btn-custom button:hover {
+  background-color: #0b61a9;
+}
+
+.form .delete-img {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.form .delete-img .e-img {
+  border: 1px #fafafa solid;
+  box-shadow: 0px 0px 8px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.form .delete-img .e-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.form .delete-img input[type=submit] {
+  margin-top: 10px;
 }
 
 #error-500 {

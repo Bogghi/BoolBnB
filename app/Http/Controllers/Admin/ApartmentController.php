@@ -100,9 +100,9 @@ class ApartmentController extends Controller
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
 
-        if ($request->visibility != null) {
+        if ($request->visibility == null) {
 
-          $apartment->visibility = $data['visibility'];
+          $apartment->visibility = 0;
         }
 
         $apartment->save();
@@ -165,6 +165,7 @@ class ApartmentController extends Controller
 
         $services = Service::all();
         $apartment_images = $apartment->images;
+        // dd($apartment_images);
 
         return view('admin.edit', compact('apartment', 'services', 'apartment_images'));
     }
