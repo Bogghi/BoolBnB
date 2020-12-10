@@ -12635,6 +12635,7 @@ footer .social-links .social-links-item i:hover {
   border-radius: 20px;
   padding: 0px 15px;
   transition: background-color 0.3s, border 0.3s;
+  margin-top: 10px;
 }
 
 .form .visibility:hover {

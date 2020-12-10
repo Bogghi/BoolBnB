@@ -231,11 +231,8 @@ class ApartmentController extends Controller
         $apartment->title = $data['title'];
 
         if ($request->visibility != null) {
-
-          $apartment->visibility = $data['visibility'];
-
+          $apartment->visibility = 0;
         } else {
-
           $apartment->visibility = 1;
         }
 
