@@ -24,25 +24,25 @@
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3 col-xs-12">
           <div class="form-group">
             <label for="rooms_number">Number of rooms</label>
             <input type="number" class="form-control input-style" id="rooms_number" name="rooms_number" min="1" value="{{old("rooms_number") ? old("rooms_number") : $apartment->rooms_number}}" required>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3 col-xs-12">
           <div class="form-group">
             <label for="beds_number">Number of beds</label>
             <input type="number" class="form-control input-style" id="beds_number" name="beds_number" min="1" value="{{old("beds_number") ? old("beds_number") : $apartment->beds_number}}" required>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3 col-xs-12">
           <div class="form-group">
             <label for="bathrooms_number">Number of bathrooms</label>
             <input type="number" class="form-control input-style" id="bathrooms_number" name="bathrooms_number" min="1" value="{{old("bathrooms_number") ? old("bathrooms_number") : $apartment->bathrooms_number}}" required>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3 col-xs-12">
           <div class="form-group">
             <label for="square_meters">Size in square meters</label>
             <input type="number" class="form-control input-style" id="square_meters" name="square_meters" value="{{old("square_meters") ? old("square_meters") : $apartment->square_meters}}" required>
@@ -104,16 +104,16 @@
       @enderror
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-4 col-xs-12">
           <div class="visibility">
-            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value="0" {{ $apartment->visibility == 0 ? "checked" : "" }} hidden>
+            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value=0 {{ $apartment->visibility == 0 ? "" : "checked" }} hidden>
             <label for="visibility">Visible</label>
             @error('visibility')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-xs-12">
           <div class="browse">
             <input type="file" id="cover_image" name="cover_image" accept="image/*" hidden>
             <label for="cover_image">Cover Image</label>
@@ -135,7 +135,7 @@
             <?php }?>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-xs-12">
           <div class="browse">
             <label for="images">Extra images <span>max 5 images</span></label>
             <input type="file" id="images" name="images[]" accept="image/*" multiple hidden>
@@ -170,13 +170,15 @@
                 $additional_images = $apartment_image->image_path;
                 $pos = strpos($additional_images, "http");          
               ?> 
-              <div class="col-4">
+              <div class="col-lg-6 col-md-12">
                 <div class="delete-img">
-                  <?php if ($pos === false) {?>
-                    <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
-                  <?php } else {?>
-                    <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
-                  <?php }?>
+                  <div class="e-img">
+                    <?php if ($pos === false) {?>
+                      <img src="{{asset("storage/" . $apartment_image->image_path)}}" alt="">
+                    <?php } else {?>
+                      <img class="border rounded" src="{{$apartment_image->image_path}}" alt="">
+                    <?php }?>
+                  </div>
                   <form action="{{route("admin.image.destroy", $apartment_image->id)}}" method="POST">
                     @csrf
                     @method("DELETE")

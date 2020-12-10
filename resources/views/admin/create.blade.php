@@ -24,25 +24,25 @@
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="rooms_number">Numero di stanze</label>
             <input type="number" class="form-control input-style" id="rooms_number" name="rooms_number" min="1" value="{{old("rooms_number") ? old("rooms_number") : 1}}" required>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="beds_number">Numeri di posti letto</label>
             <input type="number" class="form-control input-style" id="beds_number" name="beds_number" min="1" value="{{old("beds_number") ? old("beds_number") : 1}}" required>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="bathrooms_number">Numero di bagni</label>
             <input type="number" class="form-control input-style" id="bathrooms_number" name="bathrooms_number" min="1" value="{{old("bathrooms_number") ? old("bathrooms_number") : 1}}" required>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="square_meters">Dimensione in metri quadrati</label>
             <input type="number" class="form-control input-style" id="square_meters" name="square_meters" value="{{old("square_meters") ? old("square_meters") : 1}}" required>
@@ -93,16 +93,16 @@
       @enderror
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="visibility">
-            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value="0" hidden>
+            <input type="checkbox" class="form-controll" id="visibility" name="visibility" hidden checked="" value=1>
             <label for="visibility">Visible</label>
             @error('visibility')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="browse">
             <input type="file" id="cover_image" name="cover_image" accept="image/*" hidden>
             <label for="cover_image">Cover Image</label>
@@ -116,7 +116,7 @@
             <p>None image selected</p>
           </div>
         </div> 
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="browse">
             <label for="images">Extra images <span>max 5 images</span></label>
             <input type="file" id="images" name="images[]" accept="image/*" multiple hidden>

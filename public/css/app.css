@@ -12597,6 +12597,7 @@ footer .social-links .social-links-item i:hover {
 .form .label {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
@@ -12608,6 +12609,7 @@ footer .social-links .social-links-item i:hover {
   border: 2px #001533 solid;
   border-radius: 20px;
   padding: 5px 15px;
+  margin-bottom: 10px;
   background-color: #fafafa;
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s;
@@ -12662,6 +12664,7 @@ footer .social-links .social-links-item i:hover {
 
 .form .browse {
   display: flex;
+  margin-top: 10px;
 }
 
 .form .browse label {
@@ -12771,11 +12774,21 @@ footer .social-links .social-links-item i:hover {
   padding: 10px;
 }
 
-.form .delete-img img {
+.form .delete-img .e-img {
   border: 1px #fafafa solid;
   box-shadow: 0px 0px 8px;
   width: 100%;
   height: 300px;
+  overflow: hidden;
+}
+
+.form .delete-img .e-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .form .delete-img input[type=submit] {
