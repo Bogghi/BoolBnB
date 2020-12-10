@@ -601,8 +601,8 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
     var coverImage = function(input, placeToInsertImagePreview) {
       if (input.files) {
         // console.log("porcodio");
-        $(".apartment-cover img").remove();
-        $(".apartment-cover p").remove();
+        $(".preview-apartment-cover img").remove();
+        $(".preview-apartment-cover p").remove();
 
         var reader = new FileReader();
         reader.onload = function(event) {
@@ -619,7 +619,7 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
     });
 
     $('#cover_image').on('change', function() {
-      coverImage(this, '.apartment-cover');
+      coverImage(this, '.preview-apartment-cover');
     });
 
     visibilitControll();

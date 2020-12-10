@@ -112,7 +112,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <div class="apartment-cover">
+          <div class="preview-apartment-cover">
             <p>None image selected</p>
           </div>
         </div> 
@@ -126,7 +126,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <div class="apartment-images" id="preview">
+          <div class="preview-apartment-images" id="preview">
             <p>None images selected</p>
           </div>
 

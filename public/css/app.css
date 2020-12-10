@@ -13048,7 +13048,7 @@ footer .social-links .social-links-item i:hover {
   cursor: pointer;
 }
 
-.form .apartment-cover {
+.form .preview-apartment-cover {
   width: 100%;
   max-height: 250px;
   border-radius: 20px;
@@ -13056,20 +13056,21 @@ footer .social-links .social-links-item i:hover {
   overflow: hidden;
 }
 
-.form .apartment-cover img {
+.form .preview-apartment-cover img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 100%;
   -o-object-position: center;
      object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.form .apartment-cover p {
+.form .preview-apartment-cover p {
   padding: 5px 20px;
   font-style: italic;
 }
 
-.form .apartment-images {
+.form .preview-apartment-images {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -13078,35 +13079,35 @@ footer .social-links .social-links-item i:hover {
   padding: 10px 10px 0px 10px;
 }
 
-.form .apartment-images [class*=col-] {
+.form .preview-apartment-images [class*=col-] {
   padding: 0px;
 }
 
-.form .apartment-images .img {
+.form .preview-apartment-images .img {
   border-radius: 15px;
   margin-bottom: 10px;
-  max-width: 190px;
-  max-height: 100px;
+  max-width: 100%;
+  max-height: 250px;
   overflow: hidden;
   border: 2px #5a5a5a solid;
   box-shadow: 3px 3px 20px #f1f1f1;
 }
 
-.form .apartment-images .img img {
+.form .preview-apartment-images .img img {
   width: 100%;
   -o-object-position: top;
      object-position: top;
 }
 
-.form .apartment-images p {
+.form .preview-apartment-images p {
   font-style: italic;
 }
 
-.form .apartment-images.container-fluid,
-.form .apartment-images.container-sm,
-.form .apartment-images.container-md,
-.form .apartment-images.container-lg,
-.form .apartment-images.container-xl {
+.form .preview-apartment-images.container-fluid,
+.form .preview-apartment-images.container-sm,
+.form .preview-apartment-images.container-md,
+.form .preview-apartment-images.container-lg,
+.form .preview-apartment-images.container-xl {
   padding: 0px;
 }
 

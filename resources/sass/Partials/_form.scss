@@ -111,7 +111,7 @@
         }
     }
     
-    .apartment-cover {
+    .preview-apartment-cover {
         width: 100%;
         max-height: 250px;
         border-radius: 20px;
@@ -120,8 +120,9 @@
 
         img {
             width: 100%;
-            object-fit: cover;
+            height: 100%;
             object-position: center;
+            object-fit: cover;
         }
 
         p {
@@ -131,7 +132,7 @@
 
     }
 
-    .apartment-images {
+    .preview-apartment-images {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -146,8 +147,8 @@
         .img {
             border-radius: 15px;
             margin-bottom: 10px;
-            max-width: 190px;
-            max-height: 100px;
+            max-width: 100%;
+            max-height: 250px;
             overflow: hidden;
             border: 2px $dark-gray solid; 
             box-shadow: 3px 3px 20px #f1f1f1;

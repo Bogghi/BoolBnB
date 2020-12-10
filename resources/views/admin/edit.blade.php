@@ -127,7 +127,7 @@
           $pos = strpos($image, "http");          
           ?> 
 
-          <div class="apartment-cover">
+          <div class="preview-apartment-cover">
             <?php if ($pos === false) {?>
               <img src="{{asset("storage/" . $apartment->cover_image)}}" alt="">
               <?php } else {?>
@@ -145,7 +145,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <div class="apartment-images" id="preview">
+          <div class="preview-apartment-images" id="preview">
             <p>None images selected</p>
           </div>
 
@@ -158,7 +158,7 @@
     </form>
     
     <h2>Delete your saved images</h2>
-    <div class="apartment-images">
+    <div class="preview-apartment-images">
       <div class="apartment-image container-fluid">
         <div class="row">
           @if ($apartment_images)
