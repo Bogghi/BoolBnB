@@ -42388,11 +42388,12 @@ function renderSponsorized(data) {
       "delay": delay
     };
 
-    if (!data[i].cover_image.includes("placeholder")) {
+    if (data[i].cover_image.includes("http")) {
+      context.asset = false;
+    } else {
       context.asset = true;
     }
 
-    ;
     var html = template(context);
     $(".results-wrapper").append(html);
     delay += 150;
@@ -42428,11 +42429,11 @@ function renderResults(data) {
       "square_meters": apartments[i].square_meters
     }, _defineProperty(_context, "id", apartments[i].id), _defineProperty(_context, "delay", delay), _context);
 
-    if (!apartments[i].cover_image.includes("placeholder")) {
+    if (apartments[i].cover_image.includes("http")) {
+      context.asset = false;
+    } else {
       context.asset = true;
     }
-
-    ;
 
     if (sponsorizedIds.includes(apartments[i].id)) {
       context.sponsorized = true;
@@ -42796,7 +42797,7 @@ $('.single-message').on('click', function () {
       console.log(_error4);
     }
   });
-}); //HORIZONTAL SCROLL HOMEPAGE 
+}); //HORIZONTAL SCROLL HOMEPAGE
 // var winmed = window.matchMedia("(min-width: 1500px)");
 // if (winmed.matches){
 
@@ -43000,8 +43001,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
