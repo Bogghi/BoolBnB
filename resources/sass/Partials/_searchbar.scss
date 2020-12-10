@@ -97,4 +97,10 @@
     flex-grow: 0;
   }
 
+  .searchbar.lg-hidden {
+    @media (max-width:992px) {
+      display: none;
+    }
+  }
+
 

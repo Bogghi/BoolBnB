@@ -3,7 +3,7 @@
              @else container 
             @endif">
       {{-- logo --}}
-      <div class="logo logo col-lg-1 col-md-8 col-sm-4 col-4">
+      <div class="logo">
           <a href="{{ route('homepage') }}">
             <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
           </a>
@@ -11,7 +11,7 @@
 
       {{-- Search Bar --}}
       @if (Route::currentRouteName()  == 'search')
-      <div class="searchbar searchbar-nav">
+      <div class="searchbar searchbar-nav lg-hidden">
           <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
               @csrf
               @method("POST")
@@ -24,28 +24,20 @@
       @endif
        
 
-      {{-- hamburger --}}
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <span class="fas fa-bars navbar-toggler-icon hambu"></span>
-      </button>
-
-      <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
-          <!-- Left Side Of Navbar -->
-          <ul class="navbar-nav mr-auto">
-          </ul>
-
+      <div class="">
+          
           <!-- Right Side Of Navbar -->
-          <ul class="navbar-nav">
+          <ul class="navbar-nav d-flex flex-row">
 
               <!-- Authentication Links  only admin is log-->
               @if (Route::currentRouteName() == 'admin.apartment.index')
-                  <li class="nav-item zindex pl-2">
+                  <li class="nav-item zindex">
                       <a class="nav-link" href="{{ route('admin.apartment.create') }}">Create a new apartment</a>
                   </li>
               @endif
               <!-- Authentication Links  only admin is log-->
               @if (Route::currentRouteName() != 'homepage')
-                  <li class="nav-item zindex pl-2">
+                  <li class="nav-item zindex d-none d-sm-block">
                       <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                   </li>
               @endif

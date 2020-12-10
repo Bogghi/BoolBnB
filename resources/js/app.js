@@ -260,16 +260,16 @@ function createMarker(icon, position, color, popupText) {
 
 // TomTom utility functions
 
-function visibilitControll () {
+function visibilitControll() {
   var visibility = $(".visibility");
   var input = visibility.find("input");
   var label = visibility.find("label");
 
-  if(input.is(":checked")){
+  if (input.is(":checked")) {
     visibility.removeClass("bg-green");
     visibility.addClass("bg-red");
     label.text("Invisible");
-  }else {
+  } else {
     visibility.removeClass("bg-red");
     visibility.addClass("bg-green");
     label.text("Visible");
@@ -278,7 +278,9 @@ function visibilitControll () {
 
 // QUI VANNO LE FUNZIONI !!!!!!!!!
 
-
+if ($(window).width() < 992) {
+  $("img#logo").attr("src", "http://localhost:8000/img/boolbnb-symbol-logo.svg");
+}
 
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 if ((window.location.pathname == '/') || (window.location.pathname == '/search')) {
@@ -337,21 +339,27 @@ if (window.location.pathname == '/') {
 
     if (($(window).scrollTop() > (searchbarOffsetTop - 40)) && scrolled == 0) {
       scrolled = 1;
-      $(".searchbar").fadeOut(150, function () {
-        $("header .logo").after($(".searchbar"));
-        $(".cta").addClass("searchbar-margin");
-        $(".searchbar").addClass("searchbar-nav");
-        $(".searchbar").fadeIn(150);
-      });
+      if ($(window).width() > 992) {
+        $(".searchbar").fadeOut(150, function () {
+          $("header .logo").after($(".searchbar"));
+          $(".cta").addClass("searchbar-margin");
+          $(".searchbar").addClass("searchbar-nav");
+          $(".searchbar").fadeIn(150);
+        });
+      }
+
 
     } else if (($(window).scrollTop() < (searchbarOffsetTop - 40)) && scrolled == 1) {
       scrolled = 0;
-      $(".searchbar").fadeOut(150, function () {
-        $("header .jumbo-text").after($(".searchbar"));
-        $(".cta").removeClass("searchbar-margin");
-        $(".searchbar").removeClass("searchbar-nav");
-        $(".searchbar").fadeIn(150);
-      });
+      if ($(window).width() > 992) {
+        $(".searchbar").fadeOut(150, function () {
+          $("header .jumbo-text").after($(".searchbar"));
+          $(".cta").removeClass("searchbar-margin");
+          $(".searchbar").removeClass("searchbar-nav");
+          $(".searchbar").fadeIn(150);
+        });
+      }
+
     }
   });
 
@@ -574,12 +582,12 @@ if (($("#map-container").length > 0) && (window.location.pathname == '/search'))
 
 
 
-if(window.location.pathname.includes("edit") || window.location.pathname.includes("create")){
+if (window.location.pathname.includes("edit") || window.location.pathname.includes("create")) {
 
   $(function () {
     var inputs = $(".label .label-style input");
 
-    var imagesPreview = function(input, placeToInsertImagePreview, fatherImg) {
+    var imagesPreview = function (input, placeToInsertImagePreview, fatherImg) {
       if (input.files) {
         $("#preview p").remove();
 
@@ -587,7 +595,7 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
         for (i = 0; i < filesAmount; i++) {
           var reader = new FileReader();
           var template = "<div class='img'></div>";
-          reader.onload = function(event) {
+          reader.onload = function (event) {
             $($.parseHTML(template)).appendTo(fatherImg);
             $($.parseHTML("<img>")).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
           }
@@ -598,14 +606,14 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
 
     };
 
-    var coverImage = function(input, placeToInsertImagePreview) {
+    var coverImage = function (input, placeToInsertImagePreview) {
       if (input.files) {
         // console.log("porcodio");
         $(".preview-apartment-cover img").remove();
         $(".preview-apartment-cover p").remove();
 
         var reader = new FileReader();
-        reader.onload = function(event) {
+        reader.onload = function (event) {
           $($.parseHTML("<img>")).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
         }
 
@@ -614,21 +622,21 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
 
     };
 
-    $('#images').on('change', function() {
+    $('#images').on('change', function () {
       imagesPreview(this, '#preview .img:last-child', '#preview');
     });
 
-    $('#cover_image').on('change', function() {
+    $('#cover_image').on('change', function () {
       coverImage(this, '.preview-apartment-cover');
     });
 
     visibilitControll();
 
-    inputs.each(function() {
-      if($(this).is(":checked")){
+    inputs.each(function () {
+      if ($(this).is(":checked")) {
         var label = $(this).parent();
         label.addClass("active");
-      }else {
+      } else {
         var label = $(this).parent();
         label.removeClass("active");
       }
@@ -638,20 +646,20 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
 
   });
 
-  $(".visibility input").on('click',function() {
+  $(".visibility input").on('click', function () {
     visibilitControll();
   });
 
-  $(".label-style input").on('click',function() {
+  $(".label-style input").on('click', function () {
     var label = $(this).parent();
-    if($(this).is(":checked")){
+    if ($(this).is(":checked")) {
       label.addClass('active');
-    }else {
+    } else {
       label.removeClass('active');
     }
   });
 
-  $(".apartment-images").on('hover',function () {
+  $(".apartment-images").on('hover', function () {
     console.log($(this));
   })
 }

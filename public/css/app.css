@@ -11043,13 +11043,8 @@ header.margin-fixed > .container {
   position: relative;
 }
 
-@media (max-width: 992px) {
-  .navbar .position-pers {
-    position: static;
-  }
-}
-
 .navbar .navbar-nav .nav-link {
+  padding: 0 10px;
   font-weight: 700;
   color: white;
 }
@@ -11076,15 +11071,11 @@ header.margin-fixed > .container {
 }
 
 .navbar .navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: -55px;
   padding: 0;
   left: auto;
-  right: -60px;
-}
-
-@media (max-width: 992px) {
-  .navbar .navbar-nav .dropdown-menu {
-    right: 0px;
-  }
 }
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item {
@@ -11280,6 +11271,12 @@ header.margin-fixed > .container {
   flex-grow: 0;
 }
 
+@media (max-width: 992px) {
+  .searchbar.lg-hidden {
+    display: none;
+  }
+}
+
 main {
   min-height: calc(100vh - 160px);
 }
@@ -11298,16 +11295,14 @@ main #developers h2 {
 main #show,
 main #your-apartments,
 main #login,
-main #register,
-main #charts {
+main #register {
   background-image: url("/img/pattern-bg.svg");
 }
 
 main #show .container,
 main #your-apartments .container,
 main #login .container,
-main #register .container,
-main #charts .container {
+main #register .container {
   height: 100%;
   background-color: white;
   padding: 20px 40px 40px;
@@ -12003,11 +11998,6 @@ main #sponsorizations .container-xl .next .fas {
   border-bottom: 1px solid #999;
 }
 
-#show .apartment-header .ovr-hid {
-  max-height: 100px;
-  overflow: hidden;
-}
-
 #show .apartment-header .ovr-hid h1 {
   font-size: 35px;
   font-family: "Raleway", sans-serif;
@@ -12086,6 +12076,7 @@ main #sponsorizations .container-xl .next .fas {
 }
 
 #show .container-info .container-show .row .services ul li .service-icon {
+  flex-shrink: 0;
   width: 35px;
   height: 35px;
   border-radius: 50px;
@@ -12127,6 +12118,7 @@ main #sponsorizations .container-xl .next .fas {
 }
 
 #show .container-info .message ul li span {
+  flex-shrink: 0;
   height: 30px;
   width: 30px;
   background-color: #001533;
@@ -12217,7 +12209,6 @@ main #sponsorizations .container-xl .next .fas {
 
   #show .container-info .container-show .services ul {
     margin-left: -3rem;
-    height: 400px;
     width: 100%;
   }
 }

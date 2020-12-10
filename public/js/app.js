@@ -42613,7 +42613,11 @@ function visibilitControll() {
     label.text("Visible");
   }
 } // QUI VANNO LE FUNZIONI !!!!!!!!!
-// if (window.location.pathname == '/' || window.location.pathname == '/search') {
+
+
+if ($(window).width() < 992) {
+  $("img#logo").attr("src", "http://localhost:8000/img/boolbnb-symbol-logo.svg");
+} // if (window.location.pathname == '/' || window.location.pathname == '/search') {
 
 
 if (window.location.pathname == '/' || window.location.pathname == '/search') {
@@ -42660,20 +42664,26 @@ if (window.location.pathname == '/') {
 
     if ($(window).scrollTop() > searchbarOffsetTop - 40 && scrolled == 0) {
       scrolled = 1;
-      $(".searchbar").fadeOut(150, function () {
-        $("header .logo").after($(".searchbar"));
-        $(".cta").addClass("searchbar-margin");
-        $(".searchbar").addClass("searchbar-nav");
-        $(".searchbar").fadeIn(150);
-      });
+
+      if ($(window).width() > 992) {
+        $(".searchbar").fadeOut(150, function () {
+          $("header .logo").after($(".searchbar"));
+          $(".cta").addClass("searchbar-margin");
+          $(".searchbar").addClass("searchbar-nav");
+          $(".searchbar").fadeIn(150);
+        });
+      }
     } else if ($(window).scrollTop() < searchbarOffsetTop - 40 && scrolled == 1) {
       scrolled = 0;
-      $(".searchbar").fadeOut(150, function () {
-        $("header .jumbo-text").after($(".searchbar"));
-        $(".cta").removeClass("searchbar-margin");
-        $(".searchbar").removeClass("searchbar-nav");
-        $(".searchbar").fadeIn(150);
-      });
+
+      if ($(window).width() > 992) {
+        $(".searchbar").fadeOut(150, function () {
+          $("header .jumbo-text").after($(".searchbar"));
+          $(".cta").removeClass("searchbar-margin");
+          $(".searchbar").removeClass("searchbar-nav");
+          $(".searchbar").fadeIn(150);
+        });
+      }
     }
   });
 } // ------------------------------------------------------------------------------------------------------ //
@@ -43001,8 +43011,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/bogghi/git/boolean-final-project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Seven\Desktop\boolean\esercitazioni\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

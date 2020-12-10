@@ -254,8 +254,7 @@ main {
   
   .apartment-header{
     .ovr-hid{
-      max-height: 100px;
-      overflow: hidden;
+      
       h1 {
         font-size: 35px;
         font-family: "Raleway", sans-serif;
@@ -333,6 +332,7 @@ main {
               cursor: default;
 
               .service-icon {
+                flex-shrink: 0;
                 width: 35px;
                 height: 35px;
                 border-radius: 50px;
@@ -372,6 +372,7 @@ main {
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
           cursor: pointer;
           span {
+            flex-shrink: 0;
             height: 30px;
             width: 30px;
             background-color: $bluebnb;
@@ -459,7 +460,6 @@ main {
           }
           ul{
             margin-left: - $spacer * 3;
-            height: 400px;
             width: 100%;
             @media (max-width:992px) {
               margin-left: 0;
