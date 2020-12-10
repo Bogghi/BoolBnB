@@ -12409,7 +12409,7 @@ main #sponsorizations .container-xl .next .fas {
 footer {
   border-top: 3px solid #00F087;
   background-color: black;
-  height: 80px;
+  height: auto;
 }
 
 footer .modal-tr {
