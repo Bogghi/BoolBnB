@@ -1,163 +1,149 @@
 main {
-  min-height: $main-heigth;
-  margin-top: 80px;
+  min-height: calc(100vh - 160px);
 
-  .jumbo-home {
-    height: 600px;
-    background-image: url("/img/jumbo-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  &.full-height {
+    height: calc(100vh - 160px);
+  }
+  #sponsorizations,
+  #cities,
+  #developers {
 
-    .info-jumbo {
-      padding-top: $spacer * 8;
-
-      h1 {
-        font-weight: 700;
-      }
-
-      .btn-outline-primary {
-        border-color: $white;
-        color: $white;
-
-        &:hover {
-          background-color: $white;
-          color: $black;
-        }
-      }
+    h2 {
+    font-size: 35px;
+    font-weight: 600;
     }
+  }
 
-      .searchbar {
+  #show,
+  #your-apartments,
+  #login,
+  #register {
+    background-image: url('/img/pattern-bg.svg');
+    .container {
+      height: 100%;
+      background-color: $white;
+      padding: 20px 40px 40px;
+    }
+  }
 
-        #search-input {
-          width:100%;
-          color: $white;
+  #login,
+  #register {
+    height: 100%;
+    .container {
+      overflow-y:hidden;
+      background-color: transparent;
+    }
+  }
 
-          .tt-search-box {
-            background: none;
-
-            .tt-search-box-input-container {
-              padding: 10px 20px;
-              border-radius: 50px;
-              background-color: #fff;
-              fill: $greenbnb;
-
-              &:focus {
-                border-color: $greenbnb;
-              }
-
-              input.tt-search-box-input {
-                height: 40px;
-                padding: 3px 12px;
-                font-size: 20px;
-                color: $bluebnb;
-              }
+  #sponsorizations {
+    background-color: $black;
+    .container-fluid {
+      width: 100%;
+      position: relative;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .container-fluid{
+        width: 98% !important;
+        margin: 0px 30px;
+      
+        .sponsored-apartment{
+          width: 350px;
+          height: 200px;
+          margin: 10px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          filter: grayscale(0%);
+          transition: 0.5s;
+          
+          h3 {
+            height: 65px;
+            overflow: hidden;
+            color: $white;
+            visibility: hidden;
+            opacity: 0.1;
+            transition: 0.5s;
+          }
+          a{
+            visibility: hidden;
+            color: $black;
+            opacity: 0.1;
+            background-color: $white;
+            transition: 0.5s;
+            &:hover{
+              color: $white;
+              background-color: $bluebnb;
             }
+          }
+          
+          &:hover h3 {
+            visibility: visible;
+            opacity: 1;
+          }
+          &:hover a {
+            visibility: visible;
+            opacity: 1;
 
-            .tt-search-box-close-icon {
-              fill: $bluebnb;
+          }
+          &:hover {
+            filter: grayscale(100%);
+            background-size: 120%;
+          }
+        }
+        @media  (max-width: 1200px){
+          .container-fluid {
+            overflow: auto;
+            
+            .container.fluid {
 
-              &:hover {
-                fill: $greenbnb;
+            
+              .sponsored-apartment{
+                width: 250px;
               }
             }
           }
         }
-      }
-  }
-
-
-
-  #sponsorizations {
-
-    background-color: #fff;
-
-    h2 {
-      color: $bluebnb;
-      font-weight: 700;
-    }
-
-    .container-fluid {
-      overflow-x: scroll;
-      /* width */
-        &::-webkit-scrollbar {
-          height: 8px;
-        }
-
-        /* Track */
-        &::-webkit-scrollbar-track {
-          background: #fff;
-        }
-
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-          background: $greenbnb;
-          border-radius:10px;
-        }
-
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-          background: $greenbnb;
-        }
-
-      .sponsored-item {
-        margin: 0 10px 20px;
-        border-radius: 5px;
-        height: 160px;
-        width: 240px;
-        background-size: cover;
-        background-position: center;
-
-        img {
-          width: 100%;
-          border-radius: 10px;
-          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        @media  (max-width: 768px){
+          .sponsored-apartment{
+            width: 150px;
+            height: 150px;
+          }
         }
       }
-    }
-
-
-  }
-
-  #developers {
-
-    background-color: $bluebnb;
-    border-bottom: 5px solid #fff;
-    .developer {
-      height: 100%;
-      flex-wrap: wrap;
-
-      .pic {
-
-        margin-top: 30px;
-        padding-bottom: 30px;
-
-        &:not(:last-child) {
-          margin-right: 50px;
-        }
-      }
-
-      .footer-img {
-        width: 140px;
-
-      }
-      .custom-social {
-        color: $greenbnb;
+      .arrow {
+        position: absolute;
         font-size: 40px;
-        background-color: $white;
-        padding: 10px;
-
+        color: $white;
+        cursor: pointer;
+        height: 100px;
       }
+      .prev {
+        top: 30%;
+        left: 1%;
+        .fas {
+          margin-top: 30px;
+        }
+      }
+      .next {
+        top: 30%;
+        right: 1%;
+        .fas {
+          margin-top: 30px;
+        }
+      }
+
     }
+
+
+    
   }
+
+  
 
 }
 
-// homepage main
-
-
 // Search
-
 .search-container {
 
   .row {
@@ -207,13 +193,14 @@ main {
 
 
   }
-}
+  }
 
-#sponsorized {
+  #sponsorized {
   position: absolute;
   top: 0;
   left: 10px;
-}
+  }
+
 
 //search end
 
@@ -222,8 +209,6 @@ main {
   color: $bluebnb !important;
 }
 #admin-index{
-
-
     .rounded-personalized {
       border-radius: 25px;
       max-height: 150px;
@@ -254,3 +239,420 @@ main {
       }
     }
 }
+//Index Admin
+
+// Show admin 
+#show {
+
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    color: #999;
+    border-bottom: 1px solid #999;
+
+  }
+  
+  .apartment-header{
+    .ovr-hid{
+      
+      h1 {
+        font-size: 35px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+      }
+      
+    }
+    #address {
+      display: inline-block;
+      padding: 3px 8px;
+      background-color: $bluebnb;
+      color: #fff;
+      border-radius: 30px;
+      font-style:italic;
+    }
+  }
+
+    .btn-outline-primary {
+      border-color: $greenbnb;
+      color:$greenbnb;
+      &:hover{
+        background-color: $greenbnb;
+        color: $white;
+        
+      }
+    }
+    form {
+      .btn-outline-danger {
+        margin-top: 50px;
+      }
+    }
+
+  
+
+  #carousel-show {
+    border-radius: 20px;
+    overflow: hidden;
+    .carousel-item {
+      .image-car-person {
+        height: 500px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+  .container-info {
+    width: 100%;
+    
+  
+    .container-show{
+      width: 65%;
+
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+
+      .row {
+        width: 100%;
+      
+        .border-pers {
+          border-bottom: 2px ridge $bluebnb;
+          height: 150px;
+          margin-bottom: 20px;
+          p {
+            height: 80px;
+            overflow: auto;
+          }
+        }
+        .services {
+
+          ul {
+            list-style: none;
+
+            li {
+              cursor: default;
+
+              .service-icon {
+                flex-shrink: 0;
+                width: 35px;
+                height: 35px;
+                border-radius: 50px;
+                background-color: $greenbnb;
+                color: #fff;
+              }
+              .dot-pers {
+                color: $bluebnb;
+                transition: 0.5s;
+
+              }
+              &:hover .dot-pers {
+                color: $greenbnb;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+    
+    .message {
+      width: 35%;
+
+      @media (max-width:992px) {
+        width: 100%;
+      }
+      ul {
+        max-height: 400px;
+        list-style: none;
+        overflow-y: scroll;
+        li {
+          border: 1px solid $gray;
+          border-radius: 20px ;
+          overflow: hidden;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+          cursor: pointer;
+          span {
+            flex-shrink: 0;
+            height: 30px;
+            width: 30px;
+            background-color: $bluebnb;
+            color: #fff;
+            border-radius: 30px;
+            transition: background-color 0.4s;
+
+            
+          }
+          .dot-pers {
+            color: $greenbnb;
+            transition: 0.5s;
+            margin-left: 5px;
+            margin-top: 8px;
+            padding: 0;
+
+          }
+          &:hover {
+            background-color: #b6ffdf;
+          }
+          &:hover span {
+            background-color: $greenbnb;
+          }
+          &:hover .dot-pers {
+            color: $bluebnb;
+          }
+          p {
+            margin: 0;
+            padding: 0;
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+
+    .contatti {
+      width: 35%;
+      @media (max-width:992px) {
+        
+          width: 100%;
+        
+      }
+      form{
+        background-color: $bluebnb;
+        border-radius: 10px;
+        padding: $spacer * 2.1;
+        color: $white;
+        .btn-outline-primary {
+          border-color: $greenbnb;
+          color:$greenbnb;
+          &:hover{
+            background-color: $greenbnb;
+            color: $white;
+            
+          }
+        }
+      }
+    }
+  }
+
+  #map-container {
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+
+  }
+  // MEDIA QUERY
+
+  @media (max-width: 765px) {
+    .container-info {
+      display: flex;
+      flex-direction: column;
+    
+      .container-show{
+        width: 100%;
+        .border-pers {
+          border-right: none;
+          border-bottom: 2px ridge $bluebnb;
+          margin-bottom: $spacer * 2;
+        }
+        .services {
+          h2 {
+            text-align: center;
+            padding-bottom: $spacer * 1;
+          }
+          ul{
+            margin-left: - $spacer * 3;
+            width: 100%;
+            @media (max-width:992px) {
+              margin-left: 0;
+            }
+            li {
+              width: 100%;
+              padding-bottom: 10px;
+              padding-right: $spacer * 1;
+            }
+          }
+
+        }
+        .col-12 {
+          #map-container{
+            height: 300px;
+            margin-bottom: 20px;
+          }
+        }
+
+      }
+      .message {
+        width: 100%;
+        margin-left: 0;
+        h2 {
+          text-align: center;
+          padding-top: $spacer * 3;
+          margin-left: 0px;
+        }
+        ul {
+          margin-left: 0px;
+          height: 100%;
+          overflow: none;
+          li {
+            width: 100%;
+            overflow: hidden;
+          }
+        }
+      }
+      .contatti {
+        width: 100%;
+        .btn {
+          padding: 0;
+          width: 50%;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .message {
+      ul {
+        margin-left: 0px;
+        width: 100%;
+        li {
+          margin-left: -30px;
+        }
+      }
+    }
+  }
+}
+
+// Cities Mix
+
+#cities {
+
+  h3 {
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
+}
+
+
+.box-cities{
+  border: 1px solid $greenbnb;
+  border-radius: 10px;
+  width: 90%;
+  height: 280px; 
+  background-size: cover;
+  transition: 1s;
+  background-position: center;
+  &:hover{
+    filter: grayscale(100%);    
+  }
+}
+
+// edit
+
+// edit 
+
+#edit {
+  .apartment-cover {
+    max-width: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .apartment-images{
+    .apartment-image {
+      width: 23%;
+      margin: 20px;
+      height: 400px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+    .pic {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+      .hiden{
+        display: none;
+        color: white;
+      }
+      
+      .footer-img {
+        width: 140px;
+        border:2px solid #00F087;
+        &:hover{
+          filter: grayscale(100%);
+          .hiden{
+            display: block;       
+            text-align: center;
+          }
+        }       
+        
+      }
+    
+    }
+  }
+  }
+  // Developer pics team
+
+}
+#developers {
+  position: relative;
+  min-height: 600px;
+  z-index: 0;
+  background-image: url('/img/developers-bg.jpg');
+  background-size: cover;
+  background-position: bottom;
+  
+
+  .box-ghost{
+    position:absolute;
+    z-index: 1;
+    height: 100px;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%)
+    
+  }
+  
+  .developer {
+    height: 100%;
+    flex-wrap: wrap; 
+
+    .pic {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      // &:not(:last-child) {
+      //   margin-right: 50px;
+      // }
+
+      h4 {
+        color: $white;
+        font-weight: 600;
+        transition: color 0.4s;
+      }
+
+      &:hover > h4 {
+        color: $greenbnb;
+      }
+    }
+        
+    
+    .img-personalized {
+      width: 140px;
+      margin-bottom: 15px;
+      border:2px solid #00F087;
+      transition: filter 0.4s;
+
+      &:hover{
+        filter: grayscale(100%);          
+      }
+      
+    }
+    
+  }
+
+}
+// Developer pics team end

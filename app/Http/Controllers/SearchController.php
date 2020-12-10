@@ -35,9 +35,10 @@ class SearchController extends Controller
                       ) + sin( radians(?) ) *
                       sin( radians( latitude ) ) )
                     ) AS distance", [$latitude, $longitude, $latitude])
-       ->having("distance", "<", $radius)
-       ->orderBy("distance",'asc')
-       ->get();
+        ->having("distance", "<", $radius)
+        ->where("visibility", 1)
+        ->orderBy("distance",'asc')
+        ->get();
 
       // Searching for all sponsorized apartments.
       $all_apartments = Apartment::selectRaw("*,
@@ -47,8 +48,9 @@ class SearchController extends Controller
                ) + sin( radians(?) ) *
                sin( radians( latitude ) ) )
              ) AS distance", [$latitude, $longitude, $latitude])
-      ->orderBy("distance",'asc')
-      ->get();
+        ->where("visibility", 1)
+        ->orderBy("distance",'asc')
+        ->get();
 
 
       $all_sponsorized_apartments = [];
@@ -64,6 +66,6 @@ class SearchController extends Controller
       }
 
 
-      return view("guests.search", compact("apartments", "all_sponsorized_apartments", "services"));
+      return view("guests.search", compact("apartments", "all_sponsorized_apartments", "services", "address"));
     }
 }

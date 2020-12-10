@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Lato);@import url(https://fonts.googleapis.com/css?family=Raleway);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -10957,8 +10957,7 @@ body {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-  background: #00F087;
-  border-radius: 10px;
+  background: #001533;
 }
 
 /* Handle on hover */
@@ -10967,120 +10966,361 @@ body {
   background: #00F087;
 }
 
-header {
-  height: 80px;
-  border-bottom: 2px solid #001533;
+header.jumbo-header {
+  height: 700px;
+  background-image: url("/img/jumbo-bg.png");
+  background-size: cover;
+  background-position: 100% 100%;
+  color: #fff;
 }
 
-header .navbar {
-  height: 100%;
+header.jumbo-header .jumbo-content {
+  padding-top: 100px;
 }
 
-header .navbar .logo img#logo {
-  width: 200px;
+header.jumbo-header .jumbo-content .jumbo-text {
+  margin-bottom: 40px;
 }
 
-header .navbar .navbar-nav .nav-link {
-  font-weight: 700;
-  color: #001533;
+header.jumbo-header .jumbo-content .jumbo-text,
+header.jumbo-header .jumbo-content .cta {
+  align-items: center;
+  padding-left: 10px;
 }
 
-header .navbar .navbar-nav .nav-link:hover {
+header.jumbo-header .jumbo-content .cta {
+  display: flex;
+  margin-top: 20px;
+}
+
+header.jumbo-header .jumbo-content .cta p {
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+header.jumbo-header .jumbo-content .cta a {
   color: #00F087;
 }
 
-header .navbar .navbar-nav .nav-link.btn {
+header.jumbo-header .jumbo-content .cta.searchbar-margin {
+  margin-top: 122px;
+}
+
+header.margin-fixed > .container {
+  padding-top: 80px;
+}
+
+.navbar {
+  height: 80px;
+  padding: 0;
+  padding: 10px;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 5;
+}
+
+.navbar.nav-blue {
+  padding: 0 10px;
+  background-color: #001533;
+}
+
+.navbar .logo img#logo {
+  height: 40px;
+}
+
+.navbar .navbar-toggler {
+  background-color: white;
+}
+
+.navbar .navbar-toggler .hambu {
+  height: 20px;
+  width: 20px;
+  color: #00F087;
+}
+
+.navbar .position-pers {
+  position: relative;
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 0 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #00F087;
+}
+
+.navbar .navbar-nav .nav-link.blue {
+  color: #001533;
+}
+
+.navbar .navbar-nav .nav-link.blue:hover {
+  color: #00F087;
+}
+
+.navbar .navbar-nav .nav-link.btn {
   background-color: #001533;
   color: #fff;
 }
 
-header .navbar .navbar-nav .nav-link.btn:hover {
+.navbar .navbar-nav .nav-link.btn:hover {
   background-color: #00F087;
 }
 
-header .drop-right {
-  transform: translate(0px, 5px);
+.navbar .navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: -55px;
+  padding: 0;
   left: auto;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+  padding: 10px 1.5rem;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-divider {
+  margin: 0;
+}
+
+.navbar .navbar-nav .dropdown-menu.drop-right {
   border-color: #00F087;
 }
 
-header .zindex {
+.navbar .navbar-nav .dropdown-menu .dropdown-item.active,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:active {
+  color: #00F087;
+  font-weight: 400;
+  background-color: #00F087;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus {
+  color: #fff;
+  font-weight: 700;
+  background-color: #00F087;
+}
+
+.navbar .navbar-nav .dropdown-menu::before {
+  position: absolute;
+  top: -8px;
+  right: 24px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #00F087;
+}
+
+.navbar.navbar-fixed {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.navbar-fixed .searchbar {
+    display: none;
+  }
+}
+
+.navbar.navbar-fixed .navbar-toggler {
+  background-color: #001533;
+}
+
+.navbar.navbar-fixed .navbar-toggler .hambu {
+  color: white;
+}
+
+.navbar.navbar-fixed .navbar-nav .nav-link {
+  color: #001533;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.4em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  margin-top: 10px;
+}
+
+.zindex {
   z-index: 1;
 }
 
-main {
-  min-height: calc(100vh - 404px);
-  margin-top: 80px;
+.searchbar {
+  z-index: 2;
+  position: relative;
+  margin-top: 20px;
+  height: 62px;
 }
 
-main .jumbo-home {
-  height: 600px;
-  background-image: url("/img/jumbo-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-main .jumbo-home .info-jumbo {
-  padding-top: 8rem;
-}
-
-main .jumbo-home .info-jumbo h1 {
-  font-weight: 700;
-}
-
-main .jumbo-home .info-jumbo .btn-outline-primary {
-  border-color: white;
+.searchbar #search-input {
+  position: relative;
   color: white;
 }
 
-main .jumbo-home .info-jumbo .btn-outline-primary:hover {
-  background-color: white;
-  color: #000;
-}
-
-main .jumbo-home .searchbar #search-input {
-  width: 100%;
-  color: white;
-}
-
-main .jumbo-home .searchbar #search-input .tt-search-box {
+.searchbar #search-input .tt-search-box {
+  margin-top: 0;
   background: none;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container {
   padding: 10px 20px;
   border-radius: 50px;
   background-color: #fff;
   fill: #00F087;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container:focus {
   border-color: #00F087;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input {
   height: 40px;
-  padding: 3px 12px;
+  width: 250px;
+  padding: 3px 80px 3px 12px;
   font-size: 20px;
   color: #001533;
+  transition: width 0.6s;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-close-icon {
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
+  width: 45px;
+  border-radius: 50%;
+}
+
+@media (max-width: 550px) {
+  .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
+    width: 45px;
+    border-radius: 50px;
+  }
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
+  width: 450px;
+}
+
+@media (max-width: 550px) {
+  .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
+    width: 250px;
+  }
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::-moz-placeholder {
+  font-size: 16px;
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::placeholder {
+  font-size: 16px;
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-input-container div:first-child {
+  display: none;
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-input-container .tt-search-box-close-icon {
+  display: none;
+}
+
+.searchbar #search-input .tt-search-box .tt-search-box-close-icon {
   fill: #001533;
 }
 
-main .jumbo-home .searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
+.searchbar #search-input .tt-search-box .tt-search-box-close-icon:hover {
   fill: #00F087;
 }
 
-main #sponsorizations {
-  background-color: #fff;
+.searchbar #search-input .tt-search-box .tt-search-box-result-list-container {
+  border-radius: 20px;
 }
 
-main #sponsorizations h2 {
-  color: #001533;
-  font-weight: 700;
+.searchbar .search-btn {
+  position: absolute;
+  right: 10px;
+  display: block;
+  height: 45px;
+  width: 80px;
+  background-color: #00F087;
+  color: #fff;
+  outline: 0;
+  border: none;
+  border-radius: 30px;
+  transition: width 0.6s, border-radius 0.6s;
+}
+
+.searchbar.searchbar-nav,
+.searchbar.searchbar-nav form {
+  margin-top: 0 !important;
+}
+
+.collapse.navbar-collapse {
+  flex-grow: 0;
+}
+
+@media (max-width: 992px) {
+  .searchbar.lg-hidden {
+    display: none;
+  }
+}
+
+main {
+  min-height: calc(100vh - 160px);
+}
+
+main.full-height {
+  height: calc(100vh - 160px);
+}
+
+main #sponsorizations h2,
+main #cities h2,
+main #developers h2 {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+main #show,
+main #your-apartments,
+main #login,
+main #register {
+  background-image: url("/img/pattern-bg.svg");
+}
+
+main #show .container,
+main #your-apartments .container,
+main #login .container,
+main #register .container {
+  height: 100%;
+  background-color: white;
+  padding: 20px 40px 40px;
+}
+
+main #login,
+main #register {
+  height: 100%;
+}
+
+main #login .container,
+main #register .container {
+  overflow-y: hidden;
+  background-color: transparent;
+}
+
+main #sponsorizations {
+  background-color: black;
 }
 
 main #sponsorizations .container-fluid,
@@ -11088,97 +11328,591 @@ main #sponsorizations .container-sm,
 main #sponsorizations .container-md,
 main #sponsorizations .container-lg,
 main #sponsorizations .container-xl {
-  overflow-x: scroll;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar,
-main #sponsorizations .container-sm::-webkit-scrollbar,
-main #sponsorizations .container-md::-webkit-scrollbar,
-main #sponsorizations .container-lg::-webkit-scrollbar,
-main #sponsorizations .container-xl::-webkit-scrollbar {
-  height: 8px;
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar-track,
-main #sponsorizations .container-sm::-webkit-scrollbar-track,
-main #sponsorizations .container-md::-webkit-scrollbar-track,
-main #sponsorizations .container-lg::-webkit-scrollbar-track,
-main #sponsorizations .container-xl::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar-thumb,
-main #sponsorizations .container-sm::-webkit-scrollbar-thumb,
-main #sponsorizations .container-md::-webkit-scrollbar-thumb,
-main #sponsorizations .container-lg::-webkit-scrollbar-thumb,
-main #sponsorizations .container-xl::-webkit-scrollbar-thumb {
-  background: #00F087;
-  border-radius: 10px;
-}
-
-main #sponsorizations .container-fluid::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-sm::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-md::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-lg::-webkit-scrollbar-thumb:hover,
-main #sponsorizations .container-xl::-webkit-scrollbar-thumb:hover {
-  background: #00F087;
-}
-
-main #sponsorizations .container-fluid .sponsored-item,
-main #sponsorizations .container-sm .sponsored-item,
-main #sponsorizations .container-md .sponsored-item,
-main #sponsorizations .container-lg .sponsored-item,
-main #sponsorizations .container-xl .sponsored-item {
-  margin: 0 10px 20px;
-  border-radius: 5px;
-  height: 160px;
-  width: 240px;
-  background-size: cover;
-  background-position: center;
-}
-
-main #sponsorizations .container-fluid .sponsored-item img,
-main #sponsorizations .container-sm .sponsored-item img,
-main #sponsorizations .container-md .sponsored-item img,
-main #sponsorizations .container-lg .sponsored-item img,
-main #sponsorizations .container-xl .sponsored-item img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-main #developers {
-  background-color: #001533;
-  border-bottom: 5px solid #fff;
+main #sponsorizations .container-fluid .container-fluid,
+main #sponsorizations .container-sm .container-fluid,
+main #sponsorizations .container-md .container-fluid,
+main #sponsorizations .container-lg .container-fluid,
+main #sponsorizations .container-xl .container-fluid,
+main #sponsorizations .container-fluid .container-sm,
+main #sponsorizations .container-sm .container-sm,
+main #sponsorizations .container-md .container-sm,
+main #sponsorizations .container-lg .container-sm,
+main #sponsorizations .container-xl .container-sm,
+main #sponsorizations .container-fluid .container-md,
+main #sponsorizations .container-sm .container-md,
+main #sponsorizations .container-md .container-md,
+main #sponsorizations .container-lg .container-md,
+main #sponsorizations .container-xl .container-md,
+main #sponsorizations .container-fluid .container-lg,
+main #sponsorizations .container-sm .container-lg,
+main #sponsorizations .container-md .container-lg,
+main #sponsorizations .container-lg .container-lg,
+main #sponsorizations .container-xl .container-lg,
+main #sponsorizations .container-fluid .container-xl,
+main #sponsorizations .container-sm .container-xl,
+main #sponsorizations .container-md .container-xl,
+main #sponsorizations .container-lg .container-xl,
+main #sponsorizations .container-xl .container-xl {
+  width: 98% !important;
+  margin: 0px 30px;
 }
 
-main #developers .developer {
-  height: 100%;
-  flex-wrap: wrap;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment,
+main #sponsorizations .container-md .container-sm .sponsored-apartment,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment,
+main #sponsorizations .container-sm .container-md .sponsored-apartment,
+main #sponsorizations .container-md .container-md .sponsored-apartment,
+main #sponsorizations .container-lg .container-md .sponsored-apartment,
+main #sponsorizations .container-xl .container-md .sponsored-apartment,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment,
+main #sponsorizations .container-md .container-lg .sponsored-apartment,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment,
+main #sponsorizations .container-md .container-xl .sponsored-apartment,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment {
+  width: 350px;
+  height: 200px;
+  margin: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: grayscale(0%);
+  transition: 0.5s;
 }
 
-main #developers .developer .pic {
-  margin-top: 30px;
-  padding-bottom: 30px;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-md .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-md .sponsored-apartment h3,
+main #sponsorizations .container-md .container-md .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-md .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-md .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-md .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment h3,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-md .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment h3,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment h3 {
+  height: 65px;
+  overflow: hidden;
+  color: white;
+  visibility: hidden;
+  opacity: 0.1;
+  transition: 0.5s;
 }
 
-main #developers .developer .pic:not(:last-child) {
-  margin-right: 50px;
-}
-
-main #developers .developer .footer-img {
-  width: 140px;
-}
-
-main #developers .developer .custom-social {
-  color: #00F087;
-  font-size: 40px;
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment a,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment a,
+main #sponsorizations .container-md .container-sm .sponsored-apartment a,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment a,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment a,
+main #sponsorizations .container-sm .container-md .sponsored-apartment a,
+main #sponsorizations .container-md .container-md .sponsored-apartment a,
+main #sponsorizations .container-lg .container-md .sponsored-apartment a,
+main #sponsorizations .container-xl .container-md .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment a,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment a,
+main #sponsorizations .container-md .container-lg .sponsored-apartment a,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment a,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment a,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment a,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment a,
+main #sponsorizations .container-md .container-xl .sponsored-apartment a,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment a,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment a {
+  visibility: hidden;
+  color: black;
+  opacity: 0.1;
   background-color: white;
-  padding: 10px;
+  transition: 0.5s;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-md .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment a:hover,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-md .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment a:hover,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment a:hover {
+  color: white;
+  background-color: #001533;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover h3,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover h3,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover h3 {
+  visibility: visible;
+  opacity: 1;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover a,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover a,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover a {
+  visibility: visible;
+  opacity: 1;
+}
+
+main #sponsorizations .container-fluid .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-fluid .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-sm .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-md .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-lg .sponsored-apartment:hover,
+main #sponsorizations .container-fluid .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-sm .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-md .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-lg .container-xl .sponsored-apartment:hover,
+main #sponsorizations .container-xl .container-xl .sponsored-apartment:hover {
+  filter: grayscale(100%);
+  background-size: 120%;
+}
+
+@media (max-width: 1200px) {
+  main #sponsorizations .container-fluid .container-fluid .container-fluid,
+  main #sponsorizations .container-sm .container-fluid .container-fluid,
+  main #sponsorizations .container-md .container-fluid .container-fluid,
+  main #sponsorizations .container-lg .container-fluid .container-fluid,
+  main #sponsorizations .container-xl .container-fluid .container-fluid,
+  main #sponsorizations .container-fluid .container-sm .container-fluid,
+  main #sponsorizations .container-sm .container-sm .container-fluid,
+  main #sponsorizations .container-md .container-sm .container-fluid,
+  main #sponsorizations .container-lg .container-sm .container-fluid,
+  main #sponsorizations .container-xl .container-sm .container-fluid,
+  main #sponsorizations .container-fluid .container-md .container-fluid,
+  main #sponsorizations .container-sm .container-md .container-fluid,
+  main #sponsorizations .container-md .container-md .container-fluid,
+  main #sponsorizations .container-lg .container-md .container-fluid,
+  main #sponsorizations .container-xl .container-md .container-fluid,
+  main #sponsorizations .container-fluid .container-lg .container-fluid,
+  main #sponsorizations .container-sm .container-lg .container-fluid,
+  main #sponsorizations .container-md .container-lg .container-fluid,
+  main #sponsorizations .container-lg .container-lg .container-fluid,
+  main #sponsorizations .container-xl .container-lg .container-fluid,
+  main #sponsorizations .container-fluid .container-xl .container-fluid,
+  main #sponsorizations .container-sm .container-xl .container-fluid,
+  main #sponsorizations .container-md .container-xl .container-fluid,
+  main #sponsorizations .container-lg .container-xl .container-fluid,
+  main #sponsorizations .container-xl .container-xl .container-fluid,
+  main #sponsorizations .container-fluid .container-fluid .container-sm,
+  main #sponsorizations .container-sm .container-fluid .container-sm,
+  main #sponsorizations .container-md .container-fluid .container-sm,
+  main #sponsorizations .container-lg .container-fluid .container-sm,
+  main #sponsorizations .container-xl .container-fluid .container-sm,
+  main #sponsorizations .container-fluid .container-sm .container-sm,
+  main #sponsorizations .container-sm .container-sm .container-sm,
+  main #sponsorizations .container-md .container-sm .container-sm,
+  main #sponsorizations .container-lg .container-sm .container-sm,
+  main #sponsorizations .container-xl .container-sm .container-sm,
+  main #sponsorizations .container-fluid .container-md .container-sm,
+  main #sponsorizations .container-sm .container-md .container-sm,
+  main #sponsorizations .container-md .container-md .container-sm,
+  main #sponsorizations .container-lg .container-md .container-sm,
+  main #sponsorizations .container-xl .container-md .container-sm,
+  main #sponsorizations .container-fluid .container-lg .container-sm,
+  main #sponsorizations .container-sm .container-lg .container-sm,
+  main #sponsorizations .container-md .container-lg .container-sm,
+  main #sponsorizations .container-lg .container-lg .container-sm,
+  main #sponsorizations .container-xl .container-lg .container-sm,
+  main #sponsorizations .container-fluid .container-xl .container-sm,
+  main #sponsorizations .container-sm .container-xl .container-sm,
+  main #sponsorizations .container-md .container-xl .container-sm,
+  main #sponsorizations .container-lg .container-xl .container-sm,
+  main #sponsorizations .container-xl .container-xl .container-sm,
+  main #sponsorizations .container-fluid .container-fluid .container-md,
+  main #sponsorizations .container-sm .container-fluid .container-md,
+  main #sponsorizations .container-md .container-fluid .container-md,
+  main #sponsorizations .container-lg .container-fluid .container-md,
+  main #sponsorizations .container-xl .container-fluid .container-md,
+  main #sponsorizations .container-fluid .container-sm .container-md,
+  main #sponsorizations .container-sm .container-sm .container-md,
+  main #sponsorizations .container-md .container-sm .container-md,
+  main #sponsorizations .container-lg .container-sm .container-md,
+  main #sponsorizations .container-xl .container-sm .container-md,
+  main #sponsorizations .container-fluid .container-md .container-md,
+  main #sponsorizations .container-sm .container-md .container-md,
+  main #sponsorizations .container-md .container-md .container-md,
+  main #sponsorizations .container-lg .container-md .container-md,
+  main #sponsorizations .container-xl .container-md .container-md,
+  main #sponsorizations .container-fluid .container-lg .container-md,
+  main #sponsorizations .container-sm .container-lg .container-md,
+  main #sponsorizations .container-md .container-lg .container-md,
+  main #sponsorizations .container-lg .container-lg .container-md,
+  main #sponsorizations .container-xl .container-lg .container-md,
+  main #sponsorizations .container-fluid .container-xl .container-md,
+  main #sponsorizations .container-sm .container-xl .container-md,
+  main #sponsorizations .container-md .container-xl .container-md,
+  main #sponsorizations .container-lg .container-xl .container-md,
+  main #sponsorizations .container-xl .container-xl .container-md,
+  main #sponsorizations .container-fluid .container-fluid .container-lg,
+  main #sponsorizations .container-sm .container-fluid .container-lg,
+  main #sponsorizations .container-md .container-fluid .container-lg,
+  main #sponsorizations .container-lg .container-fluid .container-lg,
+  main #sponsorizations .container-xl .container-fluid .container-lg,
+  main #sponsorizations .container-fluid .container-sm .container-lg,
+  main #sponsorizations .container-sm .container-sm .container-lg,
+  main #sponsorizations .container-md .container-sm .container-lg,
+  main #sponsorizations .container-lg .container-sm .container-lg,
+  main #sponsorizations .container-xl .container-sm .container-lg,
+  main #sponsorizations .container-fluid .container-md .container-lg,
+  main #sponsorizations .container-sm .container-md .container-lg,
+  main #sponsorizations .container-md .container-md .container-lg,
+  main #sponsorizations .container-lg .container-md .container-lg,
+  main #sponsorizations .container-xl .container-md .container-lg,
+  main #sponsorizations .container-fluid .container-lg .container-lg,
+  main #sponsorizations .container-sm .container-lg .container-lg,
+  main #sponsorizations .container-md .container-lg .container-lg,
+  main #sponsorizations .container-lg .container-lg .container-lg,
+  main #sponsorizations .container-xl .container-lg .container-lg,
+  main #sponsorizations .container-fluid .container-xl .container-lg,
+  main #sponsorizations .container-sm .container-xl .container-lg,
+  main #sponsorizations .container-md .container-xl .container-lg,
+  main #sponsorizations .container-lg .container-xl .container-lg,
+  main #sponsorizations .container-xl .container-xl .container-lg,
+  main #sponsorizations .container-fluid .container-fluid .container-xl,
+  main #sponsorizations .container-sm .container-fluid .container-xl,
+  main #sponsorizations .container-md .container-fluid .container-xl,
+  main #sponsorizations .container-lg .container-fluid .container-xl,
+  main #sponsorizations .container-xl .container-fluid .container-xl,
+  main #sponsorizations .container-fluid .container-sm .container-xl,
+  main #sponsorizations .container-sm .container-sm .container-xl,
+  main #sponsorizations .container-md .container-sm .container-xl,
+  main #sponsorizations .container-lg .container-sm .container-xl,
+  main #sponsorizations .container-xl .container-sm .container-xl,
+  main #sponsorizations .container-fluid .container-md .container-xl,
+  main #sponsorizations .container-sm .container-md .container-xl,
+  main #sponsorizations .container-md .container-md .container-xl,
+  main #sponsorizations .container-lg .container-md .container-xl,
+  main #sponsorizations .container-xl .container-md .container-xl,
+  main #sponsorizations .container-fluid .container-lg .container-xl,
+  main #sponsorizations .container-sm .container-lg .container-xl,
+  main #sponsorizations .container-md .container-lg .container-xl,
+  main #sponsorizations .container-lg .container-lg .container-xl,
+  main #sponsorizations .container-xl .container-lg .container-xl,
+  main #sponsorizations .container-fluid .container-xl .container-xl,
+  main #sponsorizations .container-sm .container-xl .container-xl,
+  main #sponsorizations .container-md .container-xl .container-xl,
+  main #sponsorizations .container-lg .container-xl .container-xl,
+  main #sponsorizations .container-xl .container-xl .container-xl {
+    overflow: auto;
+  }
+
+  main #sponsorizations .container-fluid .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-fluid .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-sm .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-md .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-lg .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .container-xl .container.fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .container-xl .container.fluid .sponsored-apartment {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  main #sponsorizations .container-fluid .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-sm .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-md .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-lg .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-xl .container-fluid .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-sm .sponsored-apartment,
+  main #sponsorizations .container-sm .container-sm .sponsored-apartment,
+  main #sponsorizations .container-md .container-sm .sponsored-apartment,
+  main #sponsorizations .container-lg .container-sm .sponsored-apartment,
+  main #sponsorizations .container-xl .container-sm .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-md .sponsored-apartment,
+  main #sponsorizations .container-sm .container-md .sponsored-apartment,
+  main #sponsorizations .container-md .container-md .sponsored-apartment,
+  main #sponsorizations .container-lg .container-md .sponsored-apartment,
+  main #sponsorizations .container-xl .container-md .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-lg .sponsored-apartment,
+  main #sponsorizations .container-sm .container-lg .sponsored-apartment,
+  main #sponsorizations .container-md .container-lg .sponsored-apartment,
+  main #sponsorizations .container-lg .container-lg .sponsored-apartment,
+  main #sponsorizations .container-xl .container-lg .sponsored-apartment,
+  main #sponsorizations .container-fluid .container-xl .sponsored-apartment,
+  main #sponsorizations .container-sm .container-xl .sponsored-apartment,
+  main #sponsorizations .container-md .container-xl .sponsored-apartment,
+  main #sponsorizations .container-lg .container-xl .sponsored-apartment,
+  main #sponsorizations .container-xl .container-xl .sponsored-apartment {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+main #sponsorizations .container-fluid .arrow,
+main #sponsorizations .container-sm .arrow,
+main #sponsorizations .container-md .arrow,
+main #sponsorizations .container-lg .arrow,
+main #sponsorizations .container-xl .arrow {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  height: 100px;
+}
+
+main #sponsorizations .container-fluid .prev,
+main #sponsorizations .container-sm .prev,
+main #sponsorizations .container-md .prev,
+main #sponsorizations .container-lg .prev,
+main #sponsorizations .container-xl .prev {
+  top: 30%;
+  left: 1%;
+}
+
+main #sponsorizations .container-fluid .prev .fas,
+main #sponsorizations .container-sm .prev .fas,
+main #sponsorizations .container-md .prev .fas,
+main #sponsorizations .container-lg .prev .fas,
+main #sponsorizations .container-xl .prev .fas {
+  margin-top: 30px;
+}
+
+main #sponsorizations .container-fluid .next,
+main #sponsorizations .container-sm .next,
+main #sponsorizations .container-md .next,
+main #sponsorizations .container-lg .next,
+main #sponsorizations .container-xl .next {
+  top: 30%;
+  right: 1%;
+}
+
+main #sponsorizations .container-fluid .next .fas,
+main #sponsorizations .container-sm .next .fas,
+main #sponsorizations .container-md .next .fas,
+main #sponsorizations .container-lg .next .fas,
+main #sponsorizations .container-xl .next .fas {
+  margin-top: 30px;
 }
 
 .search-container .row .list-apartment {
@@ -11257,9 +11991,416 @@ main #developers .developer .custom-social {
   }
 }
 
+#show h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+  color: #999;
+  border-bottom: 1px solid #999;
+}
+
+#show .apartment-header .ovr-hid h1 {
+  font-size: 35px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+#show .apartment-header #address {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #001533;
+  color: #fff;
+  border-radius: 30px;
+  font-style: italic;
+}
+
+#show .btn-outline-primary {
+  border-color: #00F087;
+  color: #00F087;
+}
+
+#show .btn-outline-primary:hover {
+  background-color: #00F087;
+  color: white;
+}
+
+#show form .btn-outline-danger {
+  margin-top: 50px;
+}
+
+#show #carousel-show {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#show #carousel-show .carousel-item .image-car-person {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+#show .container-info {
+  width: 100%;
+}
+
+#show .container-info .container-show {
+  width: 65%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .container-show {
+    width: 100%;
+  }
+}
+
+#show .container-info .container-show .row {
+  width: 100%;
+}
+
+#show .container-info .container-show .row .border-pers {
+  border-bottom: 2px ridge #001533;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+#show .container-info .container-show .row .border-pers p {
+  height: 80px;
+  overflow: auto;
+}
+
+#show .container-info .container-show .row .services ul {
+  list-style: none;
+}
+
+#show .container-info .container-show .row .services ul li {
+  cursor: default;
+}
+
+#show .container-info .container-show .row .services ul li .service-icon {
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: #00F087;
+  color: #fff;
+}
+
+#show .container-info .container-show .row .services ul li .dot-pers {
+  color: #001533;
+  transition: 0.5s;
+}
+
+#show .container-info .container-show .row .services ul li:hover .dot-pers {
+  color: #00F087;
+}
+
+#show .container-info .message {
+  width: 35%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .message {
+    width: 100%;
+  }
+}
+
+#show .container-info .message ul {
+  max-height: 400px;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+#show .container-info .message ul li {
+  border: 1px solid #BDBDBD;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#show .container-info .message ul li span {
+  flex-shrink: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #001533;
+  color: #fff;
+  border-radius: 30px;
+  transition: background-color 0.4s;
+}
+
+#show .container-info .message ul li .dot-pers {
+  color: #00F087;
+  transition: 0.5s;
+  margin-left: 5px;
+  margin-top: 8px;
+  padding: 0;
+}
+
+#show .container-info .message ul li:hover {
+  background-color: #b6ffdf;
+}
+
+#show .container-info .message ul li:hover span {
+  background-color: #00F087;
+}
+
+#show .container-info .message ul li:hover .dot-pers {
+  color: #001533;
+}
+
+#show .container-info .message ul li p {
+  margin: 0;
+  padding: 0;
+  margin-top: 3px;
+}
+
+#show .container-info .contatti {
+  width: 35%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .contatti {
+    width: 100%;
+  }
+}
+
+#show .container-info .contatti form {
+  background-color: #001533;
+  border-radius: 10px;
+  padding: 2.1rem;
+  color: white;
+}
+
+#show .container-info .contatti form .btn-outline-primary {
+  border-color: #00F087;
+  color: #00F087;
+}
+
+#show .container-info .contatti form .btn-outline-primary:hover {
+  background-color: #00F087;
+  color: white;
+}
+
+#show #map-container {
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+}
+
+@media (max-width: 765px) {
+  #show .container-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #show .container-info .container-show {
+    width: 100%;
+  }
+
+  #show .container-info .container-show .border-pers {
+    border-right: none;
+    border-bottom: 2px ridge #001533;
+    margin-bottom: 2rem;
+  }
+
+  #show .container-info .container-show .services h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  #show .container-info .container-show .services ul {
+    margin-left: -3rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 765px) and (max-width: 992px) {
+  #show .container-info .container-show .services ul {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 765px) {
+  #show .container-info .container-show .services ul li {
+    width: 100%;
+    padding-bottom: 10px;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 765px) {
+  #show .container-info .container-show .col-12 #map-container {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 765px) {
+  #show .container-info .message {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #show .container-info .message h2 {
+    text-align: center;
+    padding-top: 3rem;
+    margin-left: 0px;
+  }
+
+  #show .container-info .message ul {
+    margin-left: 0px;
+    height: 100%;
+    overflow: none;
+  }
+
+  #show .container-info .message ul li {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 765px) {
+  #show .container-info .contatti {
+    width: 100%;
+  }
+
+  #show .container-info .contatti .btn {
+    padding: 0;
+    width: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  #show .message ul {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  #show .message ul li {
+    margin-left: -30px;
+  }
+}
+
+#cities h3 {
+  font-size: 40px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+.box-cities {
+  border: 1px solid #00F087;
+  border-radius: 10px;
+  width: 90%;
+  height: 280px;
+  background-size: cover;
+  transition: 1s;
+  background-position: center;
+}
+
+.box-cities:hover {
+  filter: grayscale(100%);
+}
+
+#edit .apartment-cover {
+  max-width: 50%;
+}
+
+#edit .apartment-cover img {
+  width: 100%;
+  height: 100%;
+}
+
+#edit .apartment-images .apartment-image {
+  width: 23%;
+  margin: 20px;
+  height: 400px;
+}
+
+#edit .apartment-images .apartment-image img {
+  width: 100%;
+  height: 100%;
+}
+
+#edit .apartment-images .apartment-image .pic {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+#edit .apartment-images .apartment-image .pic:not(:last-child) {
+  margin-right: 50px;
+}
+
+#edit .apartment-images .apartment-image .pic .hiden {
+  display: none;
+  color: white;
+}
+
+#edit .apartment-images .apartment-image .pic .footer-img {
+  width: 140px;
+  border: 2px solid #00F087;
+}
+
+#edit .apartment-images .apartment-image .pic .footer-img:hover {
+  filter: grayscale(100%);
+}
+
+#edit .apartment-images .apartment-image .pic .footer-img:hover .hiden {
+  display: block;
+  text-align: center;
+}
+
+#developers {
+  position: relative;
+  min-height: 600px;
+  z-index: 0;
+  background-image: url("/img/developers-bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+#developers .box-ghost {
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  background: white;
+  background: linear-gradient(180deg, white 0%, 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+#developers .developer {
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+#developers .developer .pic {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+#developers .developer .pic h4 {
+  color: white;
+  font-weight: 600;
+  transition: color 0.4s;
+}
+
+#developers .developer .pic:hover > h4 {
+  color: #00F087;
+}
+
+#developers .developer .img-personalized {
+  width: 140px;
+  margin-bottom: 15px;
+  border: 2px solid #00F087;
+  transition: filter 0.4s;
+}
+
+#developers .developer .img-personalized:hover {
+  filter: grayscale(100%);
+}
+
 footer {
   border-top: 3px solid #00F087;
-  height: 80px;
+  background-color: black;
+  height: auto;
 }
 
 footer .modal-tr {
@@ -11400,22 +12541,286 @@ footer .social-links .social-links-item i:hover {
   }
 }
 
-#search-results {
-  height: calc(100vh - 80px);
+.result .row [class*=col] {
+  padding: 0px;
 }
 
-#search-results .searchbar {
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 270px;
-  padding: 10px;
+.result .filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  padding: 10px 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  background-color: white;
+}
+
+.result .filter h6 {
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.result .filter a {
+  white-space: nowrap;
+  color: white;
+  background-color: #001533;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 40px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.result .filter a:hover {
+  background-color: #00F087;
+  cursor: pointer;
+  color: white;
+}
+
+.result .filter-option {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(-100%);
+  margin-top: 0px;
+  transition: transform 0.5s, margin-top 0.5s;
+}
+
+.result .filter-option.active {
+  transform: translateY(0%);
+  margin-top: 56px;
+}
+
+@media screen and (max-width: 367px) {
+  .result .filter-option.active {
+    margin-top: 68.4px;
+  }
+}
+
+.result .filter-option .static-options {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  padding-bottom: 10px;
+  padding-top: 3px;
+  color: #001533;
+}
+
+.result .filter-option .static-options .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.result .filter-option .static-options .content:first-child {
+  padding: 0px 0px 0px 20px;
+}
+
+.result .filter-option .static-options .content:last-child {
+  padding: 0px 20px 0px 0px;
+}
+
+.result .filter-option .static-options .content input {
+  border-radius: 40px;
+  text-align: center;
+  background-color: #fafafa;
+  transition: background-color 0.2s;
+}
+
+.result .filter-option .static-options .content input:hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
+}
+
+.result .filter-option .label-options {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.result .filter-option .label-options span {
+  min-width: 100px;
+  text-align: center;
+  background-color: #fafafa;
+  border: 1px #001533 solid;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 40px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.result .filter-option .label-options span:hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
+}
+
+.result .filter-option .label-options span.active {
+  border: none;
+  background-color: #00F087;
+  color: white;
+}
+
+.result .results-wrapper {
+  margin-top: 56px;
+  border-right: 1px solid #001533;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px - 80px);
+}
+
+@media screen and (max-width: 444px) {
+  .result .results-wrapper {
+    margin-top: 87.6px;
+  }
+}
+
+.result .results-wrapper .apartment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 10px 20px;
+  margin: 0px;
+}
+
+.result .results-wrapper .apartment-card.selected {
+  background-color: #b6ffdf;
+}
+
+.result .results-wrapper .apartment-card .image-wrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.result .results-wrapper .apartment-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper .main .title {
+  overflow: hidden;
+  color: #001533;
+  max-height: 48px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper .main .title h5 {
+  font-weight: 900;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper .main .address {
+  margin-top: 10px;
+  max-height: 48px;
+  font-style: italic;
+  overflow: hidden;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper ul {
+  display: flex;
+  align-items: flex-end;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper ul li {
+  margin: 0 5px;
+}
+
+.result .results-wrapper .apartment-card .info-wrapper ul li strong {
+  color: #001533;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper {
+  height: 100%;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper.space-between {
+  justify-content: space-between;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper.flex-end {
+  justify-content: flex-end;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper .badge {
+  background-color: #00F087;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper .btn-details {
+  text-align: center;
+  text-decoration: none;
+  color: #001533;
+  font-weight: 600;
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid #001533;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  width: 114px;
+}
+
+.result .results-wrapper .apartment-card .button-wrapper .btn-details:hover {
   background-color: #001533;
   color: #fff;
-  font-weight: 700;
 }
 
-#search-results .list-apartment {
-  height: calc(100vh - 350px);
+@media screen and (max-width: 576px) {
+  .result .results-wrapper .apartment-card {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .result .results-wrapper .apartment-card .image-wrapper {
+    width: 100%;
+  }
+
+  .result .results-wrapper .apartment-card .info-wrapper {
+    padding: 0px;
+  }
+
+  .result .results-wrapper .apartment-card .info-wrapper .main h5 {
+    margin: 20px 0px;
+  }
+
+  .result .results-wrapper .apartment-card .button-wrapper {
+    width: 100%;
+    flex-direction: row;
+  }
 }
 
 .charts .content {
@@ -11452,5 +12857,380 @@ footer .social-links .social-links-item i:hover {
 .charts .content .stats-box canvas {
   width: 100%;
   padding: 5px;
+}
+
+.marker-icon {
+  background-position: center;
+  background-size: 22px 22px;
+  border-radius: 50%;
+  height: 22px;
+  left: 4px;
+  position: absolute;
+  text-align: center;
+  top: 3px;
+  transform: rotate(45deg);
+  width: 22px;
+}
+
+.marker {
+  height: 30px;
+  width: 30px;
+}
+
+.marker-content {
+  background: #c30b82;
+  border-radius: 50% 50% 50% 0;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.marker-content::before {
+  background: #ffffff;
+  border-radius: 50%;
+  content: "";
+  height: 24px;
+  margin: 3px 0 0 3px;
+  position: absolute;
+  width: 24px;
+}
+
+.marker-house {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.marker-house::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  content: "";
+  background-image: url("/img/home-solid-white.svg");
+  background-color: #001533;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: 53% 55%;
+  transform: rotate(-45deg);
+  border-radius: 50% 50% 50% 0;
+  border: 2px solid #00F087;
+}
+
+.marker-house:hover::after {
+  background-color: #00F087;
+  cursor: pointer;
+}
+
+.form {
+  border: 2px #BDBDBD solid;
+  box-shadow: 0px 0px 20px #aaa7a9;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 20px 0px;
+}
+
+.form h2 {
+  padding: 10px 0px;
+}
+
+.form .input-style {
+  border: 2px #001533 solid;
+  border-radius: 15px;
+}
+
+.form .label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form .label #primary {
+  padding-right: 10px;
+}
+
+.form .label .label-style {
+  border: 2px #001533 solid;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form .label .label-style input {
+  background-color: #e3342f;
+}
+
+.form .label .label-style:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.form .label .label-style.active {
+  background-color: #001533;
+  color: white;
+}
+
+.form .visibility {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0px 15px;
+  transition: background-color 0.3s, border 0.3s;
+  margin-top: 10px;
+}
+
+.form .visibility:hover {
+  cursor: pointer;
+}
+
+.form .visibility label {
+  padding: 7px 0px 0px 7px;
+  width: 100%;
+}
+
+.form .visibility label:hover {
+  cursor: pointer;
+}
+
+.form .visibility.bg-red {
+  background-color: #e3342f;
+  border: none;
+  color: white;
+}
+
+.form .visibility.bg-green {
+  background-color: #005825;
+  border: none;
+  color: white;
+}
+
+.form .browse {
+  display: flex;
+  margin-top: 10px;
+}
+
+.form .browse label {
+  background-color: #fafafa;
+  border: 2px #001533 solid;
+  padding: 5px 15px;
+  border-radius: 20px;
+  width: 100%;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .browse label span {
+  font-style: italic;
+}
+
+.form .browse label:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.form .preview-apartment-cover {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 20px;
+  border: 2px solid #001533;
+  overflow: hidden;
+}
+
+.form .preview-apartment-cover img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.form .preview-apartment-cover p {
+  padding: 5px 20px;
+  font-style: italic;
+}
+
+.form .preview-apartment-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 2px #001533 solid;
+  border-radius: 20px;
+  padding: 10px 10px 0px 10px;
+}
+
+.form .preview-apartment-images [class*=col-] {
+  padding: 0px;
+}
+
+.form .preview-apartment-images .img {
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  border: 2px #5a5a5a solid;
+  box-shadow: 3px 3px 20px #f1f1f1;
+}
+
+.form .preview-apartment-images .img img {
+  width: 100%;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.form .preview-apartment-images p {
+  font-style: italic;
+}
+
+.form .preview-apartment-images.container-fluid,
+.form .preview-apartment-images.container-sm,
+.form .preview-apartment-images.container-md,
+.form .preview-apartment-images.container-lg,
+.form .preview-apartment-images.container-xl {
+  padding: 0px;
+}
+
+.form .btn-custom {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.form .btn-custom button {
+  background-color: #3490dc;
+  border: 2px white solid;
+  border-radius: 25px;
+  padding: 3px 25px;
+  font-size: 30px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.form .btn-custom button:hover {
+  background-color: #0b61a9;
+}
+
+.form .delete-img {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.form .delete-img .e-img {
+  border: 1px #fafafa solid;
+  box-shadow: 0px 0px 8px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.form .delete-img .e-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.form .delete-img input[type=submit] {
+  margin-top: 10px;
+}
+
+#error-500 {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(#111, #333, #111);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #eee;
+  position: relative;
+}
+
+#error-500 .message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#error-500 .message h1,
+#error-500 .message h2,
+#error-500 .message h3 {
+  margin: 0;
+  line-height: 0.8;
+}
+
+#error-500 .message h2,
+#error-500 .message h3 {
+  font-weight: 300;
+  color: white;
+}
+
+#error-500 .message h1 {
+  font-weight: 700;
+  color: #00F087;
+  font-size: 8em;
+}
+
+#error-500 .message h2 {
+  margin: 30px 0;
+}
+
+#error-500 .message h3 {
+  font-size: 2.5em;
+}
+
+#error-500 .message h4 {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+#error-500 .message a {
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 15px;
+  font-size: 1.25em;
+  transition: all 0.15s ease;
+  border-radius: 3px;
+}
+
+#error-500 .message a:hover {
+  background: #00F087;
+  border: 2px solid #00F087;
+  color: #111;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#auth .color-pers {
+  background-color: #001533;
+  color: white;
+  font-size: 20px;
+}
+
+#auth .card-body .form-group .btn-primary {
+  background-color: white;
+  color: black;
+  border: 1px solid #001533;
+}
+
+#auth .card-body .form-group .btn-primary:hover {
+  background-color: #001533;
+  color: white;
 }
 

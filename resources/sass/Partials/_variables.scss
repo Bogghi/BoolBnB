@@ -9,26 +9,34 @@ $main-heigth: calc(100vh - 404px);
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$font-cities: 900;
 
 // Colors
 $blue: #3490dc;
+$dark-blue: #0b61a9;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
 $red: #e3342f;
-$orange: #f6993f;
+$orange: #c78100;
 $yellow: #ffed4a;
-$green: #38c172;
+$green: #005825;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $white: white;
 $gray: #BDBDBD;
 $dark-gray: #5a5a5a;
+$medium-gray: #e8e8e8;
+$ligth-gray: #fafafa;
+$black: black;
 
 // Boolbnb Colors 
 $bluebnb: #001533;
 $greenbnb: #00F087;
 
+
+
 //sponsorization size
 $btn-size: 80%;
 $btn-smarphone-size: 100%;
+$result-wrapper-heigth: calc(100vh - 56px - 80px);

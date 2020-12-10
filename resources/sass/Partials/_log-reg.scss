@@ -1,0 +1,21 @@
+#auth {
+    .color-pers {
+        background-color: $bluebnb;
+        color: $white;
+        font-size: 20px ;
+    }
+    .card-body {
+        .form-group {
+                .btn-primary{
+                    background-color: $white;
+                    color: $black;
+                    border: 1px solid $bluebnb;
+                    &:hover{
+                        background-color: $bluebnb ;
+                        color: $white;
+                    }
+                }
+            
+        }
+    }
+}

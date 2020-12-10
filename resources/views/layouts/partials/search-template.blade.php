@@ -1,33 +1,50 @@
 <script id="search-result-template" type="text/x-handlebars-template">
-    <div class="d-flex flex-column">
-        <div class="d-flex border rounded container-apartment">
-            @{{#if asset}}
-            <div class="search-image">
-                <img class="border rounded" width="180px" height="180px" src="http://localhost:8000/storage/@{{cover_image}}" alt="cover">
-            </div>
-            @{{else}}
-            <div class="search-image">
-                <img class="border rounded" width="180px" height="180px" src="@{{cover_image}}" alt="cover">
-            </div>
-            @{{/if}}
-                        
-            <div class="info-apartment d-flex flex-column">
 
-                <h5 class="text-center">@{{title}}</h5>
-                <p class="pl-2 info-text">@{{description}}</p>
-                <div class="info-tag d-flex">
-                    <ul class="list-info d-flex">
-                        <li><p><small> Address: @{{address}}</small> </p></li>
-                        <li><p><span><i class="fas fa-circle"></i></span><small> Beds number:</small> @{{beds_number}} </p></li>
-                        <li><p><span><i class="fas fa-circle"></i></span><small> Square meters:</small> @{{square_meters}}</p></li>
-                    </ul>
-                    @{{#if sponsorized}}
-                    <div id="sponsorized">
-                        <h4><span class="badge badge-success">Superhost</span></h4>
-                    </div>
-                    @{{/if}}           
-                </div>
-            </div>
+    <div class="apartment-card" data-aos="fade-right" data-aos-anchor=".navbar" data-aos-delay="@{{delay}}">
+        <div class="image-wrapper">
+          @{{#if asset}}
+            <img src="storage/@{{cover_image}}" alt="immagine casa">
+          @{{else}}
+            <img src="@{{cover_image}}" alt="immagine casa">
+          @{{/if}}
         </div>
+        <div class="info-wrapper">
+            <div class="main">
+                <div class="title">
+                    <h5>@{{title}}</h5>
+                    <input type="hidden" value="@{{id}}" class="apartment-id">
+                </div>
+                <div class="address">
+                    <p>@{{address}}</p>
+                </div>
+                <input type="hidden" value="@{{longitude}}" class="apartment-lon">
+                <input type="hidden" value="@{{latitude}}" class="apartment-lat">
+            </div>
+            <ul>
+                <li>
+                    <strong>Rooms:</strong> @{{rooms_number}}
+                </li>
+                <li>
+                    <strong>Bathrooms:</strong> @{{bathrooms_number}}
+                </li>
+                <li>
+                    <strong>Beds:</strong> @{{beds_number}}
+                </li>
+                <li>
+                    <strong>m&sup2;:</strong> @{{square_meters}}
+                </li>
+            </ul>
+        </div>
+        @{{#if sponsorized}}
+            <div class="button-wrapper space-between">
+                <div class="badge">Superhost</div>
+                <a href="http://localhost:8000/show/@{{id}}" class="btn-details">Details</a>
+            </div>
+        @{{else}}
+            <div class="button-wrapper flex-end">
+                <a href="http://localhost:8000/show/@{{id}}" class="btn-details">Details</a>
+            </div>
+        @{{/if}}
     </div>
+
 </script>

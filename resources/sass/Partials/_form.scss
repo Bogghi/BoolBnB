@@ -1,0 +1,216 @@
+.form {
+    border: 2px $gray solid;
+    box-shadow: 0px 0px 20px #aaa7a9;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0px;
+
+    h2 {
+        padding: 10px 0px
+    }
+
+    .input-style {
+        border: 2px $bluebnb solid;
+        border-radius: 15px;
+    }
+
+    .label {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        
+        #primary {
+            padding-right: 10px;
+        }
+
+        .label-style {
+            border: 2px $bluebnb solid;
+            border-radius: 20px;
+            padding: 5px 15px;
+            margin-bottom: 10px;
+            background-color: $ligth-gray;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+
+            input {
+                background-color: $red;
+            }
+    
+            &:hover {
+                background-color: $medium-gray;
+                cursor: pointer;
+            }
+    
+            &.active {
+                background-color: $bluebnb;
+                color: $white;
+            }
+
+        }
+
+    }
+
+    .visibility {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding: 0px 15px;
+        transition: background-color 0.3s, border 0.3s;
+        margin-top: 10px;
+        
+        &:hover {
+            cursor: pointer;
+        }
+        
+        label {
+            padding: 7px 0px 0px 7px;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &.bg-red {
+            background-color: $red;
+            border: none;
+            color: $white;
+        }
+
+        &.bg-green {
+            background-color: $green;
+            border: none;
+            color: $white;
+        }
+    }
+
+    .browse {
+        display: flex;
+        margin-top: 10px;
+
+        label {
+            background-color: $ligth-gray;
+            border: 2px $bluebnb solid;
+            padding: 5px 15px;
+            border-radius: 20px;
+            width: 100%;
+            transition: background-color 0.3s;
+
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                font-style: italic;
+            }
+
+            &:hover {
+                background-color: $medium-gray;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .preview-apartment-cover {
+        width: 100%;
+        max-height: 250px;
+        border-radius: 20px;
+        border: 2px solid $bluebnb;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+
+        p {
+            padding: 5px 20px;
+            font-style: italic;
+        }
+
+    }
+
+    .preview-apartment-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border: 2px $bluebnb solid; 
+        border-radius: 20px;
+        padding: 10px 10px 0px 10px;
+
+        [class*="col-"] {
+            padding: 0px;
+        }
+
+        .img {
+            border-radius: 15px;
+            margin-bottom: 10px;
+            max-width: 100%;
+            max-height: 250px;
+            overflow: hidden;
+            border: 2px $dark-gray solid; 
+            box-shadow: 3px 3px 20px #f1f1f1;
+
+            img{
+                width: 100%;
+                object-position: top;
+            }
+
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        &.container-fluid {
+            padding: 0px
+        }
+    }
+
+    .btn-custom {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+
+        button {
+            background-color: $blue;
+            border: 2px $white solid;
+            border-radius: 25px;
+            padding: 3px 25px;
+            font-size: 30px;
+            color: white;
+            transition: background-color 0.3s;
+
+            &:hover { 
+                background-color: $dark-blue;
+            }
+        }
+    }
+
+    .delete-img {
+        overflow: hidden;
+        padding: 10px;
+
+        .e-img {
+            // position: relative;
+            border: 1px $ligth-gray solid;
+            box-shadow: 0px 0px 8px;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+    }
+
+}

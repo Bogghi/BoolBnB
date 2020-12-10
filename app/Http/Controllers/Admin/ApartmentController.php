@@ -60,7 +60,7 @@ class ApartmentController extends Controller
             'bathrooms_number' => "required|integer",
             'beds_number' => "required|integer",
             'square_meters' => "required|integer",
-            'description' => "required|min:50|max:150",
+            'description' => "required|min:150|max:500",
             'rooms_number' => "required|integer",
             'title' => "required|max:100",
             'visibility' => "boolean",
@@ -99,7 +99,11 @@ class ApartmentController extends Controller
         $apartment->description = $data['description'];
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
-        $apartment->visibility = $data['visibility'];
+
+        if ($request->visibility == null) {
+
+          $apartment->visibility = 0;
+        }
 
         $apartment->save();
 
@@ -144,14 +148,9 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        $userId = Auth::id();
-        $apartment = Apartment::find($id);
-        // apartment.show
-        if ($apartment->user_id == $userId) {
-            return view("admin.show", ["apartment" => $apartment]);
-        }
+        $apartment = Apartment::where('user_id', Auth::id())->where('id', $id)->firstOrFail();
 
-        return view('guests.show', ["apartment" => $apartment]);
+        return view("admin.show", ["apartment" => $apartment]);
     }
 
     /**
@@ -166,6 +165,7 @@ class ApartmentController extends Controller
 
         $services = Service::all();
         $apartment_images = $apartment->images;
+        // dd($apartment_images);
 
         return view('admin.edit', compact('apartment', 'services', 'apartment_images'));
     }
@@ -188,11 +188,11 @@ class ApartmentController extends Controller
             'services' => "required|array|min:1",
             'services.*' => "required|integer|min:1|max:" . $services->id,
             'address' => "required|max:255",
-            'cover_image' => "required|unique:apartments|image",
+            'cover_image' => "unique:apartments|image",
             'bathrooms_number' => "required|integer",
             'beds_number' => "required|integer",
             'square_meters' => "required|integer",
-            'description' => "required|min:50|max:150",
+            'description' => "required|min:150|max:500",
             'rooms_number' => "required|integer",
             'title' => "required|max:100",
             'visibility' => "boolean",
@@ -204,23 +204,32 @@ class ApartmentController extends Controller
         $latitude = $output->results[0]->position->lat;
         $longitude = $output->results[0]->position->lon;
 
-        // Save cover_image in the storage with original name.
-        $cover_image_name = $request->cover_image->getClientOriginalName();
+        $apartment = Apartment::find($id);
 
-        $apartment_id = $id;
+        if ($request->cover_image != null) {
 
-        $path_cover_image = $request->cover_image->storeAs(
-            "images/" . $apartment_id,
-            $cover_image_name,
-            "public"
-        );
+          Storage::disk('public')->delete($apartment->cover_image);
+
+          // Save cover_image in the storage with original name.
+          $cover_image_name = $request->cover_image->getClientOriginalName();
+
+          $apartment_id = $apartment->id;
+
+          $path_cover_image = $request->cover_image->storeAs(
+              "images/" . $apartment_id,
+              $cover_image_name,
+              "public"
+          );
+
+          $apartment->cover_image = $path_cover_image;
+        }
+
+
 
         $user_id = Auth::id();
-        $apartment = Apartment::find($id);
         $apartment->user_id = $user_id;
         $apartment->longitude = $longitude;
         $apartment->latitude = $latitude;
-        $apartment->cover_image = $path_cover_image;
         $apartment->bathrooms_number = $data['bathrooms_number'];
         $apartment->beds_number = $data['beds_number'];
         $apartment->square_meters = $data['square_meters'];
@@ -229,12 +238,17 @@ class ApartmentController extends Controller
         $apartment->description = $data['description'];
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
-        $apartment->visibility = $data['visibility'];
+
+        if ($request->visibility != null) {
+          $apartment->visibility = 0;
+        } else {
+          $apartment->visibility = 1;
+        }
+
 
         if ($request->hasFile('images')) {
 
             $images = $request->file('images');
-            dd($images);
 
             foreach ($images as $image) {
 
@@ -277,6 +291,13 @@ class ApartmentController extends Controller
         $apartment = Apartment::find($id);
 
         Storage::disk('public')->delete($apartment->cover_image);
+
+        $images = Image::where('apartment_id', $id)->get();
+
+        foreach ($images as $image) {
+
+          Storage::disk('public')->delete($image->image_path);
+        }
 
         $apartment->services()->detach();
         $apartment->delete();

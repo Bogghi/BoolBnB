@@ -23,7 +23,11 @@ class ApartmentController extends Controller
 
         $apartment = Apartment::find($apartment_id);
 
-        $sponsored_apartments[] = $apartment;
+        if ($apartment->visibility == 1) {
+
+          $sponsored_apartments[] = $apartment;
+        }
+
       }
 
       return view('guests.homepage', compact('sponsored_apartments'));
@@ -31,7 +35,12 @@ class ApartmentController extends Controller
 
     public function show($id) {
 
-      $apartment = Apartment::find($id);
+      $apartment = Apartment::findOrFail($id);
+
+      if ($apartment->visibility == 0) {
+
+        abort(404);
+      }
 
       $owner_id = $apartment->user_id;
 
@@ -48,6 +57,6 @@ class ApartmentController extends Controller
 
       }
 
-      return view('guests.show', compact('apartment'));
+      return view('admin.show', compact('apartment'));
     }
 }

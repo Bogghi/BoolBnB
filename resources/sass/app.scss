@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -12,9 +13,17 @@
 
 // Partials
 @import 'Partials/header';
+@import 'Partials/navbar';
+@import 'Partials/searchbar';
 @import 'Partials/main';
 @import 'Partials/footer';
 @import 'Partials/sponsorization';
 @import 'Partials/mediaquery';
 @import 'Partials/search';
 @import 'Partials/charts';
+@import 'Partials/map';
+@import 'Partials/form';
+
+@import 'Partials/errors';
+@import 'Partials/log-reg';
+

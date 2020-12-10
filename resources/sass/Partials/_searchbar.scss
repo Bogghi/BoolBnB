@@ -1,0 +1,106 @@
+.searchbar {
+    z-index: 2;
+    position: relative;
+    margin-top: 20px;
+    height: 62px;
+
+    #search-input {
+      position: relative;
+      color: $white;
+  
+      .tt-search-box {
+        margin-top: 0;
+        background: none;
+  
+        .tt-search-box-input-container {
+          padding: 10px 20px;
+          border-radius: 50px;
+          background-color: #fff;
+          fill: $greenbnb;
+  
+          &:focus {
+            border-color: $greenbnb;
+          }
+  
+          input.tt-search-box-input {
+            height: 40px;
+            width: 250px;
+            padding: 3px 80px 3px 12px;
+            font-size: 20px;
+            color: $bluebnb;
+            transition: width 0.6s;
+
+            &:focus ~ .search-btn {
+              width: 45px;
+              border-radius: 50%;
+              @media (max-width: 550px){
+                width:45px;
+                border-radius: 50px;
+              }
+            }
+
+            &:focus {
+              width: 450px;
+              @media (max-width: 550px){
+                width:250px;
+              }
+            }
+            
+            &::placeholder {
+              font-size: 16px;
+            }
+          }
+
+          & div:first-child {
+            display: none;
+          }
+
+          .tt-search-box-close-icon {
+            display: none;
+          }
+        }
+  
+        .tt-search-box-close-icon {
+          fill: $bluebnb;
+  
+          &:hover {
+            fill: $greenbnb;
+          }
+        }
+
+        .tt-search-box-result-list-container {
+          border-radius: 20px;
+        }
+      }
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 10px;
+      display: block;
+      height: 45px;
+      width: 80px;
+      background-color: $greenbnb;
+      color: #fff;
+      outline: 0;
+      border: none;
+      border-radius: 30px;
+      transition: width 0.6s, border-radius 0.6s;
+    }
+  }
+
+  .searchbar.searchbar-nav, .searchbar.searchbar-nav form {
+    margin-top: 0 !important;
+  }
+
+  .collapse.navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .searchbar.lg-hidden {
+    @media (max-width:992px) {
+      display: none;
+    }
+  }
+
+

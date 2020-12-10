@@ -11,7 +11,6 @@ class SearchController extends Controller
   public function search()
   {
 
-    // Take passed variable from the query string.
     $latitude = $_GET["latitude"];
     $longitude = $_GET["longitude"];
     $radius = $_GET["radius"];
@@ -20,17 +19,18 @@ class SearchController extends Controller
     if ($_GET["services"] == "") {
       $requested_services = [];
     } else {
-      $services = substr($_GET["services"], 0, -1);
-      $requested_services = explode(",", $services);
+      $requested_services = explode(",", $_GET["services"]);
     }
 
     // For debug
+
     // $latitude = 41.918171;
     // $longitude = 12.511850;
     // $radius = 50;
-    // $rooms = 3;
-    // $beds = 4;
-    // $requested_services = [1, 2];
+    // $rooms = 1;
+    // $beds = 1;
+    // $requested_services = ["1", "2", "6"];
+
 
     // Filter apartments for distance, rooms and beds.
     $apartments = Apartment::selectRaw("*,
@@ -44,6 +44,7 @@ class SearchController extends Controller
       ->orderBy("distance", 'asc')
       ->where("rooms_number", ">=", $rooms)
       ->where("beds_number", ">=", $beds)
+      ->where("visibility", 1)
       ->get();
 
     //Search if the apartments matching with the requested services.
@@ -58,9 +59,17 @@ class SearchController extends Controller
         $services[] = $service->id;
       }
 
+      $service_quantity = count($requested_services);
+      $counter = 0;
+      foreach ($requested_services as $requested_service) {
 
+        if(in_array($requested_service, $services)) {
 
-      if (count(array_diff_assoc($requested_services, $services)) == 0) {
+          $counter++;
+        }
+      }
+
+      if ($counter == $service_quantity) {
 
         $matched_apartments[] = $apartment;
       }
@@ -75,6 +84,7 @@ class SearchController extends Controller
                sin( radians( latitude ) ) )
              ) AS distance", [$latitude, $longitude, $latitude])
       ->orderBy("distance", 'asc')
+      ->where("visibility", 1)
       ->get();
 
 
