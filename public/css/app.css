@@ -12394,6 +12394,22 @@ main #sponsorizations .container-xl .next .fas {
   filter: grayscale(100%);
 }
 
+#your-apartments .link-personalized span.d-flex {
+  flex-shrink: 0;
+  height: 37px;
+  width: 37px;
+  background-color: #001533;
+  color: #fff;
+  border-radius: 30px;
+  transition: background-color 0.4s;
+}
+
+#your-apartments .link-personalized .line-height {
+  line-height: 2.4;
+  color: #001533;
+  font-weight: 600;
+}
+
 footer {
   border-top: 3px solid #00F087;
   background-color: black;

@@ -42,7 +42,8 @@
                             <p class="card-text"><small class="text-muted">Created on {{$apartment->created_at->format('d-m-Y')}}.</small></p>
                         </div>
                         {{-- {{-- bottom for link pages --}}
-                        <div  class="d-flex flex-wrap link-personalized mb-1">
+                        <div class="d-flex flex-wrap link-personalized mb-1">
+                            <span class="line-height mr-1">{{count($apartment->messages)}}</span><span class="d-flex justify-content-center align-items-center mr-2"><i class="far fa-envelope"></i></span>
                             <a href="{{route('admin.apartment.show', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Show</a>
                             <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Edit</a>
                             <a href="{{route('admin.statistics',$apartment->id)}}" class="btn-personalized btn mr-2 mb-2">Statistic</a>

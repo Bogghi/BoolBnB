@@ -660,3 +660,22 @@ main {
 
 }
 // Developer pics team end
+
+#your-apartments {
+  .link-personalized {
+    span.d-flex {
+            flex-shrink: 0;
+            height: 37px;
+            width: 37px;
+            background-color: $bluebnb;
+            color: #fff;
+            border-radius: 30px;
+            transition: background-color 0.4s;
+    }
+    .line-height {
+      line-height: 2.4;
+      color: $bluebnb;
+      font-weight: 600;
+    }
+  }
+}
