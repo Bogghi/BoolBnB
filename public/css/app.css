@@ -11044,6 +11044,16 @@ header.margin-fixed > .container {
   color: #00F087;
 }
 
+.navbar .position-pers {
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .navbar .position-pers {
+    position: static;
+  }
+}
+
 .navbar .navbar-nav .nav-link {
   font-weight: 700;
   color: white;
@@ -11073,6 +11083,13 @@ header.margin-fixed > .container {
 .navbar .navbar-nav .dropdown-menu {
   padding: 0;
   left: auto;
+  right: -60px;
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-nav .dropdown-menu {
+    right: 0px;
+  }
 }
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item {

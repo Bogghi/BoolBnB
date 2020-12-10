@@ -49,7 +49,7 @@
                   @endif
               @else
                 {{-- User --}}
-                <li class="nav-item zindex">
+                <li class="nav-item zindex position-pers">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex justify-content-end" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
