@@ -44,6 +44,7 @@ class SearchController extends Controller
       ->orderBy("distance", 'asc')
       ->where("rooms_number", ">=", $rooms)
       ->where("beds_number", ">=", $beds)
+      ->where("visibility", 1)
       ->get();
 
     //Search if the apartments matching with the requested services.
@@ -83,6 +84,7 @@ class SearchController extends Controller
                sin( radians( latitude ) ) )
              ) AS distance", [$latitude, $longitude, $latitude])
       ->orderBy("distance", 'asc')
+      ->where("visibility", 1)
       ->get();
 
 
