@@ -3,7 +3,7 @@
              @else container 
             @endif">
       {{-- logo --}}
-      <div class="logo">
+      <div class="logo logo col-lg-1 col-md-8 col-sm-4 col-4">
           <a href="{{ route('homepage') }}">
             <img id="logo" src="{{ asset('img/boolbnb-logo-light.svg') }}" alt="BoolBnB">
           </a>
@@ -75,8 +75,8 @@
 
       {{-- Search Bar --}}
       @if (Route::currentRouteName()  == 'search')
-      <div class="searchbar searchbar-nav">
-          <form class="form-inline d-flex md-form form-sm form-color mt-2" action="{{route('search')}}" method="POST" autocomplete="off">
+      <div class="searchbar searchbar-nav ">
+          <form class="form-inline d-flex md-form form-sm form-color mt-2 " action="{{route('search')}}" method="POST" autocomplete="off">
               @csrf
               @method("POST")
               <div id="search-input"></div>
