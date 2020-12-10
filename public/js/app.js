@@ -42603,13 +42603,13 @@ function visibilitControll() {
   var label = visibility.find("label");
 
   if (input.is(":checked")) {
-    visibility.removeClass("bg-red");
-    visibility.addClass("bg-green");
-    label.text("Visible");
-  } else {
     visibility.removeClass("bg-green");
     visibility.addClass("bg-red");
     label.text("Invisible");
+  } else {
+    visibility.removeClass("bg-red");
+    visibility.addClass("bg-green");
+    label.text("Visible");
   }
 } // QUI VANNO LE FUNZIONI !!!!!!!!!
 // if (window.location.pathname == '/' || window.location.pathname == '/search') {

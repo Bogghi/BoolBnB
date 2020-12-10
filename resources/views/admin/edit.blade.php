@@ -106,7 +106,7 @@
       <div class="row">
         <div class="col-md-4 col-xs-12">
           <div class="visibility">
-            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value=0 {{ $apartment->visibility == 0 ? "" : "checked" }} hidden>
+            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value=0 {{ $apartment->visibility == 0 ? "checked" : "" }} hidden>
             <label for="visibility">Visible</label>
             @error('visibility')
               <div class="alert alert-danger">{{ $message }}</div>
