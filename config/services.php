@@ -31,17 +31,10 @@ return [
     ],
 
     'braintree' => [
-        'environment' => env('BRAINTREE_ENV','sandox'),
-        'merchantId' => env('BRAINTREE_MERCHANT_ID',false),
-        'publicKey' => env('BRAINTREE_PUBLIC_KEY',false),
-        'privateKey' => env('BRAINTREE_PRIVATE_KEY',false)
-    ],
-
-    'braintree' => [
-        'environment' => env('BRAINTREE_ENV','sandox'),
-        'merchantId' => env('BRAINTREE_MERCHANT_ID',false),
-        'publicKey' => env('BRAINTREE_PUBLIC_KEY',false),
-        'privateKey' => env('BRAINTREE_PRIVATE_KEY',false)
+        'environment' => env('BRAINTREE_ENV', 'sandbox'),
+        'merchantId' => env('BRAINTREE_MERCHANT_ID', false),
+        'publicKey' => env('BRAINTREE_PUBLIC_KEY', false),
+        'privateKey' => env('BRAINTREE_PRIVATE_KEY', false)
     ]
 
 ];

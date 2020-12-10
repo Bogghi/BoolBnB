@@ -6,6 +6,9 @@
 <div class="section" id="your-apartments">
     <div class="container">
         <h1 class="pl-3 title-pers pt-3">Your Apartments:</h1>
+        @if (count($apartments) == 0)
+        <p class="pl-3 pt-3">There are no apartments to show</p> 
+        @endif
 
         {{-- Call to apartment's table and stamp apartment list of admin --}}
         @foreach ($apartments as $apartment)

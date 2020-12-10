@@ -1,3 +1,7 @@
+.bg-img {
+  background-image: url('/img/pattern-bg.svg')
+}
+
 main {
   min-height: calc(100vh - 160px);
 
@@ -18,7 +22,7 @@ main {
   #your-apartments,
   #login,
   #register {
-    background-image: url('/img/pattern-bg.svg');
+    
     .container {
       height: 100%;
       background-color: $white;
