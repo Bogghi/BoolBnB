@@ -42659,8 +42659,13 @@ if (window.location.pathname == '/') {
 
     if ($(window).scrollTop() > searchbarOffsetTop - 40 && scrolled == 0) {
       scrolled = 1;
+<<<<<<< HEAD
       $(".searchbar").fadeOut(150, function () {
         $("header .logo").after($(".searchbar"));
+=======
+      $(".searchbar").fadeOut(300, function () {
+        $("header .navbar-toggler").after($(".searchbar"));
+>>>>>>> ResponsiveHeader
         $(".cta").addClass("searchbar-margin");
         $(".searchbar").addClass("searchbar-nav");
         $(".searchbar").fadeIn(150);
