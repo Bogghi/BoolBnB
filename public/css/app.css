@@ -12010,11 +12010,16 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .container-info {
   width: 100%;
-  display: flex;
 }
 
 #show .container-info .container-show {
   width: 65%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .container-show {
+    width: 100%;
+  }
 }
 
 #show .container-info .container-show .row {
@@ -12061,12 +12066,16 @@ main #sponsorizations .container-xl .next .fas {
   width: 35%;
 }
 
-#show .container-info .message h2 {
-  text-align: center;
+@media (max-width: 992px) {
+  #show .container-info .message {
+    width: 100%;
+  }
 }
 
 #show .container-info .message ul {
+  max-height: 400px;
   list-style: none;
+  overflow-y: scroll;
 }
 
 #show .container-info .message ul li {
@@ -12114,6 +12123,12 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .container-info .contatti {
   width: 35%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .contatti {
+    width: 100%;
+  }
 }
 
 #show .container-info .contatti form {
@@ -12165,18 +12180,30 @@ main #sponsorizations .container-xl .next .fas {
     height: 400px;
     width: 100%;
   }
+}
 
+@media (max-width: 765px) and (max-width: 992px) {
+  #show .container-info .container-show .services ul {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 765px) {
   #show .container-info .container-show .services ul li {
     width: 100%;
     padding-bottom: 10px;
     padding-right: 1rem;
   }
+}
 
+@media (max-width: 765px) {
   #show .container-info .container-show .col-12 #map-container {
     height: 300px;
     margin-bottom: 20px;
   }
+}
 
+@media (max-width: 765px) {
   #show .container-info .message {
     width: 100%;
     margin-left: 0;
@@ -12198,7 +12225,9 @@ main #sponsorizations .container-xl .next .fas {
     width: 100%;
     overflow: hidden;
   }
+}
 
+@media (max-width: 765px) {
   #show .container-info .contatti {
     width: 100%;
   }

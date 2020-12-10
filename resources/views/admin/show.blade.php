@@ -80,7 +80,7 @@
     </div>
     {{-- row carousel  --}}
     {{-- row info --}}
-    <div class="container-info">
+    <div class="container-info d-lg-flex">
       <div class="container-show" >
         <div class="row mb-5">
           <div class="col-12 col-md-12 mb-5">
@@ -91,7 +91,7 @@
             <h2 class="pb-2">Services</h2>
             <ul class="d-flex flex-wrap pl-0 pt-4">
               @foreach ($apartment->services as $service)
-              <li class="d-flex align-items-center col-3 pb-4">
+              <li class="d-flex align-items-center col-6 col-sm-4 col-lg-3 pb-4">
                 <span class="service-icon d-flex justify-content-center align-items-center mr-2">
                   @switch($service->id)
                       @case(1)
@@ -131,7 +131,7 @@
         
         <div class="message">
           <h2 class="py-2">Messages</h2>
-          <ul class="py-3">
+          <ul class="mt-3">
             @foreach ($apartment->messages as $message)
             <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message py-1 px-1 my-1 d-flex"><span class="align-middle d-flex justify-content-center align-items-center mr-2"><i class="far fa-envelope"></i></span><p>{{$message->email}}</p></li>
             @endforeach

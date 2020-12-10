@@ -304,10 +304,15 @@ main {
   }
   .container-info {
     width: 100%;
-    display: flex;
+    
   
     .container-show{
       width: 65%;
+
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+
       .row {
         width: 100%;
       
@@ -353,11 +358,14 @@ main {
     
     .message {
       width: 35%;
-      h2{
-        text-align: center;
+
+      @media (max-width:992px) {
+        width: 100%;
       }
       ul {
+        max-height: 400px;
         list-style: none;
+        overflow-y: scroll;
         li {
           border: 1px solid $gray;
           border-radius: 20px ;
@@ -402,6 +410,11 @@ main {
 
     .contatti {
       width: 35%;
+      @media (max-width:992px) {
+        
+          width: 100%;
+        
+      }
       form{
         background-color: $bluebnb;
         border-radius: 10px;
@@ -449,6 +462,9 @@ main {
             margin-left: - $spacer * 3;
             height: 400px;
             width: 100%;
+            @media (max-width:992px) {
+              margin-left: 0;
+            }
             li {
               width: 100%;
               padding-bottom: 10px;
@@ -492,6 +508,7 @@ main {
       }
     }
   }
+  
   @media (max-width: 375px) {
     .message {
       ul {
