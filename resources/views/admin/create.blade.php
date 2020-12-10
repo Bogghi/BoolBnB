@@ -95,7 +95,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="visibility">
-            <input type="checkbox" class="form-controll" id="visibility" name="visibility" hidden checked="" value=1>
+            <input type="checkbox" class="form-controll" id="visibility" name="visibility" value=0 hidden>
             <label for="visibility">Visible</label>
             @error('visibility')
               <div class="alert alert-danger">{{ $message }}</div>

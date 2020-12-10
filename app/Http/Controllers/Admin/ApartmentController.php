@@ -100,9 +100,11 @@ class ApartmentController extends Controller
         $apartment->rooms_number = $data['rooms_number'];
         $apartment->title = $data['title'];
 
-        if ($request->visibility == null) {
-
-          $apartment->visibility = 0;
+        
+        if ($request->visibility != null) {
+            $apartment->visibility = 0;
+        } else {
+            $apartment->visibility = 1;
         }
 
         $apartment->save();
