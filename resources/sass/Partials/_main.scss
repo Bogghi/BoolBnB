@@ -2,15 +2,21 @@ main {
   position: relative;
   min-height: calc(100vh - 160px);
 
-  h2 {
+  #sponsorizations,
+  #cities,
+  #developers {
+
+    h2 {
     font-size: 35px;
     font-weight: 600;
+    }
   }
 
   #show,
   #your-apartments,
   #login,
-  #register {
+  #register,
+  #charts {
     background-image: url('/img/pattern-bg.svg');
     .container {
       height: 100%;
@@ -237,14 +243,35 @@ main {
 
 // Show admin 
 #show {
+
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    color: #999;
+    border-bottom: 1px solid #999;
+
+  }
   
   .apartment-header{
     .ovr-hid{
       max-height: 100px;
       overflow: hidden;
+      h1 {
+        font-size: 35px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+      }
+      
+    }
+    #address {
+      display: inline-block;
+      padding: 3px 8px;
+      background-color: $bluebnb;
+      color: #fff;
+      border-radius: 30px;
     }
   }
-  .ml-auto {
+
     .btn-outline-primary {
       border-color: $greenbnb;
       color:$greenbnb;
@@ -260,9 +287,11 @@ main {
       }
     }
 
-  }
+  
 
   #carousel-show {
+    border-radius: 20px;
+    overflow: hidden;
     .carousel-item {
       .image-car-person {
         height: 500px;
@@ -290,15 +319,20 @@ main {
           }
         }
         .services {
-          h2 {
-            margin-left: $spacer *2 ;
-          }
 
           ul {
             list-style: none;
             height: 200px;
             li {
               cursor: default;
+
+              .service-icon {
+                width: 35px;
+                height: 35px;
+                border-radius: 50px;
+                background-color: $greenbnb;
+                color: #fff;
+              }
               .dot-pers {
                 color: $bluebnb;
                 transition: 0.5s;
@@ -310,12 +344,6 @@ main {
             }
           }
         }
-        #map-container {
-          width: 100%;
-          height: 500px;
-          margin-top: 30px;
-
-        }
       }
 
 
@@ -325,7 +353,6 @@ main {
       width: 35%;
       h2{
         text-align: center;
-        padding-left: 45px;
       }
       ul {
         list-style: none;
@@ -372,6 +399,13 @@ main {
         }
       }
     }
+  }
+
+  #map-container {
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+
   }
   // MEDIA QUERY
 
