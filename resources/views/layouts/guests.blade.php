@@ -38,7 +38,7 @@
     <div id="app">
         @include('layouts.partials.header')
 
-        <main class="">
+        <main @if ((Route::currentRouteName() == 'login') || (Route::currentRouteName() == 'register')) class="full-height" @endif>
             @yield('content')
         </main>
 

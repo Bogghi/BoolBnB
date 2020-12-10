@@ -10,7 +10,7 @@
           <div class="ovr-hid">
           <h1>{{$apartment->title}}</h1>
           </div>  
-          <p id="address" class="mt-3">{{$apartment->address}}</p>
+          <p id="address" class="mt-2">{{$apartment->address}}</p>
         </div>
         @if (Auth::id() == $apartment->user_id )
         <div class="col-12 d-flex align-items-center my-3 pl-0">
@@ -89,9 +89,9 @@
           </div>
           <div class="col-12 col-md-12 services">
             <h2 class="pb-2">Services</h2>
-            <ul class="d-flex flex-wrap pl-0 pt-3">
+            <ul class="d-flex flex-wrap pl-0 pt-4">
               @foreach ($apartment->services as $service)
-              <li class="d-flex align-items-center col-3">
+              <li class="d-flex align-items-center col-3 pb-4">
                 <span class="service-icon d-flex justify-content-center align-items-center mr-2">
                   @switch($service->id)
                       @case(1)
@@ -130,10 +130,10 @@
 
         
         <div class="message">
-          <h2 class="py-2">Messaggi ricevuti</h2>
+          <h2 class="py-2">Messages</h2>
           <ul class="py-3">
             @foreach ($apartment->messages as $message)
-            <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
+            <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message py-1 px-1 my-1 d-flex"><span class="align-middle d-flex justify-content-center align-items-center mr-2"><i class="far fa-envelope"></i></span><p>{{$message->email}}</p></li>
             @endforeach
           </ul>
         </div>
@@ -158,6 +158,7 @@
                       data-dismiss="modal">Close</button>
               </div>
           </div>
+        </div>
       </div>
       {{-- MODAL --}}
 
@@ -168,7 +169,7 @@
         <form class="padding-pers" action="{{route("message.store", $apartment->id)}}" method="POST">
           @csrf
           @method('POST')
-          <p class="h4 mb-4 ">Get in touch</p>
+          <p class="h4 mb-4 ">Contact the owner</p>
       
           <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value="{{old("email") ?? old("email")}}" required>
           @error('email')
@@ -187,9 +188,10 @@
       </div>
       @endif
     </div>
+    <div class="col-12 col-md-12 px-0">
+      <div id="map-container"></div>
   </div>
-  <div class="col-12 col-md-12 px-0">
-    <div id="map-container"></div>
+  
 
   </div>
 </section>

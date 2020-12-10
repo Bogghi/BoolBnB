@@ -11241,8 +11241,11 @@ header.margin-fixed > .container {
 }
 
 main {
-  position: relative;
   min-height: calc(100vh - 160px);
+}
+
+main.full-height {
+  height: calc(100vh - 160px);
 }
 
 main #sponsorizations h2,
@@ -11272,13 +11275,12 @@ main #charts .container {
 
 main #login,
 main #register {
-  position: absolute;
   height: 100%;
-  width: 100%;
 }
 
 main #login .container,
 main #register .container {
+  overflow-y: hidden;
   background-color: transparent;
 }
 
@@ -11978,6 +11980,7 @@ main #sponsorizations .container-xl .next .fas {
   background-color: #001533;
   color: #fff;
   border-radius: 30px;
+  font-style: italic;
 }
 
 #show .btn-outline-primary {
@@ -12031,7 +12034,6 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .container-info .container-show .row .services ul {
   list-style: none;
-  height: 200px;
 }
 
 #show .container-info .container-show .row .services ul li {
@@ -12071,7 +12073,17 @@ main #sponsorizations .container-xl .next .fas {
   border: 1px solid #BDBDBD;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+}
+
+#show .container-info .message ul li span {
+  height: 30px;
+  width: 30px;
+  background-color: #001533;
+  color: #fff;
+  border-radius: 30px;
+  transition: background-color 0.4s;
 }
 
 #show .container-info .message ul li .dot-pers {
@@ -12080,6 +12092,14 @@ main #sponsorizations .container-xl .next .fas {
   margin-left: 5px;
   margin-top: 8px;
   padding: 0;
+}
+
+#show .container-info .message ul li:hover {
+  background-color: #b6ffdf;
+}
+
+#show .container-info .message ul li:hover span {
+  background-color: #00F087;
 }
 
 #show .container-info .message ul li:hover .dot-pers {
