@@ -30,9 +30,11 @@ function renderSponsorized(data) {
       "square_meters": data[i].square_meters,
       "delay": delay
     }
-    if (!data[i].cover_image.includes("placeholder")) {
+    if (data[i].cover_image.includes("http")) {
+      context.asset = false;
+    } else {
       context.asset = true;
-    };
+    }
     var html = template(context);
     $(".results-wrapper").append(html);
     delay += 150;
@@ -65,9 +67,11 @@ function renderResults(data) {
       "id": apartments[i].id,
       "delay": delay
     }
-    if (!apartments[i].cover_image.includes("placeholder")) {
+    if (apartments[i].cover_image.includes("http")) {
+      context.asset = false;
+    } else {
       context.asset = true;
-    };
+    }
     if (sponsorizedIds.includes(apartments[i].id)) {
       context.sponsorized = true;
     }
@@ -256,7 +260,7 @@ function createMarker(icon, position, color, popupText) {
 
 // TomTom utility functions
 
-function visibilitControll () { 
+function visibilitControll () {
   var visibility = $(".visibility");
   var input = visibility.find("input");
   var label = visibility.find("label");
@@ -493,7 +497,7 @@ $('.single-message').on('click', function () {
 
 });
 
-//HORIZONTAL SCROLL HOMEPAGE 
+//HORIZONTAL SCROLL HOMEPAGE
 // var winmed = window.matchMedia("(min-width: 1500px)");
 // if (winmed.matches){
 
@@ -572,7 +576,7 @@ if (($("#map-container").length > 0) && (window.location.pathname == '/search'))
 
 if(window.location.pathname.includes("edit") || window.location.pathname.includes("create")){
 
-  $(function () { 
+  $(function () {
     var inputs = $(".label .label-style input");
 
     var imagesPreview = function(input, placeToInsertImagePreview, fatherImg) {
@@ -647,7 +651,7 @@ if(window.location.pathname.includes("edit") || window.location.pathname.include
     }
   });
 
-  $(".apartment-images").on('hover',function () { 
+  $(".apartment-images").on('hover',function () {
     console.log($(this));
   })
 }
