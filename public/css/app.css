@@ -11281,11 +11281,16 @@ header.margin-fixed > .container {
 }
 
 main {
-  position: relative;
   min-height: calc(100vh - 160px);
 }
 
-main h2 {
+main.full-height {
+  height: calc(100vh - 160px);
+}
+
+main #sponsorizations h2,
+main #cities h2,
+main #developers h2 {
   font-size: 35px;
   font-weight: 600;
 }
@@ -11293,14 +11298,16 @@ main h2 {
 main #show,
 main #your-apartments,
 main #login,
-main #register {
+main #register,
+main #charts {
   background-image: url("/img/pattern-bg.svg");
 }
 
 main #show .container,
 main #your-apartments .container,
 main #login .container,
-main #register .container {
+main #register .container,
+main #charts .container {
   height: 100%;
   background-color: white;
   padding: 20px 40px 40px;
@@ -11308,13 +11315,12 @@ main #register .container {
 
 main #login,
 main #register {
-  position: absolute;
   height: 100%;
-  width: 100%;
 }
 
 main #login .container,
 main #register .container {
+  overflow-y: hidden;
   background-color: transparent;
 }
 
@@ -11990,23 +11996,50 @@ main #sponsorizations .container-xl .next .fas {
   }
 }
 
+#show h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+  color: #999;
+  border-bottom: 1px solid #999;
+}
+
 #show .apartment-header .ovr-hid {
   max-height: 100px;
   overflow: hidden;
 }
 
-#show .ml-auto .btn-outline-primary {
+#show .apartment-header .ovr-hid h1 {
+  font-size: 35px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+#show .apartment-header #address {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #001533;
+  color: #fff;
+  border-radius: 30px;
+  font-style: italic;
+}
+
+#show .btn-outline-primary {
   border-color: #00F087;
   color: #00F087;
 }
 
-#show .ml-auto .btn-outline-primary:hover {
+#show .btn-outline-primary:hover {
   background-color: #00F087;
   color: white;
 }
 
-#show .ml-auto form .btn-outline-danger {
+#show form .btn-outline-danger {
   margin-top: 50px;
+}
+
+#show #carousel-show {
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 #show #carousel-show .carousel-item .image-car-person {
@@ -12017,11 +12050,16 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .container-info {
   width: 100%;
-  display: flex;
 }
 
 #show .container-info .container-show {
   width: 65%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .container-show {
+    width: 100%;
+  }
 }
 
 #show .container-info .container-show .row {
@@ -12039,17 +12077,20 @@ main #sponsorizations .container-xl .next .fas {
   overflow: auto;
 }
 
-#show .container-info .container-show .row .services h2 {
-  margin-left: 2rem;
-}
-
 #show .container-info .container-show .row .services ul {
   list-style: none;
-  height: 200px;
 }
 
 #show .container-info .container-show .row .services ul li {
   cursor: default;
+}
+
+#show .container-info .container-show .row .services ul li .service-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: #00F087;
+  color: #fff;
 }
 
 #show .container-info .container-show .row .services ul li .dot-pers {
@@ -12061,30 +12102,37 @@ main #sponsorizations .container-xl .next .fas {
   color: #00F087;
 }
 
-#show .container-info .container-show .row #map-container {
-  width: 100%;
-  height: 500px;
-  margin-top: 30px;
-}
-
 #show .container-info .message {
   width: 35%;
 }
 
-#show .container-info .message h2 {
-  text-align: center;
-  padding-left: 45px;
+@media (max-width: 992px) {
+  #show .container-info .message {
+    width: 100%;
+  }
 }
 
 #show .container-info .message ul {
+  max-height: 400px;
   list-style: none;
+  overflow-y: scroll;
 }
 
 #show .container-info .message ul li {
   border: 1px solid #BDBDBD;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+}
+
+#show .container-info .message ul li span {
+  height: 30px;
+  width: 30px;
+  background-color: #001533;
+  color: #fff;
+  border-radius: 30px;
+  transition: background-color 0.4s;
 }
 
 #show .container-info .message ul li .dot-pers {
@@ -12093,6 +12141,14 @@ main #sponsorizations .container-xl .next .fas {
   margin-left: 5px;
   margin-top: 8px;
   padding: 0;
+}
+
+#show .container-info .message ul li:hover {
+  background-color: #b6ffdf;
+}
+
+#show .container-info .message ul li:hover span {
+  background-color: #00F087;
 }
 
 #show .container-info .message ul li:hover .dot-pers {
@@ -12107,6 +12163,12 @@ main #sponsorizations .container-xl .next .fas {
 
 #show .container-info .contatti {
   width: 35%;
+}
+
+@media (max-width: 992px) {
+  #show .container-info .contatti {
+    width: 100%;
+  }
 }
 
 #show .container-info .contatti form {
@@ -12124,6 +12186,12 @@ main #sponsorizations .container-xl .next .fas {
 #show .container-info .contatti form .btn-outline-primary:hover {
   background-color: #00F087;
   color: white;
+}
+
+#show #map-container {
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
 }
 
 @media (max-width: 765px) {
@@ -12152,18 +12220,30 @@ main #sponsorizations .container-xl .next .fas {
     height: 400px;
     width: 100%;
   }
+}
 
+@media (max-width: 765px) and (max-width: 992px) {
+  #show .container-info .container-show .services ul {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 765px) {
   #show .container-info .container-show .services ul li {
     width: 100%;
     padding-bottom: 10px;
     padding-right: 1rem;
   }
+}
 
+@media (max-width: 765px) {
   #show .container-info .container-show .col-12 #map-container {
     height: 300px;
     margin-bottom: 20px;
   }
+}
 
+@media (max-width: 765px) {
   #show .container-info .message {
     width: 100%;
     margin-left: 0;
@@ -12185,7 +12265,9 @@ main #sponsorizations .container-xl .next .fas {
     width: 100%;
     overflow: hidden;
   }
+}
 
+@media (max-width: 765px) {
   #show .container-info .contatti {
     width: 100%;
   }

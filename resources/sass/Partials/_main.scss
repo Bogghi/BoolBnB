@@ -1,16 +1,24 @@
 main {
-  position: relative;
   min-height: calc(100vh - 160px);
 
-  h2 {
+  &.full-height {
+    height: calc(100vh - 160px);
+  }
+  #sponsorizations,
+  #cities,
+  #developers {
+
+    h2 {
     font-size: 35px;
     font-weight: 600;
+    }
   }
 
   #show,
   #your-apartments,
   #login,
-  #register {
+  #register,
+  #charts {
     background-image: url('/img/pattern-bg.svg');
     .container {
       height: 100%;
@@ -21,10 +29,9 @@ main {
 
   #login,
   #register {
-    position: absolute;
     height: 100%;
-    width: 100%;
     .container {
+      overflow-y:hidden;
       background-color: transparent;
     }
   }
@@ -237,14 +244,36 @@ main {
 
 // Show admin 
 #show {
+
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    color: #999;
+    border-bottom: 1px solid #999;
+
+  }
   
   .apartment-header{
     .ovr-hid{
       max-height: 100px;
       overflow: hidden;
+      h1 {
+        font-size: 35px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+      }
+      
+    }
+    #address {
+      display: inline-block;
+      padding: 3px 8px;
+      background-color: $bluebnb;
+      color: #fff;
+      border-radius: 30px;
+      font-style:italic;
     }
   }
-  .ml-auto {
+
     .btn-outline-primary {
       border-color: $greenbnb;
       color:$greenbnb;
@@ -260,9 +289,11 @@ main {
       }
     }
 
-  }
+  
 
   #carousel-show {
+    border-radius: 20px;
+    overflow: hidden;
     .carousel-item {
       .image-car-person {
         height: 500px;
@@ -273,10 +304,15 @@ main {
   }
   .container-info {
     width: 100%;
-    display: flex;
+    
   
     .container-show{
       width: 65%;
+
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+
       .row {
         width: 100%;
       
@@ -290,15 +326,20 @@ main {
           }
         }
         .services {
-          h2 {
-            margin-left: $spacer *2 ;
-          }
 
           ul {
             list-style: none;
-            height: 200px;
+
             li {
               cursor: default;
+
+              .service-icon {
+                width: 35px;
+                height: 35px;
+                border-radius: 50px;
+                background-color: $greenbnb;
+                color: #fff;
+              }
               .dot-pers {
                 color: $bluebnb;
                 transition: 0.5s;
@@ -310,12 +351,6 @@ main {
             }
           }
         }
-        #map-container {
-          width: 100%;
-          height: 500px;
-          margin-top: 30px;
-
-        }
       }
 
 
@@ -323,17 +358,30 @@ main {
     
     .message {
       width: 35%;
-      h2{
-        text-align: center;
-        padding-left: 45px;
+
+      @media (max-width:992px) {
+        width: 100%;
       }
       ul {
+        max-height: 400px;
         list-style: none;
+        overflow-y: scroll;
         li {
           border: 1px solid $gray;
           border-radius: 20px ;
           overflow: hidden;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
           cursor: pointer;
+          span {
+            height: 30px;
+            width: 30px;
+            background-color: $bluebnb;
+            color: #fff;
+            border-radius: 30px;
+            transition: background-color 0.4s;
+
+            
+          }
           .dot-pers {
             color: $greenbnb;
             transition: 0.5s;
@@ -341,6 +389,12 @@ main {
             margin-top: 8px;
             padding: 0;
 
+          }
+          &:hover {
+            background-color: #b6ffdf;
+          }
+          &:hover span {
+            background-color: $greenbnb;
           }
           &:hover .dot-pers {
             color: $bluebnb;
@@ -356,6 +410,11 @@ main {
 
     .contatti {
       width: 35%;
+      @media (max-width:992px) {
+        
+          width: 100%;
+        
+      }
       form{
         background-color: $bluebnb;
         border-radius: 10px;
@@ -372,6 +431,13 @@ main {
         }
       }
     }
+  }
+
+  #map-container {
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+
   }
   // MEDIA QUERY
 
@@ -396,6 +462,9 @@ main {
             margin-left: - $spacer * 3;
             height: 400px;
             width: 100%;
+            @media (max-width:992px) {
+              margin-left: 0;
+            }
             li {
               width: 100%;
               padding-bottom: 10px;
@@ -439,6 +508,7 @@ main {
       }
     }
   }
+  
   @media (max-width: 375px) {
     .message {
       ul {

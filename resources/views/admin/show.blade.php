@@ -5,20 +5,20 @@
   <div class="container">
     {{-- row title  --}}
     <div class="row">
-      <div class="col-12 d-flex pt-4">
+      <div class="col-12 pt-4">
         <div class="apartment-header">
           <div class="ovr-hid">
           <h1>{{$apartment->title}}</h1>
           </div>  
-          <p id="address">{{$apartment->address}}</p>
+          <p id="address" class="mt-2">{{$apartment->address}}</p>
         </div>
         @if (Auth::id() == $apartment->user_id )
-        <div class="ml-auto">
-          <a class="btn btn-outline-primary" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza</a>
+        <div class="col-12 d-flex align-items-center my-3 pl-0">
+          <a class="btn btn-outline-primary mr-3" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza</a>
           <form action="{{route("admin.apartment.destroy", $apartment->id)}}" method="POST">
             @method("DELETE")
             @csrf
-            <input class="btn btn-outline-danger" type="submit" value="Cancella">
+            <input class="btn btn-outline-danger mt-0" type="submit" value="Cancella">
           </form>
         </div>
         @endif
@@ -80,25 +80,45 @@
     </div>
     {{-- row carousel  --}}
     {{-- row info --}}
-    <div class="container-info">
+    <div class="container-info d-lg-flex">
       <div class="container-show" >
         <div class="row mb-5">
-          <div class="col-12 col-md-12 border-pers">
+          <div class="col-12 col-md-12 mb-5">
             <h2 class="py-2">Description</h2>
             <p>{{$apartment->description}}</p>
           </div>
           <div class="col-12 col-md-12 services">
-            <h2>Services</h2>
-            <ul class="d-flex flex-column flex-wrap">
+            <h2 class="pb-2">Services</h2>
+            <ul class="d-flex flex-wrap pl-0 pt-4">
               @foreach ($apartment->services as $service)
-              <li><span><i class="fas fa-circle dot-pers mr-2"></i></span>{{$service->name}}</li>
+              <li class="d-flex align-items-center col-6 col-sm-4 col-lg-3 pb-4">
+                <span class="service-icon d-flex justify-content-center align-items-center mr-2">
+                  @switch($service->id)
+                      @case(1)
+                          <i class="fas fa-wifi"></i>
+                          @break
+                      @case(2)
+                          <i class="fas fa-car"></i>
+                          @break
+                      @case(3)
+                          <i class="fas fa-swimmer"></i>
+                          @break
+                      @case(4)
+                          <i class="fas fa-concierge-bell"></i>
+                          @break
+                      @case(5)
+                          <i class="fas fa-hot-tub"></i>
+                          @break
+                      @case(6)
+                          <i class="fas fa-umbrella-beach"></i>
+                          @break
+                      @default
+                          <i class="fas fa-concierge-bell"></i>
+                  @endswitch
+                </span>
+                {{$service->name}}</li>
               @endforeach
             </ul>
-          </div>
-          
-          <div class="col-12 col-md-12">
-            <div id="map-container"></div>
-
           </div>
 
         </div>
@@ -110,10 +130,10 @@
 
         
         <div class="message">
-          <h2 class="pb-3 pt-3">Messaggi ricevuti</h2>
-          <ul>
+          <h2 class="py-2">Messages</h2>
+          <ul class="mt-3">
             @foreach ($apartment->messages as $message)
-            <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message pb-2 d-flex"><span class="align-middle"><i class="fas fa-circle dot-pers mr-2"></i></span><p>{{$message->email}}</p></li>
+            <li data-toggle="modal" data-target="#staticBackdrop" data-id="{{$message->id}}" class="single-message py-1 px-1 my-1 d-flex"><span class="align-middle d-flex justify-content-center align-items-center mr-2"><i class="far fa-envelope"></i></span><p>{{$message->email}}</p></li>
             @endforeach
           </ul>
         </div>
@@ -138,6 +158,7 @@
                       data-dismiss="modal">Close</button>
               </div>
           </div>
+        </div>
       </div>
       {{-- MODAL --}}
 
@@ -148,7 +169,7 @@
         <form class="padding-pers" action="{{route("message.store", $apartment->id)}}" method="POST">
           @csrf
           @method('POST')
-          <p class="h4 mb-4 ">Get in touch</p>
+          <p class="h4 mb-4 ">Contact the owner</p>
       
           <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value="{{old("email") ?? old("email")}}" required>
           @error('email')
@@ -167,6 +188,11 @@
       </div>
       @endif
     </div>
+    <div class="col-12 col-md-12 px-0">
+      <div id="map-container"></div>
+  </div>
+  
+
   </div>
 </section>
 @endsection
