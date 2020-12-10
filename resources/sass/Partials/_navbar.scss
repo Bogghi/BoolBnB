@@ -1,4 +1,5 @@
 .navbar {
+  height: 80px;
   padding: 0;
   padding: 10px;
   transition: all 0.4s;
@@ -116,7 +117,6 @@
     position: fixed;
     z-index: 3;
     width: 100%;
-    height: auto;
     background-color: #fff;
     .searchbar{
       @media screen and (max-width:600px){
