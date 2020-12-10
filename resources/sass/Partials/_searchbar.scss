@@ -31,10 +31,17 @@
             &:focus ~ .search-btn {
               width: 45px;
               border-radius: 50%;
+              @media (max-width: 550px){
+                width:45px;
+                border-radius: 50px;
+              }
             }
 
             &:focus {
               width: 450px;
+              @media (max-width: 550px){
+                width:250px;
+              }
             }
             
             &::placeholder {

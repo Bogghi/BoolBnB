@@ -11195,8 +11195,21 @@ header.margin-fixed > .container {
   border-radius: 50%;
 }
 
+@media (max-width: 550px) {
+  .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus ~ .search-btn {
+    width: 45px;
+    border-radius: 50px;
+  }
+}
+
 .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
   width: 450px;
+}
+
+@media (max-width: 550px) {
+  .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input:focus {
+    width: 250px;
+  }
 }
 
 .searchbar #search-input .tt-search-box .tt-search-box-input-container input.tt-search-box-input::-moz-placeholder {

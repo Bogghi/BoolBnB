@@ -75,7 +75,7 @@
 
       {{-- Search Bar --}}
       @if (Route::currentRouteName()  == 'search')
-      <div class="searchbar searchbar-nav ">
+      <div class="searchbar searchbar-nav py-2 my-2">
           <form class="form-inline d-flex md-form form-sm form-color mt-2 " action="{{route('search')}}" method="POST" autocomplete="off">
               @csrf
               @method("POST")
