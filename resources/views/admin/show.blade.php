@@ -14,11 +14,15 @@
         </div>
         @if (Auth::id() == $apartment->user_id )
         <div class="col-12 d-flex align-items-center my-3 pl-0">
+          @if (count($apartment->sponsorizations->where('end_date', '>', date('Y-m-d h:i:s'))) == 1)
+          <span class="sponsored mr-3">Sponsored</span>
+          @else 
           <a class="btn btn-outline-primary mr-3" href="{{route('admin.sponsorization.create',["id"=>$apartment->id])}}">Sponsorizza</a>
+          @endif
           <form action="{{route("admin.apartment.destroy", $apartment->id)}}" method="POST">
             @method("DELETE")
             @csrf
-            <input class="btn btn-outline-danger mt-0" type="submit" value="Cancella">
+            <input class="btn btn-outline-danger mt-0" type="submit" value="Delete">
           </form>
         </div>
         @endif

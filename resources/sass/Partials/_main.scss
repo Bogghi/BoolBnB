@@ -677,5 +677,16 @@ main {
       color: $bluebnb;
       font-weight: 600;
     }
+    
   }
+}
+
+.sponsored {
+  height: 38px;
+  background-color: $greenbnb;
+  color: $white;
+  padding: 3px 10px;
+  line-height: 2;
+  border-radius: 30px;
+
 }
