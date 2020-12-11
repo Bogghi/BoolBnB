@@ -43,10 +43,13 @@
                         </div>
                         {{-- {{-- bottom for link pages --}}
                         <div class="d-flex flex-wrap link-personalized mb-1">
-                            <span class="line-height mr-1">{{count($apartment->messages)}}</span><span class="d-flex justify-content-center align-items-center mr-2"><i class="far fa-envelope"></i></span>
+                            @if (count($apartment->sponsorizations->where('end_date', '>', date('Y-m-d h:i:s'))) == 1)
+                            <span class="sponsored mr-3">Sponsored</span>
+                            @endif
+                            <span class="line-height mr-1">{{count($apartment->messages)}}</span><span class="d-flex justify-content-center align-items-center mr-3"><i class="far fa-envelope"></i></span>
                             <a href="{{route('admin.apartment.show', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Show</a>
                             <a href="{{route('admin.apartment.edit', $apartment)}}" class="btn-personalized btn mr-2 mb-2">Edit</a>
-                            <a href="{{route('admin.statistics',$apartment->id)}}" class="btn-personalized btn mr-2 mb-2">Statistic</a>
+                            <a href="{{route('admin.statistics',$apartment->id)}}" class="btn-personalized btn mr-2 mb-2">Statistics</a>
                             <a href="{{route('admin.sponsorization.create', ["id"=>$apartment->id])}}" class="btn-personalized btn mr-2 mb-2">Sponsorization</a>
                         </div>
 

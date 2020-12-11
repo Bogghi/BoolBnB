@@ -3,7 +3,7 @@
 @section('content')
     <section class="spn-error">
         <div class="container">
-            <h1 class="d-flex justify-content-center align-center">Sponsorization Alredy active</h1>
+            <h1 class="d-flex justify-content-center align-center">Sponsorization already active</h1>
         </div>
         <form action="{{ route('admin.apartment.index') }}">
             

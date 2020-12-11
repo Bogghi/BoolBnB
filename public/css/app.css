@@ -12410,6 +12410,15 @@ main #sponsorizations .container-xl .next .fas {
   font-weight: 600;
 }
 
+.sponsored {
+  height: 38px;
+  background-color: #00F087;
+  color: white;
+  padding: 3px 10px;
+  line-height: 2;
+  border-radius: 30px;
+}
+
 footer {
   border-top: 3px solid #00F087;
   background-color: black;
