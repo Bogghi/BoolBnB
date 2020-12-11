@@ -176,7 +176,7 @@
           @method('POST')
           <p class="h4 mb-4 ">Contact the owner</p>
       
-          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value=@guest " {{old("email") ? old("email") : ''}} " @else{{Auth::user()->email}}" readonly @endguest required>
+          <input type="email" name="email" id="email" class="form-control mb-4" placeholder="e-mail" value=@guest " {{old("email") ? old("email") : ''}} " @else{{Auth::user()->email}} readonly @endguest required>
           @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
